@@ -1331,7 +1331,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DPERSONALE" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
         </EntityType>
-        <EntityType Name="DPERSONALE">
+        <EntityType Name="DPERSONALES">
           <Key>
             <PropertyRef Name="CEDULA" />
           </Key>
@@ -1646,7 +1646,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_AREA_PERSONAL_FK">
           <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AREA_PERSONAL">
               <PropertyRef Name="COD_AREA_PERSONAL" />
@@ -1721,7 +1721,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DCOMUNICACION_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1757,7 +1757,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="CUENTAS_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DCUENTAS" Type="Self.DCUENTA" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1793,7 +1793,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DDIRECCION_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1883,7 +1883,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DISCAPACIDAD_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1895,7 +1895,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DEXPERIENCIA_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1907,7 +1907,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DFAMILIARES_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1919,7 +1919,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DFORMACION_DPERSONALES_FK">
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
@@ -1932,7 +1932,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_DUSUARIOS_FK">
           <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DUSUARIOS">
               <PropertyRef Name="COD_USER" />
@@ -1944,7 +1944,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_DUSUARIOS_FKV1">
           <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DUSUARIOS">
               <PropertyRef Name="COD_USER" />
@@ -1956,7 +1956,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_GRUPO_PERSONAL_FK">
           <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GRUPO_PERSONAL">
               <PropertyRef Name="COD_GRUPO" />
@@ -1968,7 +1968,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_NACIONALIDAD_FK">
           <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NACIONALIDAD">
               <PropertyRef Name="COD_NACIONALIDAD" />
@@ -1980,7 +1980,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_PAIS_ESTADO_FK">
           <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS_ESTADO">
               <PropertyRef Name="COD_ESTADO" />
@@ -1994,7 +1994,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DPERSONALES_SUCURSAL_FK">
           <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
-          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SUCURSAL">
               <PropertyRef Name="COD_SUCURSAL" />
@@ -2232,7 +2232,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTA" />
           <EntitySet Name="DDIRECCIONES" EntityType="Self.DDIRECCION" />
           <EntitySet Name="DDISCAPACIDADES" EntityType="Self.DDISCAPACIDAD" />
-          <EntitySet Name="DPERSONALES" EntityType="Self.DPERSONALE" />
+          <EntitySet Name="DPERSONALES" EntityType="SPISAPModel.DPERSONALES" />
           <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIO" />
           <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" />
           <EntitySet Name="FORMACIONES" EntityType="Self.FORMACION" />
@@ -2554,7 +2554,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DPERSONALES">
-            <EntityTypeMapping TypeName="SPISAPModel.DPERSONALE">
+            <EntityTypeMapping TypeName="SPISAPModel.DPERSONALES">
               <MappingFragment StoreEntitySet="DPERSONALES">
                 <ScalarProperty Name="FICHA" ColumnName="FICHA" />
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />

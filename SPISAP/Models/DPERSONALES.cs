@@ -12,9 +12,9 @@ namespace SPISAP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DPERSONALE
+    public partial class DPERSONALES
     {
-        public DPERSONALE()
+        public DPERSONALES()
         {
             this.DCOMUNICACIONs = new HashSet<DCOMUNICACION>();
             this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();

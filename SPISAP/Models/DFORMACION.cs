@@ -35,7 +35,7 @@ namespace SPISAP.Models
         public virtual CLASE_ESPECIALIDAD CLASE_ESPECIALIDAD { get; set; }
         public virtual CLASE_INSTITUTO CLASE_INSTITUTO { get; set; }
         public virtual CLASE_TITULO CLASE_TITULO { get; set; }
-        public virtual DPERSONALE DPERSONALE { get; set; }
+        public virtual DPERSONALES DPERSONALE { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual FORMACION FORMACION { get; set; }

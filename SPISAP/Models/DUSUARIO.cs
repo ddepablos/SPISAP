@@ -24,8 +24,8 @@ namespace SPISAP.Models
             this.DDIRECCIONs1 = new HashSet<DDIRECCION>();
             this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();
             this.DDISCAPACIDADs1 = new HashSet<DDISCAPACIDAD>();
-            this.DPERSONALES = new HashSet<DPERSONALE>();
-            this.DPERSONALES1 = new HashSet<DPERSONALE>();
+            this.DPERSONALES = new HashSet<DPERSONALES>();
+            this.DPERSONALES1 = new HashSet<DPERSONALES>();
             this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
             this.DEXPERIENCIAs1 = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
@@ -49,8 +49,8 @@ namespace SPISAP.Models
         public virtual ICollection<DDIRECCION> DDIRECCIONs1 { get; set; }
         public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
         public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs1 { get; set; }
-        public virtual ICollection<DPERSONALE> DPERSONALES { get; set; }
-        public virtual ICollection<DPERSONALE> DPERSONALES1 { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES1 { get; set; }
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs1 { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }

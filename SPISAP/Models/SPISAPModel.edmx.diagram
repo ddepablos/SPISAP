@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="SPISAPModel.DCUENTA" Width="1.5" PointX="10.5" PointY="21.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DDIRECCION" Width="1.5" PointX="7.5" PointY="15.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DDISCAPACIDAD" Width="1.5" PointX="7.5" PointY="25.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DPERSONALE" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DPERSONALES" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DUSUARIO" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.ESTADO_SSO" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.FORMACION" Width="1.5" PointX="11.25" PointY="32.125" IsExpanded="true" />

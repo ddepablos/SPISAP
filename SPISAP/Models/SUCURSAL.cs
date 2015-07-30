@@ -16,14 +16,14 @@ namespace SPISAP.Models
     {
         public SUCURSAL()
         {
-            this.DPERSONALES = new HashSet<DPERSONALE>();
+            this.DPERSONALES = new HashSet<DPERSONALES>();
             this.DUSUARIOS = new HashSet<DUSUARIO>();
         }
     
         public string COD_SUCURSAL { get; set; }
         public string DES_SUCURSAL { get; set; }
     
-        public virtual ICollection<DPERSONALE> DPERSONALES { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
         public virtual ICollection<DUSUARIO> DUSUARIOS { get; set; }
     }
 }

@@ -16,12 +16,12 @@ namespace SPISAP.Models
     {
         public GRUPO_PERSONAL()
         {
-            this.DPERSONALES = new HashSet<DPERSONALE>();
+            this.DPERSONALES = new HashSet<DPERSONALES>();
         }
     
         public string COD_GRUPO { get; set; }
         public string DES_GRUPO_PERSONAL { get; set; }
     
-        public virtual ICollection<DPERSONALE> DPERSONALES { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace SPISAP.Models
         public DbSet<DCUENTA> DCUENTAS { get; set; }
         public DbSet<DDIRECCION> DDIRECCIONES { get; set; }
         public DbSet<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
-        public DbSet<DPERSONALE> DPERSONALES { get; set; }
+        public DbSet<DPERSONALES> DPERSONALES { get; set; }
         public DbSet<DUSUARIO> DUSUARIOS { get; set; }
         public DbSet<ESTADO_SSO> ESTADO_SSO { get; set; }
         public DbSet<FORMACION> FORMACIONES { get; set; }
