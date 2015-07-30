@@ -17,13 +17,13 @@ namespace SPISAP.Models
         public NACIONALIDAD()
         {
             this.DPERSONALES = new HashSet<DPERSONALE>();
-            this.DFAMILIARES = new HashSet<DFAMILIARE>();
+            this.DFAMILIARES = new HashSet<DFAMILIAR>();
         }
     
         public string COD_NACIONALIDAD { get; set; }
         public string DES_NACIONALIDAD { get; set; }
     
         public virtual ICollection<DPERSONALE> DPERSONALES { get; set; }
-        public virtual ICollection<DFAMILIARE> DFAMILIARES { get; set; }
+        public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
     }
 }

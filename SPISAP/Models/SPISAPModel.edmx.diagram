@@ -7,8 +7,8 @@
       <Diagram DiagramId="d4daa8fd960f44f58251ff9e3e971c0e" Name="Diagram1">
         <EntityTypeShape EntityType="SPISAPModel.ACTIVIDAD" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.AREA_PERSONAL" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.CLASE_ESPECIALIDAD" Width="1.5" PointX="11.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.CLASE_INSTITUTO" Width="1.5" PointX="9" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.CLASE_ESPECIALIDAD" Width="2" PointX="11.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.CLASE_INSTITUTO" Width="1.875" PointX="9" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.CLASE_TITULO" Width="1.5" PointX="11.25" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DCOMUNICACION" Width="1.5" PointX="7.5" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DCUENTA" Width="1.5" PointX="10.5" PointY="21.5" IsExpanded="true" />
@@ -21,7 +21,7 @@
         <EntityTypeShape EntityType="SPISAPModel.GRUPO_PERSONAL" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.MUNICIPIO_SSO" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.NACIONALIDAD" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PAI" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PAIS" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PAIS_ESTADO" Width="1.5" PointX="3" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PARENTESCO" Width="1.5" PointX="8.25" PointY="32.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PARROQUIA_SSO" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
@@ -29,7 +29,7 @@
         <EntityTypeShape EntityType="SPISAPModel.RELACION_LABORAL" Width="1.5" PointX="8.25" PointY="29.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.SUCURSAL" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DEXPERIENCIA" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DFAMILIARE" Width="1.5" PointX="10.5" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DFAMILIAR" Width="1.5" PointX="10.5" PointY="25.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DFORMACION" Width="1.5" PointX="13.5" PointY="20.25" IsExpanded="true" />
         <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_ACTIVIDAD_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_AREA_PERSONAL_FK" ManuallyRouted="false" />

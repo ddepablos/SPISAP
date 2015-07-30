@@ -32,7 +32,7 @@ namespace SPISAP.Models
         public virtual DPERSONALE DPERSONALE { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
-        public virtual PAI PAI { get; set; }
+        public virtual PAIS PAI { get; set; }
         public virtual RAMO RAMO { get; set; }
         public virtual RELACION_LABORAL RELACION_LABORAL { get; set; }
     }

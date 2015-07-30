@@ -26,6 +26,6 @@ namespace SPISAP.Models
     
         public virtual ICollection<DDIRECCION> DDIRECCIONs { get; set; }
         public virtual ICollection<DPERSONALE> DPERSONALES { get; set; }
-        public virtual PAI PAI { get; set; }
+        public virtual PAIS PAI { get; set; }
     }
 }

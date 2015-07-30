@@ -19,7 +19,7 @@ namespace SPISAP.Models
             this.DCOMUNICACIONs = new HashSet<DCOMUNICACION>();
             this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();
             this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
-            this.DFAMILIARES = new HashSet<DFAMILIARE>();
+            this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFORMACIONs = new HashSet<DFORMACION>();
         }
     
@@ -55,7 +55,7 @@ namespace SPISAP.Models
         public virtual DDIRECCION DDIRECCION { get; set; }
         public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
-        public virtual ICollection<DFAMILIARE> DFAMILIARES { get; set; }
+        public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
         public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }

@@ -12,7 +12,7 @@ namespace SPISAP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DFAMILIARE
+    public partial class DFAMILIAR
     {
         public string CEDULA { get; set; }
         public string COD_PARENTESCO { get; set; }
@@ -34,7 +34,7 @@ namespace SPISAP.Models
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual NACIONALIDAD NACIONALIDAD { get; set; }
-        public virtual PAI PAI { get; set; }
+        public virtual PAIS PAI { get; set; }
         public virtual PARENTESCO PARENTESCO { get; set; }
     }
 }

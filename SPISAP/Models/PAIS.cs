@@ -12,12 +12,12 @@ namespace SPISAP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PAI
+    public partial class PAIS
     {
-        public PAI()
+        public PAIS()
         {
             this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
-            this.DFAMILIARES = new HashSet<DFAMILIARE>();
+            this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFORMACIONs = new HashSet<DFORMACION>();
             this.PAIS_ESTADO = new HashSet<PAIS_ESTADO>();
         }
@@ -26,7 +26,7 @@ namespace SPISAP.Models
         public string DES_PAIS { get; set; }
     
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
-        public virtual ICollection<DFAMILIARE> DFAMILIARES { get; set; }
+        public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
         public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
         public virtual ICollection<PAIS_ESTADO> PAIS_ESTADO { get; set; }
     }

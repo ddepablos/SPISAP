@@ -1447,7 +1447,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DPERSONALES" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DFAMILIARES" />
         </EntityType>
-        <EntityType Name="PAI">
+        <EntityType Name="PAIS">
           <Key>
             <PropertyRef Name="COD_PAIS" />
           </Key>
@@ -1551,7 +1551,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="RAMO" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="DEXPERIENCIA" ToRole="RAMO" />
           <NavigationProperty Name="RELACION_LABORAL" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="DEXPERIENCIA" ToRole="RELACION_LABORAL" />
         </EntityType>
-        <EntityType Name="DFAMILIARE">
+        <EntityType Name="DFAMILIAR">
           <Key>
             <PropertyRef Name="COD_PARENTESCO" />
             <PropertyRef Name="PRIMER_APELLIDO" />
@@ -1908,7 +1908,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DFAMILIARES_DPERSONALES_FK">
           <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DPERSONALES">
               <PropertyRef Name="CEDULA" />
@@ -2030,7 +2030,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DFAMILIARES_DUSUARIOS_FK">
           <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DUSUARIOS">
               <PropertyRef Name="COD_USER" />
@@ -2042,7 +2042,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DFAMILIARES_DUSUARIOS_FKV1">
           <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DUSUARIOS">
               <PropertyRef Name="COD_USER" />
@@ -2128,7 +2128,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DFAMILIARES_NACIONALIDAD_FK">
           <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NACIONALIDAD">
               <PropertyRef Name="COD_NACIONALIDAD" />
@@ -2139,7 +2139,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DEXPERIENCIA_PAIS_FK">
-          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
           <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS">
@@ -2151,8 +2151,8 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DFAMILIARES_PAIS_FK">
-          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS">
               <PropertyRef Name="COD_PAIS" />
@@ -2163,7 +2163,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="DFORMACION_PAIS_FK">
-          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
           <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS">
@@ -2175,7 +2175,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="PAIS_ESTADO_PAIS_FK">
-          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
           <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS">
@@ -2188,7 +2188,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
         </Association>
         <Association Name="DFAMILIARES_PARENTESCOS_FK">
           <End Role="PARENTESCOS" Type="Self.PARENTESCO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PARENTESCOS">
               <PropertyRef Name="COD_PARENTESCO" />
@@ -2223,35 +2223,35 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SPISAPEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ACTIVIDADs" EntityType="Self.ACTIVIDAD" />
+          <EntitySet Name="ACTIVIDADES" EntityType="Self.ACTIVIDAD" />
           <EntitySet Name="AREA_PERSONAL" EntityType="Self.AREA_PERSONAL" />
           <EntitySet Name="CLASE_ESPECIALIDAD" EntityType="Self.CLASE_ESPECIALIDAD" />
           <EntitySet Name="CLASE_INSTITUTO" EntityType="Self.CLASE_INSTITUTO" />
           <EntitySet Name="CLASE_TITULO" EntityType="Self.CLASE_TITULO" />
-          <EntitySet Name="DCOMUNICACIONs" EntityType="Self.DCOMUNICACION" />
+          <EntitySet Name="DCOMUNICACIONES" EntityType="Self.DCOMUNICACION" />
           <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTA" />
-          <EntitySet Name="DDIRECCIONs" EntityType="Self.DDIRECCION" />
-          <EntitySet Name="DDISCAPACIDADs" EntityType="Self.DDISCAPACIDAD" />
+          <EntitySet Name="DDIRECCIONES" EntityType="Self.DDIRECCION" />
+          <EntitySet Name="DDISCAPACIDADES" EntityType="Self.DDISCAPACIDAD" />
           <EntitySet Name="DPERSONALES" EntityType="Self.DPERSONALE" />
           <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIO" />
           <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" />
-          <EntitySet Name="FORMACIONs" EntityType="Self.FORMACION" />
+          <EntitySet Name="FORMACIONES" EntityType="Self.FORMACION" />
           <EntitySet Name="GRUPO_PERSONAL" EntityType="Self.GRUPO_PERSONAL" />
           <EntitySet Name="MUNICIPIO_SSO" EntityType="Self.MUNICIPIO_SSO" />
-          <EntitySet Name="NACIONALIDADs" EntityType="Self.NACIONALIDAD" />
-          <EntitySet Name="PAIS" EntityType="Self.PAI" />
+          <EntitySet Name="NACIONALIDADES" EntityType="Self.NACIONALIDAD" />
+          <EntitySet Name="PAISES" EntityType="SPISAPModel.PAIS" />
           <EntitySet Name="PAIS_ESTADO" EntityType="Self.PAIS_ESTADO" />
           <EntitySet Name="PARENTESCOS" EntityType="Self.PARENTESCO" />
           <EntitySet Name="PARROQUIA_SSO" EntityType="Self.PARROQUIA_SSO" />
-          <EntitySet Name="RAMOes" EntityType="Self.RAMO" />
+          <EntitySet Name="RAMOS" EntityType="Self.RAMO" />
           <EntitySet Name="RELACION_LABORAL" EntityType="Self.RELACION_LABORAL" />
-          <EntitySet Name="SUCURSALs" EntityType="Self.SUCURSAL" />
-          <EntitySet Name="DEXPERIENCIAs" EntityType="Self.DEXPERIENCIA" />
-          <EntitySet Name="DFAMILIARES" EntityType="Self.DFAMILIARE" />
-          <EntitySet Name="DFORMACIONs" EntityType="Self.DFORMACION" />
+          <EntitySet Name="SUCURSALES" EntityType="Self.SUCURSAL" />
+          <EntitySet Name="DEXPERIENCIAS" EntityType="Self.DEXPERIENCIA" />
+          <EntitySet Name="DFAMILIARES" EntityType="SPISAPModel.DFAMILIAR" />
+          <EntitySet Name="DFORMACIONES" EntityType="Self.DFORMACION" />
           <AssociationSet Name="DEXPERIENCIA_ACTIVIDAD_FK" Association="Self.DEXPERIENCIA_ACTIVIDAD_FK">
-            <End Role="ACTIVIDAD" EntitySet="ACTIVIDADs" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="ACTIVIDAD" EntitySet="ACTIVIDADES" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_AREA_PERSONAL_FK" Association="Self.DPERSONALES_AREA_PERSONAL_FK">
             <End Role="AREA_PERSONAL" EntitySet="AREA_PERSONAL" />
@@ -2263,7 +2263,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="DFORMACION_CESPECIALIDAD_FK" Association="Self.DFORMACION_CESPECIALIDAD_FK">
             <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="CTITULO_CINSTITUTO_FK" Association="Self.CTITULO_CINSTITUTO_FK">
             <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
@@ -2271,23 +2271,23 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="DFORMACION_CINSTITUTO_FK" Association="Self.DFORMACION_CINSTITUTO_FK">
             <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DFORMACION_CTITULO_FK" Association="Self.DFORMACION_CTITULO_FK">
             <End Role="CLASE_TITULO" EntitySet="CLASE_TITULO" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DCOMUNICACION_DPERSONALES_FK" Association="Self.DCOMUNICACION_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
-            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONES" />
           </AssociationSet>
           <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FK" Association="Self.DCOMUNICACION_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONES" />
           </AssociationSet>
           <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FKV1" Association="Self.DCOMUNICACION_DUSUARIOS_FKV1">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONES" />
           </AssociationSet>
           <AssociationSet Name="CUENTAS_DPERSONALES_FK" Association="Self.CUENTAS_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
@@ -2303,39 +2303,39 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="DDIRECCION_DPERSONALES_FK" Association="Self.DDIRECCION_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
-            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONES" />
           </AssociationSet>
           <AssociationSet Name="DDIRECCION_DUSUARIOS_FK" Association="Self.DDIRECCION_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONES" />
           </AssociationSet>
           <AssociationSet Name="DDIRECCION_DUSUARIOS_FKV1" Association="Self.DDIRECCION_DUSUARIOS_FKV1">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONES" />
           </AssociationSet>
           <AssociationSet Name="DDIRECCION_PAIS_ESTADO_FK" Association="Self.DDIRECCION_PAIS_ESTADO_FK">
             <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
-            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONES" />
           </AssociationSet>
           <AssociationSet Name="DDIRECCION_PARROQUIA_SSO_FK" Association="Self.DDIRECCION_PARROQUIA_SSO_FK">
             <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
-            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONES" />
           </AssociationSet>
           <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FK" Association="Self.DDISCAPACIDAD_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADES" />
           </AssociationSet>
           <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FKV1" Association="Self.DDISCAPACIDAD_DUSUARIOS_FKV1">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADES" />
           </AssociationSet>
           <AssociationSet Name="DISCAPACIDAD_DPERSONALES_FK" Association="Self.DISCAPACIDAD_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
-            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADES" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_DPERSONALES_FK" Association="Self.DEXPERIENCIA_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DFAMILIARES_DPERSONALES_FK" Association="Self.DFAMILIARES_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
@@ -2343,7 +2343,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="DFORMACION_DPERSONALES_FK" Association="Self.DFORMACION_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_DUSUARIOS_FK" Association="Self.DPERSONALES_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
@@ -2358,7 +2358,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_NACIONALIDAD_FK" Association="Self.DPERSONALES_NACIONALIDAD_FK">
-            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADs" />
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADES" />
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_PAIS_ESTADO_FK" Association="Self.DPERSONALES_PAIS_ESTADO_FK">
@@ -2366,16 +2366,16 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_SUCURSAL_FK" Association="Self.DPERSONALES_SUCURSAL_FK">
-            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="SUCURSAL" EntitySet="SUCURSALES" />
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FK" Association="Self.DEXPERIENCIA_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FKV1" Association="Self.DEXPERIENCIA_DUSUARIOS_FKV1">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DFAMILIARES_DUSUARIOS_FK" Association="Self.DFAMILIARES_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
@@ -2387,14 +2387,14 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="DFORMACION_DUSUARIOS_FK" Association="Self.DFORMACION_DUSUARIOS_FK">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DFORMACION_DUSUARIOS_FKV1" Association="Self.DFORMACION_DUSUARIOS_FKV1">
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DUSUARIOS_SUCURSAL_FK" Association="Self.DUSUARIOS_SUCURSAL_FK">
-            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="SUCURSAL" EntitySet="SUCURSALES" />
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
           </AssociationSet>
           <AssociationSet Name="MUNICIPIO_ESTADO_SSO_FK" Association="Self.MUNICIPIO_ESTADO_SSO_FK">
@@ -2402,31 +2402,31 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
           </AssociationSet>
           <AssociationSet Name="DFORMACION_FORMACION_FK" Association="Self.DFORMACION_FORMACION_FK">
-            <End Role="FORMACION" EntitySet="FORMACIONs" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="FORMACION" EntitySet="FORMACIONES" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="PARROQUIA_MUNICIPIO_SSO_FK" Association="Self.PARROQUIA_MUNICIPIO_SSO_FK">
             <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
             <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
           </AssociationSet>
           <AssociationSet Name="DFAMILIARES_NACIONALIDAD_FK" Association="Self.DFAMILIARES_NACIONALIDAD_FK">
-            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADs" />
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADES" />
             <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_PAIS_FK" Association="Self.DEXPERIENCIA_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAIS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="PAIS" EntitySet="PAISES" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DFAMILIARES_PAIS_FK" Association="Self.DFAMILIARES_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="PAIS" EntitySet="PAISES" />
             <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
           </AssociationSet>
           <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAIS" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+            <End Role="PAIS" EntitySet="PAISES" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="PAIS_ESTADO_PAIS_FK" Association="Self.PAIS_ESTADO_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="PAIS" EntitySet="PAISES" />
             <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
           </AssociationSet>
           <AssociationSet Name="DFAMILIARES_PARENTESCOS_FK" Association="Self.DFAMILIARES_PARENTESCOS_FK">
@@ -2434,12 +2434,12 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_RAMO_FK" Association="Self.DEXPERIENCIA_RAMO_FK">
-            <End Role="RAMO" EntitySet="RAMOes" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="RAMO" EntitySet="RAMOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
           <AssociationSet Name="DEXPERIENCIA_RLABORAL_FK" Association="Self.DEXPERIENCIA_RLABORAL_FK">
             <End Role="RELACION_LABORAL" EntitySet="RELACION_LABORAL" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -2448,7 +2448,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SPISAPModelStoreContainer" CdmEntityContainer="SPISAPEntities">
-          <EntitySetMapping Name="ACTIVIDADs">
+          <EntitySetMapping Name="ACTIVIDADES">
             <EntityTypeMapping TypeName="SPISAPModel.ACTIVIDAD">
               <MappingFragment StoreEntitySet="ACTIVIDAD">
                 <ScalarProperty Name="COD_ACTIVIDAD" ColumnName="COD_ACTIVIDAD" />
@@ -2490,7 +2490,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DCOMUNICACIONs">
+          <EntitySetMapping Name="DCOMUNICACIONES">
             <EntityTypeMapping TypeName="SPISAPModel.DCOMUNICACION">
               <MappingFragment StoreEntitySet="DCOMUNICACION">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
@@ -2518,7 +2518,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DDIRECCIONs">
+          <EntitySetMapping Name="DDIRECCIONES">
             <EntityTypeMapping TypeName="SPISAPModel.DDIRECCION">
               <MappingFragment StoreEntitySet="DDIRECCION">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
@@ -2541,7 +2541,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DDISCAPACIDADs">
+          <EntitySetMapping Name="DDISCAPACIDADES">
             <EntityTypeMapping TypeName="SPISAPModel.DDISCAPACIDAD">
               <MappingFragment StoreEntitySet="DDISCAPACIDAD">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
@@ -2604,7 +2604,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FORMACIONs">
+          <EntitySetMapping Name="FORMACIONES">
             <EntityTypeMapping TypeName="SPISAPModel.FORMACION">
               <MappingFragment StoreEntitySet="FORMACION">
                 <ScalarProperty Name="COD_FORMACION" ColumnName="COD_FORMACION" />
@@ -2629,7 +2629,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NACIONALIDADs">
+          <EntitySetMapping Name="NACIONALIDADES">
             <EntityTypeMapping TypeName="SPISAPModel.NACIONALIDAD">
               <MappingFragment StoreEntitySet="NACIONALIDAD">
                 <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
@@ -2637,8 +2637,8 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PAIS">
-            <EntityTypeMapping TypeName="SPISAPModel.PAI">
+          <EntitySetMapping Name="PAISES">
+            <EntityTypeMapping TypeName="SPISAPModel.PAIS">
               <MappingFragment StoreEntitySet="PAIS">
                 <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
                 <ScalarProperty Name="DES_PAIS" ColumnName="DES_PAIS" />
@@ -2672,7 +2672,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RAMOes">
+          <EntitySetMapping Name="RAMOS">
             <EntityTypeMapping TypeName="SPISAPModel.RAMO">
               <MappingFragment StoreEntitySet="RAMO">
                 <ScalarProperty Name="COD_RAMO" ColumnName="COD_RAMO" />
@@ -2688,7 +2688,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SUCURSALs">
+          <EntitySetMapping Name="SUCURSALES">
             <EntityTypeMapping TypeName="SPISAPModel.SUCURSAL">
               <MappingFragment StoreEntitySet="SUCURSAL">
                 <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
@@ -2696,7 +2696,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DEXPERIENCIAs">
+          <EntitySetMapping Name="DEXPERIENCIAS">
             <EntityTypeMapping TypeName="SPISAPModel.DEXPERIENCIA">
               <MappingFragment StoreEntitySet="DEXPERIENCIA">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
@@ -2716,7 +2716,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DFAMILIARES">
-            <EntityTypeMapping TypeName="SPISAPModel.DFAMILIARE">
+            <EntityTypeMapping TypeName="SPISAPModel.DFAMILIAR">
               <MappingFragment StoreEntitySet="DFAMILIARES">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
                 <ScalarProperty Name="COD_PARENTESCO" ColumnName="COD_PARENTESCO" />
@@ -2736,7 +2736,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DFORMACIONs">
+          <EntitySetMapping Name="DFORMACIONES">
             <EntityTypeMapping TypeName="SPISAPModel.DFORMACION">
               <MappingFragment StoreEntitySet="DFORMACION">
                 <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />

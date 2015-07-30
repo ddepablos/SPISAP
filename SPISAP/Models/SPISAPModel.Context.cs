@@ -25,31 +25,31 @@ namespace SPISAP.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<ACTIVIDAD> ACTIVIDADs { get; set; }
+        public DbSet<ACTIVIDAD> ACTIVIDADES { get; set; }
         public DbSet<AREA_PERSONAL> AREA_PERSONAL { get; set; }
         public DbSet<CLASE_ESPECIALIDAD> CLASE_ESPECIALIDAD { get; set; }
         public DbSet<CLASE_INSTITUTO> CLASE_INSTITUTO { get; set; }
         public DbSet<CLASE_TITULO> CLASE_TITULO { get; set; }
-        public DbSet<DCOMUNICACION> DCOMUNICACIONs { get; set; }
+        public DbSet<DCOMUNICACION> DCOMUNICACIONES { get; set; }
         public DbSet<DCUENTA> DCUENTAS { get; set; }
-        public DbSet<DDIRECCION> DDIRECCIONs { get; set; }
-        public DbSet<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
+        public DbSet<DDIRECCION> DDIRECCIONES { get; set; }
+        public DbSet<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
         public DbSet<DPERSONALE> DPERSONALES { get; set; }
         public DbSet<DUSUARIO> DUSUARIOS { get; set; }
         public DbSet<ESTADO_SSO> ESTADO_SSO { get; set; }
-        public DbSet<FORMACION> FORMACIONs { get; set; }
+        public DbSet<FORMACION> FORMACIONES { get; set; }
         public DbSet<GRUPO_PERSONAL> GRUPO_PERSONAL { get; set; }
         public DbSet<MUNICIPIO_SSO> MUNICIPIO_SSO { get; set; }
-        public DbSet<NACIONALIDAD> NACIONALIDADs { get; set; }
-        public DbSet<PAI> PAIS { get; set; }
+        public DbSet<NACIONALIDAD> NACIONALIDADES { get; set; }
+        public DbSet<PAIS> PAISES { get; set; }
         public DbSet<PAIS_ESTADO> PAIS_ESTADO { get; set; }
         public DbSet<PARENTESCO> PARENTESCOS { get; set; }
         public DbSet<PARROQUIA_SSO> PARROQUIA_SSO { get; set; }
-        public DbSet<RAMO> RAMOes { get; set; }
+        public DbSet<RAMO> RAMOS { get; set; }
         public DbSet<RELACION_LABORAL> RELACION_LABORAL { get; set; }
-        public DbSet<SUCURSAL> SUCURSALs { get; set; }
-        public DbSet<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
-        public DbSet<DFAMILIARE> DFAMILIARES { get; set; }
-        public DbSet<DFORMACION> DFORMACIONs { get; set; }
+        public DbSet<SUCURSAL> SUCURSALES { get; set; }
+        public DbSet<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
+        public DbSet<DFAMILIAR> DFAMILIARES { get; set; }
+        public DbSet<DFORMACION> DFORMACIONES { get; set; }
     }
 }

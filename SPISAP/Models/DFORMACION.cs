@@ -39,6 +39,6 @@ namespace SPISAP.Models
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual FORMACION FORMACION { get; set; }
-        public virtual PAI PAI { get; set; }
+        public virtual PAIS PAI { get; set; }
     }
 }

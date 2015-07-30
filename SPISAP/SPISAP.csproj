@@ -226,7 +226,7 @@
     <Compile Include="Models\DEXPERIENCIA.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DFAMILIARE.cs">
+    <Compile Include="Models\DFAMILIAR.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DFORMACION.cs">
@@ -238,6 +238,7 @@
     <Compile Include="Models\DUSUARIO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\ESTADO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
@@ -253,7 +254,7 @@
     <Compile Include="Models\NACIONALIDAD.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PAI.cs">
+    <Compile Include="Models\PAIS.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAIS_ESTADO.cs">

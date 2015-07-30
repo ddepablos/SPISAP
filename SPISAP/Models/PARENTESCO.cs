@@ -16,12 +16,12 @@ namespace SPISAP.Models
     {
         public PARENTESCO()
         {
-            this.DFAMILIARES = new HashSet<DFAMILIARE>();
+            this.DFAMILIARES = new HashSet<DFAMILIAR>();
         }
     
         public string COD_PARENTESCO { get; set; }
         public string DES_PARENTESCO { get; set; }
     
-        public virtual ICollection<DFAMILIARE> DFAMILIARES { get; set; }
+        public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
     }
 }
