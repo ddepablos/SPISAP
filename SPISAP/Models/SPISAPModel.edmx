@@ -1,0 +1,2785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SPISAPModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="ACTIVIDAD">
+          <Key>
+            <PropertyRef Name="COD_ACTIVIDAD" />
+          </Key>
+          <Property Name="COD_ACTIVIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_ACTIVIDAD" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AREA_PERSONAL">
+          <Key>
+            <PropertyRef Name="COD_AREA_PERSONAL" />
+          </Key>
+          <Property Name="COD_AREA_PERSONAL" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_AREA_PERSONAL" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLASE_ESPECIALIDAD">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_ESPECIALIDAD" />
+          </Key>
+          <Property Name="COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_ESPECIALIDAD" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="DES_ESPECIALIDAD" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLASE_INSTITUTO">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+          </Key>
+          <Property Name="COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_CLASE" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLASE_TITULO">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_TITULO" />
+          </Key>
+          <Property Name="COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_TITULO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DES_TITULO" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DCOMUNICACION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="COD_CLASE" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="COD_CLASE" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="IDENTIFICADOR" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DCUENTAS">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="CLAVE_BANCO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="CUENTA_BANCARIA" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="TIPO_CUENTA" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="VIA_PAGO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DDIRECCION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="CALLE" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="EDIFICIO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="PISO" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="NUMERO" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="CIUDAD" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="URBANIZACION" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="TELEFONOS" Type="varchar2" MaxLength="40" />
+          <Property Name="COD_ESTADO_SSO" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="COD_MUNICIPIO_SSO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_PARROQUIA_SSO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DDISCAPACIDAD">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="GRUPO_DISCAPACIDAD" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="GRUPO_DISCAPACIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BDSPISAP.DEXPERIENCIA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DEXPERIENCIA">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="EMPRESA" />
+            <PropertyRef Name="CIUDAD" />
+            <PropertyRef Name="PAIS" />
+            <PropertyRef Name="COD_RAMO" />
+            <PropertyRef Name="COD_ACTIVIDAD" />
+            <PropertyRef Name="COD_RELACION" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="date" />
+          <Property Name="FECHA_FIN" Type="date" />
+          <Property Name="EMPRESA" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="CIUDAD" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_RAMO" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_ACTIVIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_RELACION" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BDSPISAP.DFAMILIARES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DFAMILIARES">
+          <Key>
+            <PropertyRef Name="COD_PARENTESCO" />
+            <PropertyRef Name="PRIMER_APELLIDO" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="FECHA_NACIMIENTO" />
+            <PropertyRef Name="LUGAR_NACIMIENTO" />
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="COD_NACIONALIDAD" />
+            <PropertyRef Name="CEDULA_FAMILIAR" />
+            <PropertyRef Name="SEXO" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" />
+          <Property Name="COD_PARENTESCO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="varchar2" MaxLength="40" />
+          <Property Name="NOMBRES" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="LUGAR_NACIMIENTO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_NACIONALIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="CEDULA_FAMILIAR" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DFORMACION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_FORMACION" />
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="CT_COD_CLASE" />
+            <PropertyRef Name="CT_COD_TITULO" />
+            <PropertyRef Name="CE_COD_ESPECIALIDAD" />
+            <PropertyRef Name="CE_COD_CLASE" />
+            <PropertyRef Name="FECHA_INICIO" />
+            <PropertyRef Name="FECHA_FIN" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_FORMACION" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="INSTITUO" Type="varchar2" MaxLength="40" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="CT_COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="CT_COD_TITULO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DURACION" Type="varchar2" MaxLength="2" />
+          <Property Name="UNIDAD_TIEMPO" Type="varchar2" MaxLength="16" />
+          <Property Name="CE_COD_ESPECIALIDAD" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CE_COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="date" Nullable="false" />
+          <Property Name="FECHA_FIN" Type="date" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DPERSONALES">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="FICHA" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="COD_SUCURSAL" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="COD_AREA_PERSONAL" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="CARGO" Type="varchar2" MaxLength="120" Nullable="false" />
+          <Property Name="TRATAMIENTO" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="varchar2" MaxLength="40" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" />
+          <Property Name="CIUDAD_NACIMIENTO" Type="varchar2" MaxLength="40" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_NACIONALIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="ESTADO_CIVIL" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="RIF" Type="varchar2" MaxLength="40" />
+          <Property Name="CALZADO" Type="varchar2" MaxLength="2" />
+          <Property Name="CHEMISE" Type="varchar2" MaxLength="4" />
+          <Property Name="PANTALON" Type="varchar2" MaxLength="2" />
+          <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DUSUARIOS">
+          <Key>
+            <PropertyRef Name="COD_USER" />
+          </Key>
+          <Property Name="COD_USER" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="DES_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+          <Property Name="CLAVE" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="COD_SUCURSAL" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="FECHA_INS" Type="date" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADO_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO_SSO" />
+          </Key>
+          <Property Name="COD_ESTADO_SSO" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="DES_ESTADO_SSO" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FORMACION">
+          <Key>
+            <PropertyRef Name="COD_FORMACION" />
+          </Key>
+          <Property Name="COD_FORMACION" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_FORMACION" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GRUPO_PERSONAL">
+          <Key>
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_GRUPO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DES_GRUPO_PERSONAL" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MUNICIPIO_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO_SSO" />
+            <PropertyRef Name="COD_MUNICIPIO" />
+          </Key>
+          <Property Name="COD_ESTADO_SSO" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="COD_MUNICIPIO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="DES_MUNICIPIO" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NACIONALIDAD">
+          <Key>
+            <PropertyRef Name="COD_NACIONALIDAD" />
+          </Key>
+          <Property Name="COD_NACIONALIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_NACIONALIDAD" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAIS">
+          <Key>
+            <PropertyRef Name="COD_PAIS" />
+          </Key>
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_PAIS" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAIS_ESTADO">
+          <Key>
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="COD_ESTADO" />
+          </Key>
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="DES_ESTADO" Type="varchar2" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="PARENTESCOS">
+          <Key>
+            <PropertyRef Name="COD_PARENTESCO" />
+          </Key>
+          <Property Name="COD_PARENTESCO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="DES_PARENTESCO" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PARROQUIA_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO" />
+            <PropertyRef Name="COD_MUNICIPIO" />
+            <PropertyRef Name="COD_PARROQUIA" />
+          </Key>
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="COD_MUNICIPIO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_PARROQUIA" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="DES_PARROQUIA" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAMO">
+          <Key>
+            <PropertyRef Name="COD_RAMO" />
+          </Key>
+          <Property Name="COD_RAMO" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="DES_RAMO" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RELACION_LABORAL">
+          <Key>
+            <PropertyRef Name="COD_RELACION" />
+          </Key>
+          <Property Name="COD_RELACION" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DES_RELACION" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUCURSAL">
+          <Key>
+            <PropertyRef Name="COD_SUCURSAL" />
+          </Key>
+          <Property Name="COD_SUCURSAL" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="DES_SUCURSAL" Type="varchar2" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <Association Name="CESPECIALIDAD_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="CLASE_ESPECIALIDAD" Type="Self.CLASE_ESPECIALIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="CLASE_ESPECIALIDAD">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CTITULO_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="CLASE_TITULO" Type="Self.CLASE_TITULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="CLASE_TITULO">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CUENTAS_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTAS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCUENTAS_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCUENTAS_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_PAIS_ESTADO_FK">
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_PARROQUIA_SSO_FK">
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARROQUIA_SSO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_PARROQUIA" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+              <PropertyRef Name="COD_MUNICIPIO_SSO" />
+              <PropertyRef Name="COD_PARROQUIA_SSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDISCAPACIDAD_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDISCAPACIDAD_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_ACTIVIDAD_FK">
+          <End Role="ACTIVIDAD" Type="Self.ACTIVIDAD" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVIDAD">
+              <PropertyRef Name="COD_ACTIVIDAD" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_ACTIVIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RAMO_FK">
+          <End Role="RAMO" Type="Self.RAMO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAMO">
+              <PropertyRef Name="COD_RAMO" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RAMO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RLABORAL_FK">
+          <End Role="RELACION_LABORAL" Type="Self.RELACION_LABORAL" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RELACION_LABORAL">
+              <PropertyRef Name="COD_RELACION" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RELACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="CEDULA_FAMILIAR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_NACIONALIDAD_FK">
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NACIONALIDAD">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PARENTESCOS_FK">
+          <End Role="PARENTESCOS" Type="Self.PARENTESCOS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARENTESCOS">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CESPECIALIDAD_FK">
+          <End Role="CLASE_ESPECIALIDAD" Type="Self.CLASE_ESPECIALIDAD" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_ESPECIALIDAD">
+              <PropertyRef Name="COD_ESPECIALIDAD" />
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CE_COD_ESPECIALIDAD" />
+              <PropertyRef Name="CE_COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CTITULO_FK">
+          <End Role="CLASE_TITULO" Type="Self.CLASE_TITULO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_TITULO">
+              <PropertyRef Name="COD_CLASE" />
+              <PropertyRef Name="COD_TITULO" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CT_COD_CLASE" />
+              <PropertyRef Name="CT_COD_TITULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_FORMACION_FK">
+          <End Role="FORMACION" Type="Self.FORMACION" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMACION">
+              <PropertyRef Name="COD_FORMACION" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_FORMACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DISCAPACIDAD_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_AREA_PERSONAL_FK">
+          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AREA_PERSONAL">
+              <PropertyRef Name="COD_AREA_PERSONAL" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_AREA_PERSONAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_GRUPO_PERSONAL_FK">
+          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPO_PERSONAL">
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_NACIONALIDAD_FK">
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NACIONALIDAD">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_PAIS_ESTADO_FK">
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_SUCURSAL_FK">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DUSUARIOS_SUCURSAL_FK">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="DUSUARIOS" Type="Self.DUSUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Principal>
+            <Dependent Role="DUSUARIOS">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MUNICIPIO_ESTADO_SSO_FK">
+          <End Role="ESTADO_SSO" Type="Self.ESTADO_SSO" Multiplicity="1" />
+          <End Role="MUNICIPIO_SSO" Type="Self.MUNICIPIO_SSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_SSO">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Principal>
+            <Dependent Role="MUNICIPIO_SSO">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PAIS_ESTADO_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PARROQUIA_MUNICIPIO_SSO_FK">
+          <End Role="MUNICIPIO_SSO" Type="Self.MUNICIPIO_SSO" Multiplicity="1" />
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUNICIPIO_SSO">
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Principal>
+            <Dependent Role="PARROQUIA_SSO">
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SPISAPModelStoreContainer">
+          <EntitySet Name="ACTIVIDAD" EntityType="Self.ACTIVIDAD" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="AREA_PERSONAL" EntityType="Self.AREA_PERSONAL" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="CLASE_ESPECIALIDAD" EntityType="Self.CLASE_ESPECIALIDAD" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="CLASE_INSTITUTO" EntityType="Self.CLASE_INSTITUTO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="CLASE_TITULO" EntityType="Self.CLASE_TITULO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DCOMUNICACION" EntityType="Self.DCOMUNICACION" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTAS" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DDIRECCION" EntityType="Self.DDIRECCION" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DDISCAPACIDAD" EntityType="Self.DDISCAPACIDAD" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DPERSONALES" EntityType="Self.DPERSONALES" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIOS" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="FORMACION" EntityType="Self.FORMACION" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="GRUPO_PERSONAL" EntityType="Self.GRUPO_PERSONAL" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="MUNICIPIO_SSO" EntityType="Self.MUNICIPIO_SSO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="NACIONALIDAD" EntityType="Self.NACIONALIDAD" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="PAIS_ESTADO" EntityType="Self.PAIS_ESTADO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="PARENTESCOS" EntityType="Self.PARENTESCOS" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="PARROQUIA_SSO" EntityType="Self.PARROQUIA_SSO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="RAMO" EntityType="Self.RAMO" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="RELACION_LABORAL" EntityType="Self.RELACION_LABORAL" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DEXPERIENCIA" EntityType="Self.DEXPERIENCIA" store:Type="Tables" store:Schema="BDSPISAP">
+            <DefiningQuery>SELECT 
+"DEXPERIENCIA"."CEDULA" AS "CEDULA", 
+"DEXPERIENCIA"."FECHA_INICIO" AS "FECHA_INICIO", 
+"DEXPERIENCIA"."FECHA_FIN" AS "FECHA_FIN", 
+"DEXPERIENCIA"."EMPRESA" AS "EMPRESA", 
+"DEXPERIENCIA"."CIUDAD" AS "CIUDAD", 
+"DEXPERIENCIA"."PAIS" AS "PAIS", 
+"DEXPERIENCIA"."COD_RAMO" AS "COD_RAMO", 
+"DEXPERIENCIA"."COD_ACTIVIDAD" AS "COD_ACTIVIDAD", 
+"DEXPERIENCIA"."COD_RELACION" AS "COD_RELACION", 
+"DEXPERIENCIA"."COD_USER_INS" AS "COD_USER_INS", 
+"DEXPERIENCIA"."FECHA_INS" AS "FECHA_INS", 
+"DEXPERIENCIA"."COD_USER_UPD" AS "COD_USER_UPD", 
+"DEXPERIENCIA"."FECHA_UPD" AS "FECHA_UPD"
+FROM "BDSPISAP"."DEXPERIENCIA" "DEXPERIENCIA"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DFAMILIARES" EntityType="Self.DFAMILIARES" store:Type="Tables" store:Schema="BDSPISAP">
+            <DefiningQuery>SELECT 
+"DFAMILIARES"."CEDULA" AS "CEDULA", 
+"DFAMILIARES"."COD_PARENTESCO" AS "COD_PARENTESCO", 
+"DFAMILIARES"."PRIMER_APELLIDO" AS "PRIMER_APELLIDO", 
+"DFAMILIARES"."SEGUNDO_APELLIDO" AS "SEGUNDO_APELLIDO", 
+"DFAMILIARES"."NOMBRES" AS "NOMBRES", 
+"DFAMILIARES"."FECHA_NACIMIENTO" AS "FECHA_NACIMIENTO", 
+"DFAMILIARES"."LUGAR_NACIMIENTO" AS "LUGAR_NACIMIENTO", 
+"DFAMILIARES"."COD_PAIS" AS "COD_PAIS", 
+"DFAMILIARES"."COD_NACIONALIDAD" AS "COD_NACIONALIDAD", 
+"DFAMILIARES"."CEDULA_FAMILIAR" AS "CEDULA_FAMILIAR", 
+"DFAMILIARES"."SEXO" AS "SEXO", 
+"DFAMILIARES"."COD_USER_INS" AS "COD_USER_INS", 
+"DFAMILIARES"."FECHA_INS" AS "FECHA_INS", 
+"DFAMILIARES"."COD_USER_UPD" AS "COD_USER_UPD", 
+"DFAMILIARES"."FECHA_UPD" AS "FECHA_UPD"
+FROM "BDSPISAP"."DFAMILIARES" "DFAMILIARES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DFORMACION" EntityType="Self.DFORMACION" store:Type="Tables" store:Schema="BDSPISAP">
+            <DefiningQuery>SELECT 
+"DFORMACION"."CEDULA" AS "CEDULA", 
+"DFORMACION"."COD_CLASE" AS "COD_CLASE", 
+"DFORMACION"."COD_FORMACION" AS "COD_FORMACION", 
+"DFORMACION"."INSTITUO" AS "INSTITUO", 
+"DFORMACION"."COD_PAIS" AS "COD_PAIS", 
+"DFORMACION"."CT_COD_CLASE" AS "CT_COD_CLASE", 
+"DFORMACION"."CT_COD_TITULO" AS "CT_COD_TITULO", 
+"DFORMACION"."DURACION" AS "DURACION", 
+"DFORMACION"."UNIDAD_TIEMPO" AS "UNIDAD_TIEMPO", 
+"DFORMACION"."CE_COD_ESPECIALIDAD" AS "CE_COD_ESPECIALIDAD", 
+"DFORMACION"."CE_COD_CLASE" AS "CE_COD_CLASE", 
+"DFORMACION"."FECHA_INICIO" AS "FECHA_INICIO", 
+"DFORMACION"."FECHA_FIN" AS "FECHA_FIN", 
+"DFORMACION"."COD_USER_INS" AS "COD_USER_INS", 
+"DFORMACION"."FECHA_INS" AS "FECHA_INS", 
+"DFORMACION"."COD_USER_UPD" AS "COD_USER_UPD", 
+"DFORMACION"."FECHA_UPD" AS "FECHA_UPD"
+FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="CESPECIALIDAD_CINSTITUTO_FK" Association="Self.CESPECIALIDAD_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="CTITULO_CINSTITUTO_FK" Association="Self.CTITULO_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="CLASE_TITULO" EntitySet="CLASE_TITULO" />
+          </AssociationSet>
+          <AssociationSet Name="CUENTAS_DPERSONALES_FK" Association="Self.CUENTAS_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DPERSONALES_FK" Association="Self.DCOMUNICACION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACION" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FK" Association="Self.DCOMUNICACION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACION" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FKV1" Association="Self.DCOMUNICACION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACION" />
+          </AssociationSet>
+          <AssociationSet Name="DCUENTAS_DUSUARIOS_FK" Association="Self.DCUENTAS_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DCUENTAS_DUSUARIOS_FKV1" Association="Self.DCUENTAS_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DPERSONALES_FK" Association="Self.DDIRECCION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DUSUARIOS_FK" Association="Self.DDIRECCION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DUSUARIOS_FKV1" Association="Self.DDIRECCION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_PAIS_ESTADO_FK" Association="Self.DDIRECCION_PAIS_ESTADO_FK">
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_PARROQUIA_SSO_FK" Association="Self.DDIRECCION_PARROQUIA_SSO_FK">
+            <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FK" Association="Self.DDISCAPACIDAD_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FKV1" Association="Self.DDISCAPACIDAD_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_ACTIVIDAD_FK" Association="Self.DEXPERIENCIA_ACTIVIDAD_FK">
+            <End Role="ACTIVIDAD" EntitySet="ACTIVIDAD" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DPERSONALES_FK" Association="Self.DEXPERIENCIA_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FK" Association="Self.DEXPERIENCIA_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FKV1" Association="Self.DEXPERIENCIA_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_PAIS_FK" Association="Self.DEXPERIENCIA_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RAMO_FK" Association="Self.DEXPERIENCIA_RAMO_FK">
+            <End Role="RAMO" EntitySet="RAMO" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RLABORAL_FK" Association="Self.DEXPERIENCIA_RLABORAL_FK">
+            <End Role="RELACION_LABORAL" EntitySet="RELACION_LABORAL" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DPERSONALES_FK" Association="Self.DFAMILIARES_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FK" Association="Self.DFAMILIARES_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FKV1" Association="Self.DFAMILIARES_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_NACIONALIDAD_FK" Association="Self.DFAMILIARES_NACIONALIDAD_FK">
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDAD" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PAIS_FK" Association="Self.DFAMILIARES_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PARENTESCOS_FK" Association="Self.DFAMILIARES_PARENTESCOS_FK">
+            <End Role="PARENTESCOS" EntitySet="PARENTESCOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CESPECIALIDAD_FK" Association="Self.DFORMACION_CESPECIALIDAD_FK">
+            <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CINSTITUTO_FK" Association="Self.DFORMACION_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CTITULO_FK" Association="Self.DFORMACION_CTITULO_FK">
+            <End Role="CLASE_TITULO" EntitySet="CLASE_TITULO" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DPERSONALES_FK" Association="Self.DFORMACION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FK" Association="Self.DFORMACION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FKV1" Association="Self.DFORMACION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_FORMACION_FK" Association="Self.DFORMACION_FORMACION_FK">
+            <End Role="FORMACION" EntitySet="FORMACION" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DFORMACION" EntitySet="DFORMACION" />
+          </AssociationSet>
+          <AssociationSet Name="DISCAPACIDAD_DPERSONALES_FK" Association="Self.DISCAPACIDAD_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_AREA_PERSONAL_FK" Association="Self.DPERSONALES_AREA_PERSONAL_FK">
+            <End Role="AREA_PERSONAL" EntitySet="AREA_PERSONAL" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_DUSUARIOS_FK" Association="Self.DPERSONALES_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_DUSUARIOS_FKV1" Association="Self.DPERSONALES_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_GRUPO_PERSONAL_FK" Association="Self.DPERSONALES_GRUPO_PERSONAL_FK">
+            <End Role="GRUPO_PERSONAL" EntitySet="GRUPO_PERSONAL" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_NACIONALIDAD_FK" Association="Self.DPERSONALES_NACIONALIDAD_FK">
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDAD" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_PAIS_ESTADO_FK" Association="Self.DPERSONALES_PAIS_ESTADO_FK">
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_SUCURSAL_FK" Association="Self.DPERSONALES_SUCURSAL_FK">
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DUSUARIOS_SUCURSAL_FK" Association="Self.DUSUARIOS_SUCURSAL_FK">
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="MUNICIPIO_ESTADO_SSO_FK" Association="Self.MUNICIPIO_ESTADO_SSO_FK">
+            <End Role="ESTADO_SSO" EntitySet="ESTADO_SSO" />
+            <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
+          </AssociationSet>
+          <AssociationSet Name="PAIS_ESTADO_PAIS_FK" Association="Self.PAIS_ESTADO_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+          </AssociationSet>
+          <AssociationSet Name="PARROQUIA_MUNICIPIO_SSO_FK" Association="Self.PARROQUIA_MUNICIPIO_SSO_FK">
+            <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
+            <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SPISAPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="ACTIVIDAD">
+          <Key>
+            <PropertyRef Name="COD_ACTIVIDAD" />
+          </Key>
+          <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_ACTIVIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="ACTIVIDAD" ToRole="DEXPERIENCIA" />
+        </EntityType>
+        <EntityType Name="AREA_PERSONAL">
+          <Key>
+            <PropertyRef Name="COD_AREA_PERSONAL" />
+          </Key>
+          <Property Name="COD_AREA_PERSONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_AREA_PERSONAL" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_AREA_PERSONAL_FK" FromRole="AREA_PERSONAL" ToRole="DPERSONALES" />
+        </EntityType>
+        <EntityType Name="CLASE_ESPECIALIDAD">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_ESPECIALIDAD" />
+          </Key>
+          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ESPECIALIDAD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_ESPECIALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.CESPECIALIDAD_CINSTITUTO_FK" FromRole="CLASE_ESPECIALIDAD" ToRole="CLASE_INSTITUTO" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_CESPECIALIDAD_FK" FromRole="CLASE_ESPECIALIDAD" ToRole="DFORMACION" />
+        </EntityType>
+        <EntityType Name="CLASE_INSTITUTO">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+          </Key>
+          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_CLASE" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASE_ESPECIALIDAD" Relationship="Self.CESPECIALIDAD_CINSTITUTO_FK" FromRole="CLASE_INSTITUTO" ToRole="CLASE_ESPECIALIDAD" />
+          <NavigationProperty Name="CLASE_TITULO" Relationship="Self.CTITULO_CINSTITUTO_FK" FromRole="CLASE_INSTITUTO" ToRole="CLASE_TITULO" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_CINSTITUTO_FK" FromRole="CLASE_INSTITUTO" ToRole="DFORMACION" />
+        </EntityType>
+        <EntityType Name="CLASE_TITULO">
+          <Key>
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_TITULO" />
+          </Key>
+          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_TITULO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.CTITULO_CINSTITUTO_FK" FromRole="CLASE_TITULO" ToRole="CLASE_INSTITUTO" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="CLASE_TITULO" ToRole="DFORMACION" />
+        </EntityType>
+        <EntityType Name="DCOMUNICACION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="COD_CLASE" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_CLASE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDENTIFICADOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DCOMUNICACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DCOMUNICACION_DUSUARIOS_FK" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
+        </EntityType>
+        <EntityType Name="DCUENTA">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLAVE_BANCO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CUENTA_BANCARIA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_CUENTA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VIA_PAGO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DCUENTAS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
+        </EntityType>
+        <EntityType Name="DDIRECCION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CALLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EDIFICIO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PISO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUMERO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="URBANIZACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONOS" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ESTADO_SSO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_MUNICIPIO_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PARROQUIA_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DDIRECCION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="DDIRECCION" ToRole="PAIS_ESTADO" />
+          <NavigationProperty Name="PARROQUIA_SSO" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="DDIRECCION" ToRole="PARROQUIA_SSO" />
+        </EntityType>
+        <EntityType Name="DDISCAPACIDAD">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="GRUPO_DISCAPACIDAD" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRUPO_DISCAPACIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
+        </EntityType>
+        <EntityType Name="DPERSONALE">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="FICHA" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_SUCURSAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_AREA_PERSONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CARGO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TRATAMIENTO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" />
+          <Property Name="CIUDAD_NACIMIENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_CIVIL" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RIF" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CALZADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CHEMISE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PANTALON" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="AREA_PERSONAL" Relationship="Self.DPERSONALES_AREA_PERSONAL_FK" FromRole="DPERSONALES" ToRole="AREA_PERSONAL" />
+          <NavigationProperty Name="DCOMUNICACIONs" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCOMUNICACION" />
+          <NavigationProperty Name="DCUENTA" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCUENTAS" />
+          <NavigationProperty Name="DDIRECCION" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFAMILIARES" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFORMACION" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="GRUPO_PERSONAL" Relationship="Self.DPERSONALES_GRUPO_PERSONAL_FK" FromRole="DPERSONALES" ToRole="GRUPO_PERSONAL" />
+          <NavigationProperty Name="NACIONALIDAD" Relationship="Self.DPERSONALES_NACIONALIDAD_FK" FromRole="DPERSONALES" ToRole="NACIONALIDAD" />
+          <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.DPERSONALES_PAIS_ESTADO_FK" FromRole="DPERSONALES" ToRole="PAIS_ESTADO" />
+          <NavigationProperty Name="SUCURSAL" Relationship="Self.DPERSONALES_SUCURSAL_FK" FromRole="DPERSONALES" ToRole="SUCURSAL" />
+        </EntityType>
+        <EntityType Name="DUSUARIO">
+          <Key>
+            <PropertyRef Name="COD_USER" />
+          </Key>
+          <Property Name="COD_USER" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_USER" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLAVE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_SUCURSAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DCOMUNICACIONs" Relationship="Self.DCOMUNICACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DCOMUNICACION" />
+          <NavigationProperty Name="DCOMUNICACIONs1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCOMUNICACION" />
+          <NavigationProperty Name="DCUENTAS" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
+          <NavigationProperty Name="DCUENTAS1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONs1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DDISCAPACIDADs1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
+          <NavigationProperty Name="DFAMILIARES1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONs1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="SUCURSAL" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="DUSUARIOS" ToRole="SUCURSAL" />
+        </EntityType>
+        <EntityType Name="ESTADO_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO_SSO" />
+          </Key>
+          <Property Name="COD_ESTADO_SSO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_ESTADO_SSO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MUNICIPIO_SSO" Relationship="Self.MUNICIPIO_ESTADO_SSO_FK" FromRole="ESTADO_SSO" ToRole="MUNICIPIO_SSO" />
+        </EntityType>
+        <EntityType Name="FORMACION">
+          <Key>
+            <PropertyRef Name="COD_FORMACION" />
+          </Key>
+          <Property Name="COD_FORMACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_FORMACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="FORMACION" ToRole="DFORMACION" />
+        </EntityType>
+        <EntityType Name="GRUPO_PERSONAL">
+          <Key>
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_GRUPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_GRUPO_PERSONAL" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_GRUPO_PERSONAL_FK" FromRole="GRUPO_PERSONAL" ToRole="DPERSONALES" />
+        </EntityType>
+        <EntityType Name="MUNICIPIO_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO_SSO" />
+            <PropertyRef Name="COD_MUNICIPIO" />
+          </Key>
+          <Property Name="COD_ESTADO_SSO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_MUNICIPIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_MUNICIPIO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ESTADO_SSO" Relationship="Self.MUNICIPIO_ESTADO_SSO_FK" FromRole="MUNICIPIO_SSO" ToRole="ESTADO_SSO" />
+          <NavigationProperty Name="PARROQUIA_SSO" Relationship="Self.PARROQUIA_MUNICIPIO_SSO_FK" FromRole="MUNICIPIO_SSO" ToRole="PARROQUIA_SSO" />
+        </EntityType>
+        <EntityType Name="NACIONALIDAD">
+          <Key>
+            <PropertyRef Name="COD_NACIONALIDAD" />
+          </Key>
+          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_NACIONALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DFAMILIARES" />
+        </EntityType>
+        <EntityType Name="PAI">
+          <Key>
+            <PropertyRef Name="COD_PAIS" />
+          </Key>
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="PAIS" ToRole="DFAMILIARES" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
+          <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS" ToRole="PAIS_ESTADO" />
+        </EntityType>
+        <EntityType Name="PAIS_ESTADO">
+          <Key>
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="COD_ESTADO" />
+          </Key>
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_ESTADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DPERSONALES" />
+          <NavigationProperty Name="PAI" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
+        </EntityType>
+        <EntityType Name="PARENTESCO">
+          <Key>
+            <PropertyRef Name="COD_PARENTESCO" />
+          </Key>
+          <Property Name="COD_PARENTESCO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_PARENTESCO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_PARENTESCOS_FK" FromRole="PARENTESCOS" ToRole="DFAMILIARES" />
+        </EntityType>
+        <EntityType Name="PARROQUIA_SSO">
+          <Key>
+            <PropertyRef Name="COD_ESTADO" />
+            <PropertyRef Name="COD_MUNICIPIO" />
+            <PropertyRef Name="COD_PARROQUIA" />
+          </Key>
+          <Property Name="COD_ESTADO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_MUNICIPIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PARROQUIA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_PARROQUIA" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="MUNICIPIO_SSO" Relationship="Self.PARROQUIA_MUNICIPIO_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="MUNICIPIO_SSO" />
+        </EntityType>
+        <EntityType Name="RAMO">
+          <Key>
+            <PropertyRef Name="COD_RAMO" />
+          </Key>
+          <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_RAMO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="RAMO" ToRole="DEXPERIENCIA" />
+        </EntityType>
+        <EntityType Name="RELACION_LABORAL">
+          <Key>
+            <PropertyRef Name="COD_RELACION" />
+          </Key>
+          <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_RELACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="RELACION_LABORAL" ToRole="DEXPERIENCIA" />
+        </EntityType>
+        <EntityType Name="SUCURSAL">
+          <Key>
+            <PropertyRef Name="COD_SUCURSAL" />
+          </Key>
+          <Property Name="COD_SUCURSAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DES_SUCURSAL" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_SUCURSAL_FK" FromRole="SUCURSAL" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIOS" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="SUCURSAL" ToRole="DUSUARIOS" />
+        </EntityType>
+        <EntityType Name="DEXPERIENCIA">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="EMPRESA" />
+            <PropertyRef Name="CIUDAD" />
+            <PropertyRef Name="PAIS" />
+            <PropertyRef Name="COD_RAMO" />
+            <PropertyRef Name="COD_ACTIVIDAD" />
+            <PropertyRef Name="COD_RELACION" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="DateTime" />
+          <Property Name="FECHA_FIN" Type="DateTime" />
+          <Property Name="EMPRESA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ACTIVIDAD" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="DEXPERIENCIA" ToRole="ACTIVIDAD" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DEXPERIENCIA" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="PAI" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="DEXPERIENCIA" ToRole="PAIS" />
+          <NavigationProperty Name="RAMO" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="DEXPERIENCIA" ToRole="RAMO" />
+          <NavigationProperty Name="RELACION_LABORAL" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="DEXPERIENCIA" ToRole="RELACION_LABORAL" />
+        </EntityType>
+        <EntityType Name="DFAMILIARE">
+          <Key>
+            <PropertyRef Name="COD_PARENTESCO" />
+            <PropertyRef Name="PRIMER_APELLIDO" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="FECHA_NACIMIENTO" />
+            <PropertyRef Name="LUGAR_NACIMIENTO" />
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="COD_NACIONALIDAD" />
+            <PropertyRef Name="CEDULA_FAMILIAR" />
+            <PropertyRef Name="SEXO" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PARENTESCO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRES" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="LUGAR_NACIMIENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEDULA_FAMILIAR" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DFAMILIARES" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="NACIONALIDAD" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="DFAMILIARES" ToRole="NACIONALIDAD" />
+          <NavigationProperty Name="PAI" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="DFAMILIARES" ToRole="PAIS" />
+          <NavigationProperty Name="PARENTESCO" Relationship="Self.DFAMILIARES_PARENTESCOS_FK" FromRole="DFAMILIARES" ToRole="PARENTESCOS" />
+        </EntityType>
+        <EntityType Name="DFORMACION">
+          <Key>
+            <PropertyRef Name="CEDULA" />
+            <PropertyRef Name="COD_CLASE" />
+            <PropertyRef Name="COD_FORMACION" />
+            <PropertyRef Name="COD_PAIS" />
+            <PropertyRef Name="CT_COD_CLASE" />
+            <PropertyRef Name="CT_COD_TITULO" />
+            <PropertyRef Name="CE_COD_ESPECIALIDAD" />
+            <PropertyRef Name="CE_COD_CLASE" />
+            <PropertyRef Name="FECHA_INICIO" />
+            <PropertyRef Name="FECHA_FIN" />
+            <PropertyRef Name="COD_USER_INS" />
+            <PropertyRef Name="FECHA_INS" />
+            <PropertyRef Name="COD_USER_UPD" />
+            <PropertyRef Name="FECHA_UPD" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_FORMACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INSTITUO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CT_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CT_COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DURACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UNIDAD_TIEMPO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CE_COD_ESPECIALIDAD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CE_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_FIN" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CLASE_ESPECIALIDAD" Relationship="Self.DFORMACION_CESPECIALIDAD_FK" FromRole="DFORMACION" ToRole="CLASE_ESPECIALIDAD" />
+          <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.DFORMACION_CINSTITUTO_FK" FromRole="DFORMACION" ToRole="CLASE_INSTITUTO" />
+          <NavigationProperty Name="CLASE_TITULO" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="DFORMACION" ToRole="CLASE_TITULO" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DFORMACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DFORMACION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DFORMACION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="FORMACION" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="DFORMACION" ToRole="FORMACION" />
+          <NavigationProperty Name="PAI" Relationship="Self.DFORMACION_PAIS_FK" FromRole="DFORMACION" ToRole="PAIS" />
+        </EntityType>
+        <Association Name="DEXPERIENCIA_ACTIVIDAD_FK">
+          <End Role="ACTIVIDAD" Type="Self.ACTIVIDAD" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVIDAD">
+              <PropertyRef Name="COD_ACTIVIDAD" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_ACTIVIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_AREA_PERSONAL_FK">
+          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AREA_PERSONAL">
+              <PropertyRef Name="COD_AREA_PERSONAL" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_AREA_PERSONAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CESPECIALIDAD_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="CLASE_ESPECIALIDAD" Type="Self.CLASE_ESPECIALIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="CLASE_ESPECIALIDAD">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CESPECIALIDAD_FK">
+          <End Role="CLASE_ESPECIALIDAD" Type="Self.CLASE_ESPECIALIDAD" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_ESPECIALIDAD">
+              <PropertyRef Name="COD_ESPECIALIDAD" />
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CE_COD_ESPECIALIDAD" />
+              <PropertyRef Name="CE_COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CTITULO_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="CLASE_TITULO" Type="Self.CLASE_TITULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="CLASE_TITULO">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CINSTITUTO_FK">
+          <End Role="CLASE_INSTITUTO" Type="Self.CLASE_INSTITUTO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_INSTITUTO">
+              <PropertyRef Name="COD_CLASE" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_CTITULO_FK">
+          <End Role="CLASE_TITULO" Type="Self.CLASE_TITULO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASE_TITULO">
+              <PropertyRef Name="COD_CLASE" />
+              <PropertyRef Name="COD_TITULO" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CT_COD_CLASE" />
+              <PropertyRef Name="CT_COD_TITULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCOMUNICACION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DCOMUNICACION" Type="Self.DCOMUNICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCOMUNICACION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CUENTAS_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCUENTAS_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCUENTAS_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DCUENTAS" Type="Self.DCUENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DCUENTAS">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_PAIS_ESTADO_FK">
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDIRECCION_PARROQUIA_SSO_FK">
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="1" />
+          <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARROQUIA_SSO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_PARROQUIA" />
+            </Principal>
+            <Dependent Role="DDIRECCION">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+              <PropertyRef Name="COD_MUNICIPIO_SSO" />
+              <PropertyRef Name="COD_PARROQUIA_SSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDISCAPACIDAD_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DDISCAPACIDAD_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DISCAPACIDAD_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DDISCAPACIDAD" Type="Self.DDISCAPACIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DDISCAPACIDAD">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="CEDULA_FAMILIAR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DPERSONALES_FK">
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPERSONALES">
+              <PropertyRef Name="CEDULA" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_GRUPO_PERSONAL_FK">
+          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPO_PERSONAL">
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_NACIONALIDAD_FK">
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NACIONALIDAD">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_PAIS_ESTADO_FK">
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_ESTADO" />
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DPERSONALES_SUCURSAL_FK">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="DPERSONALES" Type="Self.DPERSONALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Principal>
+            <Dependent Role="DPERSONALES">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DUSUARIOS_SUCURSAL_FK">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Principal>
+            <Dependent Role="DUSUARIOS">
+              <PropertyRef Name="COD_SUCURSAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MUNICIPIO_ESTADO_SSO_FK">
+          <End Role="ESTADO_SSO" Type="Self.ESTADO_SSO" Multiplicity="1" />
+          <End Role="MUNICIPIO_SSO" Type="Self.MUNICIPIO_SSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_SSO">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Principal>
+            <Dependent Role="MUNICIPIO_SSO">
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_FORMACION_FK">
+          <End Role="FORMACION" Type="Self.FORMACION" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMACION">
+              <PropertyRef Name="COD_FORMACION" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_FORMACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PARROQUIA_MUNICIPIO_SSO_FK">
+          <End Role="MUNICIPIO_SSO" Type="Self.MUNICIPIO_SSO" Multiplicity="1" />
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUNICIPIO_SSO">
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_ESTADO_SSO" />
+            </Principal>
+            <Dependent Role="PARROQUIA_SSO">
+              <PropertyRef Name="COD_MUNICIPIO" />
+              <PropertyRef Name="COD_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_NACIONALIDAD_FK">
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NACIONALIDAD">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PAIS_ESTADO_PAIS_FK">
+          <End Role="PAIS" Type="Self.PAI" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="PAIS_ESTADO">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PARENTESCOS_FK">
+          <End Role="PARENTESCOS" Type="Self.PARENTESCO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="Self.DFAMILIARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARENTESCOS">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RAMO_FK">
+          <End Role="RAMO" Type="Self.RAMO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAMO">
+              <PropertyRef Name="COD_RAMO" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RAMO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RLABORAL_FK">
+          <End Role="RELACION_LABORAL" Type="Self.RELACION_LABORAL" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RELACION_LABORAL">
+              <PropertyRef Name="COD_RELACION" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RELACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SPISAPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTIVIDADs" EntityType="Self.ACTIVIDAD" />
+          <EntitySet Name="AREA_PERSONAL" EntityType="Self.AREA_PERSONAL" />
+          <EntitySet Name="CLASE_ESPECIALIDAD" EntityType="Self.CLASE_ESPECIALIDAD" />
+          <EntitySet Name="CLASE_INSTITUTO" EntityType="Self.CLASE_INSTITUTO" />
+          <EntitySet Name="CLASE_TITULO" EntityType="Self.CLASE_TITULO" />
+          <EntitySet Name="DCOMUNICACIONs" EntityType="Self.DCOMUNICACION" />
+          <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTA" />
+          <EntitySet Name="DDIRECCIONs" EntityType="Self.DDIRECCION" />
+          <EntitySet Name="DDISCAPACIDADs" EntityType="Self.DDISCAPACIDAD" />
+          <EntitySet Name="DPERSONALES" EntityType="Self.DPERSONALE" />
+          <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIO" />
+          <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" />
+          <EntitySet Name="FORMACIONs" EntityType="Self.FORMACION" />
+          <EntitySet Name="GRUPO_PERSONAL" EntityType="Self.GRUPO_PERSONAL" />
+          <EntitySet Name="MUNICIPIO_SSO" EntityType="Self.MUNICIPIO_SSO" />
+          <EntitySet Name="NACIONALIDADs" EntityType="Self.NACIONALIDAD" />
+          <EntitySet Name="PAIS" EntityType="Self.PAI" />
+          <EntitySet Name="PAIS_ESTADO" EntityType="Self.PAIS_ESTADO" />
+          <EntitySet Name="PARENTESCOS" EntityType="Self.PARENTESCO" />
+          <EntitySet Name="PARROQUIA_SSO" EntityType="Self.PARROQUIA_SSO" />
+          <EntitySet Name="RAMOes" EntityType="Self.RAMO" />
+          <EntitySet Name="RELACION_LABORAL" EntityType="Self.RELACION_LABORAL" />
+          <EntitySet Name="SUCURSALs" EntityType="Self.SUCURSAL" />
+          <EntitySet Name="DEXPERIENCIAs" EntityType="Self.DEXPERIENCIA" />
+          <EntitySet Name="DFAMILIARES" EntityType="Self.DFAMILIARE" />
+          <EntitySet Name="DFORMACIONs" EntityType="Self.DFORMACION" />
+          <AssociationSet Name="DEXPERIENCIA_ACTIVIDAD_FK" Association="Self.DEXPERIENCIA_ACTIVIDAD_FK">
+            <End Role="ACTIVIDAD" EntitySet="ACTIVIDADs" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_AREA_PERSONAL_FK" Association="Self.DPERSONALES_AREA_PERSONAL_FK">
+            <End Role="AREA_PERSONAL" EntitySet="AREA_PERSONAL" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="CESPECIALIDAD_CINSTITUTO_FK" Association="Self.CESPECIALIDAD_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CESPECIALIDAD_FK" Association="Self.DFORMACION_CESPECIALIDAD_FK">
+            <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="CTITULO_CINSTITUTO_FK" Association="Self.CTITULO_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="CLASE_TITULO" EntitySet="CLASE_TITULO" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CINSTITUTO_FK" Association="Self.DFORMACION_CINSTITUTO_FK">
+            <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_CTITULO_FK" Association="Self.DFORMACION_CTITULO_FK">
+            <End Role="CLASE_TITULO" EntitySet="CLASE_TITULO" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DPERSONALES_FK" Association="Self.DCOMUNICACION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FK" Association="Self.DCOMUNICACION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DCOMUNICACION_DUSUARIOS_FKV1" Association="Self.DCOMUNICACION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCOMUNICACION" EntitySet="DCOMUNICACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="CUENTAS_DPERSONALES_FK" Association="Self.CUENTAS_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DCUENTAS_DUSUARIOS_FK" Association="Self.DCUENTAS_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DCUENTAS_DUSUARIOS_FKV1" Association="Self.DCUENTAS_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DCUENTAS" EntitySet="DCUENTAS" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DPERSONALES_FK" Association="Self.DDIRECCION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DUSUARIOS_FK" Association="Self.DDIRECCION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_DUSUARIOS_FKV1" Association="Self.DDIRECCION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_PAIS_ESTADO_FK" Association="Self.DDIRECCION_PAIS_ESTADO_FK">
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DDIRECCION_PARROQUIA_SSO_FK" Association="Self.DDIRECCION_PARROQUIA_SSO_FK">
+            <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
+            <End Role="DDIRECCION" EntitySet="DDIRECCIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FK" Association="Self.DDISCAPACIDAD_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+          </AssociationSet>
+          <AssociationSet Name="DDISCAPACIDAD_DUSUARIOS_FKV1" Association="Self.DDISCAPACIDAD_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+          </AssociationSet>
+          <AssociationSet Name="DISCAPACIDAD_DPERSONALES_FK" Association="Self.DISCAPACIDAD_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DDISCAPACIDAD" EntitySet="DDISCAPACIDADs" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DPERSONALES_FK" Association="Self.DEXPERIENCIA_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DPERSONALES_FK" Association="Self.DFAMILIARES_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DPERSONALES_FK" Association="Self.DFORMACION_DPERSONALES_FK">
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_DUSUARIOS_FK" Association="Self.DPERSONALES_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_DUSUARIOS_FKV1" Association="Self.DPERSONALES_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_GRUPO_PERSONAL_FK" Association="Self.DPERSONALES_GRUPO_PERSONAL_FK">
+            <End Role="GRUPO_PERSONAL" EntitySet="GRUPO_PERSONAL" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_NACIONALIDAD_FK" Association="Self.DPERSONALES_NACIONALIDAD_FK">
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADs" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_PAIS_ESTADO_FK" Association="Self.DPERSONALES_PAIS_ESTADO_FK">
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DPERSONALES_SUCURSAL_FK" Association="Self.DPERSONALES_SUCURSAL_FK">
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FK" Association="Self.DEXPERIENCIA_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FKV1" Association="Self.DEXPERIENCIA_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FK" Association="Self.DFAMILIARES_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FKV1" Association="Self.DFAMILIARES_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FK" Association="Self.DFORMACION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FKV1" Association="Self.DFORMACION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="DUSUARIOS_SUCURSAL_FK" Association="Self.DUSUARIOS_SUCURSAL_FK">
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="MUNICIPIO_ESTADO_SSO_FK" Association="Self.MUNICIPIO_ESTADO_SSO_FK">
+            <End Role="ESTADO_SSO" EntitySet="ESTADO_SSO" />
+            <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_FORMACION_FK" Association="Self.DFORMACION_FORMACION_FK">
+            <End Role="FORMACION" EntitySet="FORMACIONs" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="PARROQUIA_MUNICIPIO_SSO_FK" Association="Self.PARROQUIA_MUNICIPIO_SSO_FK">
+            <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
+            <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_NACIONALIDAD_FK" Association="Self.DFAMILIARES_NACIONALIDAD_FK">
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADs" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_PAIS_FK" Association="Self.DEXPERIENCIA_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PAIS_FK" Association="Self.DFAMILIARES_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="PAIS_ESTADO_PAIS_FK" Association="Self.PAIS_ESTADO_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PARENTESCOS_FK" Association="Self.DFAMILIARES_PARENTESCOS_FK">
+            <End Role="PARENTESCOS" EntitySet="PARENTESCOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RAMO_FK" Association="Self.DEXPERIENCIA_RAMO_FK">
+            <End Role="RAMO" EntitySet="RAMOes" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RLABORAL_FK" Association="Self.DEXPERIENCIA_RLABORAL_FK">
+            <End Role="RELACION_LABORAL" EntitySet="RELACION_LABORAL" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SPISAPModelStoreContainer" CdmEntityContainer="SPISAPEntities">
+          <EntitySetMapping Name="ACTIVIDADs">
+            <EntityTypeMapping TypeName="SPISAPModel.ACTIVIDAD">
+              <MappingFragment StoreEntitySet="ACTIVIDAD">
+                <ScalarProperty Name="COD_ACTIVIDAD" ColumnName="COD_ACTIVIDAD" />
+                <ScalarProperty Name="DES_ACTIVIDAD" ColumnName="DES_ACTIVIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AREA_PERSONAL">
+            <EntityTypeMapping TypeName="SPISAPModel.AREA_PERSONAL">
+              <MappingFragment StoreEntitySet="AREA_PERSONAL">
+                <ScalarProperty Name="COD_AREA_PERSONAL" ColumnName="COD_AREA_PERSONAL" />
+                <ScalarProperty Name="DES_AREA_PERSONAL" ColumnName="DES_AREA_PERSONAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASE_ESPECIALIDAD">
+            <EntityTypeMapping TypeName="SPISAPModel.CLASE_ESPECIALIDAD">
+              <MappingFragment StoreEntitySet="CLASE_ESPECIALIDAD">
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="COD_ESPECIALIDAD" ColumnName="COD_ESPECIALIDAD" />
+                <ScalarProperty Name="DES_ESPECIALIDAD" ColumnName="DES_ESPECIALIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASE_INSTITUTO">
+            <EntityTypeMapping TypeName="SPISAPModel.CLASE_INSTITUTO">
+              <MappingFragment StoreEntitySet="CLASE_INSTITUTO">
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="DES_CLASE" ColumnName="DES_CLASE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASE_TITULO">
+            <EntityTypeMapping TypeName="SPISAPModel.CLASE_TITULO">
+              <MappingFragment StoreEntitySet="CLASE_TITULO">
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="COD_TITULO" ColumnName="COD_TITULO" />
+                <ScalarProperty Name="DES_TITULO" ColumnName="DES_TITULO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DCOMUNICACIONs">
+            <EntityTypeMapping TypeName="SPISAPModel.DCOMUNICACION">
+              <MappingFragment StoreEntitySet="DCOMUNICACION">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="IDENTIFICADOR" ColumnName="IDENTIFICADOR" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DCUENTAS">
+            <EntityTypeMapping TypeName="SPISAPModel.DCUENTA">
+              <MappingFragment StoreEntitySet="DCUENTAS">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="CLAVE_BANCO" ColumnName="CLAVE_BANCO" />
+                <ScalarProperty Name="CUENTA_BANCARIA" ColumnName="CUENTA_BANCARIA" />
+                <ScalarProperty Name="TIPO_CUENTA" ColumnName="TIPO_CUENTA" />
+                <ScalarProperty Name="VIA_PAGO" ColumnName="VIA_PAGO" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDIRECCIONs">
+            <EntityTypeMapping TypeName="SPISAPModel.DDIRECCION">
+              <MappingFragment StoreEntitySet="DDIRECCION">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="CALLE" ColumnName="CALLE" />
+                <ScalarProperty Name="EDIFICIO" ColumnName="EDIFICIO" />
+                <ScalarProperty Name="PISO" ColumnName="PISO" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="URBANIZACION" ColumnName="URBANIZACION" />
+                <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="TELEFONOS" ColumnName="TELEFONOS" />
+                <ScalarProperty Name="COD_ESTADO_SSO" ColumnName="COD_ESTADO_SSO" />
+                <ScalarProperty Name="COD_MUNICIPIO_SSO" ColumnName="COD_MUNICIPIO_SSO" />
+                <ScalarProperty Name="COD_PARROQUIA_SSO" ColumnName="COD_PARROQUIA_SSO" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDISCAPACIDADs">
+            <EntityTypeMapping TypeName="SPISAPModel.DDISCAPACIDAD">
+              <MappingFragment StoreEntitySet="DDISCAPACIDAD">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="GRUPO_DISCAPACIDAD" ColumnName="GRUPO_DISCAPACIDAD" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DPERSONALES">
+            <EntityTypeMapping TypeName="SPISAPModel.DPERSONALE">
+              <MappingFragment StoreEntitySet="DPERSONALES">
+                <ScalarProperty Name="FICHA" ColumnName="FICHA" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+                <ScalarProperty Name="COD_AREA_PERSONAL" ColumnName="COD_AREA_PERSONAL" />
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+                <ScalarProperty Name="TRATAMIENTO" ColumnName="TRATAMIENTO" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="CIUDAD_NACIMIENTO" ColumnName="CIUDAD_NACIMIENTO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+                <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
+                <ScalarProperty Name="ESTADO_CIVIL" ColumnName="ESTADO_CIVIL" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="RIF" ColumnName="RIF" />
+                <ScalarProperty Name="CALZADO" ColumnName="CALZADO" />
+                <ScalarProperty Name="CHEMISE" ColumnName="CHEMISE" />
+                <ScalarProperty Name="PANTALON" ColumnName="PANTALON" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DUSUARIOS">
+            <EntityTypeMapping TypeName="SPISAPModel.DUSUARIO">
+              <MappingFragment StoreEntitySet="DUSUARIOS">
+                <ScalarProperty Name="COD_USER" ColumnName="COD_USER" />
+                <ScalarProperty Name="DES_USER" ColumnName="DES_USER" />
+                <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+                <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADO_SSO">
+            <EntityTypeMapping TypeName="SPISAPModel.ESTADO_SSO">
+              <MappingFragment StoreEntitySet="ESTADO_SSO">
+                <ScalarProperty Name="COD_ESTADO_SSO" ColumnName="COD_ESTADO_SSO" />
+                <ScalarProperty Name="DES_ESTADO_SSO" ColumnName="DES_ESTADO_SSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORMACIONs">
+            <EntityTypeMapping TypeName="SPISAPModel.FORMACION">
+              <MappingFragment StoreEntitySet="FORMACION">
+                <ScalarProperty Name="COD_FORMACION" ColumnName="COD_FORMACION" />
+                <ScalarProperty Name="DES_FORMACION" ColumnName="DES_FORMACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRUPO_PERSONAL">
+            <EntityTypeMapping TypeName="SPISAPModel.GRUPO_PERSONAL">
+              <MappingFragment StoreEntitySet="GRUPO_PERSONAL">
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+                <ScalarProperty Name="DES_GRUPO_PERSONAL" ColumnName="DES_GRUPO_PERSONAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUNICIPIO_SSO">
+            <EntityTypeMapping TypeName="SPISAPModel.MUNICIPIO_SSO">
+              <MappingFragment StoreEntitySet="MUNICIPIO_SSO">
+                <ScalarProperty Name="COD_ESTADO_SSO" ColumnName="COD_ESTADO_SSO" />
+                <ScalarProperty Name="COD_MUNICIPIO" ColumnName="COD_MUNICIPIO" />
+                <ScalarProperty Name="DES_MUNICIPIO" ColumnName="DES_MUNICIPIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NACIONALIDADs">
+            <EntityTypeMapping TypeName="SPISAPModel.NACIONALIDAD">
+              <MappingFragment StoreEntitySet="NACIONALIDAD">
+                <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
+                <ScalarProperty Name="DES_NACIONALIDAD" ColumnName="DES_NACIONALIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAIS">
+            <EntityTypeMapping TypeName="SPISAPModel.PAI">
+              <MappingFragment StoreEntitySet="PAIS">
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="DES_PAIS" ColumnName="DES_PAIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAIS_ESTADO">
+            <EntityTypeMapping TypeName="SPISAPModel.PAIS_ESTADO">
+              <MappingFragment StoreEntitySet="PAIS_ESTADO">
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+                <ScalarProperty Name="DES_ESTADO" ColumnName="DES_ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARENTESCOS">
+            <EntityTypeMapping TypeName="SPISAPModel.PARENTESCO">
+              <MappingFragment StoreEntitySet="PARENTESCOS">
+                <ScalarProperty Name="COD_PARENTESCO" ColumnName="COD_PARENTESCO" />
+                <ScalarProperty Name="DES_PARENTESCO" ColumnName="DES_PARENTESCO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARROQUIA_SSO">
+            <EntityTypeMapping TypeName="SPISAPModel.PARROQUIA_SSO">
+              <MappingFragment StoreEntitySet="PARROQUIA_SSO">
+                <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+                <ScalarProperty Name="COD_MUNICIPIO" ColumnName="COD_MUNICIPIO" />
+                <ScalarProperty Name="COD_PARROQUIA" ColumnName="COD_PARROQUIA" />
+                <ScalarProperty Name="DES_PARROQUIA" ColumnName="DES_PARROQUIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAMOes">
+            <EntityTypeMapping TypeName="SPISAPModel.RAMO">
+              <MappingFragment StoreEntitySet="RAMO">
+                <ScalarProperty Name="COD_RAMO" ColumnName="COD_RAMO" />
+                <ScalarProperty Name="DES_RAMO" ColumnName="DES_RAMO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RELACION_LABORAL">
+            <EntityTypeMapping TypeName="SPISAPModel.RELACION_LABORAL">
+              <MappingFragment StoreEntitySet="RELACION_LABORAL">
+                <ScalarProperty Name="COD_RELACION" ColumnName="COD_RELACION" />
+                <ScalarProperty Name="DES_RELACION" ColumnName="DES_RELACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUCURSALs">
+            <EntityTypeMapping TypeName="SPISAPModel.SUCURSAL">
+              <MappingFragment StoreEntitySet="SUCURSAL">
+                <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
+                <ScalarProperty Name="DES_SUCURSAL" ColumnName="DES_SUCURSAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEXPERIENCIAs">
+            <EntityTypeMapping TypeName="SPISAPModel.DEXPERIENCIA">
+              <MappingFragment StoreEntitySet="DEXPERIENCIA">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+                <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+                <ScalarProperty Name="COD_RAMO" ColumnName="COD_RAMO" />
+                <ScalarProperty Name="COD_ACTIVIDAD" ColumnName="COD_ACTIVIDAD" />
+                <ScalarProperty Name="COD_RELACION" ColumnName="COD_RELACION" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DFAMILIARES">
+            <EntityTypeMapping TypeName="SPISAPModel.DFAMILIARE">
+              <MappingFragment StoreEntitySet="DFAMILIARES">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_PARENTESCO" ColumnName="COD_PARENTESCO" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="LUGAR_NACIMIENTO" ColumnName="LUGAR_NACIMIENTO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
+                <ScalarProperty Name="CEDULA_FAMILIAR" ColumnName="CEDULA_FAMILIAR" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DFORMACIONs">
+            <EntityTypeMapping TypeName="SPISAPModel.DFORMACION">
+              <MappingFragment StoreEntitySet="DFORMACION">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="COD_FORMACION" ColumnName="COD_FORMACION" />
+                <ScalarProperty Name="INSTITUO" ColumnName="INSTITUO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="CT_COD_CLASE" ColumnName="CT_COD_CLASE" />
+                <ScalarProperty Name="CT_COD_TITULO" ColumnName="CT_COD_TITULO" />
+                <ScalarProperty Name="DURACION" ColumnName="DURACION" />
+                <ScalarProperty Name="UNIDAD_TIEMPO" ColumnName="UNIDAD_TIEMPO" />
+                <ScalarProperty Name="CE_COD_ESPECIALIDAD" ColumnName="CE_COD_ESPECIALIDAD" />
+                <ScalarProperty Name="CE_COD_CLASE" ColumnName="CE_COD_CLASE" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
