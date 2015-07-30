@@ -16,6 +16,11 @@ namespace SPISAP.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         //
         // GET: /Employee/Details/5
 

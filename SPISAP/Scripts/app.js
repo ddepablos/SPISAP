@@ -1,7 +1,7 @@
 ﻿
 $( document ).ready(function() {
 
-    alert('Okey Dokey !!');
+    //alert('Okey Dokey !!');
 
     // Formación Académica //
     $("#add_row_formacion").on("click", function () {
