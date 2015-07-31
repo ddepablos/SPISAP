@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SPISAP.Models;
 
 namespace SPISAP.Repositories
 {
     public class EmployeeRepository
     {
+
+        public EmployeeViewModel GetEmployee()
+        { 
+            EmployeeViewModel employee = new EmployeeViewModel();
+
+            return employee;
+        }
 
         public bool IsValid()
         {

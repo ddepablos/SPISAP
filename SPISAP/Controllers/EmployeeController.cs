@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SPISAP.Repositories;
+using SPISAP.Models;
 
 namespace SPISAP.Controllers
 {
@@ -13,11 +15,17 @@ namespace SPISAP.Controllers
 
         public ActionResult Index()
         {
+            EmployeeRepository e = new EmployeeRepository();
+
+            EmployeeViewModel record = e.GetEmployee();
+
             return View();
         }
 
         public ActionResult Login()
         {
+
+
             return View();
         }
 
