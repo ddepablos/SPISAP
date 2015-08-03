@@ -24,8 +24,6 @@ namespace SPISAP.Controllers
 
         public ActionResult Login()
         {
-
-
             return View();
         }
 

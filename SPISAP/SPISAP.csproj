@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Library\Module.cs" />
     <Compile Include="Models\ACTIVIDAD.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
@@ -212,6 +213,7 @@
     <Compile Include="Models\CLASE_TITULO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\DCOMUNICACION.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>

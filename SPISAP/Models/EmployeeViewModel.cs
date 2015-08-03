@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using SPISAP.Models;
 
 namespace SPISAP.Models
 {
@@ -37,7 +38,6 @@ namespace SPISAP.Models
         public System.DateTime FECHA_UPD { get; set; }
 
         /* DDIRECCION : Dirección del Trabajador */
-        //public string CEDULA { get; set; }
         public string CALLE { get; set; }
         public string EDIFICIO { get; set; }
         public string PISO { get; set; }
@@ -53,7 +53,6 @@ namespace SPISAP.Models
         
         /* DDISCAPACIDAD */
         public List<DDISCAPACIDAD> Discapacidades; //{ set; get; }
-        //public List<DDISCAPACIDAD> Discapacidades = new List<DDISCAPACIDAD>();
 
         /* DATOS FAMILIARES */
         public List<DFAMILIAR> Familiares;
@@ -64,11 +63,40 @@ namespace SPISAP.Models
         /* DATOS DE EXPERIENCIA LABORAL */
         public List<DEXPERIENCIA> Experiencias;
 
+        /* Estructuras de Listas */
+        public List<PAIS> Paises;
+        public List<NACIONALIDAD> Nacionalidades;
+        public List<PAIS_ESTADO> Estados;
+        public List<string> EstadoCivil;
+        public List<AREA_PERSONAL> NivelesCargos;
+        public List<SUCURSAL> Sucursales;
+        public List<GRUPO_PERSONAL> GrupoPersonal;
+        public List<string> Tratamiento;
+        public List<SPISAP.Models.ListViewModel.GENERIC_ITEM> TallaCamisa;
+        public List<SPISAP.Models.ListViewModel.GENERIC_ITEM> TallaPantalon;
+        public List<string> TallaZapato;
+
         public EmployeeViewModel()
         {
 
             FillDummyRecord();
+            FillListas();
 
+        }
+
+        private void FillListas()
+        {
+            Paises = ListViewModel.FillPaises();
+            Nacionalidades = ListViewModel.Nacionalidades();
+            Estados = ListViewModel.Estados();
+            EstadoCivil = ListViewModel.EstadoCivil();
+            NivelesCargos = ListViewModel.AreaPersonal();
+            Sucursales = ListViewModel.Sucursales();
+            GrupoPersonal = ListViewModel.GrupoPersonal();
+            Tratamiento = ListViewModel.Tratamiento();
+            TallaCamisa = ListViewModel.FillTallaCamisa();
+            TallaPantalon = ListViewModel.FillTallaPantalon();
+            TallaZapato = ListViewModel.FillTallaZapato();
         }
 
         private void FillDummyRecord()
