@@ -16,12 +16,12 @@ namespace SPISAP.Models
     {
         public ACTIVIDAD()
         {
-            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
+            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
         }
     
         public string COD_ACTIVIDAD { get; set; }
         public string DES_ACTIVIDAD { get; set; }
     
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
     }
 }

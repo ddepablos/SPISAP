@@ -16,12 +16,12 @@ namespace SPISAP.Models
     {
         public FORMACION()
         {
-            this.DFORMACIONs = new HashSet<DFORMACION>();
+            this.DFORMACIONES = new HashSet<DFORMACION>();
         }
     
         public string COD_FORMACION { get; set; }
         public string DES_FORMACION { get; set; }
     
-        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
     }
 }

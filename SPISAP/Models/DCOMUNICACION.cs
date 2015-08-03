@@ -22,7 +22,7 @@ namespace SPISAP.Models
         public string COD_USER_UPD { get; set; }
         public System.DateTime FECHA_UPD { get; set; }
     
-        public virtual DPERSONALES DPERSONALE { get; set; }
+        public virtual DPERSONALES DPERSONALES { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
     }

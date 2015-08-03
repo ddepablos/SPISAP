@@ -1214,7 +1214,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_ACTIVIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="ACTIVIDAD" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="ACTIVIDAD" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="AREA_PERSONAL">
           <Key>
@@ -1254,7 +1254,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_TITULO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.CTITULO_CINSTITUTO_FK" FromRole="CLASE_TITULO" ToRole="CLASE_INSTITUTO" />
-          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="CLASE_TITULO" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="CLASE_TITULO" ToRole="DFORMACION" />
         </EntityType>
         <EntityType Name="DCOMUNICACION">
           <Key>
@@ -1268,7 +1268,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DCOMUNICACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DCOMUNICACION" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DCOMUNICACION_DUSUARIOS_FK" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
         </EntityType>
@@ -1285,7 +1285,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DCUENTAS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DCUENTAS" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
         </EntityType>
@@ -1310,7 +1310,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DDIRECCION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DDIRECCION" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="DDIRECCION" ToRole="PAIS_ESTADO" />
@@ -1329,7 +1329,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_UPD" Type="DateTime" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
         </EntityType>
         <EntityType Name="DPERSONALES">
           <Key>
@@ -1389,14 +1389,14 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="DCOMUNICACIONs1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCOMUNICACION" />
           <NavigationProperty Name="DCUENTAS" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
           <NavigationProperty Name="DCUENTAS1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
-          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDIRECCIONs1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONES1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDISCAPACIDADES" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
           <NavigationProperty Name="DDISCAPACIDADs1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
           <NavigationProperty Name="DPERSONALES1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
-          <NavigationProperty Name="DEXPERIENCIAs1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
           <NavigationProperty Name="DFAMILIARES1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
           <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
@@ -1417,7 +1417,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_FORMACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_FORMACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="FORMACION" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="FORMACION" ToRole="DFORMACION" />
         </EntityType>
         <EntityType Name="GRUPO_PERSONAL">
           <Key>
@@ -1453,9 +1453,9 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="PAIS" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
           <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS" ToRole="PAIS_ESTADO" />
         </EntityType>
         <EntityType Name="PAIS_ESTADO">
@@ -1466,9 +1466,9 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_ESTADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DPERSONALES" />
-          <NavigationProperty Name="PAI" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
+          <NavigationProperty Name="PAIS" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
         </EntityType>
         <EntityType Name="PARENTESCO">
           <Key>
@@ -1488,7 +1488,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_MUNICIPIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COD_PARROQUIA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_PARROQUIA" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="DDIRECCION" />
           <NavigationProperty Name="MUNICIPIO_SSO" Relationship="Self.PARROQUIA_MUNICIPIO_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="MUNICIPIO_SSO" />
         </EntityType>
         <EntityType Name="RAMO">
@@ -1497,7 +1497,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_RAMO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="RAMO" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="RAMO" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="RELACION_LABORAL">
           <Key>
@@ -1505,7 +1505,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_RELACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="RELACION_LABORAL" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="RELACION_LABORAL" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="SUCURSAL">
           <Key>
@@ -1544,10 +1544,10 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="ACTIVIDAD" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="DEXPERIENCIA" ToRole="ACTIVIDAD" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DEXPERIENCIA" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DEXPERIENCIA" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="PAI" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="DEXPERIENCIA" ToRole="PAIS" />
+          <NavigationProperty Name="PAISES" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="DEXPERIENCIA" ToRole="PAIS" />
           <NavigationProperty Name="RAMO" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="DEXPERIENCIA" ToRole="RAMO" />
           <NavigationProperty Name="RELACION_LABORAL" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="DEXPERIENCIA" ToRole="RELACION_LABORAL" />
         </EntityType>
@@ -1582,11 +1582,11 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DFAMILIARES" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DFAMILIARES" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="NACIONALIDAD" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="DFAMILIARES" ToRole="NACIONALIDAD" />
-          <NavigationProperty Name="PAI" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="DFAMILIARES" ToRole="PAIS" />
+          <NavigationProperty Name="PAIS" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="DFAMILIARES" ToRole="PAIS" />
           <NavigationProperty Name="PARENTESCO" Relationship="Self.DFAMILIARES_PARENTESCOS_FK" FromRole="DFAMILIARES" ToRole="PARENTESCOS" />
         </EntityType>
         <EntityType Name="DFORMACION">
@@ -1626,11 +1626,11 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="CLASE_ESPECIALIDAD" Relationship="Self.DFORMACION_CESPECIALIDAD_FK" FromRole="DFORMACION" ToRole="CLASE_ESPECIALIDAD" />
           <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.DFORMACION_CINSTITUTO_FK" FromRole="DFORMACION" ToRole="CLASE_INSTITUTO" />
           <NavigationProperty Name="CLASE_TITULO" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="DFORMACION" ToRole="CLASE_TITULO" />
-          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DFORMACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DFORMACION" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DFORMACION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DFORMACION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="FORMACION" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="DFORMACION" ToRole="FORMACION" />
-          <NavigationProperty Name="PAI" Relationship="Self.DFORMACION_PAIS_FK" FromRole="DFORMACION" ToRole="PAIS" />
+          <NavigationProperty Name="PAIS" Relationship="Self.DFORMACION_PAIS_FK" FromRole="DFORMACION" ToRole="PAIS" />
         </EntityType>
         <Association Name="DEXPERIENCIA_ACTIVIDAD_FK">
           <End Role="ACTIVIDAD" Type="Self.ACTIVIDAD" Multiplicity="1" />

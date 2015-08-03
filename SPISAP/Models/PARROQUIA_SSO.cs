@@ -16,7 +16,7 @@ namespace SPISAP.Models
     {
         public PARROQUIA_SSO()
         {
-            this.DDIRECCIONs = new HashSet<DDIRECCION>();
+            this.DDIRECCIONES = new HashSet<DDIRECCION>();
         }
     
         public string COD_ESTADO { get; set; }
@@ -24,7 +24,7 @@ namespace SPISAP.Models
         public string COD_PARROQUIA { get; set; }
         public string DES_PARROQUIA { get; set; }
     
-        public virtual ICollection<DDIRECCION> DDIRECCIONs { get; set; }
+        public virtual ICollection<DDIRECCION> DDIRECCIONES { get; set; }
         public virtual MUNICIPIO_SSO MUNICIPIO_SSO { get; set; }
     }
 }
