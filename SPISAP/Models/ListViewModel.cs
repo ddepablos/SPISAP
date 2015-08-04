@@ -263,7 +263,7 @@ namespace SPISAP.Models
         }
         #endregion
 
-        #region DIRECCION
+        #region DATOS_DIRECCION
 
         // retornar la lista de estados.
         public static List<ESTADO_SSO> GetEstadoSSO()
@@ -333,7 +333,9 @@ namespace SPISAP.Models
             }
 
         }
+        #endregion
 
+        #region DATOS_DISCAPACIDAD
         // retornar la lista de parentescos.
         public static List<PARENTESCO> GetParentesco()
         {
@@ -356,7 +358,9 @@ namespace SPISAP.Models
             }
 
         }
+        #endregion
 
+        #region DATOS_FORMACION
         // retornar la lista de formación.
         public static List<FORMACION> GetFormacion()
         {
@@ -492,6 +496,80 @@ namespace SPISAP.Models
             };
 
         }
+
+        #endregion
+
+        #region DATOS_EXPERIENCIA_LABORAL
+
+        // retornar la lista de Último Cargo/ACTIVDAD.
+        public static List<ACTIVIDAD> GetUltimoCargo()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<ACTIVIDAD> Lista = new List<ACTIVIDAD>();
+
+                Lista.Add(new ACTIVIDAD { COD_ACTIVIDAD = " ", DES_ACTIVIDAD = "" });
+
+                foreach (var record in db.ACTIVIDADES.OrderBy(p => p.COD_ACTIVIDAD))
+                {
+                    ACTIVIDAD item = new ACTIVIDAD();
+                    item.COD_ACTIVIDAD = record.COD_ACTIVIDAD;
+                    item.DES_ACTIVIDAD = record.DES_ACTIVIDAD;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de Area/RAMO.
+        public static List<RAMO> GetArea()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<RAMO> Lista = new List<RAMO>();
+
+                Lista.Add(new RAMO { COD_RAMO = " ", DES_RAMO = "" });
+
+                foreach (var record in db.RAMOS.OrderBy(p => p.DES_RAMO))
+                {
+                    RAMO item = new RAMO();
+                    item.COD_RAMO = record.COD_RAMO;
+                    item.DES_RAMO = record.DES_RAMO;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de Tipo de Contratación/RELACION_LABORAL.
+        public static List<RELACION_LABORAL> GetTipoContratacion()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<RELACION_LABORAL> Lista = new List<RELACION_LABORAL>();
+
+                Lista.Add(new RELACION_LABORAL { COD_RELACION = " ", DES_RELACION = "" });
+
+                foreach (var record in db.RELACION_LABORAL.OrderBy(p => p.DES_RELACION))
+                {
+                    RELACION_LABORAL item = new RELACION_LABORAL();
+                    item.COD_RELACION = record.COD_RELACION;
+                    item.DES_RELACION = record.DES_RELACION;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
 
         #endregion
 

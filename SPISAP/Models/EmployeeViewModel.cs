@@ -57,6 +57,8 @@ namespace SPISAP.Models
         /* DFORMACION : Datos Familiares */
         public DFORMACION DATOS_FORMACION { get; set; }
 
+        /* DEXPERIENCIA : Datos de Experiencia Laboral */
+        public DEXPERIENCIA DATOS_EXPERIENCIA { get; set; }
 
 
 
@@ -103,6 +105,9 @@ namespace SPISAP.Models
 
         #region EXPERIENCIA_LABORAL
         public List<DEXPERIENCIA> Experiencias;
+        public List<ACTIVIDAD> UltimosCargos;
+        public List<RAMO> Areas;
+        public List<RELACION_LABORAL> TipoContratacion;
         #endregion
 
         public EmployeeViewModel()
@@ -142,6 +147,12 @@ namespace SPISAP.Models
             Condiciones = ListViewModel.GetCondiciones();
             Especialidades = ListViewModel.GetEspecialidades();
             UnidadesTiempo = ListViewModel.GetUnidadTiempo();
+            #endregion
+
+            #region EXPERIENCIA_LABORAL
+            UltimosCargos = ListViewModel.GetUltimoCargo();
+            Areas = ListViewModel.GetArea();
+            TipoContratacion = ListViewModel.GetTipoContratacion();
             #endregion
 
         }

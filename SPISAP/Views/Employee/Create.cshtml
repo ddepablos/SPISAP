@@ -356,6 +356,73 @@
             <div class="row text-center">
               <a id="add_row_formacion" class="btn btn-md btn-success">Agregar Formación</a>            
             </div>
+
+        <br>
+
+        <!-- // EXPERIENCIA LABORAL -->
+        <div class="row">
+            <div class="title green">Experiencia Laboral</div>
+
+            <table class="table table-bordred table-striped" id="tab_exp">  
+
+              <thead><tr></tr></thead>
+              
+              <tr id='exp0' data-id="0" class="hidden">
+
+                <td data-name="fila">
+
+                  <div class="col-md-3">
+                  Empresa :
+                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.EMPRESA, new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-3">
+                  Ultimo Cargo :
+                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_ACTIVIDAD, new SelectList(Model.UltimosCargos, "COD_ACTIVIDAD", "DES_ACTIVIDAD", Model.UltimosCargos), new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-3">
+                  Fecha de Inicio :
+                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.FECHA_INICIO, new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-3">
+                  Fecha Fin :
+                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.FECHA_FIN, new { @class = "form-control" })
+                  </div>
+
+
+                  <div class="col-md-3">
+                  Área :
+                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_RAMO, new SelectList(Model.Areas, "COD_RAMO", "DES_RAMO", Model.Areas), new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-3">
+                  Tipo de Contratación :
+                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_RELACION, new SelectList(Model.TipoContratacion, "COD_RELACION", "DES_RELACION", Model.TipoContratacion), new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-3">
+                  Ciudad :
+                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.CIUDAD, new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-2">
+                  País :
+                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
+                  </div>
+                  <div class="col-md-1">
+                    .
+                    <button name="delete0" class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
+                  </div>
+                </td>
+
+              </tr>
+
+            </table>
+            
+            <br>
+
+            <div class="row text-center">
+              <a id="add_row_experiencia" class="btn btn-md btn-success">Agregar Experiencia Laboral</a>            
+            </div>
+
+        </div>
+        <!-- EXPERIENCIA LABORAL // -->
         
         </div>
         <!-- // FORMACIÓN -->
