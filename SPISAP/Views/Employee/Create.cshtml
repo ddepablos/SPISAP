@@ -133,4 +133,62 @@
         </div>
         <!-- // DATOS PERSONALES -->
 
+        <br>  
+
+        <!-- DIRECCIÓN DEL TRABAJADOR -->
+        <div class="row">
+            <div class="title green">Dirección del Trabajador</div>
+            <div class="row">
+                <br>
+                <div class="col-md-4">
+                Calle :
+                <input type="input" id="" class="form-control"  required autofocus></div>
+                <div class="col-md-3">
+                Edificio/Casa/Escalera :
+                <input type="input" id="" class="form-control"  required autofocus></div>
+                <div class="col-md-1">
+                Piso :
+                <input type="input" id="" class="form-control"  required autofocus></div>
+                <div class="col-md-1">
+                Número :
+                <input type="input" id="" class="form-control"  required autofocus></div>
+                <div class="col-md-3">
+                Urbanización/Zona :
+                <input type="input" id="" class="form-control"  required autofocus></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                País :
+                @Html.DropDownListFor(m => m.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="paissso" })
+                </div>
+                <div class="col-md-3">
+                Estado :
+                @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id="estadosso" })
+                </div>
+                <div class="col-md-3">
+                Ciudad :
+                <input type="input" id="ciudadsso" class="form-control" required autofocus>
+                </div>
+                <div class="col-md-3">
+                Municipio :
+                @Html.DropDownListFor(m => m.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id="municipiosso" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                Parroquia :
+                @Html.DropDownListFor(m => m.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id="parroquiasso" })
+                </div>
+                <div class="col-md-4">
+                  Teléfono de Habitación :
+                  <input type="input" id="" class="form-control" required autofocus>
+                </div>
+                <div class="col-md-4">
+                  Teléfono Celular :
+                  <input type="input" id="" class="form-control" required autofocus>
+                </div>
+            </div>
+        </div>
+        <!-- // DIRECCIÓN DEL TRABAJADOR -->
+
     </div>

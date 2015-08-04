@@ -67,18 +67,26 @@ namespace SPISAP.Models
         public List<DEXPERIENCIA> Experiencias;
 
         /* Estructuras de Listas */
+        #region DATOS_PERSONALES
         public List<PAIS> Paises;
         public List<NACIONALIDAD> Nacionalidades;
         public List<PAIS_ESTADO> Estados;
         public List<GenericModel> EstadoCivil;
         public List<AREA_PERSONAL> NivelCargo;
-        
+
         public List<SUCURSAL> Sucursales;
         public List<GRUPO_PERSONAL> GrupoPersonal;
         public List<string> Tratamiento;
         public List<GenericModel> TallaChemise;
         public List<GenericModel> TallaPantalon;
         public List<GenericModel> TallaCalzado;
+        #endregion
+
+        #region DIRECCION
+        public List<ESTADO_SSO> EstadoSSO;
+        public List<MUNICIPIO_SSO> MunicipioSSO;
+        public List<PARROQUIA_SSO> ParroquiaSSO;
+        #endregion
 
         public EmployeeViewModel()
         {
@@ -103,6 +111,14 @@ namespace SPISAP.Models
             TallaChemise = ListViewModel.FillTallaChemise();
             TallaPantalon = ListViewModel.FillTallaPantalon();
             TallaCalzado = ListViewModel.FillTallaCalzado();
+
+            #region DIRECCION
+            EstadoSSO = ListViewModel.GetEstadoSSO();
+            MunicipioSSO = ListViewModel.GetMunicipioSSO();
+            ParroquiaSSO = ListViewModel.GetParroquiaSSO();
+            #endregion
+
+
         }
 
         private void FillDummyRecord()

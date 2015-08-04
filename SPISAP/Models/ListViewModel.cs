@@ -9,6 +9,7 @@ namespace SPISAP.Models
     public static class ListViewModel
     {
 
+        #region DATOS_PERSONALES
         // retornar la lista de género.
         public static List<GenericModel> FillGeneros()
         {
@@ -30,17 +31,19 @@ namespace SPISAP.Models
             {
                 List<PAIS> Lista = new List<PAIS>();
 
+                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "" });
+
                 foreach (var record in db.PAISES.OrderBy(p => p.DES_PAIS))
                 {
-                    PAIS pais = new PAIS();
-                    pais.COD_PAIS = record.COD_PAIS;
-                    pais.DES_PAIS = record.DES_PAIS;
-                    Lista.Add(pais);
+                    PAIS item = new PAIS();
+                    item.COD_PAIS = record.COD_PAIS;
+                    item.DES_PAIS = record.DES_PAIS;
+                    Lista.Add( item );
                 }
 
                 return Lista;
             }
-        
+
         }
 
         // retornar la lista de nacionalidades.
@@ -134,9 +137,9 @@ namespace SPISAP.Models
             {
                 List<SUCURSAL> Lista = new List<SUCURSAL>();
 
-                Lista.Add( new SUCURSAL { COD_SUCURSAL = " ", DES_SUCURSAL = "" } );
+                Lista.Add(new SUCURSAL { COD_SUCURSAL = " ", DES_SUCURSAL = "" });
 
-                foreach ( var record in db.SUCURSALES.OrderBy(p => p.DES_SUCURSAL) )
+                foreach (var record in db.SUCURSALES.OrderBy(p => p.DES_SUCURSAL))
                 {
                     SUCURSAL item = new SUCURSAL();
                     item.COD_SUCURSAL = record.COD_SUCURSAL;
@@ -242,7 +245,7 @@ namespace SPISAP.Models
         public static List<GenericModel> FillTallaCalzado()
         {
             // CALZADO_CHECK
-	        // CALZADO BETWEEN '34' AND '46'
+            // CALZADO BETWEEN '34' AND '46'
             return new List<GenericModel>
             {
                 new GenericModel() { CODIGO=" ", DESCRIPCION="" },
@@ -256,7 +259,81 @@ namespace SPISAP.Models
             };
 
         }
+        #endregion
 
+        #region DIRECCION
+
+        // retornar la lista de estados.
+        public static List<ESTADO_SSO> GetEstadoSSO()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<ESTADO_SSO> Lista = new List<ESTADO_SSO>();
+
+                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "" });
+
+                foreach (var record in db.ESTADO_SSO.OrderBy(p => p.DES_ESTADO_SSO))
+                {
+                    ESTADO_SSO item = new ESTADO_SSO();
+                    item.COD_ESTADO_SSO = record.COD_ESTADO_SSO;
+                    item.DES_ESTADO_SSO = record.DES_ESTADO_SSO;
+                    Lista.Add( item );
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de municipios.
+        public static List<MUNICIPIO_SSO> GetMunicipioSSO()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<MUNICIPIO_SSO> Lista = new List<MUNICIPIO_SSO>();
+
+                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "" });
+
+                foreach (var record in db.MUNICIPIO_SSO.OrderBy(p => p.DES_MUNICIPIO))
+                {
+                    MUNICIPIO_SSO item = new MUNICIPIO_SSO();
+                    item.COD_MUNICIPIO = record.COD_MUNICIPIO;
+                    item.DES_MUNICIPIO = record.DES_MUNICIPIO;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de parroquias.
+        public static List<PARROQUIA_SSO> GetParroquiaSSO()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<PARROQUIA_SSO> Lista = new List<PARROQUIA_SSO>();
+
+                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "" });
+
+                foreach (var record in db.PARROQUIA_SSO.OrderBy(p => p.DES_PARROQUIA))
+                {
+                    PARROQUIA_SSO item = new PARROQUIA_SSO();
+                    item.COD_PARROQUIA = record.COD_PARROQUIA;
+                    item.DES_PARROQUIA = record.DES_PARROQUIA;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+
+        #endregion
 
     }
 

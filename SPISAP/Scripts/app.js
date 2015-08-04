@@ -6,9 +6,7 @@ $( document ).ready(function() {
     // configurar los valores por defecto para los nuevos registros.
     $('#pais').val("VE");
     $('#nacionalidad').val("VE");
-
-
-
+    $('#paissso').val("VE");
 
     // Formación Académica //
     $("#add_row_formacion").on("click", function () {
