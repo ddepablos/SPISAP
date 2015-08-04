@@ -50,7 +50,10 @@ namespace SPISAP.Models
         public string COD_ESTADO_SSO { get; set; }
         public string COD_MUNICIPIO_SSO { get; set; }
         public string COD_PARROQUIA_SSO { get; set; }
-        
+
+        /* DFAMILIAR : Datos Familiares */
+        public DFAMILIAR DATOS_FAMILIARES { get; set; }
+
         /* GÉNERO */
         public List<GenericModel> Generos;
 
@@ -86,6 +89,7 @@ namespace SPISAP.Models
         public List<ESTADO_SSO> EstadoSSO;
         public List<MUNICIPIO_SSO> MunicipioSSO;
         public List<PARROQUIA_SSO> ParroquiaSSO;
+        public List<PARENTESCO> Parentescos;
         #endregion
 
         public EmployeeViewModel()
@@ -116,6 +120,7 @@ namespace SPISAP.Models
             EstadoSSO = ListViewModel.GetEstadoSSO();
             MunicipioSSO = ListViewModel.GetMunicipioSSO();
             ParroquiaSSO = ListViewModel.GetParroquiaSSO();
+            Parentescos = ListViewModel.GetParentesco();
             #endregion
 
 

@@ -54,6 +54,8 @@ namespace SPISAP.Models
             {
                 List<NACIONALIDAD> Lista = new List<NACIONALIDAD>();
 
+                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = "", DES_NACIONALIDAD = "" });
+
                 foreach (var record in db.NACIONALIDADES.OrderBy(p => p.DES_NACIONALIDAD))
                 {
                     NACIONALIDAD item = new NACIONALIDAD();
@@ -332,7 +334,28 @@ namespace SPISAP.Models
 
         }
 
+        // retornar la lista de parroquias.
+        public static List<PARENTESCO> GetParentesco()
+        {
 
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<PARENTESCO> Lista = new List<PARENTESCO>();
+
+                Lista.Add(new PARENTESCO { COD_PARENTESCO = " ", DES_PARENTESCO = "" });
+
+                foreach (var record in db.PARENTESCOS.OrderBy(p => p.DES_PARENTESCO))
+                {
+                    PARENTESCO item = new PARENTESCO();
+                    item.COD_PARENTESCO = record.COD_PARENTESCO;
+                    item.DES_PARENTESCO = record.DES_PARENTESCO;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
         #endregion
 
     }
