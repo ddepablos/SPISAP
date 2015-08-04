@@ -3,6 +3,13 @@ $( document ).ready(function() {
 
     //alert('Okey Dokey !!');
 
+    // configurar los valores por defecto para los nuevos registros.
+    $('#pais').val("VE");
+    $('#nacionalidad').val("VE");
+
+
+
+
     // Formación Académica //
     $("#add_row_formacion").on("click", function () {
 

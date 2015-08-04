@@ -51,6 +51,9 @@ namespace SPISAP.Models
         public string COD_MUNICIPIO_SSO { get; set; }
         public string COD_PARROQUIA_SSO { get; set; }
         
+        /* GÉNERO */
+        public List<GenericModel> Generos;
+
         /* DDISCAPACIDAD */
         public List<DDISCAPACIDAD> Discapacidades; //{ set; get; }
 
@@ -67,36 +70,39 @@ namespace SPISAP.Models
         public List<PAIS> Paises;
         public List<NACIONALIDAD> Nacionalidades;
         public List<PAIS_ESTADO> Estados;
-        public List<string> EstadoCivil;
-        public List<AREA_PERSONAL> NivelesCargos;
+        public List<GenericModel> EstadoCivil;
+        public List<AREA_PERSONAL> NivelCargo;
+        
         public List<SUCURSAL> Sucursales;
         public List<GRUPO_PERSONAL> GrupoPersonal;
         public List<string> Tratamiento;
-        public List<SPISAP.Models.ListViewModel.GENERIC_ITEM> TallaCamisa;
-        public List<SPISAP.Models.ListViewModel.GENERIC_ITEM> TallaPantalon;
-        public List<string> TallaZapato;
+        public List<GenericModel> TallaChemise;
+        public List<GenericModel> TallaPantalon;
+        public List<GenericModel> TallaCalzado;
 
         public EmployeeViewModel()
         {
 
-            FillDummyRecord();
+            //FillDummyRecord();
             FillListas();
 
         }
 
         private void FillListas()
         {
+            Generos = ListViewModel.FillGeneros();
             Paises = ListViewModel.FillPaises();
             Nacionalidades = ListViewModel.Nacionalidades();
             Estados = ListViewModel.Estados();
             EstadoCivil = ListViewModel.EstadoCivil();
-            NivelesCargos = ListViewModel.AreaPersonal();
+            NivelCargo = ListViewModel.AreaPersonal();
+
             Sucursales = ListViewModel.Sucursales();
             GrupoPersonal = ListViewModel.GrupoPersonal();
             Tratamiento = ListViewModel.Tratamiento();
-            TallaCamisa = ListViewModel.FillTallaCamisa();
+            TallaChemise = ListViewModel.FillTallaChemise();
             TallaPantalon = ListViewModel.FillTallaPantalon();
-            TallaZapato = ListViewModel.FillTallaZapato();
+            TallaCalzado = ListViewModel.FillTallaCalzado();
         }
 
         private void FillDummyRecord()
@@ -162,6 +168,13 @@ namespace SPISAP.Models
             COD_USER_UPD = null;
             FECHA_UPD = System.DateTime.Now;
         
+        }
+
+        // estructura de registro de item dummy.
+        public class GENERO
+        {
+            public string CODIGO { get; set; }
+            public string DESCRIPCION { get; set; }
         }
 
     }

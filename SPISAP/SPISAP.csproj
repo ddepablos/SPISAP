@@ -213,6 +213,7 @@
     <Compile Include="Models\CLASE_TITULO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GenericModel.cs" />
     <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\DCOMUNICACION.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
@@ -465,6 +466,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Login.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

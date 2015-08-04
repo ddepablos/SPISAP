@@ -1,0 +1,136 @@
+﻿@model SPISAP.Models.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Gestión de Registros de Trabajadores</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <a class="navbar-brand navbar-right">Usuario : Mario Bergoglio</a>
+        </div>
+      </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Formulario de Datos del Trabajador -->
+    <div class="container jumbotron form-signin">
+
+        <div class="row">
+            
+        <!-- DATOS PERSONALES -->
+            <div class="title green">Datos Personales</div>
+
+            <div class="row">
+                <br>
+                <div class="col-md-3">
+                Primer Apellido :
+                <input type="input" id="primer_apellido" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-3">
+                Segundo Apellido :
+                <input type="input" id="segundo_apellido" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-3">
+                Nombres :
+                <input type="input" id="nombres" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-2">
+                Cédula :
+                <input type="input" id="cedula" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-1">
+                Sexo :
+                @Html.DropDownListFor(m => m.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id="sexo" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                Fecha de Nacimiento :
+                <input type="input" id="primer_apellido" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-3">
+                Ciudad de Nacimiento :
+                <input type="input" id="primer_apellido" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-3">
+                    País de Nacimiento :
+                    @Html.DropDownListFor(m => m.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+                </div>
+                <div class="col-md-3">
+                    Nacionalidad :
+                    @Html.DropDownListFor(m => m.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="nacionalidad" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    Estado de Nacimiento :
+                    @Html.DropDownListFor(m => m.COD_ESTADO, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id="edonac" })
+                </div>
+                <div class="col-md-3">
+                    Estado Civil :
+                    @Html.DropDownListFor(m => m.ESTADO_CIVIL, new SelectList(Model.EstadoCivil, "CODIGO", "DESCRIPCION", Model.EstadoCivil), new { @class = "form-control", @id="edocivil" })
+                </div>
+                <div class="col-md-3">
+                RIF :
+                <input type="input" id="" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-3">
+                Correo Electrónico :
+                <input type="input" id="" class="form-control" placeholder="" required autofocus>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    Nivel de Cargo :
+                    @Html.DropDownListFor(m => m.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id="nivelcargo" })
+                </div>
+                <div class="col-md-3">
+                    Nombre del Cargo :
+                    <input type="input" id="" class="form-control" placeholder="" required autofocus>
+                </div>
+                <div class="col-md-2">
+                    Sucursal :
+                    @Html.DropDownListFor(m => m.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id="sucursal" })
+                </div>
+                <div class="col-md-2">
+                    Tipo de Contratación :
+                    @Html.DropDownListFor(m => m.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id="grupopersonal" })
+                </div>
+                <div class="col-md-2">
+                    Tratamiento :
+                    <input type="input" id="" class="form-control" placeholder="" readonly="readonly">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Talla de Camisa :
+                    @Html.DropDownListFor(m => m.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id="chemise" })
+                </div>
+                <div class="col-md-4">
+                    Talla de Pantalón :
+                    @Html.DropDownListFor(m => m.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id="pantalon" })
+                </div>
+                <div class="col-md-4">
+                    Nro. de Zapato :
+                    @Html.DropDownListFor(m => m.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id="calzado" })
+                </div>
+            </div>
+            
+        </div>
+        <!-- // DATOS PERSONALES -->
+
+    </div>

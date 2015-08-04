@@ -40,7 +40,15 @@ namespace SPISAP.Controllers
 
         public ActionResult Create()
         {
-            return View();
+
+            EmployeeViewModel employee = new EmployeeViewModel();
+            return View("Create", employee);
+
+            //ListViewModel.FillTallaPantalon();
+            //return View();
+            //Afiliado afiliado = rep.Find(numdoc, typeid, companyid);
+            //return View("Create", afiliado);
+
         }
 
         //
