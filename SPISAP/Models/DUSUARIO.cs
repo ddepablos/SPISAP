@@ -23,15 +23,15 @@ namespace SPISAP.Models
             this.DDIRECCIONES = new HashSet<DDIRECCION>();
             this.DDIRECCIONES1 = new HashSet<DDIRECCION>();
             this.DDISCAPACIDADES = new HashSet<DDISCAPACIDAD>();
-            this.DDISCAPACIDADs1 = new HashSet<DDISCAPACIDAD>();
+            this.DDISCAPACIDADES1 = new HashSet<DDISCAPACIDAD>();
             this.DPERSONALES = new HashSet<DPERSONALES>();
             this.DPERSONALES1 = new HashSet<DPERSONALES>();
             this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
             this.DEXPERIENCIAS1 = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFAMILIARES1 = new HashSet<DFAMILIAR>();
-            this.DFORMACIONs = new HashSet<DFORMACION>();
-            this.DFORMACIONs1 = new HashSet<DFORMACION>();
+            this.DFORMACIONES = new HashSet<DFORMACION>();
+            this.DFORMACIONES1 = new HashSet<DFORMACION>();
         }
     
         public string COD_USER { get; set; }
@@ -48,15 +48,15 @@ namespace SPISAP.Models
         public virtual ICollection<DDIRECCION> DDIRECCIONES { get; set; }
         public virtual ICollection<DDIRECCION> DDIRECCIONES1 { get; set; }
         public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
-        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs1 { get; set; }
+        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES1 { get; set; }
         public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
         public virtual ICollection<DPERSONALES> DPERSONALES1 { get; set; }
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
         public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS1 { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES1 { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONs1 { get; set; }
-        public virtual SUCURSAL SUCURSAL { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONES1 { get; set; }
+        public virtual SUCURSAL SUCURSALES { get; set; }
     }
 }

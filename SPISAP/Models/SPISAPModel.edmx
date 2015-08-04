@@ -1361,13 +1361,13 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="AREA_PERSONAL" Relationship="Self.DPERSONALES_AREA_PERSONAL_FK" FromRole="DPERSONALES" ToRole="AREA_PERSONAL" />
-          <NavigationProperty Name="DCOMUNICACIONs" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCOMUNICACION" />
+          <NavigationProperty Name="DCOMUNICACIONES" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCOMUNICACION" />
           <NavigationProperty Name="DCUENTA" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCUENTAS" />
           <NavigationProperty Name="DDIRECCION" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDISCAPACIDAD" />
-          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DDISCAPACIDADES" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFORMACION" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="GRUPO_PERSONAL" Relationship="Self.DPERSONALES_GRUPO_PERSONAL_FK" FromRole="DPERSONALES" ToRole="GRUPO_PERSONAL" />
@@ -1392,16 +1392,16 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
           <NavigationProperty Name="DDIRECCIONES1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
           <NavigationProperty Name="DDISCAPACIDADES" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
-          <NavigationProperty Name="DDISCAPACIDADs1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DDISCAPACIDADES1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
           <NavigationProperty Name="DPERSONALES1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
           <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DEXPERIENCIAS1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
           <NavigationProperty Name="DFAMILIARES1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
-          <NavigationProperty Name="DFORMACIONs1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFORMACION" />
-          <NavigationProperty Name="SUCURSAL" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="DUSUARIOS" ToRole="SUCURSAL" />
+          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONES1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="SUCURSALES" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="DUSUARIOS" ToRole="SUCURSAL" />
         </EntityType>
         <EntityType Name="ESTADO_SSO">
           <Key>

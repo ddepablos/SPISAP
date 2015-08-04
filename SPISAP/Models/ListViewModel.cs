@@ -334,7 +334,7 @@ namespace SPISAP.Models
 
         }
 
-        // retornar la lista de parroquias.
+        // retornar la lista de parentescos.
         public static List<PARENTESCO> GetParentesco()
         {
 
@@ -356,6 +356,141 @@ namespace SPISAP.Models
             }
 
         }
+
+        // retornar la lista de formación.
+        public static List<FORMACION> GetFormacion()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<FORMACION> Lista = new List<FORMACION>();
+
+                Lista.Add(new FORMACION { COD_FORMACION = " ", DES_FORMACION = "" });
+
+                foreach (var record in db.FORMACIONES.OrderBy(p => p.DES_FORMACION))
+                {
+                    FORMACION item = new FORMACION();
+                    item.COD_FORMACION = record.COD_FORMACION;
+                    item.DES_FORMACION = record.DES_FORMACION;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de niveles de estudio.
+        public static List<CLASE_INSTITUTO> GetNivelEstudio()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<CLASE_INSTITUTO> Lista = new List<CLASE_INSTITUTO>();
+
+                Lista.Add(new CLASE_INSTITUTO { COD_CLASE = " ", DES_CLASE = "" });
+
+                foreach (var record in db.CLASE_INSTITUTO.OrderBy(p => p.DES_CLASE))
+                {
+                    CLASE_INSTITUTO item = new CLASE_INSTITUTO();
+                    item.COD_CLASE = record.COD_CLASE;
+                    item.DES_CLASE = record.DES_CLASE;
+                    Lista.Add(item);
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de condiciones/clase de titulos.
+        public static List<CLASE_TITULO> GetCondiciones( string key_value = null )
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<CLASE_TITULO> Lista = new List<CLASE_TITULO>();
+
+                Lista.Add(new CLASE_TITULO { COD_CLASE = " ", DES_TITULO = "" });
+
+                if ( key_value == null)
+                {
+                    foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
+                    {
+                        CLASE_TITULO item = new CLASE_TITULO();
+                        item.COD_CLASE = record.COD_CLASE;
+                        item.DES_TITULO = record.DES_TITULO;
+                        Lista.Add(item);
+                    }
+                }
+                else
+                {
+                    foreach (var record in db.CLASE_TITULO.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_TITULO))
+                    {
+                        CLASE_TITULO item = new CLASE_TITULO();
+                        item.COD_CLASE = record.COD_CLASE;
+                        item.DES_TITULO = record.DES_TITULO;
+                        Lista.Add(item);
+                    }
+                }
+
+                return Lista;
+            }
+
+        }
+        // retornar la lista de especialidades.
+        public static List<CLASE_ESPECIALIDAD> GetEspecialidades(string key_value = null)
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                List<CLASE_ESPECIALIDAD> Lista = new List<CLASE_ESPECIALIDAD>();
+
+                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = " ", DES_ESPECIALIDAD = "" });
+
+                if (key_value == null)
+                {
+                    foreach (var record in db.CLASE_ESPECIALIDAD.OrderBy(p => p.DES_ESPECIALIDAD))
+                    {
+                        CLASE_ESPECIALIDAD item = new CLASE_ESPECIALIDAD();
+                        item.COD_ESPECIALIDAD = record.COD_ESPECIALIDAD;
+                        item.DES_ESPECIALIDAD = record.DES_ESPECIALIDAD;
+                        Lista.Add(item);
+                    }
+                }
+                else
+                {
+                    foreach (var record in db.CLASE_ESPECIALIDAD.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_ESPECIALIDAD))
+                    {
+                        CLASE_ESPECIALIDAD item = new CLASE_ESPECIALIDAD();
+                        item.COD_ESPECIALIDAD = record.COD_ESPECIALIDAD;
+                        item.DES_ESPECIALIDAD = record.DES_ESPECIALIDAD;
+                        Lista.Add(item);
+                    }
+                }
+
+                return Lista;
+            }
+
+        }
+
+        // retornar la lista de Unidades de Tiempo.
+        public static List<GenericModel> GetUnidadTiempo()
+        {
+            // 'Años', 'Clases', 'Dias', 'Meses', 'Semanas', 'Semestres'
+            return new List<GenericModel>
+            {
+                new GenericModel() { CODIGO=" "         , DESCRIPCION=""          },
+                new GenericModel() { CODIGO="Años"      , DESCRIPCION="Años"      },
+                new GenericModel() { CODIGO="Clases"    , DESCRIPCION="Clases"    },
+                new GenericModel() { CODIGO="Dias"      , DESCRIPCION="Dias"      },
+                new GenericModel() { CODIGO="Meses"     , DESCRIPCION="Meses"     },
+                new GenericModel() { CODIGO="Semanas"   , DESCRIPCION="Semanas"   },
+                new GenericModel() { CODIGO="Semestres" , DESCRIPCION="Semestres" }
+            };
+
+        }
+
         #endregion
 
     }

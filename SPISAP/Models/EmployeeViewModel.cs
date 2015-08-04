@@ -54,29 +54,14 @@ namespace SPISAP.Models
         /* DFAMILIAR : Datos Familiares */
         public DFAMILIAR DATOS_FAMILIARES { get; set; }
 
-        /* GÉNERO */
-        public List<GenericModel> Generos;
-
-        /* DDISCAPACIDAD */
-        public List<DDISCAPACIDAD> Discapacidades; //{ set; get; }
-
-        /* DATOS FAMILIARES */
-        public List<DFAMILIAR> Familiares;
-
-        /* DATOS DE FORMACIÓN */
-        public List<DFORMACION> Formaciones;
-
-        /* DATOS DE EXPERIENCIA LABORAL */
-        public List<DEXPERIENCIA> Experiencias;
-
-        /* Estructuras de Listas */
+        /* ESTRUCTURAS DE LISTAS */
         #region DATOS_PERSONALES
+        public List<GenericModel> Generos;
         public List<PAIS> Paises;
         public List<NACIONALIDAD> Nacionalidades;
         public List<PAIS_ESTADO> Estados;
         public List<GenericModel> EstadoCivil;
         public List<AREA_PERSONAL> NivelCargo;
-
         public List<SUCURSAL> Sucursales;
         public List<GRUPO_PERSONAL> GrupoPersonal;
         public List<string> Tratamiento;
@@ -90,6 +75,27 @@ namespace SPISAP.Models
         public List<MUNICIPIO_SSO> MunicipioSSO;
         public List<PARROQUIA_SSO> ParroquiaSSO;
         public List<PARENTESCO> Parentescos;
+        #endregion
+
+        #region DATOS_DISCAPACIDAD
+        public List<DDISCAPACIDAD> Discapacidades;
+        #endregion
+
+        #region DATOS_FAMILIARES
+        public List<DFAMILIAR> Familiares;
+        #endregion
+
+        #region FORMACION
+        public List<DFORMACION> DFormaciones;
+        public List<FORMACION> Formaciones;
+        public List<CLASE_INSTITUTO> NivelesEstudios;
+        public List<CLASE_TITULO> Condiciones;
+        public List<CLASE_ESPECIALIDAD> Especialidades;
+        public List<GenericModel> UnidadesTiempo;
+        #endregion
+
+        #region EXPERIENCIA_LABORAL
+        public List<DEXPERIENCIA> Experiencias;
         #endregion
 
         public EmployeeViewModel()
@@ -123,6 +129,13 @@ namespace SPISAP.Models
             Parentescos = ListViewModel.GetParentesco();
             #endregion
 
+            #region FORMACION
+            Formaciones = ListViewModel.GetFormacion();
+            NivelesEstudios = ListViewModel.GetNivelEstudio();
+            Condiciones = ListViewModel.GetCondiciones();
+            Especialidades = ListViewModel.GetEspecialidades();
+            UnidadesTiempo = ListViewModel.GetUnidadTiempo();
+            #endregion
 
         }
 
@@ -176,8 +189,8 @@ namespace SPISAP.Models
             Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "GONZALEZ", NOMBRES = "NICOLLE", FECHA_NACIMIENTO = DateTime.Parse("2016-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "PORLAMAR", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "", SEXO = "F" });
 
             /* Formación */
-            Formaciones = new List<DFORMACION>();
-            Formaciones.Add(new DFORMACION { CEDULA = "12919906", COD_CLASE = "V1", COD_FORMACION = "7", INSTITUO = "UNEFA", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "2", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_ESPECIALIDAD = "00094", CE_COD_CLASE = "V1", FECHA_INICIO = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2015-01-01", CultureInfo.InvariantCulture), COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
+            DFormaciones = new List<DFORMACION>();
+            DFormaciones.Add(new DFORMACION { CEDULA = "12919906", COD_CLASE = "V1", COD_FORMACION = "7", INSTITUO = "UNEFA", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "2", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_ESPECIALIDAD = "00094", CE_COD_CLASE = "V1", FECHA_INICIO = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2015-01-01", CultureInfo.InvariantCulture), COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
 
             /* Experiencia */
             Experiencias = new List<DEXPERIENCIA>();

@@ -16,11 +16,11 @@ namespace SPISAP.Models
     {
         public DPERSONALES()
         {
-            this.DCOMUNICACIONs = new HashSet<DCOMUNICACION>();
-            this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();
-            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
+            this.DCOMUNICACIONES = new HashSet<DCOMUNICACION>();
+            this.DDISCAPACIDADES = new HashSet<DDISCAPACIDAD>();
+            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
-            this.DFORMACIONs = new HashSet<DFORMACION>();
+            this.DFORMACIONES = new HashSet<DFORMACION>();
         }
     
         public string FICHA { get; set; }
@@ -50,13 +50,13 @@ namespace SPISAP.Models
         public System.DateTime FECHA_UPD { get; set; }
     
         public virtual AREA_PERSONAL AREA_PERSONAL { get; set; }
-        public virtual ICollection<DCOMUNICACION> DCOMUNICACIONs { get; set; }
+        public virtual ICollection<DCOMUNICACION> DCOMUNICACIONES { get; set; }
         public virtual DCUENTA DCUENTA { get; set; }
         public virtual DDIRECCION DDIRECCION { get; set; }
-        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
+        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual GRUPO_PERSONAL GRUPO_PERSONAL { get; set; }
