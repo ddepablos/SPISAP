@@ -54,6 +54,13 @@ namespace SPISAP.Models
         /* DFAMILIAR : Datos Familiares */
         public DFAMILIAR DATOS_FAMILIARES { get; set; }
 
+        /* DFORMACION : Datos Familiares */
+        public DFORMACION DATOS_FORMACION { get; set; }
+
+
+
+
+
         /* ESTRUCTURAS DE LISTAS */
         #region DATOS_PERSONALES
         public List<GenericModel> Generos;
@@ -88,7 +95,7 @@ namespace SPISAP.Models
         #region FORMACION
         public List<DFORMACION> DFormaciones;
         public List<FORMACION> Formaciones;
-        public List<CLASE_INSTITUTO> NivelesEstudios;
+        public List<CLASE_INSTITUTO> NivelEstudio;
         public List<CLASE_TITULO> Condiciones;
         public List<CLASE_ESPECIALIDAD> Especialidades;
         public List<GenericModel> UnidadesTiempo;
@@ -131,7 +138,7 @@ namespace SPISAP.Models
 
             #region FORMACION
             Formaciones = ListViewModel.GetFormacion();
-            NivelesEstudios = ListViewModel.GetNivelEstudio();
+            NivelEstudio = ListViewModel.GetNivelEstudio();
             Condiciones = ListViewModel.GetCondiciones();
             Especialidades = ListViewModel.GetEspecialidades();
             UnidadesTiempo = ListViewModel.GetUnidadTiempo();

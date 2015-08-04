@@ -367,7 +367,7 @@ namespace SPISAP.Models
 
                 Lista.Add(new FORMACION { COD_FORMACION = " ", DES_FORMACION = "" });
 
-                foreach (var record in db.FORMACIONES.OrderBy(p => p.DES_FORMACION))
+                foreach (var record in db.FORMACIONES.OrderBy(p => p.COD_FORMACION))
                 {
                     FORMACION item = new FORMACION();
                     item.COD_FORMACION = record.COD_FORMACION;
@@ -390,7 +390,7 @@ namespace SPISAP.Models
 
                 Lista.Add(new CLASE_INSTITUTO { COD_CLASE = " ", DES_CLASE = "" });
 
-                foreach (var record in db.CLASE_INSTITUTO.OrderBy(p => p.DES_CLASE))
+                foreach (var record in db.CLASE_INSTITUTO.OrderBy(p => p.COD_CLASE))
                 {
                     CLASE_INSTITUTO item = new CLASE_INSTITUTO();
                     item.COD_CLASE = record.COD_CLASE;
@@ -418,7 +418,8 @@ namespace SPISAP.Models
                     foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
                     {
                         CLASE_TITULO item = new CLASE_TITULO();
-                        item.COD_CLASE = record.COD_CLASE;
+                        item.COD_CLASE = record.COD_CLASE;      // CT_COD_CLASE
+                        item.COD_TITULO = record.COD_TITULO;    // CT_COD_TITULO
                         item.DES_TITULO = record.DES_TITULO;
                         Lista.Add(item);
                     }
@@ -429,6 +430,7 @@ namespace SPISAP.Models
                     {
                         CLASE_TITULO item = new CLASE_TITULO();
                         item.COD_CLASE = record.COD_CLASE;
+                        item.COD_TITULO = record.COD_TITULO;
                         item.DES_TITULO = record.DES_TITULO;
                         Lista.Add(item);
                     }

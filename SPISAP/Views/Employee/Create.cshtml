@@ -299,25 +299,19 @@
 
               <div class="col-md-3">
                 Formación :
-                <select name="clase0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
               </div>
               <div class="col-md-3">
                 Nivel de Estudio :
-                <select name="formacion0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control" })
               </div>
               <div class="col-md-3">
                 Condición :
-                <input type="input" name="clase0" class="form-control" value=""  autofocus>
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" })
               </div>
               <div class="col-md-2">
                 Especialidad :
-                <select name="pais0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
               </div>
               <div class="col-md-1">
                 .
@@ -327,44 +321,29 @@
 
               <div class="col-md-3">
                 Nombre del Instituto :
-                <select name="titulo0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>                
+                @Html.TextBoxFor(model => model.DATOS_FORMACION.INSTITUO, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.name2)*@              
               </div>
-              <div class="col-md-3">
+              <div class="col-md-1" style="padding-right: 0px;">
                 Duración :
-                <input type="input" name="duracion0" class="form-control" value="" autofocus>
-                <select name="unidad0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>                                   
+                @Html.TextBoxFor(model => model.DATOS_FORMACION.DURACION, new { @class = "form-control" })
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2" style="padding-left: 0px;">
+                .
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+              </div>
+              <div class="col-md-2">
                 Fecha de Inicio :
-                <input type="input" name="fechainicio0" class="form-control" value=""  autofocus>                
+                @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_INICIO, new { @class = "form-control" })              
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 Fecha de Finalización :
-                <input type="input" name="fechafin0" class="form-control" value=""  autofocus>                
+                @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_FIN, new { @class = "form-control" })             
               </div>
-              <div class="col-md-3">
-                Fecha de Finalización :
-                <input type="input" name="fechafin0" class="form-control" value=""  autofocus>                
+              <div class="col-md-2">
+                País :
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
               </div>
-
-              <div class="col-md-3">
-                Unidad de Tiempo :  
-                <select name="unidad0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>                   
-              </div>
-              <div class="col-md-3">
-                Especialidad :
-                <select name="especialidad0" class="btn btn-default dropdown-toggle">
-                  <option value=""></option>
-                </select>                
-              </div>
-              <div class="col-md-3">.</div>
-              <div class="col-md-3">.</div>
 
             </td>
             
