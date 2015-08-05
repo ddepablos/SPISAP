@@ -143,9 +143,9 @@ namespace SPISAP.Models
             Sucursales = ListViewModel.Sucursales();
             GrupoPersonal = ListViewModel.GrupoPersonal();
             Tratamiento = ListViewModel.Tratamiento();
-            TallaChemise = ListViewModel.FillTallaChemise();
-            TallaPantalon = ListViewModel.FillTallaPantalon();
-            TallaCalzado = ListViewModel.FillTallaCalzado();
+            //TallaChemise = ListViewModel.TallaChemise();
+            //TallaPantalon = ListViewModel.TallaPantalon();
+            //TallaCalzado = ListViewModel.TallaCalzado();
 
             #region DIRECCION
             EstadoSSO = ListViewModel.GetEstadoSSO();

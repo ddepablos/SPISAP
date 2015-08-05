@@ -4,11 +4,15 @@ $( document ).ready(function() {
     //alert('Okey Dokey !!');
 
     // configurar los valores por defecto para los nuevos registros.
-    $('#pais').val("VE");
+    $('#paisnac').val("VE");
     $('#nacionalidad').val("VE");
     $('#paissso').val("VE");
 
-    // comportamiento de estado civil.
+    // ::::: DROPDOWNLIST ::::: //
+
+    // DATOS PERSONALES //
+
+    // Estado Civil
     $("#edocivil").change("click", function () {
         if ($("#edocivil").val() != " " && $("#sexo").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
@@ -24,8 +28,9 @@ $( document ).ready(function() {
         //alert($('#tratamiento').val());
     });
 
-    // comportamiento de género.
+    // Sexo - Género
     $("#sexo").change("click", function () {
+
         if ($("#sexo").val() != " " && $("#edocivil").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
                 $('#tratamiento').val("Srta.");
@@ -37,8 +42,114 @@ $( document ).ready(function() {
                 $('#tratamiento').val("Sr.");
             }
         }
-        //alert($('#tratamiento').val());
+
+        $.getJSON('/Employee/GetChemiseList/' + $('#sexo').val(), function (data) {
+            var items = '<option value=" ">Seleccione una Talla</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#chemise').html(items);
+        });
+
+        $.getJSON('/Employee/GetPantalonList/' + $('#sexo').val(), function (data) {
+            var items = '<option value=" ">Seleccione una Talla</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#pantalon').html(items);
+        });
+
+        $.getJSON('/Employee/GetCalzadoList/' + $('#sexo').val(), function (data) {
+            var items = '<option value=" ">Seleccione una Talla</option>';
+
+            if ($('#sexo').val() != " ") {
+                $.each(data, function (i, district) {
+                    items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+                });
+            }
+
+            $('#calzado').html(items);
+        });
+
     });
+
+
+    $('#paisnac').change(function () {
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
+            var items = '';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#nacionalidad').html(items);
+            $('#nacionalidad').val($('#paisnac').val());
+        });
+
+        $.getJSON('/Employee/GetEstadoList/' + $('#paisnac').val(), function (data) {
+            var items = '<option value=" ">Seleccione un Estado</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#edonac').html(items);
+        });
+
+    });
+
+
+
+
+    //$('#paisnac').change(function () {
+    //    //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+    //    $.getJSON('/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
+    //        //var items = '<option value=" ">Seleccione una Nacionalidad</option>';
+    //        var items = '';
+    //        $.each(data, function (i, district) {
+    //            items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+    //        });
+    //        $('#nacionalidad').html(items);
+    //        $('#nacionalidad').val($('#paisnac').val());
+    //    });
+    //});
+
+    // DATOS_DE_DIRECCIÓN //
+    $('#estadosso').change(function () {
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetMunicipioList/' + $('#estadosso').val(), function (data) {
+            var items = '<option value=" ">Seleccione un Municipio</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#municipiosso').html(items);
+        });
+    });
+
+    $('#municipiosso').change(function () {
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetParroquiaList/' + $('#municipiosso').val(), function (data) {
+            var items = '<option value=" ">Seleccione una Parroquia</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#parroquiasso').html(items);
+        });
+    });
+
+    // DATOS_DE_FORMACIÓN //
+    $('#abc').change(function () {
+        alert('nivelestudio');
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetCondicionList/' + $('#abc').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#condicion').html(items);
+        });
+    });
+
+
+    // ::::: DROPDOWNLIST ::::: //
+
 
     // Formación Académica //
     $("#add_row_formacion").on("click", function () {

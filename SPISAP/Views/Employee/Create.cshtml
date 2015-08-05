@@ -67,12 +67,12 @@
                 @Html.TextBoxFor(model => model.DATOS_PERSONALES.CIUDAD_NACIMIENTO, new { @class = "form-control" })
                 </div>
                 <div class="col-md-3">
-                    País de Nacimiento :
-                    @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+                País de Nacimiento :
+                @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="paisnac" })
                 </div>
                 <div class="col-md-3">
-                    Nacionalidad :
-                    @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="nacionalidad" })
+                Nacionalidad :
+                @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="nacionalidad" })
                 </div>
             </div>
             <div class="row">
@@ -118,15 +118,42 @@
             <div class="row">
                 <div class="col-md-4">
                     Talla de Camisa :
-                    @Html.DropDownListFor(m => m.DATOS_PERSONALES.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id="chemise" })
+                    @if (Model.TallaChemise != null)
+                    {
+                        @Html.DropDownListFor(m => m.DATOS_PERSONALES.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id="chemise" })
+                    }
+                    else
+                    {
+                        <select class="form-control" id="chemise" name="DATOS_PERSONALES.CHEMISE">
+                            <option value=" ">Seleccione una Talla</option>
+                        </select>                                    
+                    }
                 </div>
                 <div class="col-md-4">
                     Talla de Pantalón :
-                    @Html.DropDownListFor(m => m.DATOS_PERSONALES.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id="pantalon" })
+                    @if (Model.TallaPantalon != null)
+                    {
+                        @Html.DropDownListFor(m => m.DATOS_PERSONALES.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id="pantalon" })
+                    }
+                    else
+                    {
+                        <select class="form-control" id="pantalon" name="DATOS_PERSONALES.PANTALON">
+                            <option value=" ">Seleccione una Talla</option>
+                        </select>                            
+                    }
                 </div>
                 <div class="col-md-4">
                     Nro. de Zapato :
-                    @Html.DropDownListFor(m => m.DATOS_PERSONALES.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id="calzado" })
+                    @if (Model.TallaCalzado != null)
+                    {
+                        @Html.DropDownListFor(m => m.DATOS_PERSONALES.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id="calzado" })                        
+                    }
+                    else
+                    {
+                        <select class="form-control" id="calzado" name="DATOS_PERSONALES.CALZADO">
+                            <option value=" ">Seleccione una Talla</option>
+                        </select>                               
+                    }
                 </div>
             </div>
             
@@ -311,11 +338,11 @@
               </div>
               <div class="col-md-3">
                 Nivel de Estudio :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
               </div>
               <div class="col-md-3">
                 Condición :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.DATOS_FORMACION.CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
               </div>
               <div class="col-md-3">
                 Especialidad :

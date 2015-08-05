@@ -120,5 +120,86 @@ namespace SPISAP.Controllers
                 return View();
             }
         }
+
+        #region JSONRESULT
+
+        // :: DATOS_PERSONALES :: //
+
+        // retornar JSON : Nacionalidades
+        public JsonResult GetNacionalidadList(string id)
+        {
+            List<NACIONALIDAD> records = ListViewModel.Nacionalidades();
+
+            return Json(new SelectList(records.Where(x => x.COD_NACIONALIDAD == id), "COD_NACIONALIDAD", "DES_NACIONALIDAD"), JsonRequestBehavior.AllowGet);
+        }
+
+        // retornar JSON : Estado de Nacimiento.
+        public JsonResult GetEstadoList(string id)
+        {
+            List<PAIS_ESTADO> records = ListViewModel.Estados();
+
+            return Json(new SelectList(records.Where(x => x.COD_PAIS == id), "COD_ESTADO", "DES_ESTADO"), JsonRequestBehavior.AllowGet);
+        }
+
+        // retornar JSON : Talla de Camisa.
+        public JsonResult GetChemiseList(string id)
+        {
+            List<GenericModel> records = ListViewModel.GetTallaChemise();
+
+            return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+        }
+
+        // retornar JSON : Talla de Pantalón.
+        public JsonResult GetPantalonList(string id)
+        {
+            List<GenericModel> records = ListViewModel.GetTallaPantalon();
+
+            return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+        }
+
+        // retornar JSON : Talla de Calzado.
+        public JsonResult GetCalzadoList(string id)
+        {
+
+            List<GenericModel> records = ListViewModel.GetTallaCalzado();
+
+            return Json(new SelectList(records.Where(x => x.CODIGO != " "), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+        }
+
+
+        // :: DATOS_DE_DIRECCIÓN :: //
+
+        // retornar JSON : Municipios
+        public JsonResult GetMunicipioList(string id)
+        {
+            List<MUNICIPIO_SSO> records = ListViewModel.GetMunicipioSSO();
+
+            return Json(new SelectList(records.Where(x => x.COD_ESTADO_SSO == id), "COD_MUNICIPIO", "DES_MUNICIPIO"), JsonRequestBehavior.AllowGet);
+        }
+
+        // retornar JSON : Parroquias
+        public JsonResult GetParroquiaList(string id)
+        {
+            List<PARROQUIA_SSO> records = ListViewModel.GetParroquiaSSO();
+
+            return Json(new SelectList(records.Where(x => x.COD_MUNICIPIO == id), "COD_PARROQUIA", "DES_PARROQUIA"), JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        // :: DATOS_DE_FORMACIÓN :: //
+
+        // retornar JSON : CLASE_INSTITUTO / Condición
+        public JsonResult GetCondicionList(string id)
+        {
+            List<CLASE_TITULO> records = ListViewModel.GetCondiciones();
+
+            return Json(new SelectList(records.Where(x => x.COD_CLASE == id), "COD_TITULO", "DES_TITULO"), JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
+
+
+
     }
 }

@@ -54,7 +54,7 @@ namespace SPISAP.Models
             {
                 List<NACIONALIDAD> Lista = new List<NACIONALIDAD>();
 
-                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = "", DES_NACIONALIDAD = "" });
+                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = " ", DES_NACIONALIDAD = "Seleccione una Nacionalidad" });
 
                 foreach (var record in db.NACIONALIDADES.OrderBy(p => p.DES_NACIONALIDAD))
                 {
@@ -77,13 +77,14 @@ namespace SPISAP.Models
             {
                 List<PAIS_ESTADO> Lista = new List<PAIS_ESTADO>();
 
-                Lista.Add(new PAIS_ESTADO { COD_ESTADO = "", DES_ESTADO = "" });
+                Lista.Add(new PAIS_ESTADO { COD_ESTADO = " ", DES_ESTADO = "Seleccione un Estado" });
 
-                foreach (var record in db.PAIS_ESTADO.Where(p => p.COD_PAIS == "VE").OrderBy(p => p.DES_ESTADO))
+                foreach (var record in db.PAIS_ESTADO.OrderBy(p => p.DES_ESTADO))
                 {
                     PAIS_ESTADO item = new PAIS_ESTADO();
                     item.COD_ESTADO = record.COD_ESTADO;
                     item.DES_ESTADO = record.DES_ESTADO;
+                    item.COD_PAIS = record.COD_PAIS;
                     Lista.Add(item);
                 }
 
@@ -185,14 +186,14 @@ namespace SPISAP.Models
 
 
         // retornar la lista de tallas de camisa.
-        public static List<GenericModel> FillTallaChemise()
+        public static List<GenericModel> GetTallaChemise()
         {
             // CHEMISE_CHECK:
             // (SEXO ='F' AND CHEMISE IN ('S','M','L','XL','XXL','XXXL')) OR (SEXO='M' AND CHEMISE IN ('36','38','40', '42','44','46'))
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="" },
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="S" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="M"},
                 new GenericModel() { CODIGO="F", DESCRIPCION="L"},
@@ -210,7 +211,7 @@ namespace SPISAP.Models
         }
 
         // retornar la lista de tallas de pantalón.
-        public static List<GenericModel> FillTallaPantalon()
+        public static List<GenericModel> GetTallaPantalon()
         {
             // PANTALON_CHECK
             // (SEXO='F' AND CHEMISE IN ('8','10','12','14','16','18','20','22','24','26'))
@@ -218,7 +219,7 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="" },
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="8" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="10"},
                 new GenericModel() { CODIGO="F", DESCRIPCION="12"},
@@ -244,19 +245,25 @@ namespace SPISAP.Models
         }
 
         // retornar la lista de tallas de zapato.
-        public static List<GenericModel> FillTallaCalzado()
+        public static List<GenericModel> GetTallaCalzado()
         {
             // CALZADO_CHECK
             // CALZADO BETWEEN '34' AND '46'
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="" },
-                new GenericModel() { CODIGO="34", DESCRIPCION="34" },
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla"},
+                new GenericModel() { CODIGO="34", DESCRIPCION="34"},
+                new GenericModel() { CODIGO="35", DESCRIPCION="35"},
                 new GenericModel() { CODIGO="36", DESCRIPCION="36"},
+                new GenericModel() { CODIGO="37", DESCRIPCION="37"},
                 new GenericModel() { CODIGO="38", DESCRIPCION="38"},
+                new GenericModel() { CODIGO="39", DESCRIPCION="39"},
                 new GenericModel() { CODIGO="40", DESCRIPCION="40"},
+                new GenericModel() { CODIGO="41", DESCRIPCION="41"},
                 new GenericModel() { CODIGO="42", DESCRIPCION="42"},
+                new GenericModel() { CODIGO="43", DESCRIPCION="43"},
                 new GenericModel() { CODIGO="44", DESCRIPCION="44"},
+                new GenericModel() { CODIGO="45", DESCRIPCION="45"},
                 new GenericModel() { CODIGO="46", DESCRIPCION="46"}
             };
 
@@ -296,13 +303,14 @@ namespace SPISAP.Models
             {
                 List<MUNICIPIO_SSO> Lista = new List<MUNICIPIO_SSO>();
 
-                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "" });
+                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "Seleccione un Municipio" });
 
                 foreach (var record in db.MUNICIPIO_SSO.OrderBy(p => p.DES_MUNICIPIO))
                 {
                     MUNICIPIO_SSO item = new MUNICIPIO_SSO();
                     item.COD_MUNICIPIO = record.COD_MUNICIPIO;
                     item.DES_MUNICIPIO = record.DES_MUNICIPIO;
+                    item.COD_ESTADO_SSO = record.COD_ESTADO_SSO;
                     Lista.Add(item);
                 }
 
@@ -319,13 +327,14 @@ namespace SPISAP.Models
             {
                 List<PARROQUIA_SSO> Lista = new List<PARROQUIA_SSO>();
 
-                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "" });
+                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "Seleccione una Parroquia" });
 
                 foreach (var record in db.PARROQUIA_SSO.OrderBy(p => p.DES_PARROQUIA))
                 {
                     PARROQUIA_SSO item = new PARROQUIA_SSO();
                     item.COD_PARROQUIA = record.COD_PARROQUIA;
                     item.DES_PARROQUIA = record.DES_PARROQUIA;
+                    item.COD_MUNICIPIO = record.COD_MUNICIPIO;
                     Lista.Add(item);
                 }
 
@@ -408,7 +417,7 @@ namespace SPISAP.Models
         }
 
         // retornar la lista de condiciones/clase de titulos.
-        public static List<CLASE_TITULO> GetCondiciones( string key_value = null )
+        public static List<CLASE_TITULO> GetCondiciones()
         {
 
             using (SPISAPEntities db = new SPISAPEntities())
@@ -417,8 +426,8 @@ namespace SPISAP.Models
 
                 Lista.Add(new CLASE_TITULO { COD_CLASE = " ", DES_TITULO = "" });
 
-                if ( key_value == null)
-                {
+                //if ( key_value == null)
+                //{
                     foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
                     {
                         CLASE_TITULO item = new CLASE_TITULO();
@@ -427,18 +436,18 @@ namespace SPISAP.Models
                         item.DES_TITULO = record.DES_TITULO;
                         Lista.Add(item);
                     }
-                }
-                else
-                {
-                    foreach (var record in db.CLASE_TITULO.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_TITULO))
-                    {
-                        CLASE_TITULO item = new CLASE_TITULO();
-                        item.COD_CLASE = record.COD_CLASE;
-                        item.COD_TITULO = record.COD_TITULO;
-                        item.DES_TITULO = record.DES_TITULO;
-                        Lista.Add(item);
-                    }
-                }
+                //}
+                //else
+                //{
+                //    foreach (var record in db.CLASE_TITULO.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_TITULO))
+                //    {
+                //        CLASE_TITULO item = new CLASE_TITULO();
+                //        item.COD_CLASE = record.COD_CLASE;
+                //        item.COD_TITULO = record.COD_TITULO;
+                //        item.DES_TITULO = record.DES_TITULO;
+                //        Lista.Add(item);
+                //    }
+                //}
 
                 return Lista;
             }
