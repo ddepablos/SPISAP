@@ -112,7 +112,7 @@
                 </div>
                 <div class="col-md-2">
                     Tratamiento :
-                    @Html.TextBoxFor(model => model.DATOS_PERSONALES.TRATAMIENTO, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.TextBoxFor(model => model.DATOS_PERSONALES.TRATAMIENTO, new { @class = "form-control", @id="tratamiento", @readonly = "readonly" })
                 </div>
             </div>
             <div class="row">
@@ -286,7 +286,7 @@
         </div>
         <!-- // TABLA DE DATOS FAMILIARES -->
 
-        <div class="row text-center">
+        <div class="row text-right">
           <a id="add_row" class="btn btn-success">Agregar Familiar</a>            
         </div>
 
@@ -317,16 +317,13 @@
                 Condición :
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" })
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 Especialidad :
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
               </div>
-              <div class="col-md-1">
-                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
-              </div>
 
 
-              <div class="col-md-3">
+              <div class="col-md-2">
                 Nombre del Instituto :
                 @Html.TextBoxFor(model => model.DATOS_FORMACION.INSTITUO, new { @class = "form-control" })
                 @*@Html.ValidationMessageFor(model => model.name2)*@              
@@ -335,8 +332,7 @@
                 Duración :
                 @Html.TextBoxFor(model => model.DATOS_FORMACION.DURACION, new { @class = "form-control" })
               </div>
-              <div class="col-md-2" style="padding-left: 0px;">
-                
+              <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
               </div>
               <div class="col-md-2">
@@ -344,28 +340,31 @@
                 @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_INICIO, new { @class = "form-control" })              
               </div>
               <div class="col-md-2">
-                Fecha de Finalización :
+                Fecha de Fin :
                 @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_FIN, new { @class = "form-control" })             
               </div>
               <div class="col-md-2">
                 País :
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
               </div>
+              <div class="col-md-1">
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
+              </div>
 
             </td>
             
             </tr>
-          
+
             </table>
           
             <br>
             
-            <div class="row text-center">
-              <a id="add_row_formacion" class="btn btn-md btn-success">Agregar Formación</a>            
-            </div>
-
         </div>
         <!-- // FORMACIÓN -->
+
+            <div class="row text-right">
+              <a id="add_row_formacion" class="btn btn-md btn-success">Agregar Formación</a>            
+            </div>
 
         <br>
 
@@ -426,11 +425,11 @@
             
             <br>
 
-            <div class="row text-center">
-              <a id="add_row_experiencia" class="btn btn-md btn-success">Agregar Experiencia Laboral</a>            
-            </div>
-
         </div>
         <!-- EXPERIENCIA LABORAL // -->
+
+        <div class="row text-right">
+            <a id="add_row_experiencia" class="btn btn-md btn-success">Agregar Experiencia Laboral</a>            
+        </div>
 
     </div>

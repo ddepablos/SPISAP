@@ -8,6 +8,38 @@ $( document ).ready(function() {
     $('#nacionalidad').val("VE");
     $('#paissso').val("VE");
 
+    // comportamiento de estado civil.
+    $("#edocivil").change("click", function () {
+        if ($("#edocivil").val() != " " && $("#sexo").val() != " ") {
+            if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
+                $('#tratamiento').val("Srta.");
+            }
+            if ($('#edocivil').val() != "Solt." && $('#sexo').val() === "F") {
+                $('#tratamiento').val("Sra.");
+            }
+            if ($('#sexo').val() === "M") {
+                $('#tratamiento').val("Sr.");
+            }
+        }
+        //alert($('#tratamiento').val());
+    });
+
+    // comportamiento de género.
+    $("#sexo").change("click", function () {
+        if ($("#sexo").val() != " " && $("#edocivil").val() != " ") {
+            if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
+                $('#tratamiento').val("Srta.");
+            }
+            if ($('#edocivil').val() != "Solt." && $('#sexo').val() === "F") {
+                $('#tratamiento').val("Sra.");
+            }
+            if ($('#sexo').val() === "M") {
+                $('#tratamiento').val("Sr.");
+            }
+        }
+        //alert($('#tratamiento').val());
+    });
+
     // Formación Académica //
     $("#add_row_formacion").on("click", function () {
 
