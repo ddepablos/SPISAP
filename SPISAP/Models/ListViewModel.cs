@@ -70,7 +70,7 @@ namespace SPISAP.Models
         }
 
         // retornar la lista de estados.
-        public static List<PAIS_ESTADO> Estados()
+        public static List<PAIS_ESTADO> GetPaisEstados()
         {
 
             using (SPISAPEntities db = new SPISAPEntities())
@@ -280,7 +280,7 @@ namespace SPISAP.Models
             {
                 List<ESTADO_SSO> Lista = new List<ESTADO_SSO>();
 
-                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "" });
+                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "Seleccione un Estado" });
 
                 foreach (var record in db.ESTADO_SSO.OrderBy(p => p.DES_ESTADO_SSO))
                 {

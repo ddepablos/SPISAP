@@ -136,7 +136,7 @@ namespace SPISAP.Models
             Generos = ListViewModel.FillGeneros();
             Paises = ListViewModel.FillPaises();
             Nacionalidades = ListViewModel.Nacionalidades();
-            Estados = ListViewModel.Estados();
+            Estados = ListViewModel.GetPaisEstados();
             EstadoCivil = ListViewModel.EstadoCivil();
             NivelCargo = ListViewModel.AreaPersonal();
 
@@ -149,8 +149,8 @@ namespace SPISAP.Models
 
             #region DIRECCION
             EstadoSSO = ListViewModel.GetEstadoSSO();
-            MunicipioSSO = ListViewModel.GetMunicipioSSO();
-            ParroquiaSSO = ListViewModel.GetParroquiaSSO();
+            //MunicipioSSO = ListViewModel.GetMunicipioSSO();
+            //ParroquiaSSO = ListViewModel.GetParroquiaSSO();
             Parentescos = ListViewModel.GetParentesco();
             #endregion
 

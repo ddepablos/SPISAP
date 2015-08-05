@@ -26,6 +26,8 @@
     <br>
     <br>
 
+    <form id="commentForm" method="post" action="@Url.Action("Create", "Employee")" class="form-horizontal" enctype = "multipart/form-data">
+
     <!-- Formulario de Datos del Trabajador -->
     <div class="container jumbotron form-signin">
 
@@ -38,7 +40,7 @@
                 <br>
                 <div class="col-md-3">
                 Primer Apellido :
-                @Html.TextBoxFor(model => model.DATOS_PERSONALES.PRIMER_APELLIDO, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.DATOS_PERSONALES.PRIMER_APELLIDO, new { @class = "form-control" , id = "primerapellido" })
                 </div>
                 <div class="col-md-3">
                 Segundo Apellido :
@@ -195,7 +197,16 @@
                 </div>
                 <div class="col-md-3">
                 Estado :
-                @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id="estadosso" })
+                @if (Model.EstadoSSO != null)
+                {
+                    @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id="estadosso" })
+                }
+                else
+                { 
+                    <select class="form-control" id="estadosso" name="DATOS_DIRECCION.COD_ESTADO_SSO">
+                        <option value=" ">Seleccione un Estado</option>
+                    </select>                       
+                }
                 </div>
                 <div class="col-md-3">
                 Ciudad :
@@ -203,13 +214,32 @@
                 </div>
                 <div class="col-md-3">
                 Municipio :
-                @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id="municipiosso" })
+                @if (Model.MunicipioSSO != null)
+                {
+                    @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id="municipiosso" })
+                }
+                else
+                { 
+                    <select class="form-control" id="municipiosso" name="DATOS_DIRECCION.COD_MUNICIPIO_SSO">
+                        <option value=" ">Seleccione un Municipio</option>
+                    </select>                       
+                }
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                 Parroquia :
-                @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id="parroquiasso" })
+                @if (Model.ParroquiaSSO != null)
+                {
+                    @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id="parroquiasso" })
+                }
+                else
+                { 
+                    <select class="form-control" id="parroquiasso" name="DATOS_DIRECCION.COD_PARROQUIA_SSO">
+                        <option value=" ">Seleccione una Parroquia</option>
+                    </select>                       
+                }                
+                
                 </div>
                 <div class="col-md-4">
                 Teléfono de Habitación :
@@ -458,5 +488,11 @@
         <div class="row text-right">
             <a id="add_row_experiencia" class="btn btn-md btn-success">Agregar Experiencia Laboral</a>            
         </div>
+        
+        <br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
 
     </div>

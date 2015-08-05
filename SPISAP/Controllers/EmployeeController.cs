@@ -55,7 +55,7 @@ namespace SPISAP.Controllers
         // POST: /Employee/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(EmployeeViewModel EmployeeVM)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace SPISAP.Controllers
         // retornar JSON : Estado de Nacimiento.
         public JsonResult GetEstadoList(string id)
         {
-            List<PAIS_ESTADO> records = ListViewModel.Estados();
+            List<PAIS_ESTADO> records = ListViewModel.GetPaisEstados();
 
             return Json(new SelectList(records.Where(x => x.COD_PAIS == id), "COD_ESTADO", "DES_ESTADO"), JsonRequestBehavior.AllowGet);
         }

@@ -8,6 +8,8 @@ $( document ).ready(function() {
     $('#nacionalidad').val("VE");
     $('#paissso').val("VE");
 
+    $('#primerapellido').focus();
+
     // ::::: DROPDOWNLIST ::::: //
 
     // DATOS PERSONALES //
@@ -91,6 +93,7 @@ $( document ).ready(function() {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
             $('#edonac').html(items);
+            //alert('#paisnac');
         });
 
     });
@@ -113,13 +116,15 @@ $( document ).ready(function() {
 
     // DATOS_DE_DIRECCIÓN //
     $('#estadosso').change(function () {
-        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+//$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
         $.getJSON('/Employee/GetMunicipioList/' + $('#estadosso').val(), function (data) {
             var items = '<option value=" ">Seleccione un Municipio</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
             $('#municipiosso').html(items);
+            items = '<option value=" ">Seleccione una Parroquia</option>';
+            $('#parroquiasso').html(items);
         });
     });
 
