@@ -274,7 +274,8 @@
                 @Html.DropDownListFor(m => m.DATOS_FAMILIARES.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })
             </td>                        
             <td data-name="del">
-                <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
+                .
+                <button name="del0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove"></button>
             </td>
           </tr>          
 
@@ -321,8 +322,7 @@
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
               </div>
               <div class="col-md-1">
-                .
-                <button name="delete0" class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>                
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
               </div>
 
 
@@ -336,7 +336,7 @@
                 @Html.TextBoxFor(model => model.DATOS_FORMACION.DURACION, new { @class = "form-control" })
               </div>
               <div class="col-md-2" style="padding-left: 0px;">
-                .
+                
                 @Html.DropDownListFor(m => m.DATOS_FORMACION.UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
               </div>
               <div class="col-md-2">
@@ -415,8 +415,7 @@
                   @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
                  </div>
                   <div class="col-md-1">
-                    .
-                    <button name="delete0" class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
+                    <button name="delete0" class="btn btn-danger glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>
                   </div>
                 
                 </td>
