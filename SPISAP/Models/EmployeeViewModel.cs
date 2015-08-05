@@ -11,50 +11,63 @@ namespace SPISAP.Models
     {
 
         /* DPERSONALES : Datos Personales */
-        public string FICHA { get; set; }
-        public string CEDULA { get; set; }
-        public string COD_SUCURSAL { get; set; }
-        public string COD_GRUPO { get; set; }
-        public string COD_AREA_PERSONAL { get; set; }
-        public string CARGO { get; set; }
-        public string TRATAMIENTO { get; set; }
-        public string PRIMER_APELLIDO { get; set; }
-        public string SEGUNDO_APELLIDO { get; set; }
-        public string NOMBRE { get; set; }
-        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
-        public string CIUDAD_NACIMIENTO { get; set; }
-        public string COD_PAIS { get; set; }
-        public string COD_ESTADO { get; set; }
-        public string COD_NACIONALIDAD { get; set; }
-        public string ESTADO_CIVIL { get; set; }
-        public string SEXO { get; set; }
-        public string RIF { get; set; }
-        public string CALZADO { get; set; }
-        public string CHEMISE { get; set; }
-        public string PANTALON { get; set; }
-        public string COD_USER_INS { get; set; }
-        public System.DateTime FECHA_INS { get; set; }
-        public string COD_USER_UPD { get; set; }
-        public System.DateTime FECHA_UPD { get; set; }
+        public DPERSONALES DATOS_PERSONALES { get; set; }
+        //public string FICHA { get; set; }
+        //public string CEDULA { get; set; }
+        //public string COD_SUCURSAL { get; set; }
+        //public string COD_GRUPO { get; set; }
+        //public string COD_AREA_PERSONAL { get; set; }
+        //public string CARGO { get; set; }
+        //public string TRATAMIENTO { get; set; }
+        //public string PRIMER_APELLIDO { get; set; }
+        //public string SEGUNDO_APELLIDO { get; set; }
+        //public string NOMBRE { get; set; }
+        //public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+        //public string CIUDAD_NACIMIENTO { get; set; }
+        //public string COD_PAIS { get; set; }
+        //public string COD_ESTADO { get; set; }
+        //public string COD_NACIONALIDAD { get; set; }
+        //public string ESTADO_CIVIL { get; set; }
+        //public string SEXO { get; set; }
+        //public string RIF { get; set; }
+        //public string CALZADO { get; set; }
+        //public string CHEMISE { get; set; }
+        //public string PANTALON { get; set; }
+        //public string COD_USER_INS { get; set; }
+        //public System.DateTime FECHA_INS { get; set; }
+        //public string COD_USER_UPD { get; set; }
+        //public System.DateTime FECHA_UPD { get; set; }
 
         /* DDIRECCION : Dirección del Trabajador */
-        public string CALLE { get; set; }
-        public string EDIFICIO { get; set; }
-        public string PISO { get; set; }
-        public string NUMERO { get; set; }
-        public string CIUDAD { get; set; }
-        public string URBANIZACION { get; set; }
-        public string COD_ESTADO_DDIRECCION { get; set; }
-        public string COD_PAIS_DDIRECCION { get; set; }
-        public string TELEFONOS { get; set; }
-        public string COD_ESTADO_SSO { get; set; }
-        public string COD_MUNICIPIO_SSO { get; set; }
-        public string COD_PARROQUIA_SSO { get; set; }
+        public DDIRECCION DATOS_DIRECCION { get; set; }
+        //public string CALLE { get; set; }
+        //public string EDIFICIO { get; set; }
+        //public string PISO { get; set; }
+        //public string NUMERO { get; set; }
+        //public string CIUDAD { get; set; }
+        //public string URBANIZACION { get; set; }
+        //public string COD_ESTADO_DDIRECCION { get; set; }
+        //public string COD_PAIS_DDIRECCION { get; set; }
+        //public string TELEFONOS { get; set; }
+        //public string COD_ESTADO_SSO { get; set; }
+        //public string COD_MUNICIPIO_SSO { get; set; }
+        //public string COD_PARROQUIA_SSO { get; set; }
+
+        /* DCOMUNICACION : Datos de Comunicación : Número de Teléfono y/o Correo Electrónico */
+        public DCOMUNICACION DATOS_COMUNICACION { get; set; }
+        public string COD_CLASE_CORREO { get; set; }
+        public string COD_CLASE_CELULAR { get; set; }
+
+        /* DDISCAPACIDAD : Datos de Discapacidad */
+        public DDISCAPACIDAD DATOS_DISCAPACIDAD { get; set; }
+        public bool COD_DISCAPACIDAD_MOTRIZ { get; set; }
+        public bool COD_DISCAPACIDAD_INTELECTUAL { get; set; }
+        public bool COD_DISCAPACIDAD_SENSORIAL { get; set; }
 
         /* DFAMILIAR : Datos Familiares */
         public DFAMILIAR DATOS_FAMILIARES { get; set; }
 
-        /* DFORMACION : Datos Familiares */
+        /* DFORMACION : Datos de Formación Académica */
         public DFORMACION DATOS_FORMACION { get; set; }
 
         /* DEXPERIENCIA : Datos de Experiencia Laboral */
@@ -161,40 +174,40 @@ namespace SPISAP.Models
         {
 
             /* Datos Personales */
-            FICHA = "123456789012";
-            CEDULA = "12919906";
-            COD_SUCURSAL = "1001";
-            COD_GRUPO = "1";
-            COD_AREA_PERSONAL = "VK";
-            CARGO = "CARGO";
-            TRATAMIENTO = "Sra.";
-            PRIMER_APELLIDO = "GONZALEZ";
-            SEGUNDO_APELLIDO = "LOPEZ";
-            NOMBRE = "FLOR MARINA";
-            FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
-            CIUDAD_NACIMIENTO = "PORLAMAR";
-            COD_PAIS = "VE";
-            COD_ESTADO = "NE";
-            COD_NACIONALIDAD = "PA";
-            ESTADO_CIVIL = "Cas.";
-            SEXO = "F";
-            RIF = "J129199060";
-            CALZADO = "34";
-            CHEMISE = "S";
-            PANTALON = "8";
+            //FICHA = "123456789012";
+            //CEDULA = "12919906";
+            //COD_SUCURSAL = "1001";
+            //COD_GRUPO = "1";
+            //COD_AREA_PERSONAL = "VK";
+            //CARGO = "CARGO";
+            //TRATAMIENTO = "Sra.";
+            //PRIMER_APELLIDO = "GONZALEZ";
+            //SEGUNDO_APELLIDO = "LOPEZ";
+            //NOMBRE = "FLOR MARINA";
+            //FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
+            //CIUDAD_NACIMIENTO = "PORLAMAR";
+            //COD_PAIS = "VE";
+            //COD_ESTADO = "NE";
+            //COD_NACIONALIDAD = "PA";
+            //ESTADO_CIVIL = "Cas.";
+            //SEXO = "F";
+            //RIF = "J129199060";
+            //CALZADO = "34";
+            //CHEMISE = "S";
+            //PANTALON = "8";
 
-            /* Dirección */
-            CALLE = "CALLEJÓN MACHADO";
-            EDIFICIO = "RESD.LOS GRANADILLOS";
-            PISO = "14";
-            NUMERO = "141B";
-            URBANIZACION = "EL PARAÍSO";
-            COD_ESTADO = "";
-            COD_PAIS = "";
-            TELEFONOS = "0124835448";
-            COD_ESTADO_SSO = "NUE";
-            COD_MUNICIPIO_SSO = "217";
-            COD_PARROQUIA_SSO = "1191";
+            ///* Dirección */
+            //CALLE = "CALLEJÓN MACHADO";
+            //EDIFICIO = "RESD.LOS GRANADILLOS";
+            //PISO = "14";
+            //NUMERO = "141B";
+            //URBANIZACION = "EL PARAÍSO";
+            //COD_ESTADO = "";
+            //COD_PAIS = "";
+            //TELEFONOS = "0124835448";
+            //COD_ESTADO_SSO = "NUE";
+            //COD_MUNICIPIO_SSO = "217";
+            //COD_PARROQUIA_SSO = "1191";
 
             /* Discapacidad : 'ZA', 'ZB', 'ZC' */
             Discapacidades = new List<DDISCAPACIDAD>();
@@ -215,10 +228,10 @@ namespace SPISAP.Models
             Experiencias.Add(new DEXPERIENCIA { CEDULA = "12919906", FECHA_INICIO = DateTime.Parse("2000-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), EMPRESA = "GOOGLE INC", CIUDAD = "SEATTLE", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "01", COD_RELACION = "5", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
 
             /* Usuario */
-            COD_USER_INS = "CROSARIO";
-            FECHA_INS = System.DateTime.Now;
-            COD_USER_UPD = null;
-            FECHA_UPD = System.DateTime.Now;
+            //COD_USER_INS = "CROSARIO";
+            //FECHA_INS = System.DateTime.Now;
+            //COD_USER_UPD = null;
+            //FECHA_UPD = System.DateTime.Now;
         
         }
 
