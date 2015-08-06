@@ -44,11 +44,6 @@ namespace SPISAP.Controllers
             EmployeeViewModel employee = new EmployeeViewModel();
             return View("Create", employee);
 
-            //ListViewModel.FillTallaPantalon();
-            //return View();
-            //Afiliado afiliado = rep.Find(numdoc, typeid, companyid);
-            //return View("Create", afiliado);
-
         }
 
         //
@@ -60,6 +55,11 @@ namespace SPISAP.Controllers
             try
             {
                 // TODO: Add insert logic here
+
+                if (ModelState.IsValid)
+                {
+                    // validación de modelos.
+                }
 
                 return RedirectToAction("Index");
             }

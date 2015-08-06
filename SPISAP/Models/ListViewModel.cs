@@ -353,7 +353,7 @@ namespace SPISAP.Models
             {
                 List<PARENTESCO> Lista = new List<PARENTESCO>();
 
-                Lista.Add(new PARENTESCO { COD_PARENTESCO = " ", DES_PARENTESCO = "" });
+                Lista.Add(new PARENTESCO { COD_PARENTESCO = "", DES_PARENTESCO = "Seleccione un valor" });
 
                 foreach (var record in db.PARENTESCOS.OrderBy(p => p.DES_PARENTESCO))
                 {

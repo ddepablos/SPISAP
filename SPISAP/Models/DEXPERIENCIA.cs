@@ -11,9 +11,11 @@ namespace SPISAP.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class DEXPERIENCIA
     {
+
         public string CEDULA { get; set; }
         public Nullable<System.DateTime> FECHA_INICIO { get; set; }
         public Nullable<System.DateTime> FECHA_FIN { get; set; }

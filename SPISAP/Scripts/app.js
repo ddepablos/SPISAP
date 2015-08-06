@@ -1,20 +1,21 @@
 ﻿
 $( document ).ready(function() {
 
-    //alert('Okey Dokey !!');
+    // ::: SETTINGS DEFAULTS ::: //
 
-    // configurar los valores por defecto para los nuevos registros.
     $('#paisnac').val("VE");
     $('#nacionalidad').val("VE");
     $('#paissso').val("VE");
+    $('#paisfamiliar').val("VE");
 
     $('#primerapellido').focus();
 
+
     // ::::: DROPDOWNLIST ::::: //
 
-    // DATOS PERSONALES //
+    // <--DATOS PERSONALES--> //
 
-    // Estado Civil
+    /* Estado Civil */
     $("#edocivil").change("click", function () {
         if ($("#edocivil").val() != " " && $("#sexo").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
@@ -30,7 +31,7 @@ $( document ).ready(function() {
         //alert($('#tratamiento').val());
     });
 
-    // Sexo - Género
+    /* Sexo */
     $("#sexo").change("click", function () {
 
         if ($("#sexo").val() != " " && $("#edocivil").val() != " ") {
@@ -93,26 +94,10 @@ $( document ).ready(function() {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
             $('#edonac').html(items);
-            //alert('#paisnac');
         });
 
     });
 
-
-
-
-    //$('#paisnac').change(function () {
-    //    //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
-    //    $.getJSON('/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
-    //        //var items = '<option value=" ">Seleccione una Nacionalidad</option>';
-    //        var items = '';
-    //        $.each(data, function (i, district) {
-    //            items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
-    //        });
-    //        $('#nacionalidad').html(items);
-    //        $('#nacionalidad').val($('#paisnac').val());
-    //    });
-    //});
 
     // DATOS_DE_DIRECCIÓN //
     $('#estadosso').change(function () {
@@ -328,7 +313,7 @@ $( document ).ready(function() {
         $(".table-sortable thead").disableSelection();*/
 
     $("#add_row").trigger("click");
-    $("#add_row_formacion").trigger("click");
+    //$("#add_row_formacion").trigger("click");
     $("#add_row_experiencia").trigger("click");
 
 

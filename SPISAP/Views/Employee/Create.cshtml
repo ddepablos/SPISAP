@@ -25,6 +25,10 @@
     <br>
     <br>
     <br>
+@using (Html.BeginForm())
+{ 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
     <form id="commentForm" method="post" action="@Url.Action("Create", "Employee")" class="form-horizontal" enctype = "multipart/form-data">
 
@@ -358,51 +362,52 @@
           
             <thead><tr></tr></thead>
             
-            <tr id='trformacion0' data-id="0" class="hidden">
+            @*<tr id='trformacion0' data-id="0" class="hidden">*@
+            <tr id='trformacion0' data-id="0">
 
             <td data-name="tdformacion">
 
               <div class="col-md-3">
                 Formación :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.FRM1_COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
               </div>
               <div class="col-md-3">
                 Nivel de Estudio :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
+                @Html.DropDownListFor(m => m.FRM1_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
               </div>
               <div class="col-md-3">
                 Condición :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
+                @Html.DropDownListFor(m => m.FRM1_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
               </div>
               <div class="col-md-3">
                 Especialidad :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.FRM1_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
               </div>
 
 
               <div class="col-md-2">
                 Nombre del Instituto :
-                @Html.TextBoxFor(model => model.DATOS_FORMACION.INSTITUO, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.FRM1_INSTITUO, new { @class = "form-control" })
                 @*@Html.ValidationMessageFor(model => model.name2)*@              
               </div>
               <div class="col-md-1" style="padding-right: 0px;">
                 Duración :
-                @Html.TextBoxFor(model => model.DATOS_FORMACION.DURACION, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.FRM1_DURACION, new { @class = "form-control" })
               </div>
               <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.FRM1_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
               </div>
               <div class="col-md-2">
                 Fecha de Inicio :
-                @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_INICIO, new { @class = "form-control" })              
+                @Html.TextBoxFor(model => model.FRM1_FECHA_INICIO, new { @class = "form-control" })              
               </div>
               <div class="col-md-2">
                 Fecha de Fin :
-                @Html.TextBoxFor(model => model.DATOS_FORMACION.FECHA_FIN, new { @class = "form-control" })             
+                @Html.TextBoxFor(model => model.FRM1_FECHA_FIN, new { @class = "form-control" })             
               </div>
               <div class="col-md-2">
                 País :
-                @Html.DropDownListFor(m => m.DATOS_FORMACION.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+                @Html.DropDownListFor(m => m.FRM1_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
               </div>
               <div class="col-md-1">
                 <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
@@ -412,6 +417,231 @@
             
             </tr>
 
+
+            <!-- FORMACIÓN # 2 -->
+            <tr id='trformacion2' data-id="2">
+
+            <td data-name="tdformacion">
+
+              <div class="col-md-3">
+                Formación :
+                @Html.DropDownListFor(m => m.FRM2_COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
+              </div>
+              <div class="col-md-3">
+                Nivel de Estudio :
+                @Html.DropDownListFor(m => m.FRM2_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
+              </div>
+              <div class="col-md-3">
+                Condición :
+                @Html.DropDownListFor(m => m.FRM2_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
+              </div>
+              <div class="col-md-3">
+                Especialidad :
+                @Html.DropDownListFor(m => m.FRM2_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
+              </div>
+
+
+              <div class="col-md-2">
+                Nombre del Instituto :
+                @Html.TextBoxFor(model => model.FRM2_INSTITUO, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.name2)*@              
+              </div>
+              <div class="col-md-1" style="padding-right: 0px;">
+                Duración :
+                @Html.TextBoxFor(model => model.FRM2_DURACION, new { @class = "form-control" })
+              </div>
+              <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
+                @Html.DropDownListFor(m => m.FRM2_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+              </div>
+              <div class="col-md-2">
+                Fecha de Inicio :
+                @Html.TextBoxFor(model => model.FRM2_FECHA_INICIO, new { @class = "form-control" })              
+              </div>
+              <div class="col-md-2">
+                Fecha de Fin :
+                @Html.TextBoxFor(model => model.FRM2_FECHA_FIN, new { @class = "form-control" })             
+              </div>
+              <div class="col-md-2">
+                País :
+                @Html.DropDownListFor(m => m.FRM2_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+              </div>
+              <div class="col-md-1">
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
+              </div>
+
+            </td>
+            
+            </tr>
+
+            <!-- FORMACIÓN # 3 -->
+            <tr id='trformacion3' data-id="3">
+
+            <td data-name="tdformacion">
+
+              <div class="col-md-3">
+                Formación :
+                @Html.DropDownListFor(m => m.FRM3_COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
+              </div>
+              <div class="col-md-3">
+                Nivel de Estudio :
+                @Html.DropDownListFor(m => m.FRM3_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
+              </div>
+              <div class="col-md-3">
+                Condición :
+                @Html.DropDownListFor(m => m.FRM3_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
+              </div>
+              <div class="col-md-3">
+                Especialidad :
+                @Html.DropDownListFor(m => m.FRM3_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
+              </div>
+
+
+              <div class="col-md-2">
+                Nombre del Instituto :
+                @Html.TextBoxFor(model => model.FRM3_INSTITUO, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.name2)*@              
+              </div>
+              <div class="col-md-1" style="padding-right: 0px;">
+                Duración :
+                @Html.TextBoxFor(model => model.FRM3_DURACION, new { @class = "form-control" })
+              </div>
+              <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
+                @Html.DropDownListFor(m => m.FRM3_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+              </div>
+              <div class="col-md-2">
+                Fecha de Inicio :
+                @Html.TextBoxFor(model => model.FRM3_FECHA_INICIO, new { @class = "form-control" })              
+              </div>
+              <div class="col-md-2">
+                Fecha de Fin :
+                @Html.TextBoxFor(model => model.FRM3_FECHA_FIN, new { @class = "form-control" })             
+              </div>
+              <div class="col-md-2">
+                País :
+                @Html.DropDownListFor(m => m.FRM3_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+              </div>
+              <div class="col-md-1">
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
+              </div>
+
+            </td>
+            
+            </tr>
+
+
+            <!-- FORMACIÓN # 4 -->
+            <tr id='trformacion4' data-id="4">
+
+            <td data-name="tdformacion">
+
+              <div class="col-md-3">
+                Formación :
+                @Html.DropDownListFor(m => m.FRM4_COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
+              </div>
+              <div class="col-md-3">
+                Nivel de Estudio :
+                @Html.DropDownListFor(m => m.FRM4_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
+              </div>
+              <div class="col-md-3">
+                Condición :
+                @Html.DropDownListFor(m => m.FRM4_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
+              </div>
+              <div class="col-md-3">
+                Especialidad :
+                @Html.DropDownListFor(m => m.FRM4_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
+              </div>
+
+
+              <div class="col-md-2">
+                Nombre del Instituto :
+                @Html.TextBoxFor(model => model.FRM4_INSTITUO, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.name2)*@              
+              </div>
+              <div class="col-md-1" style="padding-right: 0px;">
+                Duración :
+                @Html.TextBoxFor(model => model.FRM4_DURACION, new { @class = "form-control" })
+              </div>
+              <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
+                @Html.DropDownListFor(m => m.FRM4_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+              </div>
+              <div class="col-md-2">
+                Fecha de Inicio :
+                @Html.TextBoxFor(model => model.FRM4_FECHA_INICIO, new { @class = "form-control" })              
+              </div>
+              <div class="col-md-2">
+                Fecha de Fin :
+                @Html.TextBoxFor(model => model.FRM4_FECHA_FIN, new { @class = "form-control" })             
+              </div>
+              <div class="col-md-2">
+                País :
+                @Html.DropDownListFor(m => m.FRM4_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+              </div>
+              <div class="col-md-1">
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
+              </div>
+
+            </td>
+            
+            </tr>
+
+
+            <!-- FORMACIÓN # 5 -->
+            <tr id='trformacion5' data-id="5">
+
+            <td data-name="tdformacion">
+
+              <div class="col-md-3">
+                Formación :
+                @Html.DropDownListFor(m => m.FRM5_COD_FORMACION, new SelectList(Model.Formaciones, "COD_FORMACION", "DES_FORMACION", Model.Formaciones), new { @class = "form-control" })
+              </div>
+              <div class="col-md-3">
+                Nivel de Estudio :
+                @Html.DropDownListFor(m => m.FRM5_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id="abc" })
+              </div>
+              <div class="col-md-3">
+                Condición :
+                @Html.DropDownListFor(m => m.FRM5_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control" , @id="condicion" })
+              </div>
+              <div class="col-md-3">
+                Especialidad :
+                @Html.DropDownListFor(m => m.FRM5_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control" })
+              </div>
+
+
+              <div class="col-md-2">
+                Nombre del Instituto :
+                @Html.TextBoxFor(model => model.FRM5_INSTITUO, new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.name2)*@              
+              </div>
+              <div class="col-md-1" style="padding-right: 0px;">
+                Duración :
+                @Html.TextBoxFor(model => model.FRM5_DURACION, new { @class = "form-control" })
+              </div>
+              <div class="col-md-2" style="padding-top: 20px;padding-left: 0px;">
+                @Html.DropDownListFor(m => m.FRM5_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
+              </div>
+              <div class="col-md-2">
+                Fecha de Inicio :
+                @Html.TextBoxFor(model => model.FRM5_FECHA_INICIO, new { @class = "form-control" })              
+              </div>
+              <div class="col-md-2">
+                Fecha de Fin :
+                @Html.TextBoxFor(model => model.FRM5_FECHA_FIN, new { @class = "form-control" })             
+              </div>
+              <div class="col-md-2">
+                País :
+                @Html.DropDownListFor(m => m.FRM5_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="pais" })
+              </div>
+              <div class="col-md-1">
+                <button name="delete0" class="btn btn-danger btn-sm glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>                
+              </div>
+
+            </td>
+            
+            </tr>
+
+
+
             </table>
           
             <br>
@@ -419,9 +649,9 @@
         </div>
         <!-- // FORMACIÓN -->
 
-            <div class="row text-right">
+@*            <div class="row text-right">
               <a id="add_row_formacion" class="btn btn-md btn-success">Agregar Formación</a>            
-            </div>
+            </div>*@
 
         <br>
 
@@ -429,51 +659,132 @@
         <div class="row">
             <div class="title green">Experiencia Laboral</div>
 
-            <table class="table table-bordred table-striped" id="tab_exp">  
+            <table class="table table-bordred table-striped">  
 
               <thead><tr></tr></thead>
               
-              <tr id='exp0' data-id="0" class="hidden">
+              <tr>
 
-                <td data-name="fila">
-
+                <td data-name="fila1">
+                 <h5>Experiencia Laboral # 1</h5>
                  <div class="col-md-3">
                   Empresa :
-                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.EMPRESA, new { @class = "form-control" })
+                  @Html.TextBoxFor(model => model.EXP1_EMPRESA, new { @class = "form-control" })
                  </div>
                  <div class="col-md-3">
                   Ultimo Cargo :
-                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_ACTIVIDAD, new SelectList(Model.UltimosCargos, "COD_ACTIVIDAD", "DES_ACTIVIDAD", Model.UltimosCargos), new { @class = "form-control" })
+                  @Html.DropDownListFor(model => model.EXP1_COD_ACTIVIDAD, new SelectList(Model.UltimosCargos, "COD_ACTIVIDAD", "DES_ACTIVIDAD", Model.UltimosCargos), new { @class = "form-control" })
                  </div>
                  <div class="col-md-3">
                   Fecha de Inicio :
-                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.FECHA_INICIO, new { @class = "form-control" })
+                  @Html.TextBoxFor(model => model.EXP1_FECHA_INICIO, new { @class = "form-control" })
                  </div>
                  <div class="col-md-3">
                   Fecha Fin :
-                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.FECHA_FIN, new { @class = "form-control" })
+                  @Html.TextBoxFor(model => model.EXP1_FECHA_FIN, new { @class = "form-control" })
                  </div>
 
                  <div class="col-md-3">
                   Área :
-                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_RAMO, new SelectList(Model.Areas, "COD_RAMO", "DES_RAMO", Model.Areas), new { @class = "form-control" })
+                  @Html.DropDownListFor(model => model.EXP1_COD_RAMO, new SelectList(Model.Areas, "COD_RAMO", "DES_RAMO", Model.Areas), new { @class = "form-control" })
                  </div>
                  <div class="col-md-3">
                   Tipo de Contratación :
-                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.COD_RELACION, new SelectList(Model.TipoContratacion, "COD_RELACION", "DES_RELACION", Model.TipoContratacion), new { @class = "form-control" })
+                  @Html.DropDownListFor(model => model.EXP1_COD_RELACION, new SelectList(Model.TipoContratacion, "COD_RELACION", "DES_RELACION", Model.TipoContratacion), new { @class = "form-control" })
                  </div>
                  <div class="col-md-3">
                   Ciudad :
-                  @Html.TextBoxFor(model => model.DATOS_EXPERIENCIA.CIUDAD, new { @class = "form-control" })
+                  @Html.TextBoxFor(model => model.EXP1_PAIS, new { @class = "form-control" })
                  </div>
-                 <div class="col-md-2">
+                 <div class="col-md-3">
                   País :
-                  @Html.DropDownListFor(m => m.DATOS_EXPERIENCIA.PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
+                  @Html.DropDownListFor(model => model.EXP1_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
                  </div>
-                  <div class="col-md-1">
-                    <button name="delete0" class="btn btn-danger glyphicon glyphicon-remove row-remove" style="padding-left: 25px; padding-right: 25px; margin-top: 15px;"></button>
-                  </div>
-                
+               
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td data-name="fila2">
+                 <h5>Experiencia Laboral # 2</h5>
+                 <div class="col-md-3">
+                  Empresa :
+                  @Html.TextBoxFor(model => model.EXP2_EMPRESA, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Ultimo Cargo :
+                  @Html.DropDownListFor(model => model.EXP2_COD_ACTIVIDAD, new SelectList(Model.UltimosCargos, "COD_ACTIVIDAD", "DES_ACTIVIDAD", Model.UltimosCargos), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Fecha de Inicio :
+                  @Html.TextBoxFor(model => model.EXP2_FECHA_INICIO, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Fecha Fin :
+                  @Html.TextBoxFor(model => model.EXP2_FECHA_FIN, new { @class = "form-control" })
+                 </div>
+
+                 <div class="col-md-3">
+                  Área :
+                  @Html.DropDownListFor(model => model.EXP2_COD_RAMO, new SelectList(Model.Areas, "COD_RAMO", "DES_RAMO", Model.Areas), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Tipo de Contratación :
+                  @Html.DropDownListFor(model => model.EXP2_COD_RELACION, new SelectList(Model.TipoContratacion, "COD_RELACION", "DES_RELACION", Model.TipoContratacion), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Ciudad :
+                  @Html.TextBoxFor(model => model.EXP2_PAIS, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  País :
+                  @Html.DropDownListFor(model => model.EXP2_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
+                 </div>
+               
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td data-name="fila3">
+                 <h5>Experiencia Laboral # 3</h5>
+                 <div class="col-md-3">
+                  Empresa :
+                  @Html.TextBoxFor(model => model.EXP3_EMPRESA, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Ultimo Cargo :
+                  @Html.DropDownListFor(model => model.EXP3_COD_ACTIVIDAD, new SelectList(Model.UltimosCargos, "COD_ACTIVIDAD", "DES_ACTIVIDAD", Model.UltimosCargos), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Fecha de Inicio :
+                  @Html.TextBoxFor(model => model.EXP3_FECHA_INICIO, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Fecha Fin :
+                  @Html.TextBoxFor(model => model.EXP3_FECHA_FIN, new { @class = "form-control" })
+                 </div>
+
+                 <div class="col-md-3">
+                  Área :
+                  @Html.DropDownListFor(model => model.EXP3_COD_RAMO, new SelectList(Model.Areas, "COD_RAMO", "DES_RAMO", Model.Areas), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Tipo de Contratación :
+                  @Html.DropDownListFor(model => model.EXP3_COD_RELACION, new SelectList(Model.TipoContratacion, "COD_RELACION", "DES_RELACION", Model.TipoContratacion), new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  Ciudad :
+                  @Html.TextBoxFor(model => model.EXP3_PAIS, new { @class = "form-control" })
+                 </div>
+                 <div class="col-md-3">
+                  País :
+                  @Html.DropDownListFor(model => model.EXP3_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })
+                 </div>
+               
                 </td>
 
               </tr>
@@ -485,14 +796,13 @@
         </div>
         <!-- EXPERIENCIA LABORAL // -->
 
-        <div class="row text-right">
-            <a id="add_row_experiencia" class="btn btn-md btn-success">Agregar Experiencia Laboral</a>            
+        <div class="row text-center">
+            <div class="col-md-offset-4 col-md-4">
+                <button type="submit" class="btn btn-primary">Guardar Registro del Trabajador</button>
+            </div>
         </div>
-        
-        <br>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
+    }
 
     </div>
