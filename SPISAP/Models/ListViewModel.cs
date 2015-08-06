@@ -23,42 +23,6 @@ namespace SPISAP.Models
 
         }
 
-        public static List<PAIS> GetDummy()
-        {
-            using (SPISAPEntities db = new SPISAPEntities())
-            {
-                var query = db.PAISES.OrderBy(p => p.DES_PAIS).ToList();
-
-                int i = 0;
-
-                foreach (var item in query)
-                {
-
-                    if (i == 0)
-                    {
-                        Console.Write(item.DES_PAIS);
-                    }
-                    else if( i== 1)
-                    {
-                        Console.Write(item.DES_PAIS);
-                    }
-                    else if (i == 2)
-                    {
-                        Console.Write(item.DES_PAIS);
-                    }
-                    else if (i == 3)
-                    {
-                        Console.Write(item.DES_PAIS);
-                    }
-
-                    i++;
-
-                }
-
-                return null;
-            }
-        }
-
         // retornar la lista de países.
         public static List<PAIS> FillPaises()
         {
@@ -67,7 +31,7 @@ namespace SPISAP.Models
             {
                 List<PAIS> Lista = new List<PAIS>();
 
-                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "" });
+                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "Seleccione un País" });
 
                 foreach (var record in db.PAISES.OrderBy(p => p.DES_PAIS))
                 {
@@ -437,7 +401,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_INSTITUTO> Lista = new List<CLASE_INSTITUTO>();
 
-                Lista.Add(new CLASE_INSTITUTO { COD_CLASE = " ", DES_CLASE = "" });
+                Lista.Add(new CLASE_INSTITUTO { COD_CLASE = " ", DES_CLASE = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_INSTITUTO.OrderBy(p => p.COD_CLASE))
                 {
@@ -460,64 +424,38 @@ namespace SPISAP.Models
             {
                 List<CLASE_TITULO> Lista = new List<CLASE_TITULO>();
 
-                Lista.Add(new CLASE_TITULO { COD_CLASE = " ", DES_TITULO = "" });
+                Lista.Add(new CLASE_TITULO { COD_CLASE = " ", DES_TITULO = "Seleccione un valor" });
 
-                //if ( key_value == null)
-                //{
-                    foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
-                    {
-                        CLASE_TITULO item = new CLASE_TITULO();
-                        item.COD_CLASE = record.COD_CLASE;      // CT_COD_CLASE
-                        item.COD_TITULO = record.COD_TITULO;    // CT_COD_TITULO
-                        item.DES_TITULO = record.DES_TITULO;
-                        Lista.Add(item);
-                    }
-                //}
-                //else
-                //{
-                //    foreach (var record in db.CLASE_TITULO.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_TITULO))
-                //    {
-                //        CLASE_TITULO item = new CLASE_TITULO();
-                //        item.COD_CLASE = record.COD_CLASE;
-                //        item.COD_TITULO = record.COD_TITULO;
-                //        item.DES_TITULO = record.DES_TITULO;
-                //        Lista.Add(item);
-                //    }
-                //}
+                foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
+                {
+                    CLASE_TITULO item = new CLASE_TITULO();
+                    item.COD_CLASE = record.COD_CLASE;      // CT_COD_CLASE
+                    item.COD_TITULO = record.COD_TITULO;    // CT_COD_TITULO
+                    item.DES_TITULO = record.DES_TITULO;
+                    Lista.Add(item);
+                }
 
                 return Lista;
             }
 
         }
         // retornar la lista de especialidades.
-        public static List<CLASE_ESPECIALIDAD> GetEspecialidades(string key_value = null)
+        public static List<CLASE_ESPECIALIDAD> GetEspecialidades()
         {
 
             using (SPISAPEntities db = new SPISAPEntities())
             {
                 List<CLASE_ESPECIALIDAD> Lista = new List<CLASE_ESPECIALIDAD>();
 
-                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = " ", DES_ESPECIALIDAD = "" });
+                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = " ", DES_ESPECIALIDAD = "Seleccione un valor" });
 
-                if (key_value == null)
+                foreach (var record in db.CLASE_ESPECIALIDAD.OrderBy(p => p.DES_ESPECIALIDAD))
                 {
-                    foreach (var record in db.CLASE_ESPECIALIDAD.OrderBy(p => p.DES_ESPECIALIDAD))
-                    {
-                        CLASE_ESPECIALIDAD item = new CLASE_ESPECIALIDAD();
-                        item.COD_ESPECIALIDAD = record.COD_ESPECIALIDAD;
-                        item.DES_ESPECIALIDAD = record.DES_ESPECIALIDAD;
-                        Lista.Add(item);
-                    }
-                }
-                else
-                {
-                    foreach (var record in db.CLASE_ESPECIALIDAD.Where(p => p.COD_CLASE.Equals(key_value)).OrderBy(p => p.DES_ESPECIALIDAD))
-                    {
-                        CLASE_ESPECIALIDAD item = new CLASE_ESPECIALIDAD();
-                        item.COD_ESPECIALIDAD = record.COD_ESPECIALIDAD;
-                        item.DES_ESPECIALIDAD = record.DES_ESPECIALIDAD;
-                        Lista.Add(item);
-                    }
+                    CLASE_ESPECIALIDAD item = new CLASE_ESPECIALIDAD();
+                    item.COD_ESPECIALIDAD = record.COD_ESPECIALIDAD;
+                    item.DES_ESPECIALIDAD = record.DES_ESPECIALIDAD;
+                    item.COD_CLASE = record.COD_CLASE;
+                    Lista.Add(item);
                 }
 
                 return Lista;

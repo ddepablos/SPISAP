@@ -332,10 +332,10 @@ namespace SPISAP.Models
             #endregion
 
             #region FORMACION
-            Formaciones = ListViewModel.GetFormacion();
+            //Formaciones = ListViewModel.GetFormacion();
             NivelEstudio = ListViewModel.GetNivelEstudio();
-            Condiciones = ListViewModel.GetCondiciones();
-            Especialidades = ListViewModel.GetEspecialidades();
+            //Condiciones = ListViewModel.GetCondiciones();
+            //Especialidades = ListViewModel.GetEspecialidades();
             UnidadesTiempo = ListViewModel.GetUnidadTiempo();
             #endregion
 

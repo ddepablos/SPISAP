@@ -78,7 +78,7 @@ $( document ).ready(function() {
 
 
     $('#paisnac').change(function () {
-        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+//$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
         $.getJSON('/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
@@ -125,19 +125,66 @@ $( document ).ready(function() {
     });
 
     // DATOS_DE_FORMACIÓN //
-    $('#abc').change(function () {
-        alert('nivelestudio');
+    $('#nivel1').change(function () {
+        
         //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
-        $.getJSON('/Employee/GetCondicionList/' + $('#abc').val(), function (data) {
+        $.getJSON('/Employee/GetCondicionList/' + $('#nivel1').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
-            $('#condicion').html(items);
+            $('#condicion1').html(items);
         });
+
+        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel1').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#especialidad1').html(items);
+        });
+
     });
+    $('#nivel2').change(function () {
 
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetCondicionList/' + $('#nivel2').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#condicion2').html(items);
+        });
 
+        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel2').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#especialidad2').html(items);
+        });
+
+    });
+    $('#nivel3').change(function () {
+
+        //$.getJSON('@Url.Action("/GetMunicipioList/")' + $('#estadosso').val(), function (data) {
+        $.getJSON('/Employee/GetCondicionList/' + $('#nivel3').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#condicion3').html(items);
+        });
+
+        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel3').val(), function (data) {
+            var items = '<option value=" ">Seleccione un valor</option>';
+            $.each(data, function (i, district) {
+                items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
+            });
+            $('#especialidad3').html(items);
+        });
+
+    });
     // ::::: DROPDOWNLIST ::::: //
 
 

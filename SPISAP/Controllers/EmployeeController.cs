@@ -60,9 +60,7 @@ namespace SPISAP.Controllers
                 {
                     // validación de modelos.
                 }
-
-                ListViewModel.GetDummy();
-
+                
                 return RedirectToAction("Index");
             }
             catch
@@ -198,6 +196,15 @@ namespace SPISAP.Controllers
 
             return Json(new SelectList(records.Where(x => x.COD_CLASE == id), "COD_TITULO", "DES_TITULO"), JsonRequestBehavior.AllowGet);
         }
+
+        // retornar JSON : CLASE_ESPECIALIDAD / Especialidad
+        public JsonResult GetEspecialidadList(string id)
+        {
+            List<CLASE_ESPECIALIDAD> records = ListViewModel.GetEspecialidades();
+
+            return Json(new SelectList(records.Where(x => x.COD_CLASE == id), "COD_ESPECIALIDAD", "DES_ESPECIALIDAD"), JsonRequestBehavior.AllowGet);
+        }
+
 
         #endregion
 
