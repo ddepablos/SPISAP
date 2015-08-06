@@ -23,6 +23,42 @@ namespace SPISAP.Models
 
         }
 
+        public static List<PAIS> GetDummy()
+        {
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                var query = db.PAISES.OrderBy(p => p.DES_PAIS).ToList();
+
+                int i = 0;
+
+                foreach (var item in query)
+                {
+
+                    if (i == 0)
+                    {
+                        Console.Write(item.DES_PAIS);
+                    }
+                    else if( i== 1)
+                    {
+                        Console.Write(item.DES_PAIS);
+                    }
+                    else if (i == 2)
+                    {
+                        Console.Write(item.DES_PAIS);
+                    }
+                    else if (i == 3)
+                    {
+                        Console.Write(item.DES_PAIS);
+                    }
+
+                    i++;
+
+                }
+
+                return null;
+            }
+        }
+
         // retornar la lista de países.
         public static List<PAIS> FillPaises()
         {

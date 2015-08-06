@@ -57,7 +57,8 @@
 
 body{
 	margin-top:20px;
-    font-family: 'robotoregular', Arial, sans-serif;;
+    font-family: 'robotoregular', Arial, sans-serif;
+    font-size:12px;
 }
 
 .fa-fw {
@@ -86,6 +87,11 @@ a:focus, a:hover {
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   color: #fff;
   background-color: #00a160;
+}
+
+.form-control 
+{
+    font-size: 12px;
 }
 
 /* login */

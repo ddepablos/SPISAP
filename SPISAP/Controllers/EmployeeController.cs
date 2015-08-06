@@ -61,6 +61,8 @@ namespace SPISAP.Controllers
                     // validación de modelos.
                 }
 
+                ListViewModel.GetDummy();
+
                 return RedirectToAction("Index");
             }
             catch

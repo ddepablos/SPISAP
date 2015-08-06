@@ -35,9 +35,9 @@ namespace SPISAP.Models
         //public string CHEMISE { get; set; }
         //public string PANTALON { get; set; }
         //public string COD_USER_INS { get; set; }
-        //public System.DateTime FECHA_INS { get; set; }
+        //public string FECHA_INS { get; set; }
         //public string COD_USER_UPD { get; set; }
-        //public System.DateTime FECHA_UPD { get; set; }
+        //public string FECHA_UPD { get; set; }
 
         /* DDIRECCION : Dirección del Trabajador */
         public DDIRECCION DATOS_DIRECCION { get; set; }
@@ -74,7 +74,7 @@ namespace SPISAP.Models
         public string FAM1_PRIMER_APELLIDO { get; set; }
         public string FAM1_SEGUNDO_APELLIDO { get; set; }
         public string FAM1_NOMBRES { get; set; }
-        public System.DateTime FAM1_FECHA_NACIMIENTO { get; set; }
+        public string FAM1_FECHA_NACIMIENTO { get; set; }
         public string FAM1_LUGAR_NACIMIENTO { get; set; }
         public string FAM1_COD_PAIS { get; set; }
         public string FAM1_COD_NACIONALIDAD { get; set; }
@@ -85,7 +85,7 @@ namespace SPISAP.Models
         public string FAM2_PRIMER_APELLIDO { get; set; }
         public string FAM2_SEGUNDO_APELLIDO { get; set; }
         public string FAM2_NOMBRES { get; set; }
-        public System.DateTime FAM2_FECHA_NACIMIENTO { get; set; }
+        public string FAM2_FECHA_NACIMIENTO { get; set; }
         public string FAM2_LUGAR_NACIMIENTO { get; set; }
         public string FAM2_COD_PAIS { get; set; }
         public string FAM2_COD_NACIONALIDAD { get; set; }
@@ -96,7 +96,7 @@ namespace SPISAP.Models
         public string FAM3_PRIMER_APELLIDO { get; set; }
         public string FAM3_SEGUNDO_APELLIDO { get; set; }
         public string FAM3_NOMBRES { get; set; }
-        public System.DateTime FAM3_FECHA_NACIMIENTO { get; set; }
+        public string FAM3_FECHA_NACIMIENTO { get; set; }
         public string FAM3_LUGAR_NACIMIENTO { get; set; }
         public string FAM3_COD_PAIS { get; set; }
         public string FAM3_COD_NACIONALIDAD { get; set; }
@@ -107,7 +107,7 @@ namespace SPISAP.Models
         public string FAM4_PRIMER_APELLIDO { get; set; }
         public string FAM4_SEGUNDO_APELLIDO { get; set; }
         public string FAM4_NOMBRES { get; set; }
-        public System.DateTime FAM4_FECHA_NACIMIENTO { get; set; }
+        public string FAM4_FECHA_NACIMIENTO { get; set; }
         public string FAM4_LUGAR_NACIMIENTO { get; set; }
         public string FAM4_COD_PAIS { get; set; }
         public string FAM4_COD_NACIONALIDAD { get; set; }
@@ -118,7 +118,7 @@ namespace SPISAP.Models
         public string FAM5_PRIMER_APELLIDO { get; set; }
         public string FAM5_SEGUNDO_APELLIDO { get; set; }
         public string FAM5_NOMBRES { get; set; }
-        public System.DateTime FAM5_FECHA_NACIMIENTO { get; set; }
+        public string FAM5_FECHA_NACIMIENTO { get; set; }
         public string FAM5_LUGAR_NACIMIENTO { get; set; }
         public string FAM5_COD_PAIS { get; set; }
         public string FAM5_COD_NACIONALIDAD { get; set; }
@@ -138,8 +138,8 @@ namespace SPISAP.Models
         public string FRM1_UNIDAD_TIEMPO { get; set; }
         public string FRM1_CE_COD_ESPECIALIDAD { get; set; }
         public string FRM1_CE_COD_CLASE { get; set; }
-        public System.DateTime FRM1_FECHA_INICIO { get; set; }
-        public System.DateTime FRM1_FECHA_FIN { get; set; }
+        public string FRM1_FECHA_INICIO { get; set; }
+        public string FRM1_FECHA_FIN { get; set; }
         // FORMACIÓN # 2
         public string FRM2_COD_CLASE { get; set; }
         public string FRM2_COD_FORMACION { get; set; }
@@ -151,8 +151,8 @@ namespace SPISAP.Models
         public string FRM2_UNIDAD_TIEMPO { get; set; }
         public string FRM2_CE_COD_ESPECIALIDAD { get; set; }
         public string FRM2_CE_COD_CLASE { get; set; }
-        public System.DateTime FRM2_FECHA_INICIO { get; set; }
-        public System.DateTime FRM2_FECHA_FIN { get; set; }
+        public string FRM2_FECHA_INICIO { get; set; }
+        public string FRM2_FECHA_FIN { get; set; }
         // FORMACIÓN # 3
         public string FRM3_COD_CLASE { get; set; }
         public string FRM3_COD_FORMACION { get; set; }
@@ -164,41 +164,14 @@ namespace SPISAP.Models
         public string FRM3_UNIDAD_TIEMPO { get; set; }
         public string FRM3_CE_COD_ESPECIALIDAD { get; set; }
         public string FRM3_CE_COD_CLASE { get; set; }
-        public System.DateTime FRM3_FECHA_INICIO { get; set; }
-        public System.DateTime FRM3_FECHA_FIN { get; set; }
-        // FORMACIÓN # 4
-        public string FRM4_COD_CLASE { get; set; }
-        public string FRM4_COD_FORMACION { get; set; }
-        public string FRM4_INSTITUO { get; set; }
-        public string FRM4_COD_PAIS { get; set; }
-        public string FRM4_CT_COD_CLASE { get; set; }
-        public string FRM4_CT_COD_TITULO { get; set; }
-        public string FRM4_DURACION { get; set; }
-        public string FRM4_UNIDAD_TIEMPO { get; set; }
-        public string FRM4_CE_COD_ESPECIALIDAD { get; set; }
-        public string FRM4_CE_COD_CLASE { get; set; }
-        public System.DateTime FRM4_FECHA_INICIO { get; set; }
-        public System.DateTime FRM4_FECHA_FIN { get; set; }
-        // FORMACIÓN # 5
-        public string FRM5_COD_CLASE { get; set; }
-        public string FRM5_COD_FORMACION { get; set; }
-        public string FRM5_INSTITUO { get; set; }
-        public string FRM5_COD_PAIS { get; set; }
-        public string FRM5_CT_COD_CLASE { get; set; }
-        public string FRM5_CT_COD_TITULO { get; set; }
-        public string FRM5_DURACION { get; set; }
-        public string FRM5_UNIDAD_TIEMPO { get; set; }
-        public string FRM5_CE_COD_ESPECIALIDAD { get; set; }
-        public string FRM5_CE_COD_CLASE { get; set; }
-        public System.DateTime FRM5_FECHA_INICIO { get; set; }
-        public System.DateTime FRM5_FECHA_FIN { get; set; }
-
+        public string FRM3_FECHA_INICIO { get; set; }
+        public string FRM3_FECHA_FIN { get; set; }
 
         // * * * EXPERIENCIA LABORAL * * *                 
         // EXPERIENCIA # 1
         public string EXP1_CEDULA { get; set; }
-        public Nullable<System.DateTime> EXP1_FECHA_INICIO { get; set; }
-        public Nullable<System.DateTime> EXP1_FECHA_FIN { get; set; }
+        public string EXP1_FECHA_INICIO { get; set; }
+        public string EXP1_FECHA_FIN { get; set; }
         public string EXP1_EMPRESA { get; set; }
         public string EXP1_CIUDAD { get; set; }
         public string EXP1_PAIS { get; set; }
@@ -207,8 +180,8 @@ namespace SPISAP.Models
         public string EXP1_COD_RELACION { get; set; }
         // EXPERIENCIA # 2
         public string EXP2_CEDULA { get; set; }
-        public Nullable<System.DateTime> EXP2_FECHA_INICIO { get; set; }
-        public Nullable<System.DateTime> EXP2_FECHA_FIN { get; set; }
+        public string EXP2_FECHA_INICIO { get; set; }
+        public string EXP2_FECHA_FIN { get; set; }
         public string EXP2_EMPRESA { get; set; }
         public string EXP2_CIUDAD { get; set; }
         public string EXP2_PAIS { get; set; }
@@ -217,8 +190,8 @@ namespace SPISAP.Models
         public string EXP2_COD_RELACION { get; set; }
         // EXPERIENCIA # 3
         public string EXP3_CEDULA { get; set; }
-        public Nullable<System.DateTime> EXP3_FECHA_INICIO { get; set; }
-        public Nullable<System.DateTime> EXP3_FECHA_FIN { get; set; }
+        public string EXP3_FECHA_INICIO { get; set; }
+        public string EXP3_FECHA_FIN { get; set; }
         public string EXP3_EMPRESA { get; set; }
         public string EXP3_CIUDAD { get; set; }
         public string EXP3_PAIS { get; set; }
