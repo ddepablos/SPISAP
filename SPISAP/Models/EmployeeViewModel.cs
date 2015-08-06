@@ -124,7 +124,61 @@ namespace SPISAP.Models
         public string FAM5_COD_NACIONALIDAD { get; set; }
         public string FAM5_CEDULA_FAMILIAR { get; set; }
         public string FAM5_SEXO { get; set; }
-
+        // FAMILIAR # 6
+        public string FAM6_COD_PARENTESCO { get; set; }
+        public string FAM6_PRIMER_APELLIDO { get; set; }
+        public string FAM6_SEGUNDO_APELLIDO { get; set; }
+        public string FAM6_NOMBRES { get; set; }
+        public string FAM6_FECHA_NACIMIENTO { get; set; }
+        public string FAM6_LUGAR_NACIMIENTO { get; set; }
+        public string FAM6_COD_PAIS { get; set; }
+        public string FAM6_COD_NACIONALIDAD { get; set; }
+        public string FAM6_CEDULA_FAMILIAR { get; set; }
+        public string FAM6_SEXO { get; set; }
+        // FAMILIAR # 7
+        public string FAM7_COD_PARENTESCO { get; set; }
+        public string FAM7_PRIMER_APELLIDO { get; set; }
+        public string FAM7_SEGUNDO_APELLIDO { get; set; }
+        public string FAM7_NOMBRES { get; set; }
+        public string FAM7_FECHA_NACIMIENTO { get; set; }
+        public string FAM7_LUGAR_NACIMIENTO { get; set; }
+        public string FAM7_COD_PAIS { get; set; }
+        public string FAM7_COD_NACIONALIDAD { get; set; }
+        public string FAM7_CEDULA_FAMILIAR { get; set; }
+        public string FAM7_SEXO { get; set; }
+        // FAMILIAR # 8
+        public string FAM8_COD_PARENTESCO { get; set; }
+        public string FAM8_PRIMER_APELLIDO { get; set; }
+        public string FAM8_SEGUNDO_APELLIDO { get; set; }
+        public string FAM8_NOMBRES { get; set; }
+        public string FAM8_FECHA_NACIMIENTO { get; set; }
+        public string FAM8_LUGAR_NACIMIENTO { get; set; }
+        public string FAM8_COD_PAIS { get; set; }
+        public string FAM8_COD_NACIONALIDAD { get; set; }
+        public string FAM8_CEDULA_FAMILIAR { get; set; }
+        public string FAM8_SEXO { get; set; }
+        // FAMILIAR # 9
+        public string FAM9_COD_PARENTESCO { get; set; }
+        public string FAM9_PRIMER_APELLIDO { get; set; }
+        public string FAM9_SEGUNDO_APELLIDO { get; set; }
+        public string FAM9_NOMBRES { get; set; }
+        public string FAM9_FECHA_NACIMIENTO { get; set; }
+        public string FAM9_LUGAR_NACIMIENTO { get; set; }
+        public string FAM9_COD_PAIS { get; set; }
+        public string FAM9_COD_NACIONALIDAD { get; set; }
+        public string FAM9_CEDULA_FAMILIAR { get; set; }
+        public string FAM9_SEXO { get; set; }
+        // FAMILIAR # 10
+        public string FAM10_COD_PARENTESCO { get; set; }
+        public string FAM10_PRIMER_APELLIDO { get; set; }
+        public string FAM10_SEGUNDO_APELLIDO { get; set; }
+        public string FAM10_NOMBRES { get; set; }
+        public string FAM10_FECHA_NACIMIENTO { get; set; }
+        public string FAM10_LUGAR_NACIMIENTO { get; set; }
+        public string FAM10_COD_PAIS { get; set; }
+        public string FAM10_COD_NACIONALIDAD { get; set; }
+        public string FAM10_CEDULA_FAMILIAR { get; set; }
+        public string FAM10_SEXO { get; set; }
 
         // * * * FORMACIÓN ACADÉMICA * * * 
         // FORMACIÓN # 1
