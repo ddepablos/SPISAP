@@ -60,6 +60,8 @@ namespace SPISAP.Models
         /* DCOMUNICACION : Datos de Comunicación : Número de Teléfono y/o Correo Electrónico */
         public DCOMUNICACION DATOS_COMUNICACION { get; set; }
         public string COD_CLASE_CORREO { get; set; }
+
+        [Required(ErrorMessage = "El campo Teléfono Celular es requerido.")]
         public string COD_CLASE_CELULAR { get; set; }
 
         /* DDISCAPACIDAD : Datos de Discapacidad */
@@ -185,18 +187,40 @@ namespace SPISAP.Models
 
         // * * * FORMACIÓN ACADÉMICA * * * 
         // FORMACIÓN # 1
+        [Required(ErrorMessage = "El campo Nivel de Estudio es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
+
+        // PENDIENTE POR ANALIZAR SU VALOR.
         public string FRM1_COD_FORMACION { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombre del Instituto es requerido.")]
         public string FRM1_INSTITUO { get; set; }
+
+        [Required(ErrorMessage = "El campo País (Formación # 1) es requerido.")]
         public string FRM1_COD_PAIS { get; set; }
+
         public string FRM1_CT_COD_CLASE { get; set; }
+
+        [Required(ErrorMessage = "El campo Condición es requerido.")]
         public string FRM1_CT_COD_TITULO { get; set; }
+
+        [Required(ErrorMessage = "El campo Duración (Número) es requerido.")]
         public string FRM1_DURACION { get; set; }
+
+        [Required(ErrorMessage = "El campo Duración (Tiempo) es requerido.")]
         public string FRM1_UNIDAD_TIEMPO { get; set; }
+
+        [Required(ErrorMessage = "El campo Especialidad es requerido.")]
         public string FRM1_CE_COD_ESPECIALIDAD { get; set; }
+
         public string FRM1_CE_COD_CLASE { get; set; }
+
+        [Required(ErrorMessage = "El campo Fecha de Inicio (Formación # 1) es requerido.")]
         public string FRM1_FECHA_INICIO { get; set; }
+
+        [Required(ErrorMessage = "El campo Fecha de Finalización (Formación # 1) es requerido.")]
         public string FRM1_FECHA_FIN { get; set; }
+
         // FORMACIÓN # 2
         public string FRM2_COD_CLASE { get; set; }
         public string FRM2_COD_FORMACION { get; set; }

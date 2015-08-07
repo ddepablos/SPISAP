@@ -1,0 +1,17 @@
+﻿
+@if (Html.ViewData.ModelState.Count > 0)
+{
+    <br><br>
+    
+    <div class="container">
+        <div class="alert alert-danger" role="alert">     
+            <h4>Estimado Usuario.</h4>
+            @foreach (var modelError in Html.ViewData.ModelState.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+            {
+                <p>@modelError.ErrorMessage</p>
+            }
+        </div>
+    </div>
+    
+    <br>
+}

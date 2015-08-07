@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -22,9 +24,7 @@
     </div>
 </nav>
 
-<br>
-<br>
-<br>
+@Html.Partial("_ValidationSummary")
 
 @using (Html.BeginForm())
 { 
@@ -199,7 +199,7 @@
     <div class="row">
         <div class="col-md-3">
         País :
-        @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "paissso" })
+        @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "paissso", @disabled="disabled" })
         </div>
         <div class="col-md-3">
         Estado :

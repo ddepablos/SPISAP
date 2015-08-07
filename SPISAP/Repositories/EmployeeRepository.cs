@@ -24,6 +24,7 @@ namespace SPISAP.Repositories
             Empleado.COD_USER = "CROSARIO";
             Empleado.DATOS_PERSONALES.CEDULA = "11681109";
             Empleado.DATOS_PERSONALES.SEXO = "M";
+            Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
 
             empleado = Empleado;
         }
@@ -173,7 +174,7 @@ namespace SPISAP.Repositories
 
                     #region DATOS_DISCAPACIDAD
 
-                    if (empleado.COD_DISCAPACIDAD_MOTRIZ != null && empleado.COD_DISCAPACIDAD_MOTRIZ == true)
+                    if (empleado.COD_DISCAPACIDAD_MOTRIZ == true)
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
@@ -186,7 +187,7 @@ namespace SPISAP.Repositories
                         };
                         db.DDISCAPACIDADES.Add(DDiscapacidad);
                     }
-                    if (empleado.COD_DISCAPACIDAD_INTELECTUAL != null && empleado.COD_DISCAPACIDAD_INTELECTUAL == true)
+                    if (empleado.COD_DISCAPACIDAD_INTELECTUAL == true)
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
@@ -199,7 +200,7 @@ namespace SPISAP.Repositories
                         };
                         db.DDISCAPACIDADES.Add(DDiscapacidad);
                     }
-                    if (empleado.COD_DISCAPACIDAD_SENSORIAL != null && empleado.COD_DISCAPACIDAD_SENSORIAL == true )
+                    if (empleado.COD_DISCAPACIDAD_SENSORIAL == true )
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {

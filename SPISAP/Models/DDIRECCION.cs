@@ -11,19 +11,31 @@ namespace SPISAP.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class DDIRECCION
     {
         public string CEDULA { get; set; }
+
+        [Required(ErrorMessage = "El campo Calle es requerido.")]
         public string CALLE { get; set; }
+        [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
         public string EDIFICIO { get; set; }
+        [Required(ErrorMessage = "El campo Piso es requerido.")]
         public string PISO { get; set; }
+        [Required(ErrorMessage = "El campo Número es requerido.")]
         public string NUMERO { get; set; }
+        [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
         public string CIUDAD { get; set; }
+        [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
         public string URBANIZACION { get; set; }
+        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO { get; set; }
+        [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
         public string COD_PAIS { get; set; }
+        [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
         public string TELEFONOS { get; set; }
+
         public string COD_ESTADO_SSO { get; set; }
         public string COD_MUNICIPIO_SSO { get; set; }
         public string COD_PARROQUIA_SSO { get; set; }

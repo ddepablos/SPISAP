@@ -65,8 +65,9 @@ namespace SPISAP.Controllers
                     e.AddNew();
 
                 }
-                
-                return RedirectToAction("Index");
+
+                return View( EmployeeVM );
+
             }
             catch( Exception e )
             {

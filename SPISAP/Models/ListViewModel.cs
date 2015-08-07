@@ -99,12 +99,12 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" "     , DESCRIPCION=""            },
-                new GenericModel() { CODIGO="Solt." , DESCRIPCION="Soltero"     },
-                new GenericModel() { CODIGO="Concu.", DESCRIPCION="Concubino"   },
-                new GenericModel() { CODIGO="Cas."  , DESCRIPCION="Casado"      },
-                new GenericModel() { CODIGO="Div."  , DESCRIPCION="Divorciado"  },
-                new GenericModel() { CODIGO="Viu."  , DESCRIPCION="Viudo"       }
+                new GenericModel() { CODIGO=" "     , DESCRIPCION=""              },
+                new GenericModel() { CODIGO="Solt." , DESCRIPCION="Soltero(a)"    },
+                new GenericModel() { CODIGO="Concu.", DESCRIPCION="Concubino(a)"  },
+                new GenericModel() { CODIGO="Cas."  , DESCRIPCION="Casado(a)"     },
+                new GenericModel() { CODIGO="Div."  , DESCRIPCION="Divorciado(a)" },
+                new GenericModel() { CODIGO="Viu."  , DESCRIPCION="Viudo(a)"      }
             };
 
         }

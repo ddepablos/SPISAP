@@ -9,6 +9,8 @@ $(document).ready(function () {
     $('#paissso').val("VE");
     $('#paisfamiliar').val("VE");
 
+    $('#paissso').val("VE");
+
     $('#primerapellido').focus();
 
 

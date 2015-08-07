@@ -11,6 +11,7 @@ namespace SPISAP.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class DPERSONALES
     {
@@ -24,26 +25,70 @@ namespace SPISAP.Models
         }
     
         public string FICHA { get; set; }
+
+        //[Required(ErrorMessage = "El campo XXX es requerido.")]
+
+        [Required(ErrorMessage = "El campo Cédula es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
+        [StringLength(10, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 10 dígitos.")]
         public string CEDULA { get; set; }
+
+        [Required(ErrorMessage = "El campo Sucursal es requerido.")]
         public string COD_SUCURSAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Tipo de Contratación es requerido.")]
         public string COD_GRUPO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nivel de Cargo es requerido.")]
         public string COD_AREA_PERSONAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Cargo es requerido.")]
         public string CARGO { get; set; }
+
         public string TRATAMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
         public string PRIMER_APELLIDO { get; set; }
+
+        [Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
         public string SEGUNDO_APELLIDO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombres es requerido.")]
         public string NOMBRE { get; set; }
+
+        [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
         public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
         public string CIUDAD_NACIMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo País de Nacimiento es requerido.")]
         public string COD_PAIS { get; set; }
+
+        [Required(ErrorMessage = "El campo Estado de Nacimiento es requerido.")]
         public string COD_ESTADO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nacionalidad es requerido.")]
         public string COD_NACIONALIDAD { get; set; }
+
+        [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
         public string ESTADO_CIVIL { get; set; }
+
+        [Required(ErrorMessage = "El campo Sexo es requerido.")]
         public string SEXO { get; set; }
+
+        //[Required(ErrorMessage = "El campo RIF es requerido.")]
         public string RIF { get; set; }
+
+        [Required(ErrorMessage = "El campo Nro. de Zapato es requerido.")]
         public string CALZADO { get; set; }
+
+        [Required(ErrorMessage = "El campo Talla de Camisa es requerido.")]
         public string CHEMISE { get; set; }
+
+        [Required(ErrorMessage = "El campo Talla de Pantalón es requerido.")]
         public string PANTALON { get; set; }
+
         public string COD_USER_INS { get; set; }
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }
