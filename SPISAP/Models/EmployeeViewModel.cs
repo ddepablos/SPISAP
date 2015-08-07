@@ -11,6 +11,9 @@ namespace SPISAP.Models
     public class EmployeeViewModel
     {
 
+        /* DATOS DE SESIÓN */
+        public string COD_USER { get; set; } 
+
         /* DPERSONALES : Datos Personales */
         public DPERSONALES DATOS_PERSONALES { get; set; }
         //public string FICHA { get; set; }
@@ -313,7 +316,7 @@ namespace SPISAP.Models
             Generos = ListViewModel.FillGeneros();
             Paises = ListViewModel.FillPaises();
             Nacionalidades = ListViewModel.Nacionalidades();
-            Estados = ListViewModel.GetPaisEstados();
+            Estados = ListViewModel.GetPaisEstados().Where(e => e.COD_PAIS=="VE").ToList();
             EstadoCivil = ListViewModel.EstadoCivil();
             NivelCargo = ListViewModel.AreaPersonal();
 

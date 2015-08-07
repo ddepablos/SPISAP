@@ -59,12 +59,18 @@ namespace SPISAP.Controllers
                 if (ModelState.IsValid)
                 {
                     // validación de modelos.
+
+                    EmployeeRepository e = new EmployeeRepository( EmployeeVM );
+
+                    e.AddNew();
+
                 }
                 
                 return RedirectToAction("Index");
             }
-            catch
+            catch( Exception e )
             {
+                Console.Write(e);
                 return View();
             }
         }
