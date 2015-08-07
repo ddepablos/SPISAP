@@ -31,7 +31,7 @@ namespace SPISAP.Models
             {
                 List<PAIS> Lista = new List<PAIS>();
 
-                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "Seleccione un País" });
+                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "Seleccione un valor" });
 
                 foreach (var record in db.PAISES.OrderBy(p => p.DES_PAIS))
                 {
@@ -54,7 +54,7 @@ namespace SPISAP.Models
             {
                 List<NACIONALIDAD> Lista = new List<NACIONALIDAD>();
 
-                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = " ", DES_NACIONALIDAD = "Seleccione una Nacionalidad" });
+                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = " ", DES_NACIONALIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.NACIONALIDADES.OrderBy(p => p.DES_NACIONALIDAD))
                 {
@@ -77,7 +77,7 @@ namespace SPISAP.Models
             {
                 List<PAIS_ESTADO> Lista = new List<PAIS_ESTADO>();
 
-                Lista.Add(new PAIS_ESTADO { COD_ESTADO = " ", DES_ESTADO = "Seleccione un Estado" });
+                Lista.Add(new PAIS_ESTADO { COD_ESTADO = " ", DES_ESTADO = "Seleccione un valor" });
 
                 foreach (var record in db.PAIS_ESTADO.OrderBy(p => p.DES_ESTADO))
                 {
@@ -193,7 +193,7 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla" },
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="S" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="M"},
                 new GenericModel() { CODIGO="F", DESCRIPCION="L"},
@@ -219,7 +219,7 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla" },
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="8" },
                 new GenericModel() { CODIGO="F", DESCRIPCION="10"},
                 new GenericModel() { CODIGO="F", DESCRIPCION="12"},
@@ -251,7 +251,7 @@ namespace SPISAP.Models
             // CALZADO BETWEEN '34' AND '46'
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione una Talla"},
+                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor"},
                 new GenericModel() { CODIGO="34", DESCRIPCION="34"},
                 new GenericModel() { CODIGO="35", DESCRIPCION="35"},
                 new GenericModel() { CODIGO="36", DESCRIPCION="36"},
@@ -280,7 +280,7 @@ namespace SPISAP.Models
             {
                 List<ESTADO_SSO> Lista = new List<ESTADO_SSO>();
 
-                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "Seleccione un Estado" });
+                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "Seleccione un valor" });
 
                 foreach (var record in db.ESTADO_SSO.OrderBy(p => p.DES_ESTADO_SSO))
                 {
@@ -303,7 +303,7 @@ namespace SPISAP.Models
             {
                 List<MUNICIPIO_SSO> Lista = new List<MUNICIPIO_SSO>();
 
-                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "Seleccione un Municipio" });
+                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "Seleccione un valor" });
 
                 foreach (var record in db.MUNICIPIO_SSO.OrderBy(p => p.DES_MUNICIPIO))
                 {
@@ -327,7 +327,7 @@ namespace SPISAP.Models
             {
                 List<PARROQUIA_SSO> Lista = new List<PARROQUIA_SSO>();
 
-                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "Seleccione una Parroquia" });
+                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "Seleccione un valor" });
 
                 foreach (var record in db.PARROQUIA_SSO.OrderBy(p => p.DES_PARROQUIA))
                 {
@@ -492,7 +492,7 @@ namespace SPISAP.Models
             {
                 List<ACTIVIDAD> Lista = new List<ACTIVIDAD>();
 
-                Lista.Add(new ACTIVIDAD { COD_ACTIVIDAD = " ", DES_ACTIVIDAD = "" });
+                Lista.Add(new ACTIVIDAD { COD_ACTIVIDAD = " ", DES_ACTIVIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.ACTIVIDADES.OrderBy(p => p.COD_ACTIVIDAD))
                 {
@@ -515,7 +515,7 @@ namespace SPISAP.Models
             {
                 List<RAMO> Lista = new List<RAMO>();
 
-                Lista.Add(new RAMO { COD_RAMO = " ", DES_RAMO = "" });
+                Lista.Add(new RAMO { COD_RAMO = " ", DES_RAMO = "Seleccione un valor" });
 
                 foreach (var record in db.RAMOS.OrderBy(p => p.DES_RAMO))
                 {
@@ -538,7 +538,7 @@ namespace SPISAP.Models
             {
                 List<RELACION_LABORAL> Lista = new List<RELACION_LABORAL>();
 
-                Lista.Add(new RELACION_LABORAL { COD_RELACION = " ", DES_RELACION = "" });
+                Lista.Add(new RELACION_LABORAL { COD_RELACION = " ", DES_RELACION = "Seleccione un valor" });
 
                 foreach (var record in db.RELACION_LABORAL.OrderBy(p => p.DES_RELACION))
                 {

@@ -131,7 +131,7 @@
                     else
                     {
                         <select class="form-control" id="chemise" name="DATOS_PERSONALES.CHEMISE">
-                            <option value=" ">Seleccione una Talla</option>
+                            <option value=" ">Seleccione un valor</option>
                         </select>                                    
                     }
                     </div>
@@ -144,7 +144,7 @@
                     else
                     {
                         <select class="form-control" id="pantalon" name="DATOS_PERSONALES.PANTALON">
-                            <option value=" ">Seleccione una Talla</option>
+                            <option value=" ">Seleccione un valor</option>
                         </select>                            
                     }
                     </div>
@@ -157,7 +157,7 @@
                     else
                     {
                         <select class="form-control" id="calzado" name="DATOS_PERSONALES.CALZADO">
-                            <option value=" ">Seleccione una Talla</option>
+                            <option value=" ">Seleccione un valor</option>
                         </select>                               
                     }
                     </div>
@@ -208,7 +208,7 @@
                 else
                 { 
                     <select class="form-control" id="estadosso" name="DATOS_DIRECCION.COD_ESTADO_SSO">
-                        <option value=" ">Seleccione un Estado</option>
+                        <option value=" ">Seleccione un valor</option>
                     </select>                       
                 }
                     </div>
@@ -225,7 +225,7 @@
                 else
                 { 
                     <select class="form-control" id="municipiosso" name="DATOS_DIRECCION.COD_MUNICIPIO_SSO">
-                        <option value=" ">Seleccione un Municipio</option>
+                        <option value=" ">Seleccione un valor</option>
                     </select>                       
                 }
                     </div>
@@ -240,7 +240,7 @@
                 else
                 { 
                     <select class="form-control" id="parroquiasso" name="DATOS_DIRECCION.COD_PARROQUIA_SSO">
-                        <option value=" ">Seleccione una Parroquia</option>
+                        <option value=" ">Seleccione un valor</option>
                     </select>                       
                 }
 
@@ -313,7 +313,7 @@
                             <td>@Html.TextBoxFor(model => model.FAM1_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM1_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => m.FAM1_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais1" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM1_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM1_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac1" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM1_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM1_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -326,7 +326,7 @@
                             <td>@Html.TextBoxFor(model => model.FAM2_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM2_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => m.FAM2_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais2" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM2_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM2_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac2" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM2_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM2_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -339,7 +339,7 @@
                             <td>@Html.TextBoxFor(model => model.FAM3_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM3_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => m.FAM3_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais3" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM3_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM3_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac3" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM3_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM3_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -351,8 +351,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM4_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM4_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM4_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM4_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM4_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM4_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais4" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM4_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac4" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM4_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM4_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -364,8 +364,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM5_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM5_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM5_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM5_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM5_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM5_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais5" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM5_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac5" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM5_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM5_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -377,8 +377,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM6_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM6_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM6_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM6_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM6_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM6_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais6" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM6_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac6" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM6_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM6_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -390,8 +390,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM7_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM7_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM7_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM7_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM7_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM7_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais7" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM7_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac7" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM7_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM7_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -403,8 +403,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM8_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM8_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM8_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM8_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM8_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM8_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais8" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM8_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac8" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM8_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM8_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -416,8 +416,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM9_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM9_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM9_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM9_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM9_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM9_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais9" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM9_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac9" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM9_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM9_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
@@ -429,8 +429,8 @@
                             <td>@Html.TextBoxFor(model => model.FAM10_NOMBRES, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM10_FECHA_NACIMIENTO, new { @class = "form-control" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM10_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM10_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control" })</td>
-                            <td>@Html.DropDownListFor(m => m.FAM10_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM10_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais10" })</td>
+                            <td>@Html.DropDownListFor(m => m.FAM10_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac10" })</td>
                             <td>@Html.TextBoxFor(model => model.FAM10_CEDULA_FAMILIAR, new { @class = "form-control" })</td>
                             <td>@Html.DropDownListFor(m => Model.FAM10_SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control" })</td>
                         </tr>
