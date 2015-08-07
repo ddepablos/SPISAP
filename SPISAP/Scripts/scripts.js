@@ -5,8 +5,11 @@ $(document).ready(function () {
 
     $('#paisnac').val("VE");
     $('#nacionalidad').val("VE");
+
     $('#paissso').val("VE");
     $('#paisfamiliar').val("VE");
+
+    $('#paissso').val("VE");
 
     $('#primerapellido').focus();
 
@@ -46,8 +49,8 @@ $(document).ready(function () {
                 $('#tratamiento').val("Sr.");
             }
         }
-
-        $.getJSON('/Employee/GetChemiseList/' + $('#sexo').val(), function (data) {
+        ///SPISAP/V03/Employee/GetNacionalidadList/
+        $.getJSON('/SPISAP/V03/Employee/GetChemiseList/' + $('#sexo').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -55,7 +58,7 @@ $(document).ready(function () {
             $('#chemise').html(items);
         });
 
-        $.getJSON('/Employee/GetPantalonList/' + $('#sexo').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetPantalonList/' + $('#sexo').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -63,7 +66,7 @@ $(document).ready(function () {
             $('#pantalon').html(items);
         });
 
-        $.getJSON('/Employee/GetCalzadoList/' + $('#sexo').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetCalzadoList/' + $('#sexo').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             if ($('#sexo').val() != " ") {
                 $.each(data, function (i, district) {
@@ -78,7 +81,7 @@ $(document).ready(function () {
 
     $('#paisnac').change(function () {
 
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#paisnac').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -87,7 +90,7 @@ $(document).ready(function () {
             $('#nacionalidad').val($('#paisnac').val());
         });
 
-        $.getJSON('/Employee/GetEstadoList/' + $('#paisnac').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetEstadoList/' + $('#paisnac').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -100,7 +103,7 @@ $(document).ready(function () {
 
     // DATOS_DE_DIRECCIÓN //
     $('#estadosso').change(function () {
-        $.getJSON('/Employee/GetMunicipioList/' + $('#estadosso').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetMunicipioList/' + $('#estadosso').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -112,7 +115,7 @@ $(document).ready(function () {
     });
 
     $('#municipiosso').change(function () {
-        $.getJSON('/Employee/GetParroquiaList/' + $('#municipiosso').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetParroquiaList/' + $('#municipiosso').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -124,7 +127,7 @@ $(document).ready(function () {
 
     //  D A T O S  F A M I L I A R E S  //
     $('#fpais1').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais1').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais1').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -134,7 +137,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais2').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais2').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais2').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -144,7 +147,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais3').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais3').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais3').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -154,7 +157,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais4').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais4').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais4').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -164,7 +167,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais5').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais5').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais5').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -174,7 +177,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais6').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais6').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais6').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -184,7 +187,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais7').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais7').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais7').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -194,7 +197,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais8').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais8').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais8').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -204,7 +207,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais9').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais9').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais9').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -214,7 +217,7 @@ $(document).ready(function () {
         });
     });
     $('#fpais10').change(function () {
-        $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais10').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetNacionalidadList/' + $('#fpais10').val(), function (data) {
             var items = '';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -228,7 +231,7 @@ $(document).ready(function () {
     // DATOS_DE_FORMACIÓN //
     $('#nivel1').change(function () {
 
-        $.getJSON('/Employee/GetCondicionList/' + $('#nivel1').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetCondicionList/' + $('#nivel1').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -236,7 +239,7 @@ $(document).ready(function () {
             $('#condicion1').html(items);
         });
 
-        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel1').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetEspecialidadList/' + $('#nivel1').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -247,7 +250,7 @@ $(document).ready(function () {
     });
     $('#nivel2').change(function () {
 
-        $.getJSON('/Employee/GetCondicionList/' + $('#nivel2').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetCondicionList/' + $('#nivel2').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -255,7 +258,7 @@ $(document).ready(function () {
             $('#condicion2').html(items);
         });
 
-        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel2').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetEspecialidadList/' + $('#nivel2').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -266,7 +269,7 @@ $(document).ready(function () {
     });
     $('#nivel3').change(function () {
 
-        $.getJSON('/Employee/GetCondicionList/' + $('#nivel3').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetCondicionList/' + $('#nivel3').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
@@ -274,7 +277,7 @@ $(document).ready(function () {
             $('#condicion3').html(items);
         });
 
-        $.getJSON('/Employee/GetEspecialidadList/' + $('#nivel3').val(), function (data) {
+        $.getJSON('/SPISAP/V03/Employee/GetEspecialidadList/' + $('#nivel3').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";

@@ -5,8 +5,11 @@ $(document).ready(function () {
 
     $('#paisnac').val("VE");
     $('#nacionalidad').val("VE");
+
     $('#paissso').val("VE");
     $('#paisfamiliar').val("VE");
+
+    $('#paissso').val("VE");
 
     $('#primerapellido').focus();
 
