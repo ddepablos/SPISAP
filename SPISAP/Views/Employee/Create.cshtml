@@ -67,7 +67,7 @@
         </div>
         <div class="col-md-2">
         Cédula :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.CEDULA, new { @class = "form-control", @maxlength="8" })
+        @Html.TextBoxFor(model => model.DATOS_PERSONALES.CEDULA, new { @class = "form-control", @maxlength="10" })
         </div>
         <div class="col-md-1">
         Sexo :
@@ -324,7 +324,7 @@
         <td>@Html.TextBoxFor(model => model.FAM1_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM1_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM1_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM1_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM1_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM1_LUGAR_NACIMIENTO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.DropDownListFor(m => m.FAM1_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais1" })</td>
         <td>@Html.DropDownListFor(m => m.FAM1_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac1" })</td>
@@ -337,7 +337,7 @@
         <td>@Html.TextBoxFor(model => model.FAM2_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM2_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM2_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM2_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM2_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM2_LUGAR_NACIMIENTO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.DropDownListFor(m => m.FAM2_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais2" })</td>
         <td>@Html.DropDownListFor(m => m.FAM2_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac2" })</td>
@@ -350,7 +350,7 @@
         <td>@Html.TextBoxFor(model => model.FAM3_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM3_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM3_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM3_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM3_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM3_LUGAR_NACIMIENTO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.DropDownListFor(m => m.FAM3_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "fpais3" })</td>
         <td>@Html.DropDownListFor(m => m.FAM3_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac3" })</td>
@@ -363,7 +363,7 @@
         <td>@Html.TextBoxFor(model => model.FAM4_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM4_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM4_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM4_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM4_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM4_LUGAR_NACIMIENTO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.DropDownListFor(m => m.FAM4_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais4" })</td>
         <td>@Html.DropDownListFor(m => m.FAM4_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac4" })</td>
@@ -376,7 +376,7 @@
         <td>@Html.TextBoxFor(model => model.FAM5_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM5_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM5_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM5_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM5_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM5_LUGAR_NACIMIENTO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.DropDownListFor(m => m.FAM5_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais5" })</td>
         <td>@Html.DropDownListFor(m => m.FAM5_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac5" })</td>
@@ -389,7 +389,7 @@
         <td>@Html.TextBoxFor(model => model.FAM6_PRIMER_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM6_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM6_NOMBRES, new { @class = "form-control", @maxlength="40" })</td>
-        <td>@Html.TextBoxFor(model => model.FAM6_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="8" })</td>
+        <td>@Html.TextBoxFor(model => model.FAM6_FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" })</td>
         <td>@Html.TextBoxFor(model => model.FAM6_LUGAR_NACIMIENTO, new { @class = "form-control" })</td>
         <td>@Html.DropDownListFor(m => m.FAM6_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais6" })</td>
         <td>@Html.DropDownListFor(m => m.FAM6_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac6" })</td>
@@ -402,7 +402,7 @@
         <td>@Html.TextBoxFor(model => model.FAM7_PRIMER_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM7_SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })</td>
         <td>@Html.TextBoxFor(model => model.FAM7_NOMBRES, new { @class = "form-control" , @maxlength="40"})</td>
-        <td>@Html.TextBoxFor(model => model.FAM7_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="8"})</td>
+        <td>@Html.TextBoxFor(model => model.FAM7_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="10"})</td>
         <td>@Html.TextBoxFor(model => model.FAM7_LUGAR_NACIMIENTO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.DropDownListFor(m => m.FAM7_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais7" })</td>
         <td>@Html.DropDownListFor(m => m.FAM7_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac7" })</td>
@@ -415,7 +415,7 @@
         <td>@Html.TextBoxFor(model => model.FAM8_PRIMER_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM8_SEGUNDO_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM8_NOMBRES, new { @class = "form-control" , @maxlength="40"})</td>
-        <td>@Html.TextBoxFor(model => model.FAM8_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="8"})</td>
+        <td>@Html.TextBoxFor(model => model.FAM8_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="10"})</td>
         <td>@Html.TextBoxFor(model => model.FAM8_LUGAR_NACIMIENTO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.DropDownListFor(m => m.FAM8_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais8" })</td>
         <td>@Html.DropDownListFor(m => m.FAM8_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac8" })</td>
@@ -428,7 +428,7 @@
         <td>@Html.TextBoxFor(model => model.FAM9_PRIMER_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM9_SEGUNDO_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM9_NOMBRES, new { @class = "form-control" , @maxlength="40"})</td>
-        <td>@Html.TextBoxFor(model => model.FAM9_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="8"})</td>
+        <td>@Html.TextBoxFor(model => model.FAM9_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="10"})</td>
         <td>@Html.TextBoxFor(model => model.FAM9_LUGAR_NACIMIENTO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.DropDownListFor(m => m.FAM9_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais9" })</td>
         <td>@Html.DropDownListFor(m => m.FAM9_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac9" })</td>
@@ -441,7 +441,7 @@
         <td>@Html.TextBoxFor(model => model.FAM10_PRIMER_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM10_SEGUNDO_APELLIDO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.TextBoxFor(model => model.FAM10_NOMBRES, new { @class = "form-control" , @maxlength="40"})</td>
-        <td>@Html.TextBoxFor(model => model.FAM10_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="8"})</td>
+        <td>@Html.TextBoxFor(model => model.FAM10_FECHA_NACIMIENTO, new { @class = "form-control" , @maxlength="10"})</td>
         <td>@Html.TextBoxFor(model => model.FAM10_LUGAR_NACIMIENTO, new { @class = "form-control" , @maxlength="40"})</td>
         <td>@Html.DropDownListFor(m => m.FAM10_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id="fpais10" })</td>
         <td>@Html.DropDownListFor(m => m.FAM10_COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id="fnac10" })</td>
@@ -523,11 +523,11 @@
         </div>
         <div class="col-md-2">
         Fecha de Inicio :
-        @Html.TextBoxFor(model => model.FRM1_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM1_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-2">
         Fecha de Fin :
-        @Html.TextBoxFor(model => model.FRM1_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM1_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-3">
         País :
@@ -598,11 +598,11 @@
         </div>
         <div class="col-md-2">
         Fecha de Inicio :
-        @Html.TextBoxFor(model => model.FRM2_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM2_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-2">
         Fecha de Fin :
-        @Html.TextBoxFor(model => model.FRM2_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM2_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-3">
         País :
@@ -672,11 +672,11 @@
         </div>
         <div class="col-md-2">
         Fecha de Inicio :
-        @Html.TextBoxFor(model => model.FRM3_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM3_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-2">
         Fecha de Fin :
-        @Html.TextBoxFor(model => model.FRM3_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+        @Html.TextBoxFor(model => model.FRM3_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
         </div>
         <div class="col-md-3">
         País :
@@ -720,11 +720,11 @@
             </div>
             <div class="col-md-3">
             Fecha de Inicio :
-            @Html.TextBoxFor(model => model.EXP1_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP1_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
             </div>
             <div class="col-md-3">
             Fecha Fin :
-            @Html.TextBoxFor(model => model.EXP1_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP1_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
             </div>
 
             <div class="col-md-3">
@@ -762,11 +762,11 @@
             </div>
             <div class="col-md-3">
             Fecha de Inicio :
-            @Html.TextBoxFor(model => model.EXP2_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP2_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
             </div>
             <div class="col-md-3">
             Fecha Fin :
-            @Html.TextBoxFor(model => model.EXP2_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP2_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
             </div>
 
             <div class="col-md-3">
@@ -804,11 +804,11 @@
             </div>
             <div class="col-md-3">
             Fecha de Inicio :
-            @Html.TextBoxFor(model => model.EXP3_FECHA_INICIO, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP3_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
             </div>
             <div class="col-md-3">
             Fecha Fin :
-            @Html.TextBoxFor(model => model.EXP3_FECHA_FIN, new { @class = "form-control" , @maxlength="8"})
+            @Html.TextBoxFor(model => model.EXP3_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
             </div>
 
             <div class="col-md-3">
