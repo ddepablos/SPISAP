@@ -41,20 +41,26 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
 
-        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
+        //[Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO { get; set; }
 
         [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
         public string COD_PAIS { get; set; }
 
         [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
         [StringLength(40, MinimumLength = 7, ErrorMessage = "El campo Teléfono de Habitación debe contener entre 7 y 40 carácteres.")]
         public string TELEFONOS { get; set; }
 
+        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO_SSO { get; set; }
+
+        [Required(ErrorMessage = "El campo Municipio (Dirección) es requerido.")]
         public string COD_MUNICIPIO_SSO { get; set; }
+
+        [Required(ErrorMessage = "El campo Parroquia (Dirección) es requerido.")]
         public string COD_PARROQUIA_SSO { get; set; }
+        
         public string COD_USER_INS { get; set; }
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }

@@ -58,6 +58,9 @@ namespace SPISAP.Controllers
             {
                 // TODO: Add insert logic here
 
+                // default values.
+                EmployeeVM.DATOS_DIRECCION.COD_PAIS = "VE";
+
                 if (ModelState.IsValid)
                 {
 

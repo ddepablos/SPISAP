@@ -11,6 +11,8 @@ namespace SPISAP.Models
     public class EmployeeViewModel
     {
 
+        public string FIELD_WITHOUT_VALUE { get; set; }
+
         /* DATOS DE SESIÓN */
         public string COD_USER { get; set; } 
 
@@ -30,7 +32,7 @@ namespace SPISAP.Models
         public string COD_CLASE_CORREO { get; set; }
 
         [Required(ErrorMessage = "El campo Teléfono Celular es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Teléfono Celular permite únicamente números.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono Celular permite únicamente números.")]
         public string COD_CLASE_CELULAR { get; set; }
 
         /* DDISCAPACIDAD : Datos de Discapacidad */
@@ -297,13 +299,13 @@ namespace SPISAP.Models
         // * * * FORMACIÓN ACADÉMICA * * * //
  
         // FORMACIÓN # 1
-        [Required(ErrorMessage = "El campo Nivel de Estudio es requerido.")]
+        [Required(ErrorMessage = "El campo Nivel de Estudio (Formación # 1) es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
 
         // PENDIENTE POR ANALIZAR SU VALOR.
         public string FRM1_COD_FORMACION { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre del Instituto es requerido.")]
+        [Required(ErrorMessage = "El campo Nombre del Instituto (Formación # 1) es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 1) debe contener entre 3 y 40 carácteres.")]
         public string FRM1_INSTITUO { get; set; }
 
@@ -312,17 +314,17 @@ namespace SPISAP.Models
 
         public string FRM1_CT_COD_CLASE { get; set; }
 
-        [Required(ErrorMessage = "El campo Condición es requerido.")]
+        [Required(ErrorMessage = "El campo Condición (Formación # 1) es requerido.")]
         public string FRM1_CT_COD_TITULO { get; set; }
 
-        [Required(ErrorMessage = "El campo Duración (Número) es requerido.")]
+        [Required(ErrorMessage = "El campo Número de Duración (Formación # 1) es requerido.")]
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Duración (Formación # 1) permite únicamente números.")]
         public string FRM1_DURACION { get; set; }
 
-        [Required(ErrorMessage = "El campo Duración (Tiempo) es requerido.")]
+        [Required(ErrorMessage = "El campo Tiempo de Duración (Formación # 1) es requerido.")]
         public string FRM1_UNIDAD_TIEMPO { get; set; }
 
-        [Required(ErrorMessage = "El campo Especialidad es requerido.")]
+        [Required(ErrorMessage = "El campo Especialidad (Formación # 1) es requerido.")]
         public string FRM1_CE_COD_ESPECIALIDAD { get; set; }
 
         public string FRM1_CE_COD_CLASE { get; set; }
@@ -493,16 +495,16 @@ namespace SPISAP.Models
 
             #region DIRECCION
             EstadoSSO = ListViewModel.GetEstadoSSO();
-            //MunicipioSSO = ListViewModel.GetMunicipioSSO();
-            //ParroquiaSSO = ListViewModel.GetParroquiaSSO();
+            MunicipioSSO = ListViewModel.GetMunicipioSSO();
+            ParroquiaSSO = ListViewModel.GetParroquiaSSO();
             Parentescos = ListViewModel.GetParentesco();
             #endregion
 
             #region FORMACION
             //Formaciones = ListViewModel.GetFormacion();
             NivelEstudio = ListViewModel.GetNivelEstudio();
-            //Condiciones = ListViewModel.GetCondiciones();
-            //Especialidades = ListViewModel.GetEspecialidades();
+            Condiciones = ListViewModel.GetCondiciones();
+            Especialidades = ListViewModel.GetEspecialidades();
             UnidadesTiempo = ListViewModel.GetUnidadTiempo();
             #endregion
 
