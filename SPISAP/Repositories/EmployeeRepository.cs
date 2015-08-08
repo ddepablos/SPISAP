@@ -643,7 +643,7 @@ namespace SPISAP.Repositories
         private DateTime StringToDateTime( string value )
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
-            String format = "dd/MM/yyyy";
+            //String format = "dd/MM/yyyy";
             //return DateTime.ParseExact( value, format, provider);        
         
         

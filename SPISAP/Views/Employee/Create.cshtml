@@ -125,9 +125,9 @@
         <div class="row">
         <div class="col-md-4">
         Talla de Camisa :
-        @if (Model.TallaChemise != null)
+        @if ( Model.TallaChemise != null )
         {
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id = "chemise" })
+        @Html.DropDownListFor(model => model.DATOS_PERSONALES.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id = "chemise" })
         }
         else
         {
@@ -138,9 +138,9 @@
         </div>
         <div class="col-md-4">
         Talla de Pantalón :
-        @if (Model.TallaPantalon != null)
+        @if ( Model.TallaPantalon != null )
         {
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
+        @Html.DropDownListFor(model => model.DATOS_PERSONALES.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
         }
         else
         {
@@ -151,9 +151,9 @@
         </div>
         <div class="col-md-4">
         Nro. de Zapato :
-        @if (Model.TallaCalzado != null)
+        @if ( Model.TallaCalzado != null )
         {
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id = "calzado" })                        
+        @Html.DropDownListFor(model => model.DATOS_PERSONALES.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id = "calzado" })                        
         }
         else
         {

@@ -5,7 +5,7 @@
     
     <div class="container">
         <div class="alert alert-danger" role="alert">     
-            <h4>Estimado Usuario.</h4>
+            <h4>Atención : El formulario no puede ser procesado, revise los siguientes campos:</h4>
             @foreach (var modelError in Html.ViewData.ModelState.SelectMany(keyValuePair => keyValuePair.Value.Errors))
             {
                 <p>@modelError.ErrorMessage</p>

@@ -213,6 +213,7 @@
     <Compile Include="Models\CLASE_TITULO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Generic2Model.cs" />
     <Compile Include="Models\GenericModel.cs" />
     <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\DCOMUNICACION.cs">

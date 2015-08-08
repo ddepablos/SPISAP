@@ -151,17 +151,19 @@ namespace SPISAP.Controllers
         // retornar JSON : Talla de Camisa.
         public JsonResult GetChemiseList(string id)
         {
-            List<GenericModel> records = ListViewModel.GetTallaChemise();
+            //List<GenericModel> records = ListViewModel.GetTallaChemise();
+            List<Generic2Model> records = ListViewModel.GetTallaChemise();
 
-            return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+            //return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+            return Json(new SelectList(records.Where(x => x.FOREINGKEY == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
         }
 
         // retornar JSON : Talla de Pantalón.
         public JsonResult GetPantalonList(string id)
         {
-            List<GenericModel> records = ListViewModel.GetTallaPantalon();
+            List<Generic2Model> records = ListViewModel.GetTallaPantalon();
 
-            return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
+            return Json(new SelectList(records.Where(x => x.FOREINGKEY == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
         }
 
         // retornar JSON : Talla de Calzado.

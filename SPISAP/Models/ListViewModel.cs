@@ -186,60 +186,60 @@ namespace SPISAP.Models
 
 
         // retornar la lista de tallas de camisa.
-        public static List<GenericModel> GetTallaChemise()
+        public static List<Generic2Model> GetTallaChemise()
         {
             // CHEMISE_CHECK:
             // (SEXO ='F' AND CHEMISE IN ('S','M','L','XL','XXL','XXXL')) OR (SEXO='M' AND CHEMISE IN ('36','38','40', '42','44','46'))
 
-            return new List<GenericModel>
+            return new List<Generic2Model>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor" },
-                new GenericModel() { CODIGO="F", DESCRIPCION="S" },
-                new GenericModel() { CODIGO="F", DESCRIPCION="M"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="L"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="XL"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="XXL"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="XXXL"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="36"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="38"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="40"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="42"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="44"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="46"}
+                new Generic2Model() { CODIGO=" ", DESCRIPCION="Seleccione un valor", FOREINGKEY = "" },
+                new Generic2Model() { CODIGO="S", DESCRIPCION="S", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="M", DESCRIPCION="M", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="L", DESCRIPCION="L", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="XL", DESCRIPCION="XL", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="XXL", DESCRIPCION="XXL", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="XXXL", DESCRIPCION="XXXL", FOREINGKEY = "F" },
+                new Generic2Model() { CODIGO="36", DESCRIPCION="36", FOREINGKEY = "M" },
+                new Generic2Model() { CODIGO="38", DESCRIPCION="38", FOREINGKEY = "M" },
+                new Generic2Model() { CODIGO="40", DESCRIPCION="40", FOREINGKEY = "M" },
+                new Generic2Model() { CODIGO="42", DESCRIPCION="42", FOREINGKEY = "M" },
+                new Generic2Model() { CODIGO="44", DESCRIPCION="44", FOREINGKEY = "M" },
+                new Generic2Model() { CODIGO="46", DESCRIPCION="46", FOREINGKEY = "M" }
             };
 
         }
 
         // retornar la lista de tallas de pantalón.
-        public static List<GenericModel> GetTallaPantalon()
+        public static List<Generic2Model> GetTallaPantalon()
         {
             // PANTALON_CHECK
             // (SEXO='F' AND CHEMISE IN ('8','10','12','14','16','18','20','22','24','26'))
             // (SEXO='M' AND CHEMISE IN ('28','30','32','34','36','38','40','42','44','46'))
 
-            return new List<GenericModel>
+            return new List<Generic2Model>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor" },
-                new GenericModel() { CODIGO="F", DESCRIPCION="8" },
-                new GenericModel() { CODIGO="F", DESCRIPCION="10"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="12"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="14"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="16"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="18"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="20"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="22"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="24"},
-                new GenericModel() { CODIGO="F", DESCRIPCION="26"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="28"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="30"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="32"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="34"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="36"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="38"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="40"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="42"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="44"},
-                new GenericModel() { CODIGO="M", DESCRIPCION="46"}
+                new Generic2Model() { FOREINGKEY="" , CODIGO =  "" , DESCRIPCION="Seleccione un valor" },
+                new Generic2Model() { FOREINGKEY="F", CODIGO =  "8", DESCRIPCION="8" },
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "10", DESCRIPCION="10"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "12", DESCRIPCION="12"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "14", DESCRIPCION="14"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "16", DESCRIPCION="16"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "18", DESCRIPCION="18"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "20", DESCRIPCION="20"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "22", DESCRIPCION="22"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "24", DESCRIPCION="24"},
+                new Generic2Model() { FOREINGKEY="F", CODIGO = "26", DESCRIPCION="26"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "28", DESCRIPCION="28"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "30", DESCRIPCION="30"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "32", DESCRIPCION="32"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "34", DESCRIPCION="34"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "36", DESCRIPCION="36"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "38", DESCRIPCION="38"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "40", DESCRIPCION="40"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "42", DESCRIPCION="42"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "44", DESCRIPCION="44"},
+                new Generic2Model() { FOREINGKEY="M", CODIGO = "46", DESCRIPCION="46"}
             };
 
         }

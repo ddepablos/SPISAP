@@ -18,22 +18,38 @@ namespace SPISAP.Models
         public string CEDULA { get; set; }
 
         [Required(ErrorMessage = "El campo Calle es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Calle debe contener entre 3 y 40 carácteres.")]
         public string CALLE { get; set; }
+
         [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Edificio/Casa/Escalera debe contener entre 3 y 40 carácteres.")]
         public string EDIFICIO { get; set; }
+
         [Required(ErrorMessage = "El campo Piso es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Piso permite únicamente números.")]
         public string PISO { get; set; }
+
         [Required(ErrorMessage = "El campo Número es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Número (Dirección) permite únicamente números.")]
         public string NUMERO { get; set; }
+
         [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Dirección) debe contener entre 3 y 40 carácteres.")]
         public string CIUDAD { get; set; }
+
         [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
+
         [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO { get; set; }
+
         [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
         public string COD_PAIS { get; set; }
+
         [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
+        [StringLength(40, MinimumLength = 7, ErrorMessage = "El campo Teléfono de Habitación debe contener entre 7 y 40 carácteres.")]
         public string TELEFONOS { get; set; }
 
         public string COD_ESTADO_SSO { get; set; }

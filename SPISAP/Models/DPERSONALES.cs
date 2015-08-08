@@ -27,6 +27,7 @@ namespace SPISAP.Models
         public string FICHA { get; set; }
 
         //[Required(ErrorMessage = "El campo XXX es requerido.")]
+        //[RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo XXXX permite únicamente números.")]
 
         [Required(ErrorMessage = "El campo Cédula es requerido.")]
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
@@ -48,18 +49,22 @@ namespace SPISAP.Models
         public string TRATAMIENTO { get; set; }
 
         [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
         public string PRIMER_APELLIDO { get; set; }
 
         [Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
         public string SEGUNDO_APELLIDO { get; set; }
 
         [Required(ErrorMessage = "El campo Nombres es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres debe contener entre 3 y 40 carácteres.")]
         public string NOMBRE { get; set; }
 
         [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
         public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
 
         [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad de Nacimiento debe contener entre 3 y 40 carácteres.")]
         public string CIUDAD_NACIMIENTO { get; set; }
 
         [Required(ErrorMessage = "El campo País de Nacimiento es requerido.")]

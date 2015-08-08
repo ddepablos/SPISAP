@@ -19,7 +19,7 @@ $(document).ready(function () {
     // <--DATOS PERSONALES--> //
 
     /* Estado Civil */
-    $("#edocivil").change("click", function () {
+    $("#edocivil").change(function () {
 
         if ($("#edocivil").val() != " " && $("#sexo").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
 
     /* Sexo */
-    $("#sexo").change("click", function () {
+    $("#sexo").change(function () {
 
         if ($("#sexo").val() != " " && $("#edocivil").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
