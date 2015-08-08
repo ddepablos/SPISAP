@@ -56,18 +56,27 @@ namespace SPISAP.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
 
-                // default values.
+                // agregar los valores por defecto.
                 EmployeeVM.DATOS_DIRECCION.COD_PAIS = "VE";
+                EmployeeVM.FRM1_CT_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
+                EmployeeVM.FRM1_CE_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
+
+                EmployeeVM.FRM2_CT_COD_CLASE = EmployeeVM.FRM2_COD_CLASE;
+                EmployeeVM.FRM2_CE_COD_CLASE = EmployeeVM.FRM2_COD_CLASE;
+
+                EmployeeVM.FRM3_CT_COD_CLASE = EmployeeVM.FRM3_COD_CLASE;
+                EmployeeVM.FRM3_CE_COD_CLASE = EmployeeVM.FRM3_COD_CLASE;
 
                 if (ModelState.IsValid)
                 {
 
-                    // validación de modelos.
+                    // validación del modelo.
                     EmployeeRepository e = new EmployeeRepository( EmployeeVM );
 
                     e.AddNew();
+
+                    return RedirectToAction("Index");
 
                 }
 

@@ -28,7 +28,7 @@ namespace SPISAP.Models
 
         [Required(ErrorMessage = "El campo Cédula es requerido.")]
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
-        [StringLength(10, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 10 dígitos.")]
+        [StringLength(8, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 8 dígitos.")]
         public string CEDULA { get; set; }
 
         [Required(ErrorMessage = "El campo Sucursal es requerido.")]

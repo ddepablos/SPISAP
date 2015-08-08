@@ -300,7 +300,7 @@ namespace SPISAP.Repositories
 
                     #endregion
 
-                    //#region DATOS_FAMILIARES
+                    #region DATOS_FAMILIARES
 
                     //if (empleado.FAM1_COD_PARENTESCO != null)
                     //{
@@ -552,36 +552,36 @@ namespace SPISAP.Repositories
                     //    db.DFAMILIARES.Add(DFamilar);
 
                     //}
-                    //#endregion
+                    #endregion
 
                     #region DATOS_FORMACIÓN_ACADÉMICA
-                    if (empleado.FRM1_COD_CLASE != null)
-                    {
+                    //if (empleado.FRM1_COD_CLASE != null)
+                    //{
 
-                        DFORMACION DFormacion = new DFORMACION()
-                        {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
-                            COD_CLASE = empleado.FRM1_COD_CLASE,
-                            COD_FORMACION = empleado.FRM1_COD_FORMACION,
-                            INSTITUO = empleado.FRM1_INSTITUO,
-                            COD_PAIS = empleado.FRM1_COD_PAIS,
-                            CT_COD_CLASE = empleado.FRM1_COD_CLASE,
-                            CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
-                            DURACION = empleado.FRM1_DURACION,
-                            UNIDAD_TIEMPO = empleado.FRM1_DURACION,
-                            CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
-                            CE_COD_CLASE = empleado.FRM1_COD_CLASE,
-                            FECHA_INICIO = StringToDateTime(empleado.FRM1_FECHA_INICIO),
-                            FECHA_FIN = StringToDateTime(empleado.FRM1_FECHA_FIN),
-                            COD_USER_INS = empleado.COD_USER,
-                            FECHA_INS = System.DateTime.Now,
-                            COD_USER_UPD = empleado.COD_USER,
-                            FECHA_UPD = System.DateTime.Now
-                        };
+                    //    DFORMACION DFormacion = new DFORMACION()
+                    //    {
+                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        COD_FORMACION = empleado.FRM1_COD_FORMACION,
+                    //        INSTITUO = empleado.FRM1_INSTITUO,
+                    //        COD_PAIS = empleado.FRM1_COD_PAIS,
+                    //        CT_COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
+                    //        DURACION = empleado.FRM1_DURACION,
+                    //        UNIDAD_TIEMPO = empleado.FRM1_DURACION,
+                    //        CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
+                    //        CE_COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        FECHA_INICIO = StringToDateTime(empleado.FRM1_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.FRM1_FECHA_FIN),
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
 
-                        db.DFORMACIONES.Add(DFormacion);
+                    //    db.DFORMACIONES.Add(DFormacion);
 
-                    }
+                    //}
                     //if (empleado.FRM2_COD_CLASE != null)
                     //{
 
@@ -638,7 +638,7 @@ namespace SPISAP.Repositories
                     //}
                     #endregion
 
-                    //#region DATOS_EXPERIENCIA_LABORAL
+                    #region DATOS_EXPERIENCIA_LABORAL
                     //if (empleado.EXP1_EMPRESA != null)
                     //{
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
@@ -702,7 +702,7 @@ namespace SPISAP.Repositories
 
                     //    db.DEXPERIENCIAS.Add(DExperiencia);
                     //}
-                    //#endregion
+                    #endregion
 
                     db.SaveChanges();
 
