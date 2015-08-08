@@ -14,18 +14,18 @@ namespace SPISAP.Controllers
         //
         // GET: /Employee/
 
+        EmployeeRepository EmployeeRep = new EmployeeRepository();
+
         public ActionResult Index()
         {
-            EmployeeRepository e = new EmployeeRepository();
-
-            EmployeeViewModel record = e.GetEmployee();
-
+            EmployeeViewModel record = EmployeeRep.GetEmployee();
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult Table()
         {
-            return View();
+            List<DPERSONALES> records = EmployeeRep.Find(); //.FindByCedula("11681109");
+            return View(records);
         }
 
         //

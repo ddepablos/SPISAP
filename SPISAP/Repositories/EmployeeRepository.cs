@@ -140,14 +140,25 @@ namespace SPISAP.Repositories
             return null;
         }
 
-        public EmployeeRepository FindByCedula()
+        public List<DPERSONALES> Find()
         {
-            return null;
+            using ( SPISAPEntities db = new SPISAPEntities() )
+            {
+                return db.DPERSONALES.OrderBy(x => x.PRIMER_APELLIDO).ToList();
+            }
         }
 
-        public EmployeeRepository FindByName()
+        public List<DPERSONALES> FindByCedula( string value )
         {
-            return null;
+            return Find().Where(x => x.CEDULA.Equals(value)).ToList();
+        }
+
+        public List<DPERSONALES> FindByLastName( string value )
+        {
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.Equals(value)).ToList();
+            }
         }
 
         public bool AddNew()

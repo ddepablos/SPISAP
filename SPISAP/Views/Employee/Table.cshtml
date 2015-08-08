@@ -1,0 +1,81 @@
+﻿@model List<SPISAP.Models.DPERSONALES>
+
+@{
+    ViewBag.Title = "Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container panel panel-default">
+
+    <div class="panel-heading clearfix panel-gradient">
+    <h3 class="panel-title">Listado de Trabajadores</h3>
+    </div>
+
+    <div class="panel-body">
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>Ficha</th>
+        <th>Cédula</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Nombres</th>
+        <th>Usuario (AddNew)</th>
+        <th>Fecha / Hora</th>
+        <th>Usuario (Upgrade)</th>
+        <th>Fecha / Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ long i = 0; }
+        @foreach (var item in Model)
+        {
+        <tr>
+        <td>
+        @Html.Raw(++i)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.FICHA)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.CEDULA)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+        </td>             
+        <td>
+        @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+        </td>             
+        <td>
+        @Html.DisplayFor(modelItem => item.NOMBRE)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.COD_USER_INS)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.FECHA_INS)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.COD_USER_UPD)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.FECHA_UPD)
+        </td>
+        </tr>             
+        }
+    </tbody>
+    </table>  
+
+    </div>
+
+    </div>
+
+</div>
