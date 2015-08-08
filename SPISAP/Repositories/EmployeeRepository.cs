@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using SPISAP.Models;
 using System.Globalization;
+using System.Data.Entity.Validation;
 
 namespace SPISAP.Repositories
 {
@@ -20,10 +21,93 @@ namespace SPISAP.Repositories
         public EmployeeRepository(EmployeeViewModel Empleado)
         {
 
+            // DATOS PERSONALES
+//Empleado.DATOS_PERSONALES.FICHA = "123456789012";
+//Empleado.DATOS_PERSONALES.CEDULA = "12919906";
+//Empleado.DATOS_PERSONALES.COD_SUCURSAL = "1001";
+//Empleado.DATOS_PERSONALES.COD_GRUPO = "1";
+//Empleado.DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
+//Empleado.DATOS_PERSONALES.CARGO = "CARGO";
+//Empleado.DATOS_PERSONALES.TRATAMIENTO = "Sra.";
+//Empleado.DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
+//Empleado.DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
+//Empleado.DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
+//Empleado.DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
+//Empleado.DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
+//Empleado.DATOS_PERSONALES.COD_PAIS = "VE";
+//Empleado.DATOS_PERSONALES.COD_ESTADO = "NE";
+//Empleado.DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
+//Empleado.DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
+//Empleado.DATOS_PERSONALES.SEXO = "M";
+//Empleado.DATOS_PERSONALES.RIF = "J129199060";
+//Empleado.DATOS_PERSONALES.CALZADO = "34";
+//Empleado.DATOS_PERSONALES.CHEMISE = "36";
+//Empleado.DATOS_PERSONALES.PANTALON = "36";
+
+//Empleado.COD_CLASE_CELULAR = "04128094599";
+//Empleado.COD_CLASE_CORREO = "flormaringl@gmail.com";
+                
+            //// DATOS DIRECCIÓN
+//Empleado.DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
+//Empleado.DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
+//Empleado.DATOS_DIRECCION.PISO = "14";
+//Empleado.DATOS_DIRECCION.NUMERO = "141";
+//Empleado.DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
+////Empleado.DATOS_DIRECCION.COD_ESTADO = "DC";
+//Empleado.DATOS_DIRECCION.COD_PAIS = "VE";
+//Empleado.DATOS_DIRECCION.TELEFONOS = "4835448";
+//Empleado.DATOS_DIRECCION.COD_ESTADO_SSO = "DC";
+//Empleado.DATOS_DIRECCION.COD_MUNICIPIO_SSO = "1";
+//Empleado.DATOS_DIRECCION.COD_PARROQUIA_SSO = "663";
+//Empleado.DATOS_DIRECCION.CIUDAD = "CARACAS";
+
+            //// DATOS DISCAPACIDAD
+//Empleado.COD_DISCAPACIDAD_MOTRIZ = true;
+//Empleado.COD_DISCAPACIDAD_SENSORIAL = false;
+//Empleado.COD_DISCAPACIDAD_INTELECTUAL = true;
+
+            //// DATOS FAMILIARES
+            //Empleado.FAM1_COD_PARENTESCO = "1";
+            //Empleado.FAM1_PRIMER_APELLIDO = "DEPABLOS";
+            //Empleado.FAM1_SEGUNDO_APELLIDO = "SILVA";
+            //Empleado.FAM1_NOMBRES = "DANIEL JOSÉ";
+            //Empleado.FAM1_FECHA_NACIMIENTO = "05/04/1974";
+            //Empleado.FAM1_LUGAR_NACIMIENTO = "CARACAS";
+            //Empleado.FAM1_COD_PAIS = "VE";
+            //Empleado.FAM1_COD_NACIONALIDAD = "VE";
+            //Empleado.FAM1_CEDULA_FAMILIAR = "11681109";
+            //Empleado.FAM1_SEXO = "M";
+
+            //// DATOS FORMACIÓN
+            //Empleado.FRM1_COD_CLASE = "V8";
+            //Empleado.FRM1_COD_FORMACION = "15";
+            //Empleado.FRM1_INSTITUO = "HARVARD";
+            //Empleado.FRM1_COD_PAIS = "VE";
+            //Empleado.FRM1_CT_COD_CLASE = "V8";
+            //Empleado.FRM1_CT_COD_TITULO = "2";
+            //Empleado.FRM1_DURACION = "10";
+            //Empleado.FRM1_UNIDAD_TIEMPO = "3";
+            //Empleado.FRM1_CE_COD_CLASE = "V8";
+            //Empleado.FRM1_CE_COD_ESPECIALIDAD = "00207";
+            //Empleado.FRM1_FECHA_INICIO = "01/10/2000";
+            //Empleado.FRM1_FECHA_FIN = "01/10/2000";
+
+            // DATOS EXPERIENCIA LABORAL
+//Empleado.EXP1_FECHA_INICIO = "01/01/2000";
+//Empleado.EXP1_FECHA_FIN = "31/01/2000";
+//Empleado.EXP1_EMPRESA = "EMPRESA 1";
+//Empleado.EXP1_CIUDAD = "CIUDAD 1";
+//Empleado.EXP1_PAIS = "VE";
+//Empleado.EXP1_COD_RAMO = "01";
+//Empleado.EXP1_COD_ACTIVIDAD = "01";
+//Empleado.EXP1_COD_RELACION = "4";
+
+
+
             // TEMPORAL
             Empleado.COD_USER = "CROSARIO";
-            Empleado.DATOS_PERSONALES.CEDULA = "11681109";
-            Empleado.DATOS_PERSONALES.SEXO = "M";
+            //Empleado.DATOS_PERSONALES.CEDULA = "11681109";
+            //Empleado.DATOS_PERSONALES.SEXO = "M";
             Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
 
             empleado = Empleado;
@@ -146,7 +230,7 @@ namespace SPISAP.Repositories
                     #endregion
 
                     #region DATOS_DIRECCION
-                    
+
                     DDIRECCION DDireccion = new DDIRECCION()
                     {
                         CEDULA = empleado.DATOS_PERSONALES.CEDULA,
@@ -156,7 +240,7 @@ namespace SPISAP.Repositories
                         NUMERO = empleado.DATOS_DIRECCION.NUMERO,
                         CIUDAD = empleado.DATOS_DIRECCION.CIUDAD,
                         URBANIZACION = empleado.DATOS_DIRECCION.URBANIZACION,
-                        COD_ESTADO = empleado.DATOS_DIRECCION.COD_ESTADO,
+                        COD_ESTADO = empleado.DATOS_DIRECCION.COD_ESTADO_SSO,  // CONVERSAR CON CAROLINA //empleado.DATOS_DIRECCION.COD_ESTADO,
                         COD_PAIS = empleado.DATOS_DIRECCION.COD_PAIS,
                         TELEFONOS = empleado.DATOS_DIRECCION.TELEFONOS,
                         COD_ESTADO_SSO = empleado.DATOS_DIRECCION.COD_ESTADO_SSO,
@@ -200,7 +284,7 @@ namespace SPISAP.Repositories
                         };
                         db.DDISCAPACIDADES.Add(DDiscapacidad);
                     }
-                    if (empleado.COD_DISCAPACIDAD_SENSORIAL == true )
+                    if (empleado.COD_DISCAPACIDAD_SENSORIAL == true)
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
@@ -620,16 +704,24 @@ namespace SPISAP.Repositories
                     }
                     #endregion
 
-                    //db.SaveChanges();
+                    db.SaveChanges();
 
                 }
 
                 return true;
 
             }
-            catch (Exception e)
+            catch (DbEntityValidationException dbEx)
             {
-                throw e;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+
+                return false;
             }
 
         }

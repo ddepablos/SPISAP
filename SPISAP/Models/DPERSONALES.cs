@@ -23,11 +23,8 @@ namespace SPISAP.Models
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFORMACIONES = new HashSet<DFORMACION>();
         }
-    
-        public string FICHA { get; set; }
 
-        //[Required(ErrorMessage = "El campo XXX es requerido.")]
-        //[RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo XXXX permite únicamente números.")]
+        public string FICHA { get; set; }
 
         [Required(ErrorMessage = "El campo Cédula es requerido.")]
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]

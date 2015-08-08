@@ -213,9 +213,6 @@
     <Compile Include="Models\CLASE_TITULO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Generic2Model.cs" />
-    <Compile Include="Models\GenericModel.cs" />
-    <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Models\DCOMUNICACION.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
@@ -243,16 +240,19 @@
     <Compile Include="Models\DUSUARIO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\ESTADO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FORMACION.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Generic2Model.cs" />
+    <Compile Include="Models\GenericModel.cs" />
     <Compile Include="Models\GRUPO_PERSONAL.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListViewModel.cs" />
+    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\MUNICIPIO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>

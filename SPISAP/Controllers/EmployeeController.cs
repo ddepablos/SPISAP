@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SPISAP.Repositories;
 using SPISAP.Models;
+using System.Globalization;
 
 namespace SPISAP.Controllers
 {
@@ -42,6 +43,7 @@ namespace SPISAP.Controllers
         {
 
             EmployeeViewModel employee = new EmployeeViewModel();
+
             return View("Create", employee);
 
         }
@@ -58,8 +60,8 @@ namespace SPISAP.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    // validación de modelos.
 
+                    // validación de modelos.
                     EmployeeRepository e = new EmployeeRepository( EmployeeVM );
 
                     e.AddNew();

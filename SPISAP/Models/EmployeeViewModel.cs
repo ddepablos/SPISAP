@@ -22,6 +22,11 @@ namespace SPISAP.Models
 
         /* DCOMUNICACION : Datos de Comunicación : Número de Teléfono y/o Correo Electrónico */
         public DCOMUNICACION DATOS_COMUNICACION { get; set; }
+
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                    @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                    @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
+                    ErrorMessage = "El campo Correo Electrónico no contiene el formato válido : usuario@correo.com.")]
         public string COD_CLASE_CORREO { get; set; }
 
         [Required(ErrorMessage = "El campo Teléfono Celular es requerido.")]
@@ -463,6 +468,8 @@ namespace SPISAP.Models
         public EmployeeViewModel()
         {
 
+            DPERSONALES DATOS_PERSONALES = new DPERSONALES();
+
             //FillDummyRecord();
             FillListas();
 
@@ -511,58 +518,72 @@ namespace SPISAP.Models
         {
 
             /* Datos Personales */
-            //FICHA = "123456789012";
-            //CEDULA = "12919906";
-            //COD_SUCURSAL = "1001";
-            //COD_GRUPO = "1";
-            //COD_AREA_PERSONAL = "VK";
-            //CARGO = "CARGO";
-            //TRATAMIENTO = "Sra.";
-            //PRIMER_APELLIDO = "GONZALEZ";
-            //SEGUNDO_APELLIDO = "LOPEZ";
-            //NOMBRE = "FLOR MARINA";
-            //FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
-            //CIUDAD_NACIMIENTO = "PORLAMAR";
-            //COD_PAIS = "VE";
-            //COD_ESTADO = "NE";
-            //COD_NACIONALIDAD = "PA";
-            //ESTADO_CIVIL = "Cas.";
-            //SEXO = "F";
-            //RIF = "J129199060";
-            //CALZADO = "34";
-            //CHEMISE = "S";
-            //PANTALON = "8";
 
-            ///* Dirección */
-            //CALLE = "CALLEJÓN MACHADO";
-            //EDIFICIO = "RESD.LOS GRANADILLOS";
-            //PISO = "14";
-            //NUMERO = "141B";
-            //URBANIZACION = "EL PARAÍSO";
-            //COD_ESTADO = "";
-            //COD_PAIS = "";
-            //TELEFONOS = "0124835448";
-            //COD_ESTADO_SSO = "NUE";
-            //COD_MUNICIPIO_SSO = "217";
-            //COD_PARROQUIA_SSO = "1191";
+            //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            /* Discapacidad : 'ZA', 'ZB', 'ZC' */
-            Discapacidades = new List<DDISCAPACIDAD>();
-            Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZA", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
-            Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZB", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
+            //DATOS_PERSONALES.FICHA = "123456789012";
+            //DATOS_PERSONALES.CEDULA = "12919906";
+            //DATOS_PERSONALES.COD_SUCURSAL = "1001";
+            //DATOS_PERSONALES.COD_GRUPO = "1";
+            //DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
+            //DATOS_PERSONALES.CARGO = "CARGO";
+            //DATOS_PERSONALES.TRATAMIENTO = "Sra.";
+            //DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
+            //DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
+            //DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
+            //DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
+            //DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
+            //DATOS_PERSONALES.COD_PAIS = "VE";
+            //DATOS_PERSONALES.COD_ESTADO = "NE";
+            //DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
+            //DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
+            //DATOS_PERSONALES.SEXO = "F";
+            //DATOS_PERSONALES.RIF = "J129199060";
+            //DATOS_PERSONALES.CALZADO = "34";
+            //DATOS_PERSONALES.CHEMISE = "S";
+            //DATOS_PERSONALES.PANTALON = "8";
 
-            /* Familiares */
-            Familiares = new List<DFAMILIAR>();
-            Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "1", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "SILVA", NOMBRES = "DANIEL JOSÉ", FECHA_NACIMIENTO = DateTime.Parse("1974-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "11681109", SEXO = "M" });
-            Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "GONZALEZ", NOMBRES = "NICOLLE", FECHA_NACIMIENTO = DateTime.Parse("2016-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "PORLAMAR", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "", SEXO = "F" });
+            /* Dirección */
 
-            /* Formación */
-            DFormaciones = new List<DFORMACION>();
-            DFormaciones.Add(new DFORMACION { CEDULA = "12919906", COD_CLASE = "V1", COD_FORMACION = "7", INSTITUO = "UNEFA", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "2", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_ESPECIALIDAD = "00094", CE_COD_CLASE = "V1", FECHA_INICIO = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2015-01-01", CultureInfo.InvariantCulture), COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
+            //DDIRECCION DATOS_DIRECCION = new DDIRECCION();
 
-            /* Experiencia */
-            Experiencias = new List<DEXPERIENCIA>();
-            Experiencias.Add(new DEXPERIENCIA { CEDULA = "12919906", FECHA_INICIO = DateTime.Parse("2000-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), EMPRESA = "GOOGLE INC", CIUDAD = "SEATTLE", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "01", COD_RELACION = "5", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
+            //DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
+            //DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
+            //DATOS_DIRECCION.PISO = "14";
+            //DATOS_DIRECCION.NUMERO = "141B";
+            //DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
+            //DATOS_DIRECCION.COD_ESTADO = "";
+            //DATOS_DIRECCION.COD_PAIS = "";
+            //DATOS_DIRECCION.TELEFONOS = "0124835448";
+            //DATOS_DIRECCION.COD_ESTADO_SSO = "NUE";
+            //DATOS_DIRECCION.COD_MUNICIPIO_SSO = "217";
+            //DATOS_DIRECCION.COD_PARROQUIA_SSO = "1191";
+
+            /* DISCAPACIDAD */
+            //COD_DISCAPACIDAD_MOTRIZ = true;
+            //COD_DISCAPACIDAD_SENSORIAL = true;
+            //COD_DISCAPACIDAD_INTELECTUAL = false;
+
+            /* FAMILIARES */
+
+
+            ///* Discapacidad : 'ZA', 'ZB', 'ZC' */
+            //Discapacidades = new List<DDISCAPACIDAD>();
+            //Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZA", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
+            //Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZB", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
+
+            ///* Familiares */
+            //Familiares = new List<DFAMILIAR>();
+            //Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "1", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "SILVA", NOMBRES = "DANIEL JOSÉ", FECHA_NACIMIENTO = DateTime.Parse("1974-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "11681109", SEXO = "M" });
+            //Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "GONZALEZ", NOMBRES = "NICOLLE", FECHA_NACIMIENTO = DateTime.Parse("2016-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "PORLAMAR", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "", SEXO = "F" });
+
+            ///* Formación */
+            //DFormaciones = new List<DFORMACION>();
+            //DFormaciones.Add(new DFORMACION { CEDULA = "12919906", COD_CLASE = "V1", COD_FORMACION = "7", INSTITUO = "UNEFA", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "2", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_ESPECIALIDAD = "00094", CE_COD_CLASE = "V1", FECHA_INICIO = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2015-01-01", CultureInfo.InvariantCulture), COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
+
+            ///* Experiencia */
+            //Experiencias = new List<DEXPERIENCIA>();
+            //Experiencias.Add(new DEXPERIENCIA { CEDULA = "12919906", FECHA_INICIO = DateTime.Parse("2000-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), EMPRESA = "GOOGLE INC", CIUDAD = "SEATTLE", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "01", COD_RELACION = "5", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
 
             /* Usuario */
             //COD_USER_INS = "CROSARIO";
