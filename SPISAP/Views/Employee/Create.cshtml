@@ -74,7 +74,6 @@
         @Html.DropDownListFor(model => model.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-3">
         Fecha de Nacimiento :
@@ -515,7 +514,7 @@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
-        @Html.TextBoxFor(model => model.FRM1_DURACION, new { @class = "form-control" , @maxlength="2"})
+        @Html.TextBoxFor(model => model.FRM1_DURACION, new { @class = "form-control" , @maxlength="2", @style="text-align:center"})
         </div>
         <div class="col-md-2" style="padding-top: 17px; padding-left: 0px;">
         @Html.DropDownListFor(m => m.FRM1_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
@@ -590,7 +589,7 @@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
-        @Html.TextBoxFor(model => model.FRM2_DURACION, new { @class = "form-control" , @maxlength="2"})
+        @Html.TextBoxFor(model => model.FRM2_DURACION, new { @class = "form-control" , @maxlength="2", @style="text-align:center"})
         </div>
         <div class="col-md-2" style="padding-top: 17px; padding-left: 0px;">
         @Html.DropDownListFor(m => m.FRM2_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
@@ -664,7 +663,7 @@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
-        @Html.TextBoxFor(model => model.FRM3_DURACION, new { @class = "form-control" , @maxlength="2"})
+        @Html.TextBoxFor(model => model.FRM3_DURACION, new { @class = "form-control" , @maxlength="2", @style="text-align:center"})
         </div>
         <div class="col-md-2" style="padding-top: 17px; padding-left: 0px;">
         @Html.DropDownListFor(m => m.FRM3_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })

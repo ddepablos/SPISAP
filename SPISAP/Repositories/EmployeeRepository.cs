@@ -147,6 +147,7 @@ namespace SPISAP.Repositories
             {
 
                 EmployeeViewModel record = (from dp in db.DPERSONALES
+                                            join dd in db.DDIRECCIONES on dp.CEDULA equals dd.CEDULA
                                             where dp.CEDULA.Equals(value)
                                             select new EmployeeViewModel()
                                             {
@@ -160,7 +161,7 @@ namespace SPISAP.Repositories
                                                 COD_PAIS = dp.COD_PAIS,
                                                 COD_NACIONALIDAD = dp.COD_NACIONALIDAD,
                                                 COD_ESTADO = dp.COD_ESTADO,
-                                                RIF = dp.RIF, //COD_CLASE_CORREO 
+                                                RIF = dp.RIF, 
                                                 COD_AREA_PERSONAL = dp.COD_AREA_PERSONAL,
                                                 CARGO = dp.CARGO,
                                                 COD_SUCURSAL = dp.COD_SUCURSAL,
@@ -168,12 +169,367 @@ namespace SPISAP.Repositories
                                                 TRATAMIENTO = dp.TRATAMIENTO,
                                                 CHEMISE = dp.CHEMISE,
                                                 PANTALON = dp.PANTALON,
-                                                CALZADO = dp.CALZADO
+                                                CALZADO = dp.CALZADO,
+                                                CALLE = dd.CALLE,
+                                                EDIFICIO = dd.EDIFICIO,
+                                                PISO = dd.PISO,
+                                                NUMERO = dd.NUMERO,
+                                                URBANIZACION = dd.URBANIZACION,
+                                                COD_PARROQUIA_SSO = dd.COD_PARROQUIA_SSO,
+                                                COD_MUNICIPIO_SSO = dd.COD_MUNICIPIO_SSO,
+                                                CIUDAD = dd.CIUDAD,
+                                                COD_ESTADO_SSO = dd.COD_ESTADO_SSO,
+                                                COD_PAIS_DIRECCION = dd.COD_PAIS,
+                                                TELEFONOS = dd.TELEFONOS
                                             }).SingleOrDefault();
-                                
+
+                // DATOS DE COMUNICACIÓN
+                record.COD_CLASE_CORREO = FindDComunicacion("correo" , record.CEDULA);
+                record.COD_CLASE_CELULAR = FindDComunicacion("cell" , record.CEDULA);
+
+                // DATOS DE DISCAPACIDAD
+                record.COD_DISCAPACIDAD_MOTRIZ = FindDDiscapacidad("motriz", record.CEDULA);
+                record.COD_DISCAPACIDAD_INTELECTUAL = FindDDiscapacidad("intelectual", record.CEDULA);
+                record.COD_DISCAPACIDAD_SENSORIAL = FindDDiscapacidad("sensorial", record.CEDULA);
+
+                // DATOS DE FAMILIARES
+                #region TABLA_DATOS_FAMILIARES
+
+                // llenar los datos familiares.
+                List<DFAMILIAR> query = db.DFAMILIARES.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
+
+                /* SIMULACRO */
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "1", PRIMER_APELLIDO = "GONZALEZ", SEGUNDO_APELLIDO="LOPEZ", NOMBRES = "FLOR MARINA", FECHA_NACIMIENTO = DateTime.Parse("1976/01/19"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "12919906", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO="MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+
+
+                for (int i = 0; i < query.Count(); i++)
+                {
+
+                    switch (i)
+                    {
+                        case 0:
+                            record.FAM1_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM1_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM1_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM1_NOMBRES = query[i].NOMBRES;
+                            record.FAM1_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM1_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM1_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM1_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM1_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM1_SEXO = query[i].SEXO;
+                            break;
+                        case 1:
+                            record.FAM2_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM2_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM2_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM2_NOMBRES = query[i].NOMBRES;
+                            record.FAM2_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM2_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM2_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM2_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM2_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM2_SEXO = query[i].SEXO;
+                            break;
+                        case 2:
+                            record.FAM3_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM3_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM3_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM3_NOMBRES = query[i].NOMBRES;
+                            record.FAM3_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM3_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM3_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM3_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM3_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM3_SEXO = query[i].SEXO;
+                            break;
+                        case 3:
+                            record.FAM4_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM4_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM4_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM4_NOMBRES = query[i].NOMBRES;
+                            record.FAM4_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM4_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM4_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM4_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM4_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM4_SEXO = query[i].SEXO;
+                            break;
+                        case 4:
+                            record.FAM5_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM5_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM5_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM5_NOMBRES = query[i].NOMBRES;
+                            record.FAM5_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM5_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM5_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM5_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM5_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM5_SEXO = query[i].SEXO;
+                            break;
+                        case 5:
+                            record.FAM6_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM6_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM6_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM6_NOMBRES = query[i].NOMBRES;
+                            record.FAM6_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM6_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM6_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM6_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM6_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM6_SEXO = query[i].SEXO;
+                            break;
+                        case 6:
+                            record.FAM7_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM7_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM7_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM7_NOMBRES = query[i].NOMBRES;
+                            record.FAM7_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM7_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM7_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM7_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM7_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM7_SEXO = query[i].SEXO;
+                            break;
+                        case 7:
+                            record.FAM8_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM8_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM8_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM8_NOMBRES = query[i].NOMBRES;
+                            record.FAM8_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM8_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM8_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM8_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM8_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM8_SEXO = query[i].SEXO;
+                            break;
+                        case 8:
+                            record.FAM9_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM9_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM9_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM9_NOMBRES = query[i].NOMBRES;
+                            record.FAM9_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM9_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM9_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM9_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM9_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM9_SEXO = query[i].SEXO;
+                            break;
+                        case 9:
+                            record.FAM10_COD_PARENTESCO = query[i].COD_PARENTESCO;
+                            record.FAM10_PRIMER_APELLIDO = query[i].PRIMER_APELLIDO;
+                            record.FAM10_SEGUNDO_APELLIDO = query[i].SEGUNDO_APELLIDO;
+                            record.FAM10_NOMBRES = query[i].NOMBRES;
+                            record.FAM10_FECHA_NACIMIENTO = query[i].FECHA_NACIMIENTO.ToString();
+                            record.FAM10_LUGAR_NACIMIENTO = query[i].LUGAR_NACIMIENTO;
+                            record.FAM10_COD_PAIS = query[i].COD_PAIS;
+                            record.FAM10_COD_NACIONALIDAD = query[i].COD_NACIONALIDAD;
+                            record.FAM10_CEDULA_FAMILIAR = query[i].CEDULA_FAMILIAR;
+                            record.FAM10_SEXO = query[i].SEXO;
+                            break;
+                    }
+                }
+                #endregion
+
+                // DATOS DE FORMACIÓN ACADÉMICA
+                #region TABLA_DATOS_FORMACIÓN
+                List<DFORMACION> form = db.DFORMACIONES.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
+
+//SIMULACRO
+//form.Add(new DFORMACION { COD_CLASE = "V1", INSTITUO = "INSTITUTO1", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00086", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+//form.Add(new DFORMACION { COD_CLASE = "V2", INSTITUO = "INSTITUTO2", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00030", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+//form.Add(new DFORMACION { COD_CLASE = "V3", INSTITUO = "INSTITUTO3", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00029", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+
+                for (int i = 0; i < form.Count(); i++)
+                {
+
+                    switch (i)
+                    {
+                        case 0:
+                            record.FRM1_COD_CLASE = form[i].COD_CLASE;
+                            record.FRM1_CT_COD_CLASE = form[i].CT_COD_CLASE;
+                            record.FRM1_CT_COD_TITULO = form[i].CT_COD_TITULO;
+                            record.FRM1_CE_COD_CLASE = form[i].CE_COD_CLASE;
+                            record.FRM1_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
+                            record.FRM1_INSTITUO = form[i].INSTITUO;
+                            record.FRM1_DURACION = form[i].DURACION;
+                            record.FRM1_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
+                            record.FRM1_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
+                            record.FRM1_FECHA_FIN = form[i].FECHA_FIN.ToString();
+                            record.FRM1_COD_PAIS = form[i].COD_PAIS;
+                            break;
+                        case 1:
+                            record.FRM2_COD_CLASE = form[i].COD_CLASE;
+                            record.FRM2_CT_COD_CLASE = form[i].CT_COD_CLASE;
+                            record.FRM2_CT_COD_TITULO = form[i].CT_COD_TITULO;
+                            record.FRM2_CE_COD_CLASE = form[i].CE_COD_CLASE;
+                            record.FRM2_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
+                            record.FRM2_INSTITUO = form[i].INSTITUO;
+                            record.FRM2_DURACION = form[i].DURACION;
+                            record.FRM2_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
+                            record.FRM2_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
+                            record.FRM2_FECHA_FIN = form[i].FECHA_FIN.ToString();
+                            record.FRM2_COD_PAIS = form[i].COD_PAIS;
+                            break;
+                        case 2:
+                            record.FRM3_COD_CLASE = form[i].COD_CLASE;
+                            record.FRM3_CT_COD_CLASE = form[i].CT_COD_CLASE;
+                            record.FRM3_CT_COD_TITULO = form[i].CT_COD_TITULO;
+                            record.FRM3_CE_COD_CLASE = form[i].CE_COD_CLASE;
+                            record.FRM3_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
+                            record.FRM3_INSTITUO = form[i].INSTITUO;
+                            record.FRM3_DURACION = form[i].DURACION;
+                            record.FRM3_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
+                            record.FRM3_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
+                            record.FRM3_FECHA_FIN = form[i].FECHA_FIN.ToString();
+                            record.FRM3_COD_PAIS = form[i].COD_PAIS;
+                            break;
+                    }
+
+                }
+                #endregion
+
+                // DATOS DE EXPERIENCIA LABORAL
+                #region TABLA_DATOS_EXPERIENCIA_LABORAL
+                List<DEXPERIENCIA> exp = db.DEXPERIENCIAS.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
+// SIMULACRO
+//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 1", CIUDAD = "CDAD 1", PAIS = "VE", COD_RAMO = "03", COD_ACTIVIDAD = "01", COD_RELACION = "5" });
+//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 2", CIUDAD = "CDAD 2", PAIS = "AR", COD_RAMO = "02", COD_ACTIVIDAD = "02", COD_RELACION = "4" });
+//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 3", CIUDAD = "CDAD 3", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "03", COD_RELACION = "3" });
+
+                for (int i = 0; i < exp.Count(); i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            record.EXP1_EMPRESA = exp[i].EMPRESA;
+                            record.EXP1_COD_ACTIVIDAD = exp[i].COD_ACTIVIDAD;
+                            record.EXP1_FECHA_INICIO = exp[i].FECHA_INICIO.ToString();
+                            record.EXP1_FECHA_FIN = exp[i].FECHA_FIN.ToString();
+                            record.EXP1_COD_RAMO = exp[i].COD_RAMO;
+                            record.EXP1_COD_RELACION = exp[i].COD_RELACION;
+                            record.EXP1_CIUDAD = exp[i].CIUDAD;
+                            record.EXP1_PAIS = exp[i].PAIS;
+                            break;
+                        case 1:
+                            record.EXP2_EMPRESA = exp[i].EMPRESA;
+                            record.EXP2_COD_ACTIVIDAD = exp[i].COD_ACTIVIDAD;
+                            record.EXP2_FECHA_INICIO = exp[i].FECHA_INICIO.ToString();
+                            record.EXP2_FECHA_FIN = exp[i].FECHA_FIN.ToString();
+                            record.EXP2_COD_RAMO = exp[i].COD_RAMO;
+                            record.EXP2_COD_RELACION = exp[i].COD_RELACION;
+                            record.EXP2_CIUDAD = exp[i].CIUDAD;
+                            record.EXP2_PAIS = exp[i].PAIS;
+                            break;
+                        case 2:
+                            record.EXP3_EMPRESA = exp[i].EMPRESA;
+                            record.EXP3_COD_ACTIVIDAD = exp[i].COD_ACTIVIDAD;
+                            record.EXP3_FECHA_INICIO = exp[i].FECHA_INICIO.ToString();
+                            record.EXP3_FECHA_FIN = exp[i].FECHA_FIN.ToString();
+                            record.EXP3_COD_RAMO = exp[i].COD_RAMO;
+                            record.EXP3_COD_RELACION = exp[i].COD_RELACION;
+                            record.EXP3_CIUDAD = exp[i].CIUDAD;
+                            record.EXP3_PAIS = exp[i].PAIS;
+                            break;
+                    }
+                }
+
+                #endregion
+
                 return record;
             }
 
+        }
+
+        private void FillDFamiliares()
+        {
+
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+
+                List<DFAMILIAR> query = db.DFAMILIARES.Where(x => x.CEDULA.Equals("11681109")).ToList();
+
+                for (int i = 0; i < query.Count(); i++)
+                {
+
+                    switch (i)
+                    {
+
+                        case 1:
+                            Console.WriteLine("Case 1");
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                }
+
+            }
+        
+        }
+
+        private string FindDComunicacion( string fieldname, string value)
+        {
+        
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                string thevalue;
+
+                if (fieldname.Equals("correo"))
+                {
+                    thevalue = (from c in db.DCOMUNICACIONES
+                                       where c.CEDULA.Equals(value) && c.COD_CLASE.Equals("0010")
+                                       select c.IDENTIFICADOR).SingleOrDefault();
+                }
+                else
+                {
+                    thevalue = (from c in db.DCOMUNICACIONES
+                                       where c.CEDULA.Equals(value) && c.COD_CLASE.Equals("CELL")
+                                       select c.IDENTIFICADOR).SingleOrDefault();
+                }
+
+                return thevalue;
+            }
+
+        }
+
+        private bool FindDDiscapacidad(string field, string value)
+        {
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                int thevalue = 0;
+
+                if (field.Equals("motriz"))
+                {
+                    thevalue = (from c in db.DDISCAPACIDADES
+                                where c.CEDULA.Equals(value) && c.GRUPO_DISCAPACIDAD.Equals("ZA")
+                                select c.GRUPO_DISCAPACIDAD).Count();
+                }
+                else if (field.Equals("intelectual"))
+                {
+                    thevalue = (from c in db.DDISCAPACIDADES
+                                where c.CEDULA.Equals(value) && c.GRUPO_DISCAPACIDAD.Equals("ZB")
+                                select c.GRUPO_DISCAPACIDAD).Count();
+                }
+                else
+                {
+                    thevalue = (from c in db.DDISCAPACIDADES
+                                where c.CEDULA.Equals(value) && c.GRUPO_DISCAPACIDAD.Equals("ZC")
+                                select c.GRUPO_DISCAPACIDAD).Count();
+                }
+
+                return (thevalue > 0);
+            }        
         }
 
         public List<DPERSONALES> Find()
