@@ -52,27 +52,27 @@ namespace SPISAP.Controllers
         // POST: /Employee/Create
 
         [HttpPost]
-        public ActionResult Create(EmployeeViewModel EmployeeVM)
+        public ActionResult Create(EmployeeViewModel EmployeeModel)
         {
             try
             {
 
                 // agregar los valores por defecto.
-                EmployeeVM.COD_PAIS = "VE";
-                EmployeeVM.FRM1_CT_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
-                EmployeeVM.FRM1_CE_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
+                //EmployeeModel.COD_PAIS = "VE";
+                //EmployeeModel.FRM1_CT_COD_CLASE = EmployeeModel.FRM1_COD_CLASE;
+                //EmployeeModel.FRM1_CE_COD_CLASE = EmployeeModel.FRM1_COD_CLASE;
 
-                EmployeeVM.FRM2_CT_COD_CLASE = EmployeeVM.FRM2_COD_CLASE;
-                EmployeeVM.FRM2_CE_COD_CLASE = EmployeeVM.FRM2_COD_CLASE;
+                //EmployeeModel.FRM2_CT_COD_CLASE = EmployeeModel.FRM2_COD_CLASE;
+                //EmployeeModel.FRM2_CE_COD_CLASE = EmployeeModel.FRM2_COD_CLASE;
 
-                EmployeeVM.FRM3_CT_COD_CLASE = EmployeeVM.FRM3_COD_CLASE;
-                EmployeeVM.FRM3_CE_COD_CLASE = EmployeeVM.FRM3_COD_CLASE;
+                //EmployeeModel.FRM3_CT_COD_CLASE = EmployeeModel.FRM3_COD_CLASE;
+                //EmployeeModel.FRM3_CE_COD_CLASE = EmployeeModel.FRM3_COD_CLASE;
 
                 if (ModelState.IsValid)
                 {
 
                     // validación del modelo.
-                    EmployeeRepository e = new EmployeeRepository( EmployeeVM );
+                    EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
                     e.AddNew();
 
@@ -80,7 +80,7 @@ namespace SPISAP.Controllers
 
                 }
 
-                return View( EmployeeVM );
+                return View(EmployeeModel);
 
             }
             catch( Exception e )
@@ -102,19 +102,39 @@ namespace SPISAP.Controllers
 
         //
         // POST: /Employee/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit( EmployeeViewModel EmployeeModel ) // (int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                //if (ModelState.IsValid)
+                //{
+
+                    // validación del modelo.
+                    EmployeeRepository e = new EmployeeRepository(EmployeeModel);
+
+                    if ( e.Update() )
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View(EmployeeModel);
+                    }
+
+
+                //}
+
+                //return View(EmployeeModel);
+
+                //return RedirectToAction("Index");
             }
-            catch
+            catch( Exception e )
             {
-                return View();
+                Console.Write(e.Message);
+                return View(EmployeeModel);
             }
         }
 

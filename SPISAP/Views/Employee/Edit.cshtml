@@ -23,8 +23,8 @@
 </nav>
 
 @*//@Html.Partial("_ValidationSummary")*@
-
-@using (Html.BeginForm())
+@*//Html.BeginForm("Confirm", "Wydawca", new { app = @Model })*@
+@using (Html.BeginForm("Edit","Employee","POST"))
 { 
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)

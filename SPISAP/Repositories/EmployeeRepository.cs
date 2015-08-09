@@ -21,50 +21,51 @@ namespace SPISAP.Repositories
         public EmployeeRepository(EmployeeViewModel Empleado)
         {
 
+            #region DATA_EMPLOYEE_TEST
             // DATOS PERSONALES
-//Empleado.DATOS_PERSONALES.FICHA = "123456789012";
-//Empleado.DATOS_PERSONALES.CEDULA = "12919906";
-//Empleado.DATOS_PERSONALES.COD_SUCURSAL = "1001";
-//Empleado.DATOS_PERSONALES.COD_GRUPO = "1";
-//Empleado.DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
-//Empleado.DATOS_PERSONALES.CARGO = "CARGO";
-//Empleado.DATOS_PERSONALES.TRATAMIENTO = "Sra.";
-//Empleado.DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
-//Empleado.DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
-//Empleado.DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
-//Empleado.DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
-//Empleado.DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
-//Empleado.DATOS_PERSONALES.COD_PAIS = "VE";
-//Empleado.DATOS_PERSONALES.COD_ESTADO = "NE";
-//Empleado.DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
-//Empleado.DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
-//Empleado.DATOS_PERSONALES.SEXO = "M";
-//Empleado.DATOS_PERSONALES.RIF = "J129199060";
-//Empleado.DATOS_PERSONALES.CALZADO = "34";
-//Empleado.DATOS_PERSONALES.CHEMISE = "36";
-//Empleado.DATOS_PERSONALES.PANTALON = "36";
+            //Empleado.DATOS_PERSONALES.FICHA = "123456789012";
+            //Empleado.DATOS_PERSONALES.CEDULA = "12919906";
+            //Empleado.DATOS_PERSONALES.COD_SUCURSAL = "1001";
+            //Empleado.DATOS_PERSONALES.COD_GRUPO = "1";
+            //Empleado.DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
+            //Empleado.DATOS_PERSONALES.CARGO = "CARGO";
+            //Empleado.DATOS_PERSONALES.TRATAMIENTO = "Sra.";
+            //Empleado.DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
+            //Empleado.DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
+            //Empleado.DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
+            //Empleado.DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
+            //Empleado.DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
+            //Empleado.DATOS_PERSONALES.COD_PAIS = "VE";
+            //Empleado.DATOS_PERSONALES.COD_ESTADO = "NE";
+            //Empleado.DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
+            //Empleado.DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
+            //Empleado.DATOS_PERSONALES.SEXO = "M";
+            //Empleado.DATOS_PERSONALES.RIF = "J129199060";
+            //Empleado.DATOS_PERSONALES.CALZADO = "34";
+            //Empleado.DATOS_PERSONALES.CHEMISE = "36";
+            //Empleado.DATOS_PERSONALES.PANTALON = "36";
 
-//Empleado.COD_CLASE_CELULAR = "04128094599";
-//Empleado.COD_CLASE_CORREO = "flormaringl@gmail.com";
-                
+            //Empleado.COD_CLASE_CELULAR = "04128094599";
+            //Empleado.COD_CLASE_CORREO = "flormaringl@gmail.com";
+
             //// DATOS DIRECCIÓN
-//Empleado.DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
-//Empleado.DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
-//Empleado.DATOS_DIRECCION.PISO = "14";
-//Empleado.DATOS_DIRECCION.NUMERO = "141";
-//Empleado.DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
-////Empleado.DATOS_DIRECCION.COD_ESTADO = "DC";
-//Empleado.DATOS_DIRECCION.COD_PAIS = "VE";
-//Empleado.DATOS_DIRECCION.TELEFONOS = "4835448";
-//Empleado.DATOS_DIRECCION.COD_ESTADO_SSO = "DC";
-//Empleado.DATOS_DIRECCION.COD_MUNICIPIO_SSO = "1";
-//Empleado.DATOS_DIRECCION.COD_PARROQUIA_SSO = "663";
-//Empleado.DATOS_DIRECCION.CIUDAD = "CARACAS";
+            //Empleado.DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
+            //Empleado.DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
+            //Empleado.DATOS_DIRECCION.PISO = "14";
+            //Empleado.DATOS_DIRECCION.NUMERO = "141";
+            //Empleado.DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
+            ////Empleado.DATOS_DIRECCION.COD_ESTADO = "DC";
+            //Empleado.DATOS_DIRECCION.COD_PAIS = "VE";
+            //Empleado.DATOS_DIRECCION.TELEFONOS = "4835448";
+            //Empleado.DATOS_DIRECCION.COD_ESTADO_SSO = "DC";
+            //Empleado.DATOS_DIRECCION.COD_MUNICIPIO_SSO = "1";
+            //Empleado.DATOS_DIRECCION.COD_PARROQUIA_SSO = "663";
+            //Empleado.DATOS_DIRECCION.CIUDAD = "CARACAS";
 
             //// DATOS DISCAPACIDAD
-//Empleado.COD_DISCAPACIDAD_MOTRIZ = true;
-//Empleado.COD_DISCAPACIDAD_SENSORIAL = false;
-//Empleado.COD_DISCAPACIDAD_INTELECTUAL = true;
+            //Empleado.COD_DISCAPACIDAD_MOTRIZ = true;
+            //Empleado.COD_DISCAPACIDAD_SENSORIAL = false;
+            //Empleado.COD_DISCAPACIDAD_INTELECTUAL = true;
 
             //// DATOS FAMILIARES
             //Empleado.FAM1_COD_PARENTESCO = "1";
@@ -93,19 +94,30 @@ namespace SPISAP.Repositories
             //Empleado.FRM1_FECHA_FIN = "01/10/2000";
 
             // DATOS EXPERIENCIA LABORAL
-//Empleado.EXP1_FECHA_INICIO = "01/01/2000";
-//Empleado.EXP1_FECHA_FIN = "31/01/2000";
-//Empleado.EXP1_EMPRESA = "EMPRESA 1";
-//Empleado.EXP1_CIUDAD = "CIUDAD 1";
-//Empleado.EXP1_PAIS = "VE";
-//Empleado.EXP1_COD_RAMO = "01";
-//Empleado.EXP1_COD_ACTIVIDAD = "01";
-//Empleado.EXP1_COD_RELACION = "4";
+            //Empleado.EXP1_FECHA_INICIO = "01/01/2000";
+            //Empleado.EXP1_FECHA_FIN = "31/01/2000";
+            //Empleado.EXP1_EMPRESA = "EMPRESA 1";
+            //Empleado.EXP1_CIUDAD = "CIUDAD 1";
+            //Empleado.EXP1_PAIS = "VE";
+            //Empleado.EXP1_COD_RAMO = "01";
+            //Empleado.EXP1_COD_ACTIVIDAD = "01";
+            //Empleado.EXP1_COD_RELACION = "4";
+            #endregion
 
+            // agregar valores por defecto.
+            Empleado.COD_PAIS = "VE";
+            Empleado.FRM1_CT_COD_CLASE = Empleado.FRM1_COD_CLASE;
+            Empleado.FRM1_CE_COD_CLASE = Empleado.FRM1_COD_CLASE;
 
+            Empleado.FRM2_CT_COD_CLASE = Empleado.FRM2_COD_CLASE;
+            Empleado.FRM2_CE_COD_CLASE = Empleado.FRM2_COD_CLASE;
+
+            Empleado.FRM3_CT_COD_CLASE = Empleado.FRM3_COD_CLASE;
+            Empleado.FRM3_CE_COD_CLASE = Empleado.FRM3_COD_CLASE;
 
             // TEMPORAL
             Empleado.COD_USER = "CROSARIO";
+            Empleado.TRATAMIENTO = "Sr.";
             //Empleado.DATOS_PERSONALES.CEDULA = "11681109";
             //Empleado.DATOS_PERSONALES.SEXO = "M";
             Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
@@ -161,6 +173,7 @@ namespace SPISAP.Repositories
                                                 COD_PAIS = dp.COD_PAIS,
                                                 COD_NACIONALIDAD = dp.COD_NACIONALIDAD,
                                                 COD_ESTADO = dp.COD_ESTADO,
+                                                ESTADO_CIVIL = dp.ESTADO_CIVIL,
                                                 RIF = dp.RIF, 
                                                 COD_AREA_PERSONAL = dp.COD_AREA_PERSONAL,
                                                 CARGO = dp.CARGO,
@@ -198,17 +211,17 @@ namespace SPISAP.Repositories
                 // llenar los datos familiares.
                 List<DFAMILIAR> query = db.DFAMILIARES.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
 
-                /* SIMULACRO */
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "1", PRIMER_APELLIDO = "GONZALEZ", SEGUNDO_APELLIDO="LOPEZ", NOMBRES = "FLOR MARINA", FECHA_NACIMIENTO = DateTime.Parse("1976/01/19"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "12919906", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO="MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
-                //query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+/* SIMULACRO */
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "1", PRIMER_APELLIDO = "GONZALEZ", SEGUNDO_APELLIDO = "LOPEZ", NOMBRES = "FLOR MARINA", FECHA_NACIMIENTO = DateTime.Parse("1976/01/19"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "12919906", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
+                query.Add(new DFAMILIAR { COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "MENDOZA", NOMBRES = "ALISON", FECHA_NACIMIENTO = DateTime.Parse("02/10/1996"), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "25123321", SEXO = "F" });
 
 
                 for (int i = 0; i < query.Count(); i++)
@@ -345,9 +358,9 @@ namespace SPISAP.Repositories
                 List<DFORMACION> form = db.DFORMACIONES.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
 
 //SIMULACRO
-//form.Add(new DFORMACION { COD_CLASE = "V1", INSTITUO = "INSTITUTO1", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00086", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
-//form.Add(new DFORMACION { COD_CLASE = "V2", INSTITUO = "INSTITUTO2", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00030", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
-//form.Add(new DFORMACION { COD_CLASE = "V3", INSTITUO = "INSTITUTO3", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00029", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V1", INSTITUO = "INSTITUTO1", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00086", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V2", INSTITUO = "INSTITUTO2", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00030", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V3", INSTITUO = "INSTITUTO3", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00029", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
 
                 for (int i = 0; i < form.Count(); i++)
                 {
@@ -402,9 +415,9 @@ namespace SPISAP.Repositories
                 #region TABLA_DATOS_EXPERIENCIA_LABORAL
                 List<DEXPERIENCIA> exp = db.DEXPERIENCIAS.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
 // SIMULACRO
-//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 1", CIUDAD = "CDAD 1", PAIS = "VE", COD_RAMO = "03", COD_ACTIVIDAD = "01", COD_RELACION = "5" });
-//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 2", CIUDAD = "CDAD 2", PAIS = "AR", COD_RAMO = "02", COD_ACTIVIDAD = "02", COD_RELACION = "4" });
-//exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 3", CIUDAD = "CDAD 3", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "03", COD_RELACION = "3" });
+                exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 1", CIUDAD = "CDAD 1", PAIS = "VE", COD_RAMO = "03", COD_ACTIVIDAD = "01", COD_RELACION = "5" });
+                exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 2", CIUDAD = "CDAD 2", PAIS = "AR", COD_RAMO = "02", COD_ACTIVIDAD = "02", COD_RELACION = "4" });
+                exp.Add(new DEXPERIENCIA { FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000"), EMPRESA = "COMPANY 3", CIUDAD = "CDAD 3", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "03", COD_RELACION = "3" });
 
                 for (int i = 0; i < exp.Count(); i++)
                 {
@@ -448,34 +461,6 @@ namespace SPISAP.Repositories
                 return record;
             }
 
-        }
-
-        private void FillDFamiliares()
-        {
-
-            using (SPISAPEntities db = new SPISAPEntities())
-            {
-
-                List<DFAMILIAR> query = db.DFAMILIARES.Where(x => x.CEDULA.Equals("11681109")).ToList();
-
-                for (int i = 0; i < query.Count(); i++)
-                {
-
-                    switch (i)
-                    {
-
-                        case 1:
-                            Console.WriteLine("Case 1");
-                            break;
-
-                        default:
-                            break;
-                    }
-
-                }
-
-            }
-        
         }
 
         private string FindDComunicacion( string fieldname, string value)
@@ -1131,6 +1116,141 @@ namespace SPISAP.Repositories
 
         public bool Update()
         {
+
+            try
+            {
+
+                using (SPISAPEntities db = new SPISAPEntities())
+                {
+
+                    #region DATOS_PERSONALES
+                    //DPERSONALES dp = db.DPERSONALES.FirstOrDefault(x => x.CEDULA.Equals(empleado.CEDULA) && x.FICHA.Equals("F" + empleado.CEDULA ) );
+
+                    //if (dp != null)
+                    //{
+                    //    dp.FICHA = "F" + empleado.CEDULA;
+                    //    dp.CEDULA = empleado.CEDULA;
+                    //    dp.COD_SUCURSAL = empleado.COD_SUCURSAL;
+                    //    dp.COD_GRUPO = empleado.COD_GRUPO;
+                    //    dp.COD_AREA_PERSONAL = empleado.COD_AREA_PERSONAL;
+                    //    dp.CARGO = empleado.CARGO;
+                    //    dp.TRATAMIENTO = empleado.TRATAMIENTO;
+                    //    dp.PRIMER_APELLIDO = empleado.PRIMER_APELLIDO;
+                    //    dp.SEGUNDO_APELLIDO = empleado.SEGUNDO_APELLIDO;
+                    //    dp.NOMBRE = empleado.NOMBRE;
+                    //    dp.FECHA_NACIMIENTO = empleado.FECHA_NACIMIENTO;
+                    //    dp.CIUDAD_NACIMIENTO = empleado.CIUDAD_NACIMIENTO;
+                    //    dp.COD_PAIS = empleado.COD_PAIS;
+                    //    dp.COD_ESTADO = empleado.COD_ESTADO;
+                    //    dp.COD_NACIONALIDAD = empleado.COD_NACIONALIDAD;
+                    //    dp.ESTADO_CIVIL = empleado.ESTADO_CIVIL;
+                    //    dp.SEXO = empleado.SEXO;
+                    //    dp.RIF = empleado.RIF;
+                    //    dp.CALZADO = empleado.CALZADO;
+                    //    dp.CHEMISE = empleado.CHEMISE;
+                    //    dp.PANTALON = empleado.PANTALON;
+                    //    dp.COD_USER_INS = empleado.COD_USER;
+                    //    dp.FECHA_INS = System.DateTime.Now;
+                    //    dp.COD_USER_UPD = empleado.COD_USER;
+                    //    dp.FECHA_UPD = System.DateTime.Now;
+                    //}
+
+                    //db.DPERSONALES.Add(dp);
+                    #endregion
+
+                    #region DATOS_COMUNICACION
+                    //if (empleado.COD_CLASE_CELULAR != null)
+                    //{
+                    //    DCOMUNICACION dc = db.DCOMUNICACIONES.FirstOrDefault(x => x.CEDULA.Equals(empleado.CEDULA) && x.COD_CLASE.Equals("CELL"));
+                    //    if( dc != null)
+                    //    {
+                    //        dc.CEDULA = empleado.CEDULA;
+                    //        //dc.COD_CLASE = "CELL";
+                    //        dc.IDENTIFICADOR = empleado.COD_CLASE_CELULAR;
+                    //        dc.COD_USER_UPD = empleado.COD_USER;
+                    //        dc.FECHA_UPD = System.DateTime.Now;
+                    //    }
+                    //    db.DCOMUNICACIONES.Add(dc);
+                    //}
+                    //if (empleado.COD_CLASE_CORREO != null)
+                    //{
+                    //    DCOMUNICACION dcorreo = db.DCOMUNICACIONES.FirstOrDefault(x => x.CEDULA.Equals(empleado.CEDULA) && x.COD_CLASE.Equals("0010"));
+                    //    if( dcorreo != null)
+                    //    {
+                    //        dcorreo.CEDULA = empleado.CEDULA;
+                    //        //dc.COD_CLASE = "0010";
+                    //        dcorreo.IDENTIFICADOR = empleado.COD_CLASE_CORREO;
+                    //        dcorreo.COD_USER_UPD = empleado.COD_USER;
+                    //        dcorreo.FECHA_UPD = System.DateTime.Now;
+                    //    }
+                    //    db.DCOMUNICACIONES.Add(dcorreo);
+                    //}
+                    #endregion
+
+                    #region DATOS_DIRECCION
+                    //DDIRECCION dd = db.DDIRECCIONES.FirstOrDefault(x => x.CEDULA.Equals(empleado.CEDULA));
+
+                    //if (dd != null)
+                    //{
+                    //    dd.CEDULA = empleado.CEDULA;
+                    //    dd.CALLE = empleado.CALLE;
+                    //    dd.EDIFICIO = empleado.EDIFICIO;
+                    //    dd.PISO = empleado.PISO;
+                    //    dd.NUMERO = empleado.NUMERO;
+                    //    dd.CIUDAD = empleado.CIUDAD;
+                    //    dd.URBANIZACION = empleado.URBANIZACION;
+                    //    dd.COD_ESTADO = empleado.COD_ESTADO_SSO;  // CONVERSAR CON CAROLINA //empleado.COD_ESTADO;
+                    //    dd.COD_PAIS = empleado.COD_PAIS;
+                    //    dd.TELEFONOS = empleado.TELEFONOS;
+                    //    dd.COD_ESTADO_SSO = empleado.COD_ESTADO_SSO;
+                    //    dd.COD_MUNICIPIO_SSO = empleado.COD_MUNICIPIO_SSO;
+                    //    dd.COD_PARROQUIA_SSO = empleado.COD_PARROQUIA_SSO;
+                    //    dd.COD_USER_UPD = empleado.COD_USER;
+                    //    dd.FECHA_UPD = System.DateTime.Now;
+                    //}
+
+                    //db.DDIRECCIONES.Add(dd);
+                    #endregion
+
+                    #region DATOS_DISCAPACIDAD
+                    List<DDISCAPACIDAD> itemsToDelete = db.DDISCAPACIDADES.Where(x => x.CEDULA.Equals(empleado.CEDULA)).ToList();
+                    foreach (var item in itemsToDelete)
+                    {
+                        db.DDISCAPACIDADES.Remove(item);
+                    }
+                    if (empleado.COD_DISCAPACIDAD_MOTRIZ == true)
+                    {
+                        db.DDISCAPACIDADES.Add(new DDISCAPACIDAD { CEDULA = empleado.CEDULA, GRUPO_DISCAPACIDAD = "ZA", COD_USER_INS = empleado.COD_USER, COD_USER_UPD = empleado.COD_USER, FECHA_INS = System.DateTime.Now, FECHA_UPD = System.DateTime.Now });
+                    }
+                    if (empleado.COD_DISCAPACIDAD_INTELECTUAL == true)
+                    {
+                        db.DDISCAPACIDADES.Add(new DDISCAPACIDAD { CEDULA = empleado.CEDULA, GRUPO_DISCAPACIDAD = "ZB", COD_USER_INS = empleado.COD_USER, COD_USER_UPD = empleado.COD_USER, FECHA_INS = System.DateTime.Now, FECHA_UPD = System.DateTime.Now });
+                    }
+                    if (empleado.COD_DISCAPACIDAD_SENSORIAL == true)
+                    {
+                        db.DDISCAPACIDADES.Add(new DDISCAPACIDAD { CEDULA = empleado.CEDULA, GRUPO_DISCAPACIDAD = "ZC", COD_USER_INS = empleado.COD_USER, COD_USER_UPD = empleado.COD_USER, FECHA_INS = System.DateTime.Now, FECHA_UPD = System.DateTime.Now });
+                    }
+                    #endregion
+
+                    db.SaveChanges();
+
+                }
+
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+
+                return false;
+            }
+
+
             return true;
         }
 
