@@ -58,7 +58,7 @@ namespace SPISAP.Controllers
             {
 
                 // agregar los valores por defecto.
-                EmployeeVM.DATOS_DIRECCION.COD_PAIS = "VE";
+                EmployeeVM.COD_PAIS = "VE";
                 EmployeeVM.FRM1_CT_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
                 EmployeeVM.FRM1_CE_COD_CLASE = EmployeeVM.FRM1_COD_CLASE;
 
@@ -95,7 +95,9 @@ namespace SPISAP.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
+
+            return View(model);
         }
 
         //

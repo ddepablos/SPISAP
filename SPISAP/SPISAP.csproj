@@ -240,6 +240,7 @@
     <Compile Include="Models\DUSUARIO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\ESTADO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
@@ -252,7 +253,6 @@
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ListViewModel.cs" />
-    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\MUNICIPIO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
@@ -473,6 +473,7 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Shared\_ValidationSummary.cshtml" />
     <Content Include="Views\Employee\Table.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

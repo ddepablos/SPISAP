@@ -140,6 +140,42 @@ namespace SPISAP.Repositories
             return null;
         }
 
+        public EmployeeViewModel FindEmployee(string value)
+        {
+
+            using ( SPISAPEntities db = new SPISAPEntities() )
+            {
+
+                EmployeeViewModel record = (from dp in db.DPERSONALES
+                                            where dp.CEDULA.Equals(value)
+                                            select new EmployeeViewModel()
+                                            {
+                                                PRIMER_APELLIDO = dp.PRIMER_APELLIDO,
+                                                SEGUNDO_APELLIDO = dp.SEGUNDO_APELLIDO,
+                                                NOMBRE = dp.NOMBRE,
+                                                CEDULA = dp.CEDULA,
+                                                SEXO = dp.SEXO,
+                                                FECHA_NACIMIENTO = dp.FECHA_NACIMIENTO,
+                                                CIUDAD_NACIMIENTO = dp.CIUDAD_NACIMIENTO,
+                                                COD_PAIS = dp.COD_PAIS,
+                                                COD_NACIONALIDAD = dp.COD_NACIONALIDAD,
+                                                COD_ESTADO = dp.COD_ESTADO,
+                                                RIF = dp.RIF, //COD_CLASE_CORREO 
+                                                COD_AREA_PERSONAL = dp.COD_AREA_PERSONAL,
+                                                CARGO = dp.CARGO,
+                                                COD_SUCURSAL = dp.COD_SUCURSAL,
+                                                COD_GRUPO = dp.COD_GRUPO,
+                                                TRATAMIENTO = dp.TRATAMIENTO,
+                                                CHEMISE = dp.CHEMISE,
+                                                PANTALON = dp.PANTALON,
+                                                CALZADO = dp.CALZADO
+                                            }).SingleOrDefault();
+                                
+                return record;
+            }
+
+        }
+
         public List<DPERSONALES> Find()
         {
             using ( SPISAPEntities db = new SPISAPEntities() )
@@ -173,27 +209,27 @@ namespace SPISAP.Repositories
                     #region DATOS_PERSONALES
                     DPERSONALES DPersonales = new DPERSONALES()
                     {
-                        FICHA = "F" + empleado.DATOS_PERSONALES.CEDULA,
-                        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
-                        COD_SUCURSAL = empleado.DATOS_PERSONALES.COD_SUCURSAL,
-                        COD_GRUPO = empleado.DATOS_PERSONALES.COD_GRUPO,
-                        COD_AREA_PERSONAL = empleado.DATOS_PERSONALES.COD_AREA_PERSONAL,
-                        CARGO = empleado.DATOS_PERSONALES.CARGO,
-                        TRATAMIENTO = empleado.DATOS_PERSONALES.TRATAMIENTO,
-                        PRIMER_APELLIDO = empleado.DATOS_PERSONALES.PRIMER_APELLIDO,
-                        SEGUNDO_APELLIDO = empleado.DATOS_PERSONALES.SEGUNDO_APELLIDO,
-                        NOMBRE = empleado.DATOS_PERSONALES.NOMBRE,
-                        FECHA_NACIMIENTO = empleado.DATOS_PERSONALES.FECHA_NACIMIENTO,
-                        CIUDAD_NACIMIENTO = empleado.DATOS_PERSONALES.CIUDAD_NACIMIENTO,
-                        COD_PAIS = empleado.DATOS_PERSONALES.COD_PAIS,
-                        COD_ESTADO = empleado.DATOS_PERSONALES.COD_ESTADO,
-                        COD_NACIONALIDAD = empleado.DATOS_PERSONALES.COD_NACIONALIDAD,
-                        ESTADO_CIVIL = empleado.DATOS_PERSONALES.ESTADO_CIVIL,
-                        SEXO = empleado.DATOS_PERSONALES.SEXO,
-                        RIF = empleado.DATOS_PERSONALES.RIF,
-                        CALZADO = empleado.DATOS_PERSONALES.CALZADO,
-                        CHEMISE = empleado.DATOS_PERSONALES.CHEMISE,
-                        PANTALON = empleado.DATOS_PERSONALES.PANTALON,
+                        FICHA = "F" + empleado.CEDULA,
+                        CEDULA = empleado.CEDULA,
+                        COD_SUCURSAL = empleado.COD_SUCURSAL,
+                        COD_GRUPO = empleado.COD_GRUPO,
+                        COD_AREA_PERSONAL = empleado.COD_AREA_PERSONAL,
+                        CARGO = empleado.CARGO,
+                        TRATAMIENTO = empleado.TRATAMIENTO,
+                        PRIMER_APELLIDO = empleado.PRIMER_APELLIDO,
+                        SEGUNDO_APELLIDO = empleado.SEGUNDO_APELLIDO,
+                        NOMBRE = empleado.NOMBRE,
+                        FECHA_NACIMIENTO = empleado.FECHA_NACIMIENTO,
+                        CIUDAD_NACIMIENTO = empleado.CIUDAD_NACIMIENTO,
+                        COD_PAIS = empleado.COD_PAIS,
+                        COD_ESTADO = empleado.COD_ESTADO,
+                        COD_NACIONALIDAD = empleado.COD_NACIONALIDAD,
+                        ESTADO_CIVIL = empleado.ESTADO_CIVIL,
+                        SEXO = empleado.SEXO,
+                        RIF = empleado.RIF,
+                        CALZADO = empleado.CALZADO,
+                        CHEMISE = empleado.CHEMISE,
+                        PANTALON = empleado.PANTALON,
                         COD_USER_INS = empleado.COD_USER,
                         FECHA_INS = System.DateTime.Now,
                         COD_USER_UPD = empleado.COD_USER,
@@ -209,7 +245,7 @@ namespace SPISAP.Repositories
 
                         DCOMUNICACION DComunicacion = new DCOMUNICACION()
                         {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                            CEDULA = empleado.CEDULA,
                             COD_CLASE = "CELL",
                             IDENTIFICADOR = empleado.COD_CLASE_CELULAR,
                             COD_USER_INS = empleado.COD_USER,
@@ -226,7 +262,7 @@ namespace SPISAP.Repositories
 
                         DCOMUNICACION DComunicacion = new DCOMUNICACION()
                         {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                            CEDULA = empleado.CEDULA,
                             COD_CLASE = "0010",
                             IDENTIFICADOR = empleado.COD_CLASE_CORREO,
                             COD_USER_INS = empleado.COD_USER,
@@ -244,19 +280,19 @@ namespace SPISAP.Repositories
 
                     DDIRECCION DDireccion = new DDIRECCION()
                     {
-                        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
-                        CALLE = empleado.DATOS_DIRECCION.CALLE,
-                        EDIFICIO = empleado.DATOS_DIRECCION.EDIFICIO,
-                        PISO = empleado.DATOS_DIRECCION.PISO,
-                        NUMERO = empleado.DATOS_DIRECCION.NUMERO,
-                        CIUDAD = empleado.DATOS_DIRECCION.CIUDAD,
-                        URBANIZACION = empleado.DATOS_DIRECCION.URBANIZACION,
-                        COD_ESTADO = empleado.DATOS_DIRECCION.COD_ESTADO_SSO,  // CONVERSAR CON CAROLINA //empleado.DATOS_DIRECCION.COD_ESTADO,
-                        COD_PAIS = empleado.DATOS_DIRECCION.COD_PAIS,
-                        TELEFONOS = empleado.DATOS_DIRECCION.TELEFONOS,
-                        COD_ESTADO_SSO = empleado.DATOS_DIRECCION.COD_ESTADO_SSO,
-                        COD_MUNICIPIO_SSO = empleado.DATOS_DIRECCION.COD_MUNICIPIO_SSO,
-                        COD_PARROQUIA_SSO = empleado.DATOS_DIRECCION.COD_PARROQUIA_SSO,
+                        CEDULA = empleado.CEDULA,
+                        CALLE = empleado.CALLE,
+                        EDIFICIO = empleado.EDIFICIO,
+                        PISO = empleado.PISO,
+                        NUMERO = empleado.NUMERO,
+                        CIUDAD = empleado.CIUDAD,
+                        URBANIZACION = empleado.URBANIZACION,
+                        COD_ESTADO = empleado.COD_ESTADO_SSO,  // CONVERSAR CON CAROLINA //empleado.COD_ESTADO,
+                        COD_PAIS = empleado.COD_PAIS,
+                        TELEFONOS = empleado.TELEFONOS,
+                        COD_ESTADO_SSO = empleado.COD_ESTADO_SSO,
+                        COD_MUNICIPIO_SSO = empleado.COD_MUNICIPIO_SSO,
+                        COD_PARROQUIA_SSO = empleado.COD_PARROQUIA_SSO,
                         COD_USER_INS = empleado.COD_USER,
                         FECHA_INS = System.DateTime.Now,
                         COD_USER_UPD = empleado.COD_USER,
@@ -273,7 +309,7 @@ namespace SPISAP.Repositories
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                            CEDULA = empleado.CEDULA,
                             GRUPO_DISCAPACIDAD = "ZA",
                             COD_USER_INS = empleado.COD_USER,
                             FECHA_INS = System.DateTime.Now,
@@ -286,7 +322,7 @@ namespace SPISAP.Repositories
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                            CEDULA = empleado.CEDULA,
                             GRUPO_DISCAPACIDAD = "ZB",
                             COD_USER_INS = empleado.COD_USER,
                             FECHA_INS = System.DateTime.Now,
@@ -299,7 +335,7 @@ namespace SPISAP.Repositories
                     {
                         DDISCAPACIDAD DDiscapacidad = new DDISCAPACIDAD()
                         {
-                            CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                            CEDULA = empleado.CEDULA,
                             GRUPO_DISCAPACIDAD = "ZC",
                             COD_USER_INS = empleado.COD_USER,
                             FECHA_INS = System.DateTime.Now,
@@ -318,7 +354,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM1_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM1_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM1_SEGUNDO_APELLIDO,
@@ -343,7 +379,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM2_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,
@@ -368,7 +404,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM3_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM3_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM3_SEGUNDO_APELLIDO,
@@ -393,7 +429,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM4_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM4_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM4_SEGUNDO_APELLIDO,
@@ -418,7 +454,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM5_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM5_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM5_SEGUNDO_APELLIDO,
@@ -443,7 +479,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM6_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM6_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM6_SEGUNDO_APELLIDO,
@@ -468,7 +504,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM7_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM7_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM7_SEGUNDO_APELLIDO,
@@ -493,7 +529,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM8_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM8_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM8_SEGUNDO_APELLIDO,
@@ -518,7 +554,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM9_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM9_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM9_SEGUNDO_APELLIDO,
@@ -543,7 +579,7 @@ namespace SPISAP.Repositories
 
                     //    DFAMILIAR DFamilar = new DFAMILIAR()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_PARENTESCO = empleado.FAM10_COD_PARENTESCO,
                     //        PRIMER_APELLIDO = empleado.FAM10_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM10_SEGUNDO_APELLIDO,
@@ -571,7 +607,7 @@ namespace SPISAP.Repositories
 
                     //    DFORMACION DFormacion = new DFORMACION()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM1_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM1_COD_FORMACION,
                     //        INSTITUO = empleado.FRM1_INSTITUO,
@@ -598,7 +634,7 @@ namespace SPISAP.Repositories
 
                     //    DFORMACION DFormacion = new DFORMACION()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM2_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM2_COD_FORMACION,
                     //        INSTITUO = empleado.FRM2_INSTITUO,
@@ -625,7 +661,7 @@ namespace SPISAP.Repositories
 
                     //    DFORMACION DFormacion = new DFORMACION()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM3_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM3_COD_FORMACION,
                     //        INSTITUO = empleado.FRM3_INSTITUO,
@@ -654,7 +690,7 @@ namespace SPISAP.Repositories
                     //{
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        FECHA_INICIO = StringToDateTime(empleado.EXP1_FECHA_INICIO),
                     //        FECHA_FIN = StringToDateTime(empleado.EXP1_FECHA_FIN),
                     //        EMPRESA = empleado.EXP1_EMPRESA,
@@ -675,7 +711,7 @@ namespace SPISAP.Repositories
                     //{
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        FECHA_INICIO = StringToDateTime(empleado.EXP2_FECHA_INICIO),
                     //        FECHA_FIN = StringToDateTime(empleado.EXP2_FECHA_FIN),
                     //        EMPRESA = empleado.EXP2_EMPRESA,
@@ -696,7 +732,7 @@ namespace SPISAP.Repositories
                     //{
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
-                    //        CEDULA = empleado.DATOS_PERSONALES.CEDULA,
+                    //        CEDULA = empleado.CEDULA,
                     //        FECHA_INICIO = StringToDateTime(empleado.EXP3_FECHA_INICIO),
                     //        FECHA_FIN = StringToDateTime(empleado.EXP3_FECHA_FIN),
                     //        EMPRESA = empleado.EXP3_EMPRESA,

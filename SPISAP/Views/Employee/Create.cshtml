@@ -55,56 +55,56 @@
         <br>
         <div class="col-md-3">
         Primer Apellido :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" })
+        @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" })
         </div>
         <div class="col-md-3">
         Segundo Apellido :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
         Nombres :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.NOMBRE, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.NOMBRE, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-2">
         Cédula :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.CEDULA, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
+        @Html.TextBoxFor(model => model.CEDULA, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
         </div>
         <div class="col-md-1">
         Sexo :
-        @Html.DropDownListFor(model => model.DATOS_PERSONALES.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
+        @Html.DropDownListFor(model => model.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-3">
         Fecha de Nacimiento :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
+        @Html.TextBoxFor(model => model.FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
         </div>
         <div class="col-md-3">
         Ciudad de Nacimiento :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.CIUDAD_NACIMIENTO, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.CIUDAD_NACIMIENTO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
         País de Nacimiento :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "paisnac" })
+        @Html.DropDownListFor(m => m.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "paisnac" })
         </div>
         <div class="col-md-3">
         Nacionalidad :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id = "nacionalidad" })
+        @Html.DropDownListFor(m => m.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id = "nacionalidad" })
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
         Estado de Nacimiento :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_ESTADO, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "edonac" })
+        @Html.DropDownListFor(m => m.COD_ESTADO, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "edonac" })
         </div>
         <div class="col-md-3">
         Estado Civil :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.ESTADO_CIVIL, new SelectList(Model.EstadoCivil, "CODIGO", "DESCRIPCION", Model.EstadoCivil), new { @class = "form-control", @id = "edocivil" })
+        @Html.DropDownListFor(m => m.ESTADO_CIVIL, new SelectList(Model.EstadoCivil, "CODIGO", "DESCRIPCION", Model.EstadoCivil), new { @class = "form-control", @id = "edocivil" })
         </div>
         <div class="col-md-3">
         RIF :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.RIF, new { @class = "form-control", @maxlength="20" })
+        @Html.TextBoxFor(model => model.RIF, new { @class = "form-control", @maxlength="20" })
         </div>
         <div class="col-md-3">
         Correo Electrónico :
@@ -114,23 +114,23 @@
         <div class="row">
         <div class="col-md-3">
         Nivel de Cargo :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id = "nivelcargo" })
+        @Html.DropDownListFor(m => m.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id = "nivelcargo" })
         </div>
         <div class="col-md-3">
         Nombre del Cargo :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.CARGO, new { @class = "form-control", @maxlength="60" })
+        @Html.TextBoxFor(model => model.CARGO, new { @class = "form-control", @maxlength="60" })
         </div>
         <div class="col-md-2" style="width: 300px;">
         Sucursal :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id = "sucursal" })
+        @Html.DropDownListFor(m => m.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id = "sucursal" })
         </div>
         <div class="col-md-2" style="width: 150px;">
         Tipo de Contratación :
-        @Html.DropDownListFor(m => m.DATOS_PERSONALES.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id = "grupopersonal" })
+        @Html.DropDownListFor(m => m.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id = "grupopersonal" })
         </div>
         <div class="col-md-2" style="width: 150px;">
         Tratamiento :
-        @Html.TextBoxFor(model => model.DATOS_PERSONALES.TRATAMIENTO, new { @class = "form-control", @id = "tratamiento",  @disabled = "disabled", @style="text-align:center"})
+        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamiento",  @disabled = "disabled", @style="text-align:center"})
         </div>
         </div>
         <div class="row">
@@ -138,11 +138,11 @@
         Talla de Camisa :
         @if ( Model.TallaChemise != null )
         {
-        @Html.DropDownListFor(model => model.DATOS_PERSONALES.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id = "chemise" })
+        @Html.DropDownListFor(model => model.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id = "chemise" })
         }
         else
         {
-        <select class="form-control" id="chemise" name="DATOS_PERSONALES.CHEMISE">
+        <select class="form-control" id="chemise" name="CHEMISE">
         <option value=" ">Seleccione un valor</option>
         </select>                                    
         }
@@ -151,11 +151,11 @@
         Talla de Pantalón :
         @if ( Model.TallaPantalon != null )
         {
-        @Html.DropDownListFor(model => model.DATOS_PERSONALES.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
+        @Html.DropDownListFor(model => model.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
         }
         else
         {
-        <select class="form-control" id="pantalon" name="DATOS_PERSONALES.PANTALON">
+        <select class="form-control" id="pantalon" name="PANTALON">
         <option value=" ">Seleccione un valor</option>
         </select>                            
         }
@@ -164,11 +164,11 @@
         Nro. de Zapato :
         @if ( Model.TallaCalzado != null )
         {
-        @Html.DropDownListFor(model => model.DATOS_PERSONALES.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id = "calzado" })                        
+        @Html.DropDownListFor(model => model.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id = "calzado" })                        
         }
         else
         {
-        <select class="form-control" id="calzado" name="DATOS_PERSONALES.CALZADO">
+        <select class="form-control" id="calzado" name="CALZADO">
         <option value=" ">Seleccione un valor</option>
         </select>                               
         }
@@ -187,58 +187,58 @@
         <br>
         <div class="col-md-4">
         Calle :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.CALLE, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.CALLE, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
         Edificio/Casa/Escalera :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.EDIFICIO, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.EDIFICIO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-1">
         Piso :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.PISO, new { @class = "form-control", @maxlength="2", @style="text-align:center" })
+        @Html.TextBoxFor(model => model.PISO, new { @class = "form-control", @maxlength="2", @style="text-align:center" })
         </div>
         <div class="col-md-1">
         Número :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.NUMERO, new { @class = "form-control", @maxlength="4", @style="text-align:center" })
+        @Html.TextBoxFor(model => model.NUMERO, new { @class = "form-control", @maxlength="4", @style="text-align:center" })
         </div>
         <div class="col-md-3">
         Urbanización/Zona :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.URBANIZACION, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.URBANIZACION, new { @class = "form-control", @maxlength="40" })
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-3">
         País :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.COD_PAIS, new { @class = "form-control", @Value="VE", style = "display:none" })
+        @Html.TextBoxFor(model => model.COD_PAIS, new { @class = "form-control", @Value="VE", style = "display:none" })
         @Html.TextBoxFor(model => model.FIELD_WITHOUT_VALUE, new { @class = "form-control", @Value="VENEZUELA", @disabled="disabled"})
         </div>
         <div class="col-md-3">
         Estado :
         @if (Model.EstadoSSO != null)
         {
-        @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id = "estadosso" })
+        @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id = "estadosso" })
         }
         else
         { 
-        <select class="form-control" id="estadosso" name="DATOS_DIRECCION.COD_ESTADO_SSO">
+        <select class="form-control" id="estadosso" name="COD_ESTADO_SSO">
         <option value=" ">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-3">
         Ciudad :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.CIUDAD, new { @class = "form-control", @maxlength="40" })
+        @Html.TextBoxFor(model => model.CIUDAD, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
         Municipio :
         @if (Model.MunicipioSSO != null)
         {
-        @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id = "municipiosso" })
+        @Html.DropDownListFor(m => m.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id = "municipiosso" })
         }
         else
         { 
-        <select class="form-control" id="municipiosso" name="DATOS_DIRECCION.COD_MUNICIPIO_SSO">
+        <select class="form-control" id="municipiosso" name="COD_MUNICIPIO_SSO">
         <option value=" ">Seleccione un valor</option>
         </select>                       
         }
@@ -249,18 +249,18 @@
         Parroquia :
         @if (Model.ParroquiaSSO != null)
         {
-        @Html.DropDownListFor(m => m.DATOS_DIRECCION.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id = "parroquiasso" })
+        @Html.DropDownListFor(m => m.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id = "parroquiasso" })
         }
         else
         { 
-        <select class="form-control" id="parroquiasso" name="DATOS_DIRECCION.COD_PARROQUIA_SSO">
+        <select class="form-control" id="parroquiasso" name="COD_PARROQUIA_SSO">
         <option value=" ">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Teléfono de Habitación :
-        @Html.TextBoxFor(model => model.DATOS_DIRECCION.TELEFONOS, new { @class = "form-control", @maxlength="11" })
+        @Html.TextBoxFor(model => model.TELEFONOS, new { @class = "form-control", @maxlength="11" })
         </div>
         <div class="col-md-4">
         Teléfono Celular :

@@ -11,19 +11,67 @@ namespace SPISAP.Models
     public class EmployeeViewModel
     {
 
-        public string FIELD_WITHOUT_VALUE { get; set; }
 
-        /* DATOS DE SESIÓN */
-        public string COD_USER { get; set; } 
+        #region EMPLOYEE_ATRIBUTOS
 
-        /* DPERSONALES : Datos Personales */
-        public DPERSONALES DATOS_PERSONALES { get; set; }
+        #region DATOS_PERSONALES
+        public string FICHA { get; set; }
 
-        /* DDIRECCION : Dirección del Trabajador */
-        public DDIRECCION DATOS_DIRECCION { get; set; }
+        [Required(ErrorMessage = "El campo Cédula es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
+        [StringLength(8, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 8 dígitos.")]
+        public string CEDULA { get; set; }
 
-        /* DCOMUNICACION : Datos de Comunicación : Número de Teléfono y/o Correo Electrónico */
-        public DCOMUNICACION DATOS_COMUNICACION { get; set; }
+        [Required(ErrorMessage = "El campo Sucursal es requerido.")]
+        public string COD_SUCURSAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Tipo de Contratación es requerido.")]
+        public string COD_GRUPO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nivel de Cargo es requerido.")]
+        public string COD_AREA_PERSONAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Cargo es requerido.")]
+        public string CARGO { get; set; }
+
+        public string TRATAMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
+        public string PRIMER_APELLIDO { get; set; }
+
+        [Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
+        public string SEGUNDO_APELLIDO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombres es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres debe contener entre 3 y 40 carácteres.")]
+        public string NOMBRE { get; set; }
+
+        [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
+        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad de Nacimiento debe contener entre 3 y 40 carácteres.")]
+        public string CIUDAD_NACIMIENTO { get; set; }
+
+        [Required(ErrorMessage = "El campo País de Nacimiento es requerido.")]
+        public string COD_PAIS { get; set; }
+
+        [Required(ErrorMessage = "El campo Estado de Nacimiento es requerido.")]
+        public string COD_ESTADO { get; set; }
+
+        [Required(ErrorMessage = "El campo Nacionalidad es requerido.")]
+        public string COD_NACIONALIDAD { get; set; }
+
+        [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
+        public string ESTADO_CIVIL { get; set; }
+
+        [Required(ErrorMessage = "El campo Sexo es requerido.")]
+        public string SEXO { get; set; }
+
+        //[Required(ErrorMessage = "El campo RIF es requerido.")]
+        public string RIF { get; set; }
 
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                     @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
@@ -35,20 +83,73 @@ namespace SPISAP.Models
         [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono Celular permite únicamente números.")]
         public string COD_CLASE_CELULAR { get; set; }
 
-        /* DDISCAPACIDAD : Datos de Discapacidad */
-        public DDISCAPACIDAD DATOS_DISCAPACIDAD { get; set; }
+        [Required(ErrorMessage = "El campo Nro. de Zapato es requerido.")]
+        public string CALZADO { get; set; }
+
+        [Required(ErrorMessage = "El campo Talla de Camisa es requerido.")]
+        public string CHEMISE { get; set; }
+
+        [Required(ErrorMessage = "El campo Talla de Pantalón es requerido.")]
+        public string PANTALON { get; set; }
+        #endregion
+
+        #region DATOS_DIRECCION
+        [Required(ErrorMessage = "El campo Calle es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Calle debe contener entre 3 y 40 carácteres.")]
+        public string CALLE { get; set; }
+
+        [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Edificio/Casa/Escalera debe contener entre 3 y 40 carácteres.")]
+        public string EDIFICIO { get; set; }
+
+        [Required(ErrorMessage = "El campo Piso es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Piso permite únicamente números.")]
+        public string PISO { get; set; }
+
+        [Required(ErrorMessage = "El campo Número es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Número (Dirección) permite únicamente números.")]
+        public string NUMERO { get; set; }
+
+        [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Dirección) debe contener entre 3 y 40 carácteres.")]
+        public string CIUDAD { get; set; }
+
+        [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
+        public string URBANIZACION { get; set; }
+
+        //[Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
+        public string COD_ESTADO_DIRECCION { get; set; }
+
+        [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
+        public string COD_PAIS_DIRECCION { get; set; }
+
+        [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
+        [StringLength(40, MinimumLength = 7, ErrorMessage = "El campo Teléfono de Habitación debe contener entre 7 y 40 carácteres.")]
+        public string TELEFONOS { get; set; }
+
+        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
+        public string COD_ESTADO_SSO { get; set; }
+
+        [Required(ErrorMessage = "El campo Municipio (Dirección) es requerido.")]
+        public string COD_MUNICIPIO_SSO { get; set; }
+
+        [Required(ErrorMessage = "El campo Parroquia (Dirección) es requerido.")]
+        public string COD_PARROQUIA_SSO { get; set; }
+        #endregion
+
+        #region DATOS_DISCAPACIDAD
         public bool COD_DISCAPACIDAD_MOTRIZ { get; set; }
         public bool COD_DISCAPACIDAD_INTELECTUAL { get; set; }
         public bool COD_DISCAPACIDAD_SENSORIAL { get; set; }
+        #endregion
 
-        /* DFAMILIAR */
-        public DFAMILIAR DATOS_FAMILIARES { get; set; }
-        
-        // * * * D A T O S  F A M I L I A R E S * * *
+        #region DATOS_FAMILIARES
         // FAMILIAR # 1
         public string FAM1_COD_PARENTESCO { get; set; }
 
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 1) debe contener entre 3 y 40 carácteres.")]       
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_PRIMER_APELLIDO { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
@@ -69,8 +170,8 @@ namespace SPISAP.Models
         public string FAM1_CEDULA_FAMILIAR { get; set; }
 
         public string FAM1_SEXO { get; set; }
-        
-        
+
+
         // FAMILIAR # 2
         public string FAM2_COD_PARENTESCO { get; set; }
 
@@ -295,9 +396,9 @@ namespace SPISAP.Models
         public string FAM10_CEDULA_FAMILIAR { get; set; }
 
         public string FAM10_SEXO { get; set; }
+        #endregion
 
-        // * * * FORMACIÓN ACADÉMICA * * * //
- 
+        #region DATOS_FORMACION
         // FORMACIÓN # 1
         [Required(ErrorMessage = "El campo Nivel de Estudio (Formación # 1) es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
@@ -370,8 +471,9 @@ namespace SPISAP.Models
         public string FRM3_CE_COD_CLASE { get; set; }
         public string FRM3_FECHA_INICIO { get; set; }
         public string FRM3_FECHA_FIN { get; set; }
+        #endregion
 
-        // * * * EXPERIENCIA LABORAL * * *                 
+        #region DATOS_EXPERIENCIA_LABORAL
         // EXPERIENCIA # 1
         public string EXP1_CEDULA { get; set; }
         public string EXP1_FECHA_INICIO { get; set; }
@@ -419,8 +521,19 @@ namespace SPISAP.Models
         public string EXP3_COD_RAMO { get; set; }
         public string EXP3_COD_ACTIVIDAD { get; set; }
         public string EXP3_COD_RELACION { get; set; }
+        #endregion
+
+        #region DATOS_SESSION
+        public string COD_USER { get; set; }
+
+        public string FIELD_WITHOUT_VALUE { get; set; }
+        #endregion
+        
+        #endregion
 
         /* ESTRUCTURAS DE LISTAS */
+        #region LISTAS_DE_ATRIBUTOS
+
         #region DATOS_PERSONALES
         public List<GenericModel> Generos;
         public List<PAIS> Paises;
@@ -467,6 +580,9 @@ namespace SPISAP.Models
         public List<RELACION_LABORAL> TipoContratacion;
         #endregion
 
+        #endregion
+
+
         public EmployeeViewModel()
         {
 
@@ -482,7 +598,7 @@ namespace SPISAP.Models
             Generos = ListViewModel.FillGeneros();
             Paises = ListViewModel.FillPaises();
             Nacionalidades = ListViewModel.Nacionalidades();
-            Estados = ListViewModel.GetPaisEstados().Where(e => e.COD_PAIS=="VE").ToList();
+            Estados = ListViewModel.GetPaisEstados().Where(e => e.COD_PAIS == "VE").ToList();
             EstadoCivil = ListViewModel.EstadoCivil();
             NivelCargo = ListViewModel.AreaPersonal();
 
@@ -592,15 +708,10 @@ namespace SPISAP.Models
             //FECHA_INS = System.DateTime.Now;
             //COD_USER_UPD = null;
             //FECHA_UPD = System.DateTime.Now;
-        
+
         }
 
-        // estructura de registro de item dummy.
-        public class GENERO
-        {
-            public string CODIGO { get; set; }
-            public string DESCRIPCION { get; set; }
-        }
+
 
     }
 }
