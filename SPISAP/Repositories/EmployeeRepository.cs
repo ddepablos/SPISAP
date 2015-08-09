@@ -1213,8 +1213,7 @@ namespace SPISAP.Repositories
                     #endregion
 
                     #region DATOS_DISCAPACIDAD
-                    List<DDISCAPACIDAD> itemsToDelete = db.DDISCAPACIDADES.Where(x => x.CEDULA.Equals(empleado.CEDULA)).ToList();
-                    foreach (var item in itemsToDelete)
+                    foreach (var item in db.DDISCAPACIDADES.Where(x => x.CEDULA.Equals(empleado.CEDULA)))
                     {
                         db.DDISCAPACIDADES.Remove(item);
                     }
@@ -1230,6 +1229,421 @@ namespace SPISAP.Repositories
                     {
                         db.DDISCAPACIDADES.Add(new DDISCAPACIDAD { CEDULA = empleado.CEDULA, GRUPO_DISCAPACIDAD = "ZC", COD_USER_INS = empleado.COD_USER, COD_USER_UPD = empleado.COD_USER, FECHA_INS = System.DateTime.Now, FECHA_UPD = System.DateTime.Now });
                     }
+                    #endregion
+
+                    #region DATOS_FAMILIARES
+                    foreach (var item in db.DFAMILIARES.Where(x => x.CEDULA.Equals(empleado.CEDULA)))
+                    {
+                        db.DFAMILIARES.Remove(item);
+                    }
+                    //if (empleado.FAM1_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM1_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM1_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM1_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM1_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM1_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM1_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM1_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM1_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM1_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM1_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM2_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM2_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM2_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM2_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM2_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM2_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM2_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM2_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM2_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM3_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM3_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM3_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM3_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM3_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM3_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM3_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM3_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM3_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM3_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM3_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM4_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM4_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM4_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM4_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM4_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM4_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM4_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM4_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM4_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM4_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM4_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM5_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM5_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM5_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM5_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM5_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM5_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM5_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM5_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM5_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM5_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM5_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM6_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM6_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM6_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM6_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM6_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM6_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM6_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM6_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM6_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM6_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM6_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM7_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM7_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM7_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM7_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM7_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM7_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM7_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM7_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM7_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM7_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM7_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM8_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM8_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM8_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM8_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM8_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM8_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM8_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM8_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM8_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM8_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM8_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM9_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM9_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM9_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM9_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM9_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM9_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM9_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM9_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM9_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM9_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM9_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    //if (empleado.FAM10_COD_PARENTESCO != null)
+                    //{
+
+                    //    DFAMILIAR DFamilar = new DFAMILIAR()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_PARENTESCO = empleado.FAM10_COD_PARENTESCO,
+                    //        PRIMER_APELLIDO = empleado.FAM10_PRIMER_APELLIDO,
+                    //        SEGUNDO_APELLIDO = empleado.FAM10_SEGUNDO_APELLIDO,
+                    //        NOMBRES = empleado.FAM10_NOMBRES,
+                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM10_FECHA_NACIMIENTO),
+                    //        LUGAR_NACIMIENTO = empleado.FAM10_LUGAR_NACIMIENTO,
+                    //        COD_PAIS = empleado.FAM10_COD_PAIS,
+                    //        COD_NACIONALIDAD = empleado.FAM10_COD_NACIONALIDAD,
+                    //        CEDULA_FAMILIAR = empleado.FAM10_CEDULA_FAMILIAR,
+                    //        SEXO = empleado.FAM10_SEXO,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFAMILIARES.Add(DFamilar);
+
+                    //}
+                    #endregion
+
+                    #region DATOS_FORMACIÓN_ACADÉMICA
+                    foreach (var item in db.DFORMACIONES.Where(x => x.CEDULA.Equals(empleado.CEDULA)))
+                    {
+                        db.DFORMACIONES.Remove(item);
+                    }
+                    //if (empleado.FRM1_COD_CLASE != null)
+                    //{
+
+                    //    DFORMACION DFormacion = new DFORMACION()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        COD_FORMACION = empleado.FRM1_COD_FORMACION,
+                    //        INSTITUO = empleado.FRM1_INSTITUO,
+                    //        COD_PAIS = empleado.FRM1_COD_PAIS,
+                    //        CT_COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
+                    //        DURACION = empleado.FRM1_DURACION,
+                    //        UNIDAD_TIEMPO = empleado.FRM1_DURACION,
+                    //        CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
+                    //        CE_COD_CLASE = empleado.FRM1_COD_CLASE,
+                    //        FECHA_INICIO = StringToDateTime(empleado.FRM1_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.FRM1_FECHA_FIN),
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFORMACIONES.Add(DFormacion);
+
+                    //}
+                    //if (empleado.FRM2_COD_CLASE != null)
+                    //{
+
+                    //    DFORMACION DFormacion = new DFORMACION()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_CLASE = empleado.FRM2_COD_CLASE,
+                    //        COD_FORMACION = empleado.FRM2_COD_FORMACION,
+                    //        INSTITUO = empleado.FRM2_INSTITUO,
+                    //        COD_PAIS = empleado.FRM2_COD_PAIS,
+                    //        CT_COD_CLASE = empleado.FRM2_COD_CLASE,
+                    //        CT_COD_TITULO = empleado.FRM2_CT_COD_TITULO,
+                    //        DURACION = empleado.FRM2_DURACION,
+                    //        UNIDAD_TIEMPO = empleado.FRM2_DURACION,
+                    //        CE_COD_ESPECIALIDAD = empleado.FRM2_CE_COD_ESPECIALIDAD,
+                    //        CE_COD_CLASE = empleado.FRM2_COD_CLASE,
+                    //        FECHA_INICIO = StringToDateTime(empleado.FRM2_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.FRM2_FECHA_FIN),
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFORMACIONES.Add(DFormacion);
+
+                    //}
+                    //if (empleado.FRM3_COD_CLASE != null)
+                    //{
+
+                    //    DFORMACION DFormacion = new DFORMACION()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        COD_CLASE = empleado.FRM3_COD_CLASE,
+                    //        COD_FORMACION = empleado.FRM3_COD_FORMACION,
+                    //        INSTITUO = empleado.FRM3_INSTITUO,
+                    //        COD_PAIS = empleado.FRM3_COD_PAIS,
+                    //        CT_COD_CLASE = empleado.FRM3_COD_CLASE,
+                    //        CT_COD_TITULO = empleado.FRM3_CT_COD_TITULO,
+                    //        DURACION = empleado.FRM3_DURACION,
+                    //        UNIDAD_TIEMPO = empleado.FRM3_DURACION,
+                    //        CE_COD_ESPECIALIDAD = empleado.FRM3_CE_COD_ESPECIALIDAD,
+                    //        CE_COD_CLASE = empleado.FRM3_COD_CLASE,
+                    //        FECHA_INICIO = StringToDateTime(empleado.FRM3_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.FRM3_FECHA_FIN),
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DFORMACIONES.Add(DFormacion);
+
+                    //}
+                    #endregion
+
+                    #region DATOS_EXPERIENCIA_LABORAL
+                    foreach (var item in db.DEXPERIENCIAS.Where(x => x.CEDULA.Equals(empleado.CEDULA)))
+                    {
+                        db.DEXPERIENCIAS.Remove(item);
+                    }
+                    //if (empleado.EXP1_EMPRESA != null)
+                    //{
+                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        FECHA_INICIO = StringToDateTime(empleado.EXP1_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.EXP1_FECHA_FIN),
+                    //        EMPRESA = empleado.EXP1_EMPRESA,
+                    //        CIUDAD = empleado.EXP1_CIUDAD,
+                    //        PAIS = empleado.EXP1_PAIS,
+                    //        COD_RAMO = empleado.EXP1_COD_RAMO,
+                    //        COD_ACTIVIDAD = empleado.EXP1_COD_ACTIVIDAD,
+                    //        COD_RELACION = empleado.EXP1_COD_RELACION,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DEXPERIENCIAS.Add(DExperiencia);
+                    //}
+                    //if (empleado.EXP2_EMPRESA != null)
+                    //{
+                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        FECHA_INICIO = StringToDateTime(empleado.EXP2_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.EXP2_FECHA_FIN),
+                    //        EMPRESA = empleado.EXP2_EMPRESA,
+                    //        CIUDAD = empleado.EXP2_CIUDAD,
+                    //        PAIS = empleado.EXP2_PAIS,
+                    //        COD_RAMO = empleado.EXP2_COD_RAMO,
+                    //        COD_ACTIVIDAD = empleado.EXP2_COD_ACTIVIDAD,
+                    //        COD_RELACION = empleado.EXP2_COD_RELACION,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DEXPERIENCIAS.Add(DExperiencia);
+                    //}
+                    //if (empleado.EXP3_EMPRESA != null)
+                    //{
+                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                    //    {
+                    //        CEDULA = empleado.CEDULA,
+                    //        FECHA_INICIO = StringToDateTime(empleado.EXP3_FECHA_INICIO),
+                    //        FECHA_FIN = StringToDateTime(empleado.EXP3_FECHA_FIN),
+                    //        EMPRESA = empleado.EXP3_EMPRESA,
+                    //        CIUDAD = empleado.EXP3_CIUDAD,
+                    //        PAIS = empleado.EXP3_PAIS,
+                    //        COD_RAMO = empleado.EXP3_COD_RAMO,
+                    //        COD_ACTIVIDAD = empleado.EXP3_COD_ACTIVIDAD,
+                    //        COD_RELACION = empleado.EXP3_COD_RELACION,
+                    //        COD_USER_INS = empleado.COD_USER,
+                    //        FECHA_INS = System.DateTime.Now,
+                    //        COD_USER_UPD = empleado.COD_USER,
+                    //        FECHA_UPD = System.DateTime.Now
+                    //    };
+
+                    //    db.DEXPERIENCIAS.Add(DExperiencia);
+                    //}
                     #endregion
 
                     db.SaveChanges();
@@ -1250,8 +1664,8 @@ namespace SPISAP.Repositories
                 return false;
             }
 
-
             return true;
+
         }
 
         #region PRIVATES_METHODS
