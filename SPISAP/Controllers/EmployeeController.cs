@@ -57,27 +57,36 @@ namespace SPISAP.Controllers
             try
             {
 
-                // agregar los valores por defecto.
-                //EmployeeModel.COD_PAIS = "VE";
-                //EmployeeModel.FRM1_CT_COD_CLASE = EmployeeModel.FRM1_COD_CLASE;
-                //EmployeeModel.FRM1_CE_COD_CLASE = EmployeeModel.FRM1_COD_CLASE;
-
-                //EmployeeModel.FRM2_CT_COD_CLASE = EmployeeModel.FRM2_COD_CLASE;
-                //EmployeeModel.FRM2_CE_COD_CLASE = EmployeeModel.FRM2_COD_CLASE;
-
-                //EmployeeModel.FRM3_CT_COD_CLASE = EmployeeModel.FRM3_COD_CLASE;
-                //EmployeeModel.FRM3_CE_COD_CLASE = EmployeeModel.FRM3_COD_CLASE;
-
                 if (ModelState.IsValid)
                 {
 
-                    // validación del modelo.
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
-                    e.AddNew();
-
-                    return RedirectToAction("Index");
-
+                    // validación del modelo.
+                    if (e.IsDatosFamiliarAlert())
+                    {
+                        ModelState.AddModelError("Datos Familiares", "Datos de Familiares : Existe un registro de  que no posee todos los valores completos.");
+                    }
+                    else if (e.IsDatosFormacionAlert())
+                    {
+                        ModelState.AddModelError("Datos Formación", "Datos de Formación : Existe un registro que no posee todos los valores completos.");
+                    }
+                    else if (e.IsExperienciaLaboralAlert())
+                    {
+                        ModelState.AddModelError("Experiencia Laboral", "Experiencia Laboral : Existe un registro que no posee todos los valores completos.");
+                    }
+                    else
+                    {
+                        if (e.AddNew())
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            return View(EmployeeModel);
+                        }
+                    }
+                    
                 }
 
                 return View(EmployeeModel);
@@ -103,33 +112,45 @@ namespace SPISAP.Controllers
         //
         // POST: /Employee/Edit/5
         [HttpPost]
-        public ActionResult Edit( EmployeeViewModel EmployeeModel ) // (int id, FormCollection collection)
+        public ActionResult Edit( EmployeeViewModel EmployeeModel )
         {
             try
             {
-                // TODO: Add update logic here
 
-                //if (ModelState.IsValid)
-                //{
+                if (ModelState.IsValid)
+                {
 
-                    // validación del modelo.
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
-                    if ( e.Update() )
+                    // validación del modelo.
+                    if (e.IsDatosFamiliarAlert())
                     {
-                        return RedirectToAction("Index");
+                        ModelState.AddModelError("Datos Familiares", "Datos de Familiares : Existe un registro de  que no posee todos los valores completos.");
+                    }
+                    else if (e.IsDatosFormacionAlert())
+                    {
+                        ModelState.AddModelError("Datos Formación", "Datos de Formación : Existe un registro que no posee todos los valores completos.");
+                    }
+                    else if (e.IsExperienciaLaboralAlert())
+                    {
+                        ModelState.AddModelError("Experiencia Laboral", "Experiencia Laboral : Existe un registro que no posee todos los valores completos.");
                     }
                     else
                     {
-                        return View(EmployeeModel);
+                        if (e.Update())
+                        {
+                            return RedirectToAction("Index","Home");
+                        }
+                        else
+                        {
+                            return View(EmployeeModel);
+                        }
                     }
 
+                }
 
-                //}
+                return View(EmployeeModel);
 
-                //return View(EmployeeModel);
-
-                //return RedirectToAction("Index");
             }
             catch( Exception e )
             {
@@ -155,7 +176,6 @@ namespace SPISAP.Controllers
             try
             {
                 // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -172,7 +192,6 @@ namespace SPISAP.Controllers
         public JsonResult GetNacionalidadList(string id)
         {
             List<NACIONALIDAD> records = ListViewModel.Nacionalidades();
-
             return Json(new SelectList(records.Where(x => x.COD_NACIONALIDAD == id), "COD_NACIONALIDAD", "DES_NACIONALIDAD"), JsonRequestBehavior.AllowGet);
         }
 
@@ -180,17 +199,13 @@ namespace SPISAP.Controllers
         public JsonResult GetEstadoList(string id)
         {
             List<PAIS_ESTADO> records = ListViewModel.GetPaisEstados();
-
             return Json(new SelectList(records.Where(x => x.COD_PAIS == id), "COD_ESTADO", "DES_ESTADO"), JsonRequestBehavior.AllowGet);
         }
 
         // retornar JSON : Talla de Camisa.
         public JsonResult GetChemiseList(string id)
         {
-            //List<GenericModel> records = ListViewModel.GetTallaChemise();
             List<Generic2Model> records = ListViewModel.GetTallaChemise();
-
-            //return Json(new SelectList(records.Where(x => x.CODIGO == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
             return Json(new SelectList(records.Where(x => x.FOREINGKEY == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
         }
 
@@ -198,19 +213,15 @@ namespace SPISAP.Controllers
         public JsonResult GetPantalonList(string id)
         {
             List<Generic2Model> records = ListViewModel.GetTallaPantalon();
-
             return Json(new SelectList(records.Where(x => x.FOREINGKEY == id), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
         }
 
         // retornar JSON : Talla de Calzado.
         public JsonResult GetCalzadoList(string id)
         {
-
             List<GenericModel> records = ListViewModel.GetTallaCalzado();
-
             return Json(new SelectList(records.Where(x => x.CODIGO != " "), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);
         }
-
 
         // :: DATOS_DE_DIRECCIÓN :: //
 
@@ -218,7 +229,6 @@ namespace SPISAP.Controllers
         public JsonResult GetMunicipioList(string id)
         {
             List<MUNICIPIO_SSO> records = ListViewModel.GetMunicipioSSO();
-
             return Json(new SelectList(records.Where(x => x.COD_ESTADO_SSO == id), "COD_MUNICIPIO", "DES_MUNICIPIO"), JsonRequestBehavior.AllowGet);
         }
 
@@ -226,11 +236,8 @@ namespace SPISAP.Controllers
         public JsonResult GetParroquiaList(string id)
         {
             List<PARROQUIA_SSO> records = ListViewModel.GetParroquiaSSO();
-
             return Json(new SelectList(records.Where(x => x.COD_MUNICIPIO == id), "COD_PARROQUIA", "DES_PARROQUIA"), JsonRequestBehavior.AllowGet);
         }
-
-
 
         // :: DATOS_DE_FORMACIÓN :: //
 
@@ -238,7 +245,6 @@ namespace SPISAP.Controllers
         public JsonResult GetCondicionList(string id)
         {
             List<CLASE_TITULO> records = ListViewModel.GetCondiciones();
-
             return Json(new SelectList(records.Where(x => x.COD_CLASE == id), "COD_TITULO", "DES_TITULO"), JsonRequestBehavior.AllowGet);
         }
 
@@ -246,10 +252,8 @@ namespace SPISAP.Controllers
         public JsonResult GetEspecialidadList(string id)
         {
             List<CLASE_ESPECIALIDAD> records = ListViewModel.GetEspecialidades();
-
             return Json(new SelectList(records.Where(x => x.COD_CLASE == id), "COD_ESPECIALIDAD", "DES_ESPECIALIDAD"), JsonRequestBehavior.AllowGet);
         }
-
 
         #endregion
 

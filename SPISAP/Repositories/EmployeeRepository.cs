@@ -517,6 +517,22 @@ namespace SPISAP.Repositories
             }        
         }
 
+
+        public bool IsDatosFamiliarAlert()
+        {
+            return false;
+        }
+        public bool IsDatosFormacionAlert()
+        {
+            return false;
+        }
+        public bool IsExperienciaLaboralAlert()
+        {
+            return true;
+        }
+
+
+
         public List<DPERSONALES> Find()
         {
             using ( SPISAPEntities db = new SPISAPEntities() )
