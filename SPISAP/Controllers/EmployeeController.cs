@@ -159,12 +159,16 @@ namespace SPISAP.Controllers
             }
         }
 
+
+
         //
         // GET: /Employee/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Confirm(int id)
         {
-            return View();
+            EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
+
+            return View(model);
         }
 
         //
