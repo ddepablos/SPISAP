@@ -457,6 +457,8 @@ namespace SPISAP.Repositories
                 }
 
                 #endregion
+//TEMPORAL
+                record.COD_USER = "Daniel Depablos";
 
                 return record;
             }
@@ -517,7 +519,6 @@ namespace SPISAP.Repositories
             }        
         }
 
-
         public bool IsDatosFamiliarAlert()
         {
             return false;
@@ -528,10 +529,8 @@ namespace SPISAP.Repositories
         }
         public bool IsExperienciaLaboralAlert()
         {
-            return true;
+            return false;
         }
-
-
 
         public List<DPERSONALES> Find()
         {

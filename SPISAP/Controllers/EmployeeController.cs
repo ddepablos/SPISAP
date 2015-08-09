@@ -102,23 +102,35 @@ namespace SPISAP.Controllers
         //
         // GET: /Employee/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
 
-            return View(model);
+            if (id == null)
+            {
+                EmployeeViewModel model = (EmployeeViewModel)TempData["ConfirmacionModel"];
+                TempData["ConfirmacionModel"] = null;
+                return View(model);
+            }
+            else
+            {
+                EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
+                return View(model);
+            }
+
+           
         }
 
         //
         // POST: /Employee/Edit/5
+
         [HttpPost]
         public ActionResult Edit( EmployeeViewModel EmployeeModel )
         {
             try
             {
 
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
 
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
@@ -137,17 +149,12 @@ namespace SPISAP.Controllers
                     }
                     else
                     {
-                        if (e.Update())
-                        {
-                            return RedirectToAction("Index","Home");
-                        }
-                        else
-                        {
-                            return View(EmployeeModel);
-                        }
+                        // cargar el modelo temporal para la confirmación.
+                        TempData["ConfirmacionModel"] = EmployeeModel;
+                        return RedirectToAction("Confirm");
                     }
 
-                }
+                //}
 
                 return View(EmployeeModel);
 
@@ -164,23 +171,75 @@ namespace SPISAP.Controllers
         //
         // GET: /Employee/Delete/5
 
-        public ActionResult Confirm(int id)
+        public ActionResult Confirm()
         {
-            EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
+            EmployeeViewModel confirmacion = (EmployeeViewModel) TempData["ConfirmacionModel"];
 
-            return View(model);
+            TempData.Keep("ConfirmacionModel");
+            return View(confirmacion);
         }
 
         //
-        // POST: /Employee/Delete/5
+        // POST: /Employee/Confirm/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Confirm(EmployeeViewModel EmployeeModel)
+        {
+
+            // PARCHE_LEÓN
+            EmployeeViewModel modelo = (EmployeeViewModel)TempData["ConfirmacionModel"];
+
+            TempData["ConfirmacionModel"] = null;
+
+            if (modelo.CEDULA == null)
+            {
+                // redireccionar a la vista inicial de pago en línea.
+                return RedirectToAction("Index","Home");
+            }
+            else
+            {
+                // actualizar el registro del trabajador.
+                EmployeeRepository e = new EmployeeRepository(modelo);
+
+                if (e.Update())
+                {
+                    return RedirectToAction("Index", "Home");
+                    //return RedirectToAction("Registrado");
+                }
+                else
+                {
+                    return RedirectToAction("Edit", modelo);
+                    //return RedirectToAction("Rechazado");
+                }
+
+            }
+
+        }
+
+
+        public ActionResult Filter()
+        {
+            return View();
+        }
+
+
+        //
+        // POST: /Employee/Filter/5
+
+        [HttpPost]
+        public ActionResult Filter(FilterViewModel filter)
         {
             try
             {
                 // TODO: Add delete logic here
-                return RedirectToAction("Index");
+
+                if (filter.CEDULA == null)
+                {
+                    return RedirectToAction("Table","Employee");
+                }
+
+                return View();
+
             }
             catch
             {

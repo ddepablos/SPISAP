@@ -23,7 +23,7 @@
     <thead>
         <tr>
         <th>#</th>
-        <th>Ficha</th>
+        @*<th>Ficha</th>*@
         <th>Cédula</th>
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
@@ -42,11 +42,11 @@
         <td>
         @Html.Raw(++i)
         </td>
-        <td>
+@*        <td>
         @Html.DisplayFor(modelItem => item.FICHA)
-        </td>
+        </td>*@
         <td>
-        @Html.DisplayFor(modelItem => item.CEDULA)
+        @Html.ActionLink(item.CEDULA, "Edit", new { id=item.CEDULA })
         </td>
         <td>
         @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
@@ -75,6 +75,22 @@
     </table>  
 
     </div>
+
+    <br>
+
+    <!-- BUTTONS -->
+    <div class="form-group">
+@*        <div class="col-md-offset-4 col-md-2">
+            <button type="submit" class="btn btn-success btn-md">Guardar Datos</button>
+        </div>*@
+        <div class="col-md-offset-4 col-md-2">
+            <a class="btn  btn-success btn-md" href="@Url.Action("Create","Employee")">Agregar Nuevo Trabajador</a>
+        </div>
+        <div class="col-md-2">
+            <a class="btn  btn-danger btn-md" href="@Url.Action("Filter","Employee")">Regresar</a>
+        </div>
+    </div>
+    <!--// BUTTONS //-->
 
     </div>
 

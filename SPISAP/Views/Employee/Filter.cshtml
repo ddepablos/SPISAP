@@ -1,0 +1,58 @@
+﻿@model SPISAP.Models.FilterViewModel
+
+@{
+    ViewBag.Title = "Filter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+		<div class="span12">
+			<form class="form-horizontal" action=@Url.Action("Filter","Employee") method="POST">
+			    <div id="legend">
+			      <legend class="">Filtro de Consulta de Trabajadores</legend>
+			    </div>
+			    <div class="control-group">
+			      <!-- Username -->
+			      <label class="control-label"  for="username">Ficha:</label>
+			      <div class="controls">
+			        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+			      </div>
+			    </div>
+			    <div class="control-group">
+			      <!-- Password-->
+			      <label class="control-label" for="password">Cédula:</label>
+			      <div class="controls">
+			        <input type="password" id="cedula" name="password" placeholder="" class="input-xlarge">
+			      </div>
+			    </div>
+			    <div class="control-group">
+			      <!-- Password-->
+			      <label class="control-label" for="password">Primer Apellido:</label>
+			      <div class="controls">
+			        <input type="password" id="primer_apellido" name="password" placeholder="" class="input-xlarge">
+			      </div>
+			    </div>
+			    <div class="control-group">
+			      <!-- Password-->
+			      <label class="control-label" for="password">Nombres:</label>
+			      <div class="controls">
+			        <input type="password" id="nombres" name="password" placeholder="" class="input-xlarge">
+			      </div>
+			    </div>
+                <br>
+			    <div class="control-group">
+			      <!-- Button -->
+			      <div class="controls">
+			        <button class="btn btn-success">Buscar</button>
+			      </div>
+			    </div>
+			</form>
+		</div>
+	</div>
+</div>

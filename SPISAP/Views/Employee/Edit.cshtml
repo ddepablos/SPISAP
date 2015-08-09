@@ -17,33 +17,26 @@
             <a class="navbar-brand">Gestión de Registros de Trabajadores</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand navbar-right">Usuario : Mario Bergoglio</a>
+            <a class="navbar-brand navbar-right">Usuario : @Html.DisplayFor(model => model.COD_USER, new { @class="form-control", @disabled="disabled"})</a>
         </div>
     </div>
 </nav>
 
-@*//@Html.Partial("_ValidationSummary")*@
-@*//Html.BeginForm("Confirm", "Wydawca", new { app = @Model })*@
 @using (Html.BeginForm("Edit","Employee","POST"))
 { 
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
+    //Html.Partial("_ValidationSummary") --antes del beginform.
+    //Html.HiddenFor(model => model.PLANILLA)
+
     <div class="container jumbotron form-signin">
     
     <form class="form-horizontal">
 
+    <h3>Editar/Actualizar Datos del Trabajador</h3>
+
     <div class="row">
-
-    <br>
-
-    <div class="row text-center">
-        <div class="col-md-offset-4 col-md-4">
-            <button type="submit" class="btn btn-primary">Guardar Registro del Trabajador</button>
-        </div>
-    </div>
-
-    <br>
 
         <!-- DATOS PERSONALES -->
         <div class="title green">DATOS PERSONALES</div>
@@ -836,6 +829,17 @@
     <!-- EXPERIENCIA LABORAL // -->
 
     <br>
+
+    <!-- BUTTONS -->
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-2">
+            <button type="submit" class="btn btn-success btn-md">Confirmar Datos</button>
+        </div>
+        <div class="col-md-2">
+            <a class="btn  btn-danger btn-md" href="@Url.Action("Table","Employee")">Cancelar</a>
+        </div>
+    </div>
+    <!--// BUTTONS //-->
 
     </form>
 

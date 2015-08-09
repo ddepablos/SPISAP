@@ -304,7 +304,7 @@ th {
     width: 100%;
 }
 
-.btn.btn-success.dropdown-toggle {
+.btn.btn-success.dropdown-toggle, .btn.btn-danger.dropdown-toggle {
     border-radius: 0px;
 }
 
@@ -398,4 +398,14 @@ th {
 .btn-success, .btn-success:focus, .btn-sucess:hover {
     background-color: #00a160;
     border-radius: 0px;
+}
+
+.btn-danger, .btn-danger:focus, .btn-danger:hover {
+    /*background-color: #00a160;*/
+    border-radius: 0px;
+}
+
+h3 {
+    text-align:center;
+    color: #00a160;
 }
