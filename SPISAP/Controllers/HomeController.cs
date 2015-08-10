@@ -1,4 +1,5 @@
 ﻿using SPISAP.Models;
+using SPISAP.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,24 @@ namespace SPISAP.Controllers
         [HttpPost]
         public ActionResult Login( UserViewModel user )
         {
-        
-            return RedirectToAction("Filter","Employee");
+
+            if (ModelState.IsValid)
+            {
+
+                UserRepository u = new UserRepository(user);
+
+                if ( u.IsValid() )
+                {
+                    return RedirectToAction("Filter", "Employee");
+                }
+                else
+                {
+                    ModelState.AddModelError("Usuario", "El Usuario o Contraseña no son válidas.");
+                }
+
+            }
+
+            return View(user);
 
         }
 

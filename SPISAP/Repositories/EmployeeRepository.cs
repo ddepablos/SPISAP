@@ -168,7 +168,7 @@ namespace SPISAP.Repositories
                                                 NOMBRE = dp.NOMBRE,
                                                 CEDULA = dp.CEDULA,
                                                 SEXO = dp.SEXO,
-                                                FECHA_NACIMIENTO = OracleDateToString(dp.FECHA_NACIMIENTO), 
+                                                FECHA_NACIMIENTO_DATE = dp.FECHA_NACIMIENTO, 
                                                 CIUDAD_NACIMIENTO = dp.CIUDAD_NACIMIENTO,
                                                 COD_PAIS = dp.COD_PAIS,
                                                 COD_NACIONALIDAD = dp.COD_NACIONALIDAD,
@@ -198,7 +198,7 @@ namespace SPISAP.Repositories
 
                 //FIX FECHA
 
-                //record.FECHA_NACIMIENTO_STRING = OracleDateToString(record.FECHA_NACIMIENTO);
+                record.FECHA_NACIMIENTO = OracleDateToString(record.FECHA_NACIMIENTO_DATE);
 
                 //record.FECHA_NACIMIENTO_STRING = string s = record.FECHA_NACIMIENTO.ToString("dd/M/yyyy");
                 //String.Format("dd/MM/yyyy" , record.FECHA_NACIMIENTO.ToString() );
@@ -1695,7 +1695,7 @@ namespace SPISAP.Repositories
 
         private string OracleDateToString( DateTime? value )
         {
-            return value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(6, 4); 
+            return value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(6, 4); 
         }
 
         private DateTime OracleStringToDate(string value)
