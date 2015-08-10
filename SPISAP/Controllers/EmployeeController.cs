@@ -57,8 +57,8 @@ namespace SPISAP.Controllers
             try
             {
 
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
 
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
@@ -79,7 +79,7 @@ namespace SPISAP.Controllers
                     {
                         if (e.AddNew())
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Filter", "Employee");
                         }
                         else
                         {
@@ -87,7 +87,7 @@ namespace SPISAP.Controllers
                         }
                     }
                     
-                }
+                //}
 
                 return View(EmployeeModel);
 

@@ -168,7 +168,7 @@ namespace SPISAP.Repositories
                                                 NOMBRE = dp.NOMBRE,
                                                 CEDULA = dp.CEDULA,
                                                 SEXO = dp.SEXO,
-                                                FECHA_NACIMIENTO = dp.FECHA_NACIMIENTO,
+                                                FECHA_NACIMIENTO = OracleDateToString(dp.FECHA_NACIMIENTO), 
                                                 CIUDAD_NACIMIENTO = dp.CIUDAD_NACIMIENTO,
                                                 COD_PAIS = dp.COD_PAIS,
                                                 COD_NACIONALIDAD = dp.COD_NACIONALIDAD,
@@ -195,6 +195,13 @@ namespace SPISAP.Repositories
                                                 COD_PAIS_DIRECCION = dd.COD_PAIS,
                                                 TELEFONOS = dd.TELEFONOS
                                             }).SingleOrDefault();
+
+                //FIX FECHA
+
+                //record.FECHA_NACIMIENTO_STRING = OracleDateToString(record.FECHA_NACIMIENTO);
+
+                //record.FECHA_NACIMIENTO_STRING = string s = record.FECHA_NACIMIENTO.ToString("dd/M/yyyy");
+                //String.Format("dd/MM/yyyy" , record.FECHA_NACIMIENTO.ToString() );
 
                 // DATOS DE COMUNICACIÓN
                 record.COD_CLASE_CORREO = FindDComunicacion("correo" , record.CEDULA);
@@ -575,7 +582,8 @@ namespace SPISAP.Repositories
                         PRIMER_APELLIDO = empleado.PRIMER_APELLIDO,
                         SEGUNDO_APELLIDO = empleado.SEGUNDO_APELLIDO,
                         NOMBRE = empleado.NOMBRE,
-                        FECHA_NACIMIENTO = empleado.FECHA_NACIMIENTO,
+                        //FECHA_NACIMIENTO = DateTime.Parse(empleado.FECHA_NACIMIENTO_STRING),
+                        FECHA_NACIMIENTO = OracleStringToDate(empleado.FECHA_NACIMIENTO), 
                         CIUDAD_NACIMIENTO = empleado.CIUDAD_NACIMIENTO,
                         COD_PAIS = empleado.COD_PAIS,
                         COD_ESTADO = empleado.COD_ESTADO,
@@ -715,7 +723,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM1_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM1_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM1_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM1_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM1_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM1_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM1_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM1_COD_NACIONALIDAD,
@@ -740,7 +748,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM2_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM2_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM2_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM2_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM2_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM2_COD_NACIONALIDAD,
@@ -765,7 +773,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM3_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM3_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM3_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM3_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM3_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM3_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM3_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM3_COD_NACIONALIDAD,
@@ -790,7 +798,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM4_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM4_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM4_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM4_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM4_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM4_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM4_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM4_COD_NACIONALIDAD,
@@ -815,7 +823,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM5_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM5_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM5_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM5_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM5_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM5_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM5_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM5_COD_NACIONALIDAD,
@@ -840,7 +848,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM6_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM6_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM6_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM6_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM6_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM6_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM6_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM6_COD_NACIONALIDAD,
@@ -865,7 +873,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM7_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM7_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM7_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM7_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM7_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM7_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM7_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM7_COD_NACIONALIDAD,
@@ -890,7 +898,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM8_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM8_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM8_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM8_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM8_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM8_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM8_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM8_COD_NACIONALIDAD,
@@ -915,7 +923,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM9_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM9_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM9_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM9_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM9_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM9_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM9_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM9_COD_NACIONALIDAD,
@@ -940,7 +948,7 @@ namespace SPISAP.Repositories
                     //        PRIMER_APELLIDO = empleado.FAM10_PRIMER_APELLIDO,
                     //        SEGUNDO_APELLIDO = empleado.FAM10_SEGUNDO_APELLIDO,
                     //        NOMBRES = empleado.FAM10_NOMBRES,
-                    //        FECHA_NACIMIENTO = StringToDateTime(empleado.FAM10_FECHA_NACIMIENTO),
+                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM10_FECHA_NACIMIENTO),
                     //        LUGAR_NACIMIENTO = empleado.FAM10_LUGAR_NACIMIENTO,
                     //        COD_PAIS = empleado.FAM10_COD_PAIS,
                     //        COD_NACIONALIDAD = empleado.FAM10_COD_NACIONALIDAD,
@@ -958,33 +966,33 @@ namespace SPISAP.Repositories
                     #endregion
 
                     #region DATOS_FORMACIÓN_ACADÉMICA
-                    //if (empleado.FRM1_COD_CLASE != null)
-                    //{
+                    if (empleado.FRM1_COD_CLASE != null)
+                    {
 
-                    //    DFORMACION DFormacion = new DFORMACION()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_CLASE = empleado.FRM1_COD_CLASE,
-                    //        COD_FORMACION = empleado.FRM1_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM1_INSTITUO,
-                    //        COD_PAIS = empleado.FRM1_COD_PAIS,
-                    //        CT_COD_CLASE = empleado.FRM1_COD_CLASE,
-                    //        CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
-                    //        DURACION = empleado.FRM1_DURACION,
-                    //        UNIDAD_TIEMPO = empleado.FRM1_DURACION,
-                    //        CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
-                    //        CE_COD_CLASE = empleado.FRM1_COD_CLASE,
-                    //        FECHA_INICIO = StringToDateTime(empleado.FRM1_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.FRM1_FECHA_FIN),
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFORMACION DFormacion = new DFORMACION()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            COD_CLASE = empleado.FRM1_COD_CLASE,
+                            COD_FORMACION = empleado.FRM1_COD_FORMACION,
+                            INSTITUO = empleado.FRM1_INSTITUO,
+                            COD_PAIS = empleado.FRM1_COD_PAIS,
+                            CT_COD_CLASE = empleado.FRM1_COD_CLASE,
+                            CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
+                            DURACION = empleado.FRM1_DURACION,
+                            UNIDAD_TIEMPO = empleado.FRM1_DURACION,
+                            CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
+                            CE_COD_CLASE = empleado.FRM1_COD_CLASE,
+                            FECHA_INICIO = OracleStringToDate(empleado.FRM1_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.FRM1_FECHA_FIN),
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now
+                        };
 
-                    //    db.DFORMACIONES.Add(DFormacion);
+                        db.DFORMACIONES.Add(DFormacion);
 
-                    //}
+                    }
                     //if (empleado.FRM2_COD_CLASE != null)
                     //{
 
@@ -1001,8 +1009,8 @@ namespace SPISAP.Repositories
                     //        UNIDAD_TIEMPO = empleado.FRM2_DURACION,
                     //        CE_COD_ESPECIALIDAD = empleado.FRM2_CE_COD_ESPECIALIDAD,
                     //        CE_COD_CLASE = empleado.FRM2_COD_CLASE,
-                    //        FECHA_INICIO = StringToDateTime(empleado.FRM2_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.FRM2_FECHA_FIN),
+                            //FECHA_INICIO = OracleStringToDate(empleado.FRM2_FECHA_INICIO),
+                            //FECHA_FIN = OracleStringToDate(empleado.FRM2_FECHA_FIN),
                     //        COD_USER_INS = empleado.COD_USER,
                     //        FECHA_INS = System.DateTime.Now,
                     //        COD_USER_UPD = empleado.COD_USER,
@@ -1028,8 +1036,8 @@ namespace SPISAP.Repositories
                     //        UNIDAD_TIEMPO = empleado.FRM3_DURACION,
                     //        CE_COD_ESPECIALIDAD = empleado.FRM3_CE_COD_ESPECIALIDAD,
                     //        CE_COD_CLASE = empleado.FRM3_COD_CLASE,
-                    //        FECHA_INICIO = StringToDateTime(empleado.FRM3_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.FRM3_FECHA_FIN),
+                            //FECHA_INICIO = OracleStringToDate(empleado.FRM3_FECHA_INICIO),
+                            //FECHA_FIN = OracleStringToDate(empleado.FRM3_FECHA_FIN),
                     //        COD_USER_INS = empleado.COD_USER,
                     //        FECHA_INS = System.DateTime.Now,
                     //        COD_USER_UPD = empleado.COD_USER,
@@ -1047,8 +1055,8 @@ namespace SPISAP.Repositories
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
                     //        CEDULA = empleado.CEDULA,
-                    //        FECHA_INICIO = StringToDateTime(empleado.EXP1_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.EXP1_FECHA_FIN),
+                            //FECHA_INICIO = OracleStringToDate(empleado.EXP1_FECHA_INICIO),
+                            //FECHA_FIN = OracleStringToDate(empleado.EXP1_FECHA_FIN),
                     //        EMPRESA = empleado.EXP1_EMPRESA,
                     //        CIUDAD = empleado.EXP1_CIUDAD,
                     //        PAIS = empleado.EXP1_PAIS,
@@ -1068,8 +1076,8 @@ namespace SPISAP.Repositories
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
                     //        CEDULA = empleado.CEDULA,
-                    //        FECHA_INICIO = StringToDateTime(empleado.EXP2_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.EXP2_FECHA_FIN),
+                            //FECHA_INICIO = OracleStringToDate(empleado.EXP2_FECHA_INICIO),
+                            //FECHA_FIN = OracleStringToDate(empleado.EXP2_FECHA_FIN),
                     //        EMPRESA = empleado.EXP2_EMPRESA,
                     //        CIUDAD = empleado.EXP2_CIUDAD,
                     //        PAIS = empleado.EXP2_PAIS,
@@ -1089,8 +1097,8 @@ namespace SPISAP.Repositories
                     //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
                     //    {
                     //        CEDULA = empleado.CEDULA,
-                    //        FECHA_INICIO = StringToDateTime(empleado.EXP3_FECHA_INICIO),
-                    //        FECHA_FIN = StringToDateTime(empleado.EXP3_FECHA_FIN),
+                            //FECHA_INICIO = OracleStringToDate(empleado.EXP3_FECHA_INICIO),
+                            //FECHA_FIN = OracleStringToDate(empleado.EXP3_FECHA_FIN),
                     //        EMPRESA = empleado.EXP3_EMPRESA,
                     //        CIUDAD = empleado.EXP3_CIUDAD,
                     //        PAIS = empleado.EXP3_PAIS,
@@ -1684,15 +1692,16 @@ namespace SPISAP.Repositories
         }
 
         #region PRIVATES_METHODS
-        private DateTime StringToDateTime( string value )
+
+        private string OracleDateToString( DateTime? value )
         {
-            CultureInfo provider = CultureInfo.InvariantCulture;
-            //String format = "dd/MM/yyyy";
-            //return DateTime.ParseExact( value, format, provider);        
-        
-        
-            // TO BE FIX
-            return DateTime.Parse("12/01/1976");
+            return value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(6, 4); 
+        }
+
+        private DateTime OracleStringToDate(string value)
+        {
+            //return DateTime.Parse(value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(6, 4));
+            return DateTime.Parse(value.ToString().Substring(6, 4) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2)); 
 
         }
         #endregion
