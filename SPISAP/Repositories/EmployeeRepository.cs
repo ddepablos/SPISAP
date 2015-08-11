@@ -1695,7 +1695,11 @@ namespace SPISAP.Repositories
 
         private string OracleDateToString( DateTime? value )
         {
-            return value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(6, 4); 
+            //return value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(6, 4); 
+            string v = value.ToString();
+
+            return String.Format("dd-MM-yyyy", v);
+
         }
 
         private DateTime OracleStringToDate(string value)
