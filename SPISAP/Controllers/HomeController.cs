@@ -35,6 +35,8 @@ namespace SPISAP.Controllers
 
                 if ( u.IsValid() )
                 {
+                    Session["COD_USER"] = user.username;
+                    Session["USUARIO"] = user.userdesc;
                     return RedirectToAction("Filter", "Employee");
                 }
                 else
@@ -47,6 +49,14 @@ namespace SPISAP.Controllers
             return View(user);
 
         }
+
+        public ActionResult Logout()
+        { 
+            HttpContext.Session.Clear();
+            HttpContext.Session.Abandon();
+            HttpContext.User = null;
+            return RedirectToAction("Login");
+        }        
 
     }
 }

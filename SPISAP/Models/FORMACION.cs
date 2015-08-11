@@ -14,14 +14,7 @@ namespace SPISAP.Models
     
     public partial class FORMACION
     {
-        public FORMACION()
-        {
-            this.DFORMACIONES = new HashSet<DFORMACION>();
-        }
-    
         public string COD_FORMACION { get; set; }
         public string DES_FORMACION { get; set; }
-    
-        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
     }
 }

@@ -16,8 +16,7 @@ namespace SPISAP.Models
     {
         public string CEDULA { get; set; }
         public string COD_CLASE { get; set; }
-        public string COD_FORMACION { get; set; }
-        public string INSTITUO { get; set; }
+        public string INSTITUTO { get; set; }
         public string COD_PAIS { get; set; }
         public string CT_COD_CLASE { get; set; }
         public string CT_COD_TITULO { get; set; }
@@ -31,14 +30,14 @@ namespace SPISAP.Models
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }
         public System.DateTime FECHA_UPD { get; set; }
+        public decimal ID_FORMACION { get; set; }
     
         public virtual CLASE_ESPECIALIDAD CLASE_ESPECIALIDAD { get; set; }
         public virtual CLASE_INSTITUTO CLASE_INSTITUTO { get; set; }
         public virtual CLASE_TITULO CLASE_TITULO { get; set; }
-        public virtual DPERSONALES DPERSONALES { get; set; }
+        public virtual DPERSONALES DPERSONALE { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
-        public virtual FORMACION FORMACION { get; set; }
-        public virtual PAIS PAIS { get; set; }
+        public virtual PAIS PAI { get; set; }
     }
 }

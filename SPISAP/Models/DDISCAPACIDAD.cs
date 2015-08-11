@@ -23,6 +23,6 @@ namespace SPISAP.Models
     
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
-        public virtual DPERSONALES DPERSONALES { get; set; }
+        public virtual DPERSONALES DPERSONALE { get; set; }
     }
 }

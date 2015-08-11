@@ -17,5 +17,7 @@ namespace SPISAP.Models
         [StringLength(8, MinimumLength = 1, ErrorMessage = "El campo Contraseña debe contener 8 carácteres.")]
         public string password { get; set; }
 
+        public string userdesc { get; set; }
+
     }
 }

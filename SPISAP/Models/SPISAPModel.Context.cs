@@ -34,6 +34,9 @@ namespace SPISAP.Models
         public DbSet<DCUENTA> DCUENTAS { get; set; }
         public DbSet<DDIRECCION> DDIRECCIONES { get; set; }
         public DbSet<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
+        public DbSet<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
+        public DbSet<DFAMILIAR> DFAMILIARES { get; set; }
+        public DbSet<DFORMACION> DFORMACIONES { get; set; }
         public DbSet<DPERSONALES> DPERSONALES { get; set; }
         public DbSet<DUSUARIO> DUSUARIOS { get; set; }
         public DbSet<ESTADO_SSO> ESTADO_SSO { get; set; }
@@ -48,8 +51,5 @@ namespace SPISAP.Models
         public DbSet<RAMO> RAMOS { get; set; }
         public DbSet<RELACION_LABORAL> RELACION_LABORAL { get; set; }
         public DbSet<SUCURSAL> SUCURSALES { get; set; }
-        public DbSet<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
-        public DbSet<DFAMILIAR> DFAMILIARES { get; set; }
-        public DbSet<DFORMACION> DFORMACIONES { get; set; }
     }
 }

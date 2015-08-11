@@ -437,7 +437,7 @@ namespace SPISAP.Models
 
         [Required(ErrorMessage = "El campo Nombre del Instituto (Formación # 1) es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 1) debe contener entre 3 y 40 carácteres.")]
-        public string FRM1_INSTITUO { get; set; }
+        public string FRM1_INSTITUTO { get; set; }
 
         [Required(ErrorMessage = "El campo País (Formación # 1) es requerido.")]
         public string FRM1_COD_PAIS { get; set; }
@@ -474,7 +474,7 @@ namespace SPISAP.Models
         public string FRM2_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 2) debe contener entre 3 y 40 carácteres.")]
-        public string FRM2_INSTITUO { get; set; }
+        public string FRM2_INSTITUTO { get; set; }
         public string FRM2_COD_PAIS { get; set; }
         public string FRM2_CT_COD_CLASE { get; set; }
         public string FRM2_CT_COD_TITULO { get; set; }
@@ -492,7 +492,7 @@ namespace SPISAP.Models
         public string FRM3_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 3) debe contener entre 3 y 40 carácteres.")]
-        public string FRM3_INSTITUO { get; set; }
+        public string FRM3_INSTITUTO { get; set; }
         public string FRM3_COD_PAIS { get; set; }
         public string FRM3_CT_COD_CLASE { get; set; }
         public string FRM3_CT_COD_TITULO { get; set; }
@@ -637,7 +637,7 @@ namespace SPISAP.Models
         public EmployeeViewModel()
         {
 
-            DPERSONALES DATOS_PERSONALES = new DPERSONALES();
+            //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
             //FillDummyRecord();
             FillListas();
@@ -690,50 +690,72 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            //DATOS_PERSONALES.FICHA = "123456789012";
-            //DATOS_PERSONALES.CEDULA = "12919906";
-            //DATOS_PERSONALES.COD_SUCURSAL = "1001";
-            //DATOS_PERSONALES.COD_GRUPO = "1";
-            //DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
-            //DATOS_PERSONALES.CARGO = "CARGO";
-            //DATOS_PERSONALES.TRATAMIENTO = "Sra.";
-            //DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
-            //DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
-            //DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
-            //DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
-            //DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
-            //DATOS_PERSONALES.COD_PAIS = "VE";
-            //DATOS_PERSONALES.COD_ESTADO = "NE";
-            //DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
-            //DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
-            //DATOS_PERSONALES.SEXO = "F";
-            //DATOS_PERSONALES.RIF = "J129199060";
-            //DATOS_PERSONALES.CALZADO = "34";
-            //DATOS_PERSONALES.CHEMISE = "S";
-            //DATOS_PERSONALES.PANTALON = "8";
+            FICHA = "123456789012";
+            CEDULA = "12919906";
+            COD_SUCURSAL = "1001";
+            COD_GRUPO = "1";
+            COD_AREA_PERSONAL = "VK";
+            CARGO = "CARGO";
+            TRATAMIENTO = "Sra.";
+            PRIMER_APELLIDO = "GONZALEZ";
+            SEGUNDO_APELLIDO = "LOPEZ";
+            NOMBRE = "FLOR MARINA";
+            FECHA_NACIMIENTO = "18/01/1976";    // ("1976-01-18", CultureInfo.InvariantCulture);
+            CIUDAD_NACIMIENTO = "PORLAMAR";
+            COD_PAIS = "VE";
+            COD_ESTADO = "NE";
+            COD_NACIONALIDAD = "PA";
+            ESTADO_CIVIL = "Cas.";
+            SEXO = "F";
+            RIF = "J129199060";
+            CALZADO = "34";
+            CHEMISE = "S";
+            PANTALON = "8";
+            COD_CLASE_CELULAR = "04128094599";
+            COD_CLASE_CORREO = "flormarinagl@gmail.com";
 
-            /* Dirección */
-
-            //DDIRECCION DATOS_DIRECCION = new DDIRECCION();
-
-            //DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
-            //DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
-            //DATOS_DIRECCION.PISO = "14";
-            //DATOS_DIRECCION.NUMERO = "141B";
-            //DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
-            //DATOS_DIRECCION.COD_ESTADO = "";
-            //DATOS_DIRECCION.COD_PAIS = "";
-            //DATOS_DIRECCION.TELEFONOS = "0124835448";
-            //DATOS_DIRECCION.COD_ESTADO_SSO = "NUE";
-            //DATOS_DIRECCION.COD_MUNICIPIO_SSO = "217";
-            //DATOS_DIRECCION.COD_PARROQUIA_SSO = "1191";
+            /* DIRECCIÓN */
+            CALLE = "CALLEJÓN MACHADO";
+            EDIFICIO = "RESD.LOS GRANADILLOS";
+            PISO = "14";
+            NUMERO = "141B";
+            URBANIZACION = "EL PARAÍSO";
+            COD_PAIS = "VE";
+            COD_ESTADO = "DC";
+            CIUDAD = "CARACAS";
+            TELEFONOS = "0124835448";
+            COD_ESTADO_SSO = "NUE";
+            COD_MUNICIPIO_SSO = "217";
+            COD_PARROQUIA_SSO = "1191";
 
             /* DISCAPACIDAD */
-            //COD_DISCAPACIDAD_MOTRIZ = true;
-            //COD_DISCAPACIDAD_SENSORIAL = true;
-            //COD_DISCAPACIDAD_INTELECTUAL = false;
+            COD_DISCAPACIDAD_MOTRIZ = true;
+            COD_DISCAPACIDAD_SENSORIAL = true;
+            COD_DISCAPACIDAD_INTELECTUAL = false;
 
             /* FAMILIARES */
+
+            FAM1_COD_PARENTESCO = "1";
+            FAM1_PRIMER_APELLIDO = "DEPABLOS";
+            FAM1_SEGUNDO_APELLIDO = "SILVA";
+            FAM1_NOMBRES = "DANIEL";
+            FAM1_FECHA_NACIMIENTO = "05/04/1974";
+            FAM1_LUGAR_NACIMIENTO = "CARACAS";
+            FAM1_COD_PAIS = "VE";
+            FAM1_COD_NACIONALIDAD = "VE";
+            FAM1_CEDULA_FAMILIAR = "11681109";
+            FAM1_SEXO = "M";
+
+            FAM2_COD_PARENTESCO = "1";
+            FAM2_PRIMER_APELLIDO = "DEPABLOS";
+            FAM2_SEGUNDO_APELLIDO = "GONZALEZ";
+            FAM2_NOMBRES = "NICOLE CELESTE";
+            FAM2_FECHA_NACIMIENTO = "10/10/2016";
+            FAM2_LUGAR_NACIMIENTO = "CARACAS";
+            FAM2_COD_PAIS = "VE";
+            FAM2_COD_NACIONALIDAD = "VE";
+            FAM2_CEDULA_FAMILIAR = "11681109";
+            FAM2_SEXO = "F";            
 
 
             ///* Discapacidad : 'ZA', 'ZB', 'ZC' */
@@ -759,6 +781,29 @@ namespace SPISAP.Models
             //FECHA_INS = System.DateTime.Now;
             //COD_USER_UPD = null;
             //FECHA_UPD = System.DateTime.Now;
+
+            // DATOS DE FORMACIÓN //
+            FRM1_COD_CLASE = "V1";
+            FRM1_CT_COD_CLASE = "V1";
+            FRM1_CT_COD_TITULO = "2";
+            FRM1_CE_COD_CLASE = "V1";
+            FRM1_CE_COD_ESPECIALIDAD = "00001";
+            FRM1_INSTITUTO = "INSTITUTO 1";
+            FRM1_DURACION = "5";
+            FRM1_UNIDAD_TIEMPO = "Años";
+            FRM1_FECHA_INICIO = "01/01/2000";
+            FRM1_FECHA_FIN = "01/01/2005";
+            FRM1_COD_PAIS = "VE";
+
+            // DATOS EXPERIENCIA //
+            EXP1_FECHA_INICIO = "01/01/2000";
+            EXP1_FECHA_FIN = "01/01/2010";
+            EXP1_EMPRESA = "EMPRESA 1";
+            EXP1_CIUDAD = "CARACAS";
+            EXP1_PAIS = "VE";
+            EXP1_COD_RAMO = "36";
+            EXP1_COD_ACTIVIDAD = "14";
+            EXP1_COD_RELACION = "5";
 
         }
 

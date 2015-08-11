@@ -20,18 +20,18 @@ namespace SPISAP.Models
             this.DCOMUNICACIONs1 = new HashSet<DCOMUNICACION>();
             this.DCUENTAS = new HashSet<DCUENTA>();
             this.DCUENTAS1 = new HashSet<DCUENTA>();
-            this.DDIRECCIONES = new HashSet<DDIRECCION>();
-            this.DDIRECCIONES1 = new HashSet<DDIRECCION>();
-            this.DDISCAPACIDADES = new HashSet<DDISCAPACIDAD>();
-            this.DDISCAPACIDADES1 = new HashSet<DDISCAPACIDAD>();
-            this.DPERSONALES = new HashSet<DPERSONALES>();
-            this.DPERSONALES1 = new HashSet<DPERSONALES>();
-            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
-            this.DEXPERIENCIAS1 = new HashSet<DEXPERIENCIA>();
+            this.DDIRECCIONs = new HashSet<DDIRECCION>();
+            this.DDIRECCIONs1 = new HashSet<DDIRECCION>();
+            this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();
+            this.DDISCAPACIDADs1 = new HashSet<DDISCAPACIDAD>();
+            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
+            this.DEXPERIENCIAs1 = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFAMILIARES1 = new HashSet<DFAMILIAR>();
-            this.DFORMACIONES = new HashSet<DFORMACION>();
-            this.DFORMACIONES1 = new HashSet<DFORMACION>();
+            this.DFORMACIONs = new HashSet<DFORMACION>();
+            this.DFORMACIONs1 = new HashSet<DFORMACION>();
+            this.DPERSONALES = new HashSet<DPERSONALES>();
+            this.DPERSONALES1 = new HashSet<DPERSONALES>();
         }
     
         public string COD_USER { get; set; }
@@ -45,18 +45,18 @@ namespace SPISAP.Models
         public virtual ICollection<DCOMUNICACION> DCOMUNICACIONs1 { get; set; }
         public virtual ICollection<DCUENTA> DCUENTAS { get; set; }
         public virtual ICollection<DCUENTA> DCUENTAS1 { get; set; }
-        public virtual ICollection<DDIRECCION> DDIRECCIONES { get; set; }
-        public virtual ICollection<DDIRECCION> DDIRECCIONES1 { get; set; }
-        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
-        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES1 { get; set; }
-        public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
-        public virtual ICollection<DPERSONALES> DPERSONALES1 { get; set; }
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS1 { get; set; }
+        public virtual ICollection<DDIRECCION> DDIRECCIONs { get; set; }
+        public virtual ICollection<DDIRECCION> DDIRECCIONs1 { get; set; }
+        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
+        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs1 { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs1 { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES1 { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONES1 { get; set; }
-        public virtual SUCURSAL SUCURSALES { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONs1 { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES { get; set; }
+        public virtual ICollection<DPERSONALES> DPERSONALES1 { get; set; }
+        public virtual SUCURSAL SUCURSAL { get; set; }
     }
 }

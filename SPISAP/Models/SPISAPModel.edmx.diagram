@@ -4,33 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d4daa8fd960f44f58251ff9e3e971c0e" Name="Diagram1">
+      <Diagram DiagramId="6c578640c8ac4d9da72226d9bdcf3b79" Name="Diagram1">
         <EntityTypeShape EntityType="SPISAPModel.ACTIVIDAD" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.AREA_PERSONAL" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.CLASE_ESPECIALIDAD" Width="2" PointX="11.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.CLASE_INSTITUTO" Width="1.875" PointX="9" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.CLASE_TITULO" Width="1.5" PointX="11.25" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DCOMUNICACION" Width="1.5" PointX="7.5" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DCUENTA" Width="1.5" PointX="10.5" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DDIRECCION" Width="1.5" PointX="7.5" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DDISCAPACIDAD" Width="1.5" PointX="7.5" PointY="25.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DPERSONALES" Width="1.875" PointX="5.25" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DUSUARIO" Width="2.125" PointX="3" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.ESTADO_SSO" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.FORMACION" Width="1.5" PointX="11.25" PointY="32.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.GRUPO_PERSONAL" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.MUNICIPIO_SSO" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.NACIONALIDAD" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PAIS" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PAIS_ESTADO" Width="1.5" PointX="3" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PARENTESCO" Width="1.5" PointX="8.25" PointY="32.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PARROQUIA_SSO" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.RAMO" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.RELACION_LABORAL" Width="1.5" PointX="8.25" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.SUCURSAL" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.AREA_PERSONAL" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.CLASE_ESPECIALIDAD" Width="1.5" PointX="11.25" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.CLASE_INSTITUTO" Width="1.5" PointX="9" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.CLASE_TITULO" Width="1.5" PointX="11.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DCOMUNICACION" Width="1.5" PointX="7.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DCUENTA" Width="1.5" PointX="10.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DDIRECCION" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DDISCAPACIDAD" Width="1.5" PointX="7.5" PointY="26" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DEXPERIENCIA" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DFAMILIAR" Width="2.25" PointX="10.5" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.DFORMACION" Width="1.5" PointX="13.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DFAMILIAR" Width="1.5" PointX="10.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DFORMACION" Width="1.5" PointX="13.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DPERSONALES" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.DUSUARIO" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.ESTADO_SSO" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.FORMACION" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.GRUPO_PERSONAL" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.MUNICIPIO_SSO" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.NACIONALIDAD" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PAIS" Width="1.5" PointX="0.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PAIS_ESTADO" Width="1.5" PointX="3" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PARENTESCO" Width="1.5" PointX="8.25" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PARROQUIA_SSO" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.RAMO" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.RELACION_LABORAL" Width="1.5" PointX="8.25" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.SUCURSAL" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
         <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_ACTIVIDAD_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_AREA_PERSONAL_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.CESPECIALIDAD_CINSTITUTO_FK" ManuallyRouted="false" />
@@ -53,32 +53,31 @@
         <AssociationConnector Association="SPISAPModel.DDISCAPACIDAD_DUSUARIOS_FKV1" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DISCAPACIDAD_DPERSONALES_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_DPERSONALES_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_DUSUARIOS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_DUSUARIOS_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_PAIS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_RAMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_RLABORAL_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DFAMILIARES_DPERSONALES_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFAMILIARES_DUSUARIOS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFAMILIARES_DUSUARIOS_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFAMILIARES_NACIONALIDAD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFAMILIARES_PAIS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFAMILIARES_PARENTESCOS_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DFORMACION_DPERSONALES_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFORMACION_DUSUARIOS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFORMACION_DUSUARIOS_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPISAPModel.DFORMACION_PAIS_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_DUSUARIOS_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_DUSUARIOS_FKV1" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_GRUPO_PERSONAL_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_NACIONALIDAD_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_PAIS_ESTADO_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DPERSONALES_SUCURSAL_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_DUSUARIOS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_DUSUARIOS_FKV1" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFAMILIARES_DUSUARIOS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFAMILIARES_DUSUARIOS_FKV1" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFORMACION_DUSUARIOS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFORMACION_DUSUARIOS_FKV1" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.DUSUARIOS_SUCURSAL_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.MUNICIPIO_ESTADO_SSO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFORMACION_FORMACION_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.PARROQUIA_MUNICIPIO_SSO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFAMILIARES_NACIONALIDAD_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_PAIS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFAMILIARES_PAIS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFORMACION_PAIS_FK" ManuallyRouted="false" />
         <AssociationConnector Association="SPISAPModel.PAIS_ESTADO_PAIS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DFAMILIARES_PARENTESCOS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_RAMO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPISAPModel.DEXPERIENCIA_RLABORAL_FK" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

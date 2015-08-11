@@ -11,99 +11,52 @@ namespace SPISAP.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class DPERSONALES
     {
         public DPERSONALES()
         {
-            this.DCOMUNICACIONES = new HashSet<DCOMUNICACION>();
-            this.DDISCAPACIDADES = new HashSet<DDISCAPACIDAD>();
-            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
+            this.DCOMUNICACIONs = new HashSet<DCOMUNICACION>();
+            this.DDISCAPACIDADs = new HashSet<DDISCAPACIDAD>();
+            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
-            this.DFORMACIONES = new HashSet<DFORMACION>();
+            this.DFORMACIONs = new HashSet<DFORMACION>();
         }
-
+    
         public string FICHA { get; set; }
-
-        [Required(ErrorMessage = "El campo Cédula es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
-        [StringLength(8, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 8 dígitos.")]
         public string CEDULA { get; set; }
-
-        [Required(ErrorMessage = "El campo Sucursal es requerido.")]
         public string COD_SUCURSAL { get; set; }
-
-        [Required(ErrorMessage = "El campo Tipo de Contratación es requerido.")]
         public string COD_GRUPO { get; set; }
-
-        [Required(ErrorMessage = "El campo Nivel de Cargo es requerido.")]
         public string COD_AREA_PERSONAL { get; set; }
-
-        [Required(ErrorMessage = "El campo Cargo es requerido.")]
         public string CARGO { get; set; }
-
         public string TRATAMIENTO { get; set; }
-
-        [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
         public string PRIMER_APELLIDO { get; set; }
-
-        [Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
         public string SEGUNDO_APELLIDO { get; set; }
-
-        [Required(ErrorMessage = "El campo Nombres es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres debe contener entre 3 y 40 carácteres.")]
         public string NOMBRE { get; set; }
-
-        [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
         public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
-
-        [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad de Nacimiento debe contener entre 3 y 40 carácteres.")]
         public string CIUDAD_NACIMIENTO { get; set; }
-
-        [Required(ErrorMessage = "El campo País de Nacimiento es requerido.")]
         public string COD_PAIS { get; set; }
-
-        [Required(ErrorMessage = "El campo Estado de Nacimiento es requerido.")]
         public string COD_ESTADO { get; set; }
-
-        [Required(ErrorMessage = "El campo Nacionalidad es requerido.")]
         public string COD_NACIONALIDAD { get; set; }
-
-        [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
         public string ESTADO_CIVIL { get; set; }
-
-        [Required(ErrorMessage = "El campo Sexo es requerido.")]
         public string SEXO { get; set; }
-
-        //[Required(ErrorMessage = "El campo RIF es requerido.")]
         public string RIF { get; set; }
-
-        [Required(ErrorMessage = "El campo Nro. de Zapato es requerido.")]
         public string CALZADO { get; set; }
-
-        [Required(ErrorMessage = "El campo Talla de Camisa es requerido.")]
         public string CHEMISE { get; set; }
-
-        [Required(ErrorMessage = "El campo Talla de Pantalón es requerido.")]
         public string PANTALON { get; set; }
-
         public string COD_USER_INS { get; set; }
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }
         public System.DateTime FECHA_UPD { get; set; }
     
         public virtual AREA_PERSONAL AREA_PERSONAL { get; set; }
-        public virtual ICollection<DCOMUNICACION> DCOMUNICACIONES { get; set; }
+        public virtual ICollection<DCOMUNICACION> DCOMUNICACIONs { get; set; }
         public virtual DCUENTA DCUENTA { get; set; }
         public virtual DDIRECCION DDIRECCION { get; set; }
-        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADES { get; set; }
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
+        public virtual ICollection<DDISCAPACIDAD> DDISCAPACIDADs { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual GRUPO_PERSONAL GRUPO_PERSONAL { get; set; }

@@ -29,12 +29,13 @@ namespace SPISAP.Models
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }
         public System.DateTime FECHA_UPD { get; set; }
+        public decimal ID_FAMILIARES { get; set; }
     
-        public virtual DPERSONALES DPERSONALES { get; set; }
+        public virtual DPERSONALES DPERSONALE { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual NACIONALIDAD NACIONALIDAD { get; set; }
-        public virtual PAIS PAIS { get; set; }
+        public virtual PAIS PAI { get; set; }
         public virtual PARENTESCO PARENTESCO { get; set; }
     }
 }

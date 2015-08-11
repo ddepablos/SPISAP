@@ -11,66 +11,31 @@ namespace SPISAP.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class DDIRECCION
     {
         public string CEDULA { get; set; }
-
-        [Required(ErrorMessage = "El campo Calle es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Calle debe contener entre 3 y 40 carácteres.")]
         public string CALLE { get; set; }
-
-        [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Edificio/Casa/Escalera debe contener entre 3 y 40 carácteres.")]
         public string EDIFICIO { get; set; }
-
-        [Required(ErrorMessage = "El campo Piso es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Piso permite únicamente números.")]
         public string PISO { get; set; }
-
-        [Required(ErrorMessage = "El campo Número es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Número (Dirección) permite únicamente números.")]
         public string NUMERO { get; set; }
-
-        [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Dirección) debe contener entre 3 y 40 carácteres.")]
         public string CIUDAD { get; set; }
-
-        [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
-        [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
-
-        //[Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO { get; set; }
-
-        [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
         public string COD_PAIS { get; set; }
-
-        [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
-        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
-        [StringLength(40, MinimumLength = 7, ErrorMessage = "El campo Teléfono de Habitación debe contener entre 7 y 40 carácteres.")]
         public string TELEFONOS { get; set; }
-
-        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO_SSO { get; set; }
-
-        [Required(ErrorMessage = "El campo Municipio (Dirección) es requerido.")]
         public string COD_MUNICIPIO_SSO { get; set; }
-
-        [Required(ErrorMessage = "El campo Parroquia (Dirección) es requerido.")]
         public string COD_PARROQUIA_SSO { get; set; }
-        
         public string COD_USER_INS { get; set; }
         public System.DateTime FECHA_INS { get; set; }
         public string COD_USER_UPD { get; set; }
         public System.DateTime FECHA_UPD { get; set; }
-
-        public virtual DPERSONALES DPERSONALES { get; set; }
+    
+        public virtual DPERSONALES DPERSONALE { get; set; }
         public virtual DUSUARIO DUSUARIO { get; set; }
         public virtual DUSUARIO DUSUARIO1 { get; set; }
         public virtual PAIS_ESTADO PAIS_ESTADO { get; set; }
         public virtual PARROQUIA_SSO PARROQUIA_SSO { get; set; }
-
     }
 }

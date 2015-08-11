@@ -105,21 +105,9 @@
           <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="FECHA_UPD" Type="date" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BDSPISAP.DEXPERIENCIA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DEXPERIENCIA">
           <Key>
-            <PropertyRef Name="CEDULA" />
-            <PropertyRef Name="EMPRESA" />
-            <PropertyRef Name="CIUDAD" />
-            <PropertyRef Name="PAIS" />
-            <PropertyRef Name="COD_RAMO" />
-            <PropertyRef Name="COD_ACTIVIDAD" />
-            <PropertyRef Name="COD_RELACION" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
+            <PropertyRef Name="ID_DEXPERIENCIA" />
           </Key>
           <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
           <Property Name="FECHA_INICIO" Type="date" />
@@ -134,24 +122,11 @@ warning 6002: The table/view 'BDSPISAP.DEXPERIENCIA' does not have a primary key
           <Property Name="FECHA_INS" Type="date" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+          <Property Name="ID_DEXPERIENCIA" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BDSPISAP.DFAMILIARES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DFAMILIARES">
           <Key>
-            <PropertyRef Name="COD_PARENTESCO" />
-            <PropertyRef Name="PRIMER_APELLIDO" />
-            <PropertyRef Name="NOMBRES" />
-            <PropertyRef Name="FECHA_NACIMIENTO" />
-            <PropertyRef Name="LUGAR_NACIMIENTO" />
-            <PropertyRef Name="COD_PAIS" />
-            <PropertyRef Name="COD_NACIONALIDAD" />
-            <PropertyRef Name="CEDULA_FAMILIAR" />
-            <PropertyRef Name="SEXO" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
+            <PropertyRef Name="ID_FAMILIARES" />
           </Key>
           <Property Name="CEDULA" Type="varchar2" MaxLength="8" />
           <Property Name="COD_PARENTESCO" Type="varchar2" MaxLength="4" Nullable="false" />
@@ -168,30 +143,15 @@ warning 6002: The table/view 'BDSPISAP.DFAMILIARES' does not have a primary key 
           <Property Name="FECHA_INS" Type="date" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+          <Property Name="ID_FAMILIARES" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DFORMACION">
           <Key>
-            <PropertyRef Name="CEDULA" />
-            <PropertyRef Name="COD_CLASE" />
-            <PropertyRef Name="COD_FORMACION" />
-            <PropertyRef Name="COD_PAIS" />
-            <PropertyRef Name="CT_COD_CLASE" />
-            <PropertyRef Name="CT_COD_TITULO" />
-            <PropertyRef Name="CE_COD_ESPECIALIDAD" />
-            <PropertyRef Name="CE_COD_CLASE" />
-            <PropertyRef Name="FECHA_INICIO" />
-            <PropertyRef Name="FECHA_FIN" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
+            <PropertyRef Name="ID_FORMACION" />
           </Key>
           <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
           <Property Name="COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
-          <Property Name="COD_FORMACION" Type="varchar2" MaxLength="2" Nullable="false" />
-          <Property Name="INSTITUO" Type="varchar2" MaxLength="40" />
+          <Property Name="INSTITUTO" Type="varchar2" MaxLength="40" />
           <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
           <Property Name="CT_COD_CLASE" Type="varchar2" MaxLength="2" Nullable="false" />
           <Property Name="CT_COD_TITULO" Type="varchar2" MaxLength="1" Nullable="false" />
@@ -205,6 +165,7 @@ warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key d
           <Property Name="FECHA_INS" Type="date" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="FECHA_UPD" Type="date" Nullable="false" />
+          <Property Name="ID_FORMACION" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="DPERSONALES">
           <Key>
@@ -757,18 +718,6 @@ warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DFORMACION_FORMACION_FK">
-          <End Role="FORMACION" Type="Self.FORMACION" Multiplicity="1" />
-          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FORMACION">
-              <PropertyRef Name="COD_FORMACION" />
-            </Principal>
-            <Dependent Role="DFORMACION">
-              <PropertyRef Name="COD_FORMACION" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DFORMACION_PAIS_FK">
           <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
           <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
@@ -939,6 +888,9 @@ warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key d
           <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTAS" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="DDIRECCION" EntityType="Self.DDIRECCION" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="DDISCAPACIDAD" EntityType="Self.DDISCAPACIDAD" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DEXPERIENCIA" EntityType="Self.DEXPERIENCIA" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DFAMILIARES" EntityType="Self.DFAMILIARES" Schema="BDSPISAP" store:Type="Tables" />
+          <EntitySet Name="DFORMACION" EntityType="Self.DFORMACION" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="DPERSONALES" EntityType="Self.DPERSONALES" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIOS" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" Schema="BDSPISAP" store:Type="Tables" />
@@ -953,63 +905,6 @@ warning 6002: The table/view 'BDSPISAP.DFORMACION' does not have a primary key d
           <EntitySet Name="RAMO" EntityType="Self.RAMO" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="RELACION_LABORAL" EntityType="Self.RELACION_LABORAL" Schema="BDSPISAP" store:Type="Tables" />
           <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="BDSPISAP" store:Type="Tables" />
-          <EntitySet Name="DEXPERIENCIA" EntityType="Self.DEXPERIENCIA" store:Type="Tables" store:Schema="BDSPISAP">
-            <DefiningQuery>SELECT 
-"DEXPERIENCIA"."CEDULA" AS "CEDULA", 
-"DEXPERIENCIA"."FECHA_INICIO" AS "FECHA_INICIO", 
-"DEXPERIENCIA"."FECHA_FIN" AS "FECHA_FIN", 
-"DEXPERIENCIA"."EMPRESA" AS "EMPRESA", 
-"DEXPERIENCIA"."CIUDAD" AS "CIUDAD", 
-"DEXPERIENCIA"."PAIS" AS "PAIS", 
-"DEXPERIENCIA"."COD_RAMO" AS "COD_RAMO", 
-"DEXPERIENCIA"."COD_ACTIVIDAD" AS "COD_ACTIVIDAD", 
-"DEXPERIENCIA"."COD_RELACION" AS "COD_RELACION", 
-"DEXPERIENCIA"."COD_USER_INS" AS "COD_USER_INS", 
-"DEXPERIENCIA"."FECHA_INS" AS "FECHA_INS", 
-"DEXPERIENCIA"."COD_USER_UPD" AS "COD_USER_UPD", 
-"DEXPERIENCIA"."FECHA_UPD" AS "FECHA_UPD"
-FROM "BDSPISAP"."DEXPERIENCIA" "DEXPERIENCIA"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="DFAMILIARES" EntityType="Self.DFAMILIARES" store:Type="Tables" store:Schema="BDSPISAP">
-            <DefiningQuery>SELECT 
-"DFAMILIARES"."CEDULA" AS "CEDULA", 
-"DFAMILIARES"."COD_PARENTESCO" AS "COD_PARENTESCO", 
-"DFAMILIARES"."PRIMER_APELLIDO" AS "PRIMER_APELLIDO", 
-"DFAMILIARES"."SEGUNDO_APELLIDO" AS "SEGUNDO_APELLIDO", 
-"DFAMILIARES"."NOMBRES" AS "NOMBRES", 
-"DFAMILIARES"."FECHA_NACIMIENTO" AS "FECHA_NACIMIENTO", 
-"DFAMILIARES"."LUGAR_NACIMIENTO" AS "LUGAR_NACIMIENTO", 
-"DFAMILIARES"."COD_PAIS" AS "COD_PAIS", 
-"DFAMILIARES"."COD_NACIONALIDAD" AS "COD_NACIONALIDAD", 
-"DFAMILIARES"."CEDULA_FAMILIAR" AS "CEDULA_FAMILIAR", 
-"DFAMILIARES"."SEXO" AS "SEXO", 
-"DFAMILIARES"."COD_USER_INS" AS "COD_USER_INS", 
-"DFAMILIARES"."FECHA_INS" AS "FECHA_INS", 
-"DFAMILIARES"."COD_USER_UPD" AS "COD_USER_UPD", 
-"DFAMILIARES"."FECHA_UPD" AS "FECHA_UPD"
-FROM "BDSPISAP"."DFAMILIARES" "DFAMILIARES"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="DFORMACION" EntityType="Self.DFORMACION" store:Type="Tables" store:Schema="BDSPISAP">
-            <DefiningQuery>SELECT 
-"DFORMACION"."CEDULA" AS "CEDULA", 
-"DFORMACION"."COD_CLASE" AS "COD_CLASE", 
-"DFORMACION"."COD_FORMACION" AS "COD_FORMACION", 
-"DFORMACION"."INSTITUO" AS "INSTITUO", 
-"DFORMACION"."COD_PAIS" AS "COD_PAIS", 
-"DFORMACION"."CT_COD_CLASE" AS "CT_COD_CLASE", 
-"DFORMACION"."CT_COD_TITULO" AS "CT_COD_TITULO", 
-"DFORMACION"."DURACION" AS "DURACION", 
-"DFORMACION"."UNIDAD_TIEMPO" AS "UNIDAD_TIEMPO", 
-"DFORMACION"."CE_COD_ESPECIALIDAD" AS "CE_COD_ESPECIALIDAD", 
-"DFORMACION"."CE_COD_CLASE" AS "CE_COD_CLASE", 
-"DFORMACION"."FECHA_INICIO" AS "FECHA_INICIO", 
-"DFORMACION"."FECHA_FIN" AS "FECHA_FIN", 
-"DFORMACION"."COD_USER_INS" AS "COD_USER_INS", 
-"DFORMACION"."FECHA_INS" AS "FECHA_INS", 
-"DFORMACION"."COD_USER_UPD" AS "COD_USER_UPD", 
-"DFORMACION"."FECHA_UPD" AS "FECHA_UPD"
-FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="CESPECIALIDAD_CINSTITUTO_FK" Association="Self.CESPECIALIDAD_CINSTITUTO_FK">
             <End Role="CLASE_INSTITUTO" EntitySet="CLASE_INSTITUTO" />
             <End Role="CLASE_ESPECIALIDAD" EntitySet="CLASE_ESPECIALIDAD" />
@@ -1146,10 +1041,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
             <End Role="DFORMACION" EntitySet="DFORMACION" />
           </AssociationSet>
-          <AssociationSet Name="DFORMACION_FORMACION_FK" Association="Self.DFORMACION_FORMACION_FK">
-            <End Role="FORMACION" EntitySet="FORMACION" />
-            <End Role="DFORMACION" EntitySet="DFORMACION" />
-          </AssociationSet>
           <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
             <End Role="PAIS" EntitySet="PAIS" />
             <End Role="DFORMACION" EntitySet="DFORMACION" />
@@ -1254,7 +1145,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_TITULO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.CTITULO_CINSTITUTO_FK" FromRole="CLASE_TITULO" ToRole="CLASE_INSTITUTO" />
-          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="CLASE_TITULO" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="CLASE_TITULO" ToRole="DFORMACION" />
         </EntityType>
         <EntityType Name="DCOMUNICACION">
           <Key>
@@ -1285,7 +1176,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DCUENTAS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DCUENTAS" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DCUENTAS" ToRole="DUSUARIOS" />
         </EntityType>
@@ -1310,7 +1201,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DDIRECCION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DDIRECCION" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DDIRECCION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="DDIRECCION" ToRole="PAIS_ESTADO" />
@@ -1329,7 +1220,89 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="FECHA_UPD" Type="DateTime" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DDISCAPACIDAD" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DDISCAPACIDAD" ToRole="DPERSONALES" />
+        </EntityType>
+        <EntityType Name="DEXPERIENCIA">
+          <Key>
+            <PropertyRef Name="ID_DEXPERIENCIA" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="DateTime" />
+          <Property Name="FECHA_FIN" Type="DateTime" />
+          <Property Name="EMPRESA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <Property Name="ID_DEXPERIENCIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ACTIVIDAD" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="DEXPERIENCIA" ToRole="ACTIVIDAD" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DEXPERIENCIA" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="PAI" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="DEXPERIENCIA" ToRole="PAIS" />
+          <NavigationProperty Name="RAMO" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="DEXPERIENCIA" ToRole="RAMO" />
+          <NavigationProperty Name="RELACION_LABORAL" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="DEXPERIENCIA" ToRole="RELACION_LABORAL" />
+        </EntityType>
+        <EntityType Name="DFAMILIAR">
+          <Key>
+            <PropertyRef Name="ID_FAMILIARES" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PARENTESCO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRES" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="LUGAR_NACIMIENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEDULA_FAMILIAR" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <Property Name="ID_FAMILIARES" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DFAMILIARES" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="NACIONALIDAD" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="DFAMILIARES" ToRole="NACIONALIDAD" />
+          <NavigationProperty Name="PAI" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="DFAMILIARES" ToRole="PAIS" />
+          <NavigationProperty Name="PARENTESCO" Relationship="Self.DFAMILIARES_PARENTESCOS_FK" FromRole="DFAMILIARES" ToRole="PARENTESCOS" />
+        </EntityType>
+        <EntityType Name="DFORMACION">
+          <Key>
+            <PropertyRef Name="ID_FORMACION" />
+          </Key>
+          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INSTITUTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CT_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CT_COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DURACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UNIDAD_TIEMPO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CE_COD_ESPECIALIDAD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CE_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_FIN" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
+          <Property Name="ID_FORMACION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CLASE_ESPECIALIDAD" Relationship="Self.DFORMACION_CESPECIALIDAD_FK" FromRole="DFORMACION" ToRole="CLASE_ESPECIALIDAD" />
+          <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.DFORMACION_CINSTITUTO_FK" FromRole="DFORMACION" ToRole="CLASE_INSTITUTO" />
+          <NavigationProperty Name="CLASE_TITULO" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="DFORMACION" ToRole="CLASE_TITULO" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DFORMACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DFORMACION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DFORMACION" ToRole="DUSUARIOS" />
+          <NavigationProperty Name="PAI" Relationship="Self.DFORMACION_PAIS_FK" FromRole="DFORMACION" ToRole="PAIS" />
         </EntityType>
         <EntityType Name="DPERSONALES">
           <Key>
@@ -1361,13 +1334,13 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="AREA_PERSONAL" Relationship="Self.DPERSONALES_AREA_PERSONAL_FK" FromRole="DPERSONALES" ToRole="AREA_PERSONAL" />
-          <NavigationProperty Name="DCOMUNICACIONES" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCOMUNICACION" />
+          <NavigationProperty Name="DCOMUNICACIONs" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCOMUNICACION" />
           <NavigationProperty Name="DCUENTA" Relationship="Self.CUENTAS_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DCUENTAS" />
           <NavigationProperty Name="DDIRECCION" Relationship="Self.DDIRECCION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDISCAPACIDADES" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDISCAPACIDAD" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DISCAPACIDAD_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DPERSONALES" ToRole="DFORMACION" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DPERSONALES" ToRole="DUSUARIOS" />
           <NavigationProperty Name="GRUPO_PERSONAL" Relationship="Self.DPERSONALES_GRUPO_PERSONAL_FK" FromRole="DPERSONALES" ToRole="GRUPO_PERSONAL" />
@@ -1389,19 +1362,19 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <NavigationProperty Name="DCOMUNICACIONs1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCOMUNICACION" />
           <NavigationProperty Name="DCUENTAS" Relationship="Self.DCUENTAS_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
           <NavigationProperty Name="DCUENTAS1" Relationship="Self.DCUENTAS_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DCUENTAS" />
-          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDIRECCIONES1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
-          <NavigationProperty Name="DDISCAPACIDADES" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
-          <NavigationProperty Name="DDISCAPACIDADES1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DPERSONALES1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
-          <NavigationProperty Name="DEXPERIENCIAS1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONs1" Relationship="Self.DDIRECCION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDISCAPACIDADs" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DDISCAPACIDADs1" Relationship="Self.DDISCAPACIDAD_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DDISCAPACIDAD" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
           <NavigationProperty Name="DFAMILIARES1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
-          <NavigationProperty Name="DFORMACIONES1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFORMACION" />
-          <NavigationProperty Name="SUCURSALES" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="DUSUARIOS" ToRole="SUCURSAL" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONs1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_DUSUARIOS_FK" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALES1" Relationship="Self.DPERSONALES_DUSUARIOS_FKV1" FromRole="DUSUARIOS" ToRole="DPERSONALES" />
+          <NavigationProperty Name="SUCURSAL" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="DUSUARIOS" ToRole="SUCURSAL" />
         </EntityType>
         <EntityType Name="ESTADO_SSO">
           <Key>
@@ -1417,7 +1390,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_FORMACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_FORMACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="FORMACION" ToRole="DFORMACION" />
         </EntityType>
         <EntityType Name="GRUPO_PERSONAL">
           <Key>
@@ -1444,8 +1416,8 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_NACIONALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DPERSONALES" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DFAMILIARES" />
+          <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_NACIONALIDAD_FK" FromRole="NACIONALIDAD" ToRole="DPERSONALES" />
         </EntityType>
         <EntityType Name="PAIS">
           <Key>
@@ -1453,7 +1425,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           </Key>
           <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="PAIS" ToRole="DFAMILIARES" />
           <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
           <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS" ToRole="PAIS_ESTADO" />
@@ -1468,7 +1440,7 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="DES_ESTADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DPERSONALES" />
-          <NavigationProperty Name="PAIS" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
+          <NavigationProperty Name="PAI" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
         </EntityType>
         <EntityType Name="PARENTESCO">
           <Key>
@@ -1515,122 +1487,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <Property Name="DES_SUCURSAL" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_SUCURSAL_FK" FromRole="SUCURSAL" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIOS" Relationship="Self.DUSUARIOS_SUCURSAL_FK" FromRole="SUCURSAL" ToRole="DUSUARIOS" />
-        </EntityType>
-        <EntityType Name="DEXPERIENCIA">
-          <Key>
-            <PropertyRef Name="CEDULA" />
-            <PropertyRef Name="EMPRESA" />
-            <PropertyRef Name="CIUDAD" />
-            <PropertyRef Name="PAIS" />
-            <PropertyRef Name="COD_RAMO" />
-            <PropertyRef Name="COD_ACTIVIDAD" />
-            <PropertyRef Name="COD_RELACION" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
-          </Key>
-          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_INICIO" Type="DateTime" />
-          <Property Name="FECHA_FIN" Type="DateTime" />
-          <Property Name="EMPRESA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
-          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="ACTIVIDAD" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="DEXPERIENCIA" ToRole="ACTIVIDAD" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DEXPERIENCIA_DPERSONALES_FK" FromRole="DEXPERIENCIA" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DUSUARIO" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FK" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DEXPERIENCIA_DUSUARIOS_FKV1" FromRole="DEXPERIENCIA" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="PAISES" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="DEXPERIENCIA" ToRole="PAIS" />
-          <NavigationProperty Name="RAMO" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="DEXPERIENCIA" ToRole="RAMO" />
-          <NavigationProperty Name="RELACION_LABORAL" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="DEXPERIENCIA" ToRole="RELACION_LABORAL" />
-        </EntityType>
-        <EntityType Name="DFAMILIAR">
-          <Key>
-            <PropertyRef Name="COD_PARENTESCO" />
-            <PropertyRef Name="PRIMER_APELLIDO" />
-            <PropertyRef Name="NOMBRES" />
-            <PropertyRef Name="FECHA_NACIMIENTO" />
-            <PropertyRef Name="LUGAR_NACIMIENTO" />
-            <PropertyRef Name="COD_PAIS" />
-            <PropertyRef Name="COD_NACIONALIDAD" />
-            <PropertyRef Name="CEDULA_FAMILIAR" />
-            <PropertyRef Name="SEXO" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
-          </Key>
-          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="COD_PARENTESCO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="NOMBRES" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
-          <Property Name="LUGAR_NACIMIENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CEDULA_FAMILIAR" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
-          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DFAMILIARES_DPERSONALES_FK" FromRole="DFAMILIARES" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFAMILIARES_DUSUARIOS_FK" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFAMILIARES_DUSUARIOS_FKV1" FromRole="DFAMILIARES" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="NACIONALIDAD" Relationship="Self.DFAMILIARES_NACIONALIDAD_FK" FromRole="DFAMILIARES" ToRole="NACIONALIDAD" />
-          <NavigationProperty Name="PAIS" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="DFAMILIARES" ToRole="PAIS" />
-          <NavigationProperty Name="PARENTESCO" Relationship="Self.DFAMILIARES_PARENTESCOS_FK" FromRole="DFAMILIARES" ToRole="PARENTESCOS" />
-        </EntityType>
-        <EntityType Name="DFORMACION">
-          <Key>
-            <PropertyRef Name="CEDULA" />
-            <PropertyRef Name="COD_CLASE" />
-            <PropertyRef Name="COD_FORMACION" />
-            <PropertyRef Name="COD_PAIS" />
-            <PropertyRef Name="CT_COD_CLASE" />
-            <PropertyRef Name="CT_COD_TITULO" />
-            <PropertyRef Name="CE_COD_ESPECIALIDAD" />
-            <PropertyRef Name="CE_COD_CLASE" />
-            <PropertyRef Name="FECHA_INICIO" />
-            <PropertyRef Name="FECHA_FIN" />
-            <PropertyRef Name="COD_USER_INS" />
-            <PropertyRef Name="FECHA_INS" />
-            <PropertyRef Name="COD_USER_UPD" />
-            <PropertyRef Name="FECHA_UPD" />
-          </Key>
-          <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_FORMACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="INSTITUO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CT_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CT_COD_TITULO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DURACION" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="UNIDAD_TIEMPO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="CE_COD_ESPECIALIDAD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CE_COD_CLASE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_INICIO" Type="DateTime" Nullable="false" />
-          <Property Name="FECHA_FIN" Type="DateTime" Nullable="false" />
-          <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
-          <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="CLASE_ESPECIALIDAD" Relationship="Self.DFORMACION_CESPECIALIDAD_FK" FromRole="DFORMACION" ToRole="CLASE_ESPECIALIDAD" />
-          <NavigationProperty Name="CLASE_INSTITUTO" Relationship="Self.DFORMACION_CINSTITUTO_FK" FromRole="DFORMACION" ToRole="CLASE_INSTITUTO" />
-          <NavigationProperty Name="CLASE_TITULO" Relationship="Self.DFORMACION_CTITULO_FK" FromRole="DFORMACION" ToRole="CLASE_TITULO" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DFORMACION_DPERSONALES_FK" FromRole="DFORMACION" ToRole="DPERSONALES" />
-          <NavigationProperty Name="DUSUARIO" Relationship="Self.DFORMACION_DUSUARIOS_FK" FromRole="DFORMACION" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="DUSUARIO1" Relationship="Self.DFORMACION_DUSUARIOS_FKV1" FromRole="DFORMACION" ToRole="DUSUARIOS" />
-          <NavigationProperty Name="FORMACION" Relationship="Self.DFORMACION_FORMACION_FK" FromRole="DFORMACION" ToRole="FORMACION" />
-          <NavigationProperty Name="PAIS" Relationship="Self.DFORMACION_PAIS_FK" FromRole="DFORMACION" ToRole="PAIS" />
         </EntityType>
         <Association Name="DEXPERIENCIA_ACTIVIDAD_FK">
           <End Role="ACTIVIDAD" Type="Self.ACTIVIDAD" Multiplicity="1" />
@@ -1906,6 +1762,66 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_PAIS_FK">
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RAMO_FK">
+          <End Role="RAMO" Type="Self.RAMO" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAMO">
+              <PropertyRef Name="COD_RAMO" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RAMO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEXPERIENCIA_RLABORAL_FK">
+          <End Role="RELACION_LABORAL" Type="Self.RELACION_LABORAL" Multiplicity="1" />
+          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RELACION_LABORAL">
+              <PropertyRef Name="COD_RELACION" />
+            </Principal>
+            <Dependent Role="DEXPERIENCIA">
+              <PropertyRef Name="COD_RELACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="DFAMILIARES_DPERSONALES_FK">
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
@@ -1918,6 +1834,66 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_NACIONALIDAD_FK">
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NACIONALIDAD">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_NACIONALIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PAIS_FK">
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFAMILIARES_PARENTESCOS_FK">
+          <End Role="PARENTESCOS" Type="Self.PARENTESCO" Multiplicity="1" />
+          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARENTESCOS">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Principal>
+            <Dependent Role="DFAMILIARES">
+              <PropertyRef Name="COD_PARENTESCO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="DFORMACION_DPERSONALES_FK">
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="1" />
           <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
@@ -1927,6 +1903,42 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Principal>
             <Dependent Role="DFORMACION">
               <PropertyRef Name="CEDULA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FK">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_INS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_DUSUARIOS_FKV1">
+          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DUSUARIOS">
+              <PropertyRef Name="COD_USER" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_USER_UPD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DFORMACION_PAIS_FK">
+          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
+          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="COD_PAIS" />
+            </Principal>
+            <Dependent Role="DFORMACION">
+              <PropertyRef Name="COD_PAIS" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2004,78 +2016,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DEXPERIENCIA_DUSUARIOS_FK">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DEXPERIENCIA">
-              <PropertyRef Name="COD_USER_INS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DEXPERIENCIA_DUSUARIOS_FKV1">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DEXPERIENCIA">
-              <PropertyRef Name="COD_USER_UPD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFAMILIARES_DUSUARIOS_FK">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DFAMILIARES">
-              <PropertyRef Name="COD_USER_INS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFAMILIARES_DUSUARIOS_FKV1">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DFAMILIARES">
-              <PropertyRef Name="COD_USER_UPD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFORMACION_DUSUARIOS_FK">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DFORMACION">
-              <PropertyRef Name="COD_USER_INS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFORMACION_DUSUARIOS_FKV1">
-          <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="1" />
-          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DUSUARIOS">
-              <PropertyRef Name="COD_USER" />
-            </Principal>
-            <Dependent Role="DFORMACION">
-              <PropertyRef Name="COD_USER_UPD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DUSUARIOS_SUCURSAL_FK">
           <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
           <End Role="DUSUARIOS" Type="Self.DUSUARIO" Multiplicity="*" />
@@ -2100,18 +2040,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DFORMACION_FORMACION_FK">
-          <End Role="FORMACION" Type="Self.FORMACION" Multiplicity="1" />
-          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FORMACION">
-              <PropertyRef Name="COD_FORMACION" />
-            </Principal>
-            <Dependent Role="DFORMACION">
-              <PropertyRef Name="COD_FORMACION" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="PARROQUIA_MUNICIPIO_SSO_FK">
           <End Role="MUNICIPIO_SSO" Type="Self.MUNICIPIO_SSO" Multiplicity="1" />
           <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="*" />
@@ -2123,54 +2051,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <Dependent Role="PARROQUIA_SSO">
               <PropertyRef Name="COD_MUNICIPIO" />
               <PropertyRef Name="COD_ESTADO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFAMILIARES_NACIONALIDAD_FK">
-          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NACIONALIDAD">
-              <PropertyRef Name="COD_NACIONALIDAD" />
-            </Principal>
-            <Dependent Role="DFAMILIARES">
-              <PropertyRef Name="COD_NACIONALIDAD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DEXPERIENCIA_PAIS_FK">
-          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
-          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PAIS">
-              <PropertyRef Name="COD_PAIS" />
-            </Principal>
-            <Dependent Role="DEXPERIENCIA">
-              <PropertyRef Name="PAIS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFAMILIARES_PAIS_FK">
-          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PAIS">
-              <PropertyRef Name="COD_PAIS" />
-            </Principal>
-            <Dependent Role="DFAMILIARES">
-              <PropertyRef Name="COD_PAIS" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DFORMACION_PAIS_FK">
-          <End Role="PAIS" Type="SPISAPModel.PAIS" Multiplicity="1" />
-          <End Role="DFORMACION" Type="Self.DFORMACION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PAIS">
-              <PropertyRef Name="COD_PAIS" />
-            </Principal>
-            <Dependent Role="DFORMACION">
-              <PropertyRef Name="COD_PAIS" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2186,42 +2066,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DFAMILIARES_PARENTESCOS_FK">
-          <End Role="PARENTESCOS" Type="Self.PARENTESCO" Multiplicity="1" />
-          <End Role="DFAMILIARES" Type="SPISAPModel.DFAMILIAR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PARENTESCOS">
-              <PropertyRef Name="COD_PARENTESCO" />
-            </Principal>
-            <Dependent Role="DFAMILIARES">
-              <PropertyRef Name="COD_PARENTESCO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DEXPERIENCIA_RAMO_FK">
-          <End Role="RAMO" Type="Self.RAMO" Multiplicity="1" />
-          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RAMO">
-              <PropertyRef Name="COD_RAMO" />
-            </Principal>
-            <Dependent Role="DEXPERIENCIA">
-              <PropertyRef Name="COD_RAMO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DEXPERIENCIA_RLABORAL_FK">
-          <End Role="RELACION_LABORAL" Type="Self.RELACION_LABORAL" Multiplicity="1" />
-          <End Role="DEXPERIENCIA" Type="Self.DEXPERIENCIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RELACION_LABORAL">
-              <PropertyRef Name="COD_RELACION" />
-            </Principal>
-            <Dependent Role="DEXPERIENCIA">
-              <PropertyRef Name="COD_RELACION" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="SPISAPEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACTIVIDADES" EntityType="Self.ACTIVIDAD" />
           <EntitySet Name="AREA_PERSONAL" EntityType="Self.AREA_PERSONAL" />
@@ -2232,6 +2076,9 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <EntitySet Name="DCUENTAS" EntityType="Self.DCUENTA" />
           <EntitySet Name="DDIRECCIONES" EntityType="Self.DDIRECCION" />
           <EntitySet Name="DDISCAPACIDADES" EntityType="Self.DDISCAPACIDAD" />
+          <EntitySet Name="DEXPERIENCIAS" EntityType="Self.DEXPERIENCIA" />
+          <EntitySet Name="DFAMILIARES" EntityType="SPISAPModel.DFAMILIAR" />
+          <EntitySet Name="DFORMACIONES" EntityType="Self.DFORMACION" />
           <EntitySet Name="DPERSONALES" EntityType="SPISAPModel.DPERSONALES" />
           <EntitySet Name="DUSUARIOS" EntityType="Self.DUSUARIO" />
           <EntitySet Name="ESTADO_SSO" EntityType="Self.ESTADO_SSO" />
@@ -2246,9 +2093,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
           <EntitySet Name="RAMOS" EntityType="Self.RAMO" />
           <EntitySet Name="RELACION_LABORAL" EntityType="Self.RELACION_LABORAL" />
           <EntitySet Name="SUCURSALES" EntityType="Self.SUCURSAL" />
-          <EntitySet Name="DEXPERIENCIAS" EntityType="Self.DEXPERIENCIA" />
-          <EntitySet Name="DFAMILIARES" EntityType="SPISAPModel.DFAMILIAR" />
-          <EntitySet Name="DFORMACIONES" EntityType="Self.DFORMACION" />
           <AssociationSet Name="DEXPERIENCIA_ACTIVIDAD_FK" Association="Self.DEXPERIENCIA_ACTIVIDAD_FK">
             <End Role="ACTIVIDAD" EntitySet="ACTIVIDADES" />
             <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
@@ -2337,12 +2181,64 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
             <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FK" Association="Self.DEXPERIENCIA_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FKV1" Association="Self.DEXPERIENCIA_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_PAIS_FK" Association="Self.DEXPERIENCIA_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAISES" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RAMO_FK" Association="Self.DEXPERIENCIA_RAMO_FK">
+            <End Role="RAMO" EntitySet="RAMOS" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
+          </AssociationSet>
+          <AssociationSet Name="DEXPERIENCIA_RLABORAL_FK" Association="Self.DEXPERIENCIA_RLABORAL_FK">
+            <End Role="RELACION_LABORAL" EntitySet="RELACION_LABORAL" />
+            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
+          </AssociationSet>
           <AssociationSet Name="DFAMILIARES_DPERSONALES_FK" Association="Self.DFAMILIARES_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
             <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
           </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FK" Association="Self.DFAMILIARES_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FKV1" Association="Self.DFAMILIARES_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_NACIONALIDAD_FK" Association="Self.DFAMILIARES_NACIONALIDAD_FK">
+            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADES" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PAIS_FK" Association="Self.DFAMILIARES_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAISES" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
+          <AssociationSet Name="DFAMILIARES_PARENTESCOS_FK" Association="Self.DFAMILIARES_PARENTESCOS_FK">
+            <End Role="PARENTESCOS" EntitySet="PARENTESCOS" />
+            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
+          </AssociationSet>
           <AssociationSet Name="DFORMACION_DPERSONALES_FK" Association="Self.DFORMACION_DPERSONALES_FK">
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FK" Association="Self.DFORMACION_DUSUARIOS_FK">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_DUSUARIOS_FKV1" Association="Self.DFORMACION_DUSUARIOS_FKV1">
+            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
+            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
+            <End Role="PAIS" EntitySet="PAISES" />
             <End Role="DFORMACION" EntitySet="DFORMACIONES" />
           </AssociationSet>
           <AssociationSet Name="DPERSONALES_DUSUARIOS_FK" Association="Self.DPERSONALES_DUSUARIOS_FK">
@@ -2369,30 +2265,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="SUCURSAL" EntitySet="SUCURSALES" />
             <End Role="DPERSONALES" EntitySet="DPERSONALES" />
           </AssociationSet>
-          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FK" Association="Self.DEXPERIENCIA_DUSUARIOS_FK">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
-          </AssociationSet>
-          <AssociationSet Name="DEXPERIENCIA_DUSUARIOS_FKV1" Association="Self.DEXPERIENCIA_DUSUARIOS_FKV1">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
-          </AssociationSet>
-          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FK" Association="Self.DFAMILIARES_DUSUARIOS_FK">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
-          </AssociationSet>
-          <AssociationSet Name="DFAMILIARES_DUSUARIOS_FKV1" Association="Self.DFAMILIARES_DUSUARIOS_FKV1">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
-          </AssociationSet>
-          <AssociationSet Name="DFORMACION_DUSUARIOS_FK" Association="Self.DFORMACION_DUSUARIOS_FK">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
-          </AssociationSet>
-          <AssociationSet Name="DFORMACION_DUSUARIOS_FKV1" Association="Self.DFORMACION_DUSUARIOS_FKV1">
-            <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
-          </AssociationSet>
           <AssociationSet Name="DUSUARIOS_SUCURSAL_FK" Association="Self.DUSUARIOS_SUCURSAL_FK">
             <End Role="SUCURSAL" EntitySet="SUCURSALES" />
             <End Role="DUSUARIOS" EntitySet="DUSUARIOS" />
@@ -2401,45 +2273,13 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
             <End Role="ESTADO_SSO" EntitySet="ESTADO_SSO" />
             <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
           </AssociationSet>
-          <AssociationSet Name="DFORMACION_FORMACION_FK" Association="Self.DFORMACION_FORMACION_FK">
-            <End Role="FORMACION" EntitySet="FORMACIONES" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
-          </AssociationSet>
           <AssociationSet Name="PARROQUIA_MUNICIPIO_SSO_FK" Association="Self.PARROQUIA_MUNICIPIO_SSO_FK">
             <End Role="MUNICIPIO_SSO" EntitySet="MUNICIPIO_SSO" />
             <End Role="PARROQUIA_SSO" EntitySet="PARROQUIA_SSO" />
           </AssociationSet>
-          <AssociationSet Name="DFAMILIARES_NACIONALIDAD_FK" Association="Self.DFAMILIARES_NACIONALIDAD_FK">
-            <End Role="NACIONALIDAD" EntitySet="NACIONALIDADES" />
-            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
-          </AssociationSet>
-          <AssociationSet Name="DEXPERIENCIA_PAIS_FK" Association="Self.DEXPERIENCIA_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAISES" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
-          </AssociationSet>
-          <AssociationSet Name="DFAMILIARES_PAIS_FK" Association="Self.DFAMILIARES_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAISES" />
-            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
-          </AssociationSet>
-          <AssociationSet Name="DFORMACION_PAIS_FK" Association="Self.DFORMACION_PAIS_FK">
-            <End Role="PAIS" EntitySet="PAISES" />
-            <End Role="DFORMACION" EntitySet="DFORMACIONES" />
-          </AssociationSet>
           <AssociationSet Name="PAIS_ESTADO_PAIS_FK" Association="Self.PAIS_ESTADO_PAIS_FK">
             <End Role="PAIS" EntitySet="PAISES" />
             <End Role="PAIS_ESTADO" EntitySet="PAIS_ESTADO" />
-          </AssociationSet>
-          <AssociationSet Name="DFAMILIARES_PARENTESCOS_FK" Association="Self.DFAMILIARES_PARENTESCOS_FK">
-            <End Role="PARENTESCOS" EntitySet="PARENTESCOS" />
-            <End Role="DFAMILIARES" EntitySet="DFAMILIARES" />
-          </AssociationSet>
-          <AssociationSet Name="DEXPERIENCIA_RAMO_FK" Association="Self.DEXPERIENCIA_RAMO_FK">
-            <End Role="RAMO" EntitySet="RAMOS" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
-          </AssociationSet>
-          <AssociationSet Name="DEXPERIENCIA_RLABORAL_FK" Association="Self.DEXPERIENCIA_RLABORAL_FK">
-            <End Role="RELACION_LABORAL" EntitySet="RELACION_LABORAL" />
-            <End Role="DEXPERIENCIA" EntitySet="DEXPERIENCIAS" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -2550,6 +2390,71 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
                 <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
                 <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
                 <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEXPERIENCIAS">
+            <EntityTypeMapping TypeName="SPISAPModel.DEXPERIENCIA">
+              <MappingFragment StoreEntitySet="DEXPERIENCIA">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+                <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+                <ScalarProperty Name="COD_RAMO" ColumnName="COD_RAMO" />
+                <ScalarProperty Name="COD_ACTIVIDAD" ColumnName="COD_ACTIVIDAD" />
+                <ScalarProperty Name="COD_RELACION" ColumnName="COD_RELACION" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+                <ScalarProperty Name="ID_DEXPERIENCIA" ColumnName="ID_DEXPERIENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DFAMILIARES">
+            <EntityTypeMapping TypeName="SPISAPModel.DFAMILIAR">
+              <MappingFragment StoreEntitySet="DFAMILIARES">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_PARENTESCO" ColumnName="COD_PARENTESCO" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="LUGAR_NACIMIENTO" ColumnName="LUGAR_NACIMIENTO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
+                <ScalarProperty Name="CEDULA_FAMILIAR" ColumnName="CEDULA_FAMILIAR" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+                <ScalarProperty Name="ID_FAMILIARES" ColumnName="ID_FAMILIARES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DFORMACIONES">
+            <EntityTypeMapping TypeName="SPISAPModel.DFORMACION">
+              <MappingFragment StoreEntitySet="DFORMACION">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
+                <ScalarProperty Name="INSTITUTO" ColumnName="INSTITUTO" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="CT_COD_CLASE" ColumnName="CT_COD_CLASE" />
+                <ScalarProperty Name="CT_COD_TITULO" ColumnName="CT_COD_TITULO" />
+                <ScalarProperty Name="DURACION" ColumnName="DURACION" />
+                <ScalarProperty Name="UNIDAD_TIEMPO" ColumnName="UNIDAD_TIEMPO" />
+                <ScalarProperty Name="CE_COD_ESPECIALIDAD" ColumnName="CE_COD_ESPECIALIDAD" />
+                <ScalarProperty Name="CE_COD_CLASE" ColumnName="CE_COD_CLASE" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
+                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
+                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
+                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
+                <ScalarProperty Name="ID_FORMACION" ColumnName="ID_FORMACION" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2693,69 +2598,6 @@ FROM "BDSPISAP"."DFORMACION" "DFORMACION"</DefiningQuery>
               <MappingFragment StoreEntitySet="SUCURSAL">
                 <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
                 <ScalarProperty Name="DES_SUCURSAL" ColumnName="DES_SUCURSAL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DEXPERIENCIAS">
-            <EntityTypeMapping TypeName="SPISAPModel.DEXPERIENCIA">
-              <MappingFragment StoreEntitySet="DEXPERIENCIA">
-                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
-                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
-                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
-                <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
-                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
-                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
-                <ScalarProperty Name="COD_RAMO" ColumnName="COD_RAMO" />
-                <ScalarProperty Name="COD_ACTIVIDAD" ColumnName="COD_ACTIVIDAD" />
-                <ScalarProperty Name="COD_RELACION" ColumnName="COD_RELACION" />
-                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
-                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
-                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
-                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DFAMILIARES">
-            <EntityTypeMapping TypeName="SPISAPModel.DFAMILIAR">
-              <MappingFragment StoreEntitySet="DFAMILIARES">
-                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
-                <ScalarProperty Name="COD_PARENTESCO" ColumnName="COD_PARENTESCO" />
-                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
-                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
-                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
-                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
-                <ScalarProperty Name="LUGAR_NACIMIENTO" ColumnName="LUGAR_NACIMIENTO" />
-                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
-                <ScalarProperty Name="COD_NACIONALIDAD" ColumnName="COD_NACIONALIDAD" />
-                <ScalarProperty Name="CEDULA_FAMILIAR" ColumnName="CEDULA_FAMILIAR" />
-                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
-                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
-                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
-                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
-                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DFORMACIONES">
-            <EntityTypeMapping TypeName="SPISAPModel.DFORMACION">
-              <MappingFragment StoreEntitySet="DFORMACION">
-                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
-                <ScalarProperty Name="COD_CLASE" ColumnName="COD_CLASE" />
-                <ScalarProperty Name="COD_FORMACION" ColumnName="COD_FORMACION" />
-                <ScalarProperty Name="INSTITUO" ColumnName="INSTITUO" />
-                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
-                <ScalarProperty Name="CT_COD_CLASE" ColumnName="CT_COD_CLASE" />
-                <ScalarProperty Name="CT_COD_TITULO" ColumnName="CT_COD_TITULO" />
-                <ScalarProperty Name="DURACION" ColumnName="DURACION" />
-                <ScalarProperty Name="UNIDAD_TIEMPO" ColumnName="UNIDAD_TIEMPO" />
-                <ScalarProperty Name="CE_COD_ESPECIALIDAD" ColumnName="CE_COD_ESPECIALIDAD" />
-                <ScalarProperty Name="CE_COD_CLASE" ColumnName="CE_COD_CLASE" />
-                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
-                <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
-                <ScalarProperty Name="COD_USER_INS" ColumnName="COD_USER_INS" />
-                <ScalarProperty Name="FECHA_INS" ColumnName="FECHA_INS" />
-                <ScalarProperty Name="COD_USER_UPD" ColumnName="COD_USER_UPD" />
-                <ScalarProperty Name="FECHA_UPD" ColumnName="FECHA_UPD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

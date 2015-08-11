@@ -31,7 +31,7 @@ namespace SPISAP.Models
             {
                 List<PAIS> Lista = new List<PAIS>();
 
-                Lista.Add(new PAIS { COD_PAIS = " ", DES_PAIS = "Seleccione un valor" });
+                Lista.Add(new PAIS { COD_PAIS = "", DES_PAIS = "Seleccione un valor" });
 
                 foreach (var record in db.PAISES.OrderBy(p => p.DES_PAIS))
                 {
@@ -54,7 +54,7 @@ namespace SPISAP.Models
             {
                 List<NACIONALIDAD> Lista = new List<NACIONALIDAD>();
 
-                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = " ", DES_NACIONALIDAD = "Seleccione un valor" });
+                Lista.Add(new NACIONALIDAD { COD_NACIONALIDAD = "", DES_NACIONALIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.NACIONALIDADES.OrderBy(p => p.DES_NACIONALIDAD))
                 {
@@ -77,7 +77,7 @@ namespace SPISAP.Models
             {
                 List<PAIS_ESTADO> Lista = new List<PAIS_ESTADO>();
 
-                Lista.Add(new PAIS_ESTADO { COD_ESTADO = " ", DES_ESTADO = "Seleccione un valor" });
+                Lista.Add(new PAIS_ESTADO { COD_ESTADO = "", DES_ESTADO = "Seleccione un valor" });
 
                 foreach (var record in db.PAIS_ESTADO.OrderBy(p => p.DES_ESTADO))
                 {
@@ -117,7 +117,7 @@ namespace SPISAP.Models
             {
                 List<AREA_PERSONAL> Lista = new List<AREA_PERSONAL>();
 
-                Lista.Add(new AREA_PERSONAL { COD_AREA_PERSONAL = " ", DES_AREA_PERSONAL = "" });
+                Lista.Add(new AREA_PERSONAL { COD_AREA_PERSONAL = "", DES_AREA_PERSONAL = "" });
 
                 foreach (var record in db.AREA_PERSONAL.OrderBy(p => p.DES_AREA_PERSONAL))
                 {
@@ -140,7 +140,7 @@ namespace SPISAP.Models
             {
                 List<SUCURSAL> Lista = new List<SUCURSAL>();
 
-                Lista.Add(new SUCURSAL { COD_SUCURSAL = " ", DES_SUCURSAL = "" });
+                Lista.Add(new SUCURSAL { COD_SUCURSAL = "", DES_SUCURSAL = "" });
 
                 foreach (var record in db.SUCURSALES.OrderBy(p => p.DES_SUCURSAL))
                 {
@@ -163,7 +163,7 @@ namespace SPISAP.Models
             {
                 List<GRUPO_PERSONAL> Lista = new List<GRUPO_PERSONAL>();
 
-                Lista.Add(new GRUPO_PERSONAL { COD_GRUPO = " ", DES_GRUPO_PERSONAL = "" });
+                Lista.Add(new GRUPO_PERSONAL { COD_GRUPO = "", DES_GRUPO_PERSONAL = "" });
 
                 foreach (var record in db.GRUPO_PERSONAL.OrderBy(p => p.DES_GRUPO_PERSONAL))
                 {
@@ -280,7 +280,7 @@ namespace SPISAP.Models
             {
                 List<ESTADO_SSO> Lista = new List<ESTADO_SSO>();
 
-                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = " ", DES_ESTADO_SSO = "Seleccione un valor" });
+                Lista.Add(new ESTADO_SSO { COD_ESTADO_SSO = "", DES_ESTADO_SSO = "Seleccione un valor" });
 
                 foreach (var record in db.ESTADO_SSO.OrderBy(p => p.DES_ESTADO_SSO))
                 {
@@ -303,7 +303,7 @@ namespace SPISAP.Models
             {
                 List<MUNICIPIO_SSO> Lista = new List<MUNICIPIO_SSO>();
 
-                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = " ", DES_MUNICIPIO = "Seleccione un valor" });
+                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = "", DES_MUNICIPIO = "Seleccione un valor" });
 
                 foreach (var record in db.MUNICIPIO_SSO.OrderBy(p => p.DES_MUNICIPIO))
                 {
@@ -327,7 +327,7 @@ namespace SPISAP.Models
             {
                 List<PARROQUIA_SSO> Lista = new List<PARROQUIA_SSO>();
 
-                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = " ", DES_PARROQUIA = "Seleccione un valor" });
+                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = "", DES_PARROQUIA = "Seleccione un valor" });
 
                 foreach (var record in db.PARROQUIA_SSO.OrderBy(p => p.DES_PARROQUIA))
                 {
@@ -378,7 +378,7 @@ namespace SPISAP.Models
             {
                 List<FORMACION> Lista = new List<FORMACION>();
 
-                Lista.Add(new FORMACION { COD_FORMACION = " ", DES_FORMACION = "" });
+                Lista.Add(new FORMACION { COD_FORMACION = "", DES_FORMACION = "" });
 
                 foreach (var record in db.FORMACIONES.OrderBy(p => p.COD_FORMACION))
                 {
@@ -401,7 +401,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_INSTITUTO> Lista = new List<CLASE_INSTITUTO>();
 
-                Lista.Add(new CLASE_INSTITUTO { COD_CLASE = " ", DES_CLASE = "Seleccione un valor" });
+                Lista.Add(new CLASE_INSTITUTO { COD_CLASE = "", DES_CLASE = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_INSTITUTO.OrderBy(p => p.COD_CLASE))
                 {
@@ -424,7 +424,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_TITULO> Lista = new List<CLASE_TITULO>();
 
-                Lista.Add(new CLASE_TITULO { COD_CLASE = " ", DES_TITULO = "Seleccione un valor" });
+                Lista.Add(new CLASE_TITULO { COD_CLASE = "", DES_TITULO = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
                 {
@@ -447,7 +447,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_ESPECIALIDAD> Lista = new List<CLASE_ESPECIALIDAD>();
 
-                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = " ", DES_ESPECIALIDAD = "Seleccione un valor" });
+                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_ESPECIALIDAD.OrderBy(p => p.DES_ESPECIALIDAD))
                 {
@@ -492,7 +492,7 @@ namespace SPISAP.Models
             {
                 List<ACTIVIDAD> Lista = new List<ACTIVIDAD>();
 
-                Lista.Add(new ACTIVIDAD { COD_ACTIVIDAD = " ", DES_ACTIVIDAD = "Seleccione un valor" });
+                Lista.Add(new ACTIVIDAD { COD_ACTIVIDAD = "", DES_ACTIVIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.ACTIVIDADES.OrderBy(p => p.COD_ACTIVIDAD))
                 {
@@ -515,7 +515,7 @@ namespace SPISAP.Models
             {
                 List<RAMO> Lista = new List<RAMO>();
 
-                Lista.Add(new RAMO { COD_RAMO = " ", DES_RAMO = "Seleccione un valor" });
+                Lista.Add(new RAMO { COD_RAMO = "", DES_RAMO = "Seleccione un valor" });
 
                 foreach (var record in db.RAMOS.OrderBy(p => p.DES_RAMO))
                 {
@@ -538,7 +538,7 @@ namespace SPISAP.Models
             {
                 List<RELACION_LABORAL> Lista = new List<RELACION_LABORAL>();
 
-                Lista.Add(new RELACION_LABORAL { COD_RELACION = " ", DES_RELACION = "Seleccione un valor" });
+                Lista.Add(new RELACION_LABORAL { COD_RELACION = "", DES_RELACION = "Seleccione un valor" });
 
                 foreach (var record in db.RELACION_LABORAL.OrderBy(p => p.DES_RELACION))
                 {

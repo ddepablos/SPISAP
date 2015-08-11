@@ -16,7 +16,7 @@ namespace SPISAP.Models
     {
         public CLASE_TITULO()
         {
-            this.DFORMACIONES = new HashSet<DFORMACION>();
+            this.DFORMACIONs = new HashSet<DFORMACION>();
         }
     
         public string COD_CLASE { get; set; }
@@ -24,6 +24,6 @@ namespace SPISAP.Models
         public string DES_TITULO { get; set; }
     
         public virtual CLASE_INSTITUTO CLASE_INSTITUTO { get; set; }
-        public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
+        public virtual ICollection<DFORMACION> DFORMACIONs { get; set; }
     }
 }

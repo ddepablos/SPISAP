@@ -22,45 +22,45 @@ namespace SPISAP.Repositories
         {
 
             #region DATA_EMPLOYEE_TEST
-            // DATOS PERSONALES
-            //Empleado.DATOS_PERSONALES.FICHA = "123456789012";
-            //Empleado.DATOS_PERSONALES.CEDULA = "12919906";
-            //Empleado.DATOS_PERSONALES.COD_SUCURSAL = "1001";
-            //Empleado.DATOS_PERSONALES.COD_GRUPO = "1";
-            //Empleado.DATOS_PERSONALES.COD_AREA_PERSONAL = "VK";
-            //Empleado.DATOS_PERSONALES.CARGO = "CARGO";
-            //Empleado.DATOS_PERSONALES.TRATAMIENTO = "Sra.";
-            //Empleado.DATOS_PERSONALES.PRIMER_APELLIDO = "GONZALEZ";
-            //Empleado.DATOS_PERSONALES.SEGUNDO_APELLIDO = "LOPEZ";
-            //Empleado.DATOS_PERSONALES.NOMBRE = "FLOR MARINA";
-            //Empleado.DATOS_PERSONALES.FECHA_NACIMIENTO = DateTime.Parse("1976-01-18", CultureInfo.InvariantCulture);
-            //Empleado.DATOS_PERSONALES.CIUDAD_NACIMIENTO = "PORLAMAR";
-            //Empleado.DATOS_PERSONALES.COD_PAIS = "VE";
-            //Empleado.DATOS_PERSONALES.COD_ESTADO = "NE";
-            //Empleado.DATOS_PERSONALES.COD_NACIONALIDAD = "PA";
-            //Empleado.DATOS_PERSONALES.ESTADO_CIVIL = "Cas.";
-            //Empleado.DATOS_PERSONALES.SEXO = "M";
-            //Empleado.DATOS_PERSONALES.RIF = "J129199060";
-            //Empleado.DATOS_PERSONALES.CALZADO = "34";
-            //Empleado.DATOS_PERSONALES.CHEMISE = "36";
-            //Empleado.DATOS_PERSONALES.PANTALON = "36";
+            ////DATOS PERSONALES
+            //Empleado.FICHA = "123456789012";
+            //Empleado.CEDULA = "12919906";
+            //Empleado.COD_SUCURSAL = "1001";
+            //Empleado.COD_GRUPO = "1";
+            //Empleado.COD_AREA_PERSONAL = "VK";
+            //Empleado.CARGO = "CARGO";
+            //Empleado.TRATAMIENTO = "Sra.";
+            //Empleado.PRIMER_APELLIDO = "GONZALEZ";
+            //Empleado.SEGUNDO_APELLIDO = "LOPEZ";
+            //Empleado.NOMBRE = "FLOR MARINA";
+            //Empleado.FECHA_NACIMIENTO = "1978/01/18";
+            //Empleado.CIUDAD_NACIMIENTO = "PORLAMAR";
+            //Empleado.COD_PAIS = "VE";
+            //Empleado.COD_ESTADO = "NE";
+            //Empleado.COD_NACIONALIDAD = "PA";
+            //Empleado.ESTADO_CIVIL = "Cas.";
+            //Empleado.SEXO = "M";
+            //Empleado.RIF = "J129199060";
+            //Empleado.CALZADO = "34";
+            //Empleado.CHEMISE = "36";
+            //Empleado.PANTALON = "36";
 
             //Empleado.COD_CLASE_CELULAR = "04128094599";
             //Empleado.COD_CLASE_CORREO = "flormaringl@gmail.com";
 
             //// DATOS DIRECCIÓN
-            //Empleado.DATOS_DIRECCION.CALLE = "CALLEJÓN MACHADO";
-            //Empleado.DATOS_DIRECCION.EDIFICIO = "RESD.LOS GRANADILLOS";
-            //Empleado.DATOS_DIRECCION.PISO = "14";
-            //Empleado.DATOS_DIRECCION.NUMERO = "141";
-            //Empleado.DATOS_DIRECCION.URBANIZACION = "EL PARAÍSO";
-            ////Empleado.DATOS_DIRECCION.COD_ESTADO = "DC";
-            //Empleado.DATOS_DIRECCION.COD_PAIS = "VE";
-            //Empleado.DATOS_DIRECCION.TELEFONOS = "4835448";
-            //Empleado.DATOS_DIRECCION.COD_ESTADO_SSO = "DC";
-            //Empleado.DATOS_DIRECCION.COD_MUNICIPIO_SSO = "1";
-            //Empleado.DATOS_DIRECCION.COD_PARROQUIA_SSO = "663";
-            //Empleado.DATOS_DIRECCION.CIUDAD = "CARACAS";
+            //Empleado.CALLE = "CALLEJÓN MACHADO";
+            //Empleado.EDIFICIO = "RESD.LOS GRANADILLOS";
+            //Empleado.PISO = "14";
+            //Empleado.NUMERO = "141";
+            //Empleado.URBANIZACION = "EL PARAÍSO";
+            ////Empleado.COD_ESTADO = "DC";
+            //Empleado.COD_PAIS = "VE";
+            //Empleado.TELEFONOS = "4835448";
+            //Empleado.COD_ESTADO_SSO = "DC";
+            //Empleado.COD_MUNICIPIO_SSO = "1";
+            //Empleado.COD_PARROQUIA_SSO = "663";
+            //Empleado.CIUDAD = "CARACAS";
 
             //// DATOS DISCAPACIDAD
             //Empleado.COD_DISCAPACIDAD_MOTRIZ = true;
@@ -82,7 +82,7 @@ namespace SPISAP.Repositories
             //// DATOS FORMACIÓN
             //Empleado.FRM1_COD_CLASE = "V8";
             //Empleado.FRM1_COD_FORMACION = "15";
-            //Empleado.FRM1_INSTITUO = "HARVARD";
+            //Empleado.FRM1_INSTITUTO = "HARVARD";
             //Empleado.FRM1_COD_PAIS = "VE";
             //Empleado.FRM1_CT_COD_CLASE = "V8";
             //Empleado.FRM1_CT_COD_TITULO = "2";
@@ -93,7 +93,7 @@ namespace SPISAP.Repositories
             //Empleado.FRM1_FECHA_INICIO = "01/10/2000";
             //Empleado.FRM1_FECHA_FIN = "01/10/2000";
 
-            // DATOS EXPERIENCIA LABORAL
+            //// DATOS EXPERIENCIA LABORAL
             //Empleado.EXP1_FECHA_INICIO = "01/01/2000";
             //Empleado.EXP1_FECHA_FIN = "31/01/2000";
             //Empleado.EXP1_EMPRESA = "EMPRESA 1";
@@ -116,11 +116,11 @@ namespace SPISAP.Repositories
             Empleado.FRM3_CE_COD_CLASE = Empleado.FRM3_COD_CLASE;
 
             // TEMPORAL
-            Empleado.COD_USER = "CROSARIO";
+            Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
             Empleado.TRATAMIENTO = "Sr.";
-            //Empleado.DATOS_PERSONALES.CEDULA = "11681109";
-            //Empleado.DATOS_PERSONALES.SEXO = "M";
-            Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
+            //Empleado.CEDULA = "11681109";
+            //Empleado.SEXO = "M";
+            //Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
 
             empleado = Empleado;
         }
@@ -365,9 +365,9 @@ namespace SPISAP.Repositories
                 List<DFORMACION> form = db.DFORMACIONES.Where(x => x.CEDULA.Equals(record.CEDULA)).ToList();
 
 //SIMULACRO
-                form.Add(new DFORMACION { COD_CLASE = "V1", INSTITUO = "INSTITUTO1", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00086", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
-                form.Add(new DFORMACION { COD_CLASE = "V2", INSTITUO = "INSTITUTO2", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00030", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
-                form.Add(new DFORMACION { COD_CLASE = "V3", INSTITUO = "INSTITUTO3", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00029", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V1", INSTITUTO = "INSTITUTO1", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00086", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V2", INSTITUTO = "INSTITUTO2", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00030", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
+                form.Add(new DFORMACION { COD_CLASE = "V3", INSTITUTO = "INSTITUTO3", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "1", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_CLASE = "V1", CE_COD_ESPECIALIDAD = "00029", FECHA_INICIO = DateTime.Parse("01/01/2000"), FECHA_FIN = DateTime.Parse("01/01/2000") });
 
                 for (int i = 0; i < form.Count(); i++)
                 {
@@ -380,7 +380,7 @@ namespace SPISAP.Repositories
                             record.FRM1_CT_COD_TITULO = form[i].CT_COD_TITULO;
                             record.FRM1_CE_COD_CLASE = form[i].CE_COD_CLASE;
                             record.FRM1_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
-                            record.FRM1_INSTITUO = form[i].INSTITUO;
+                            record.FRM1_INSTITUTO = form[i].INSTITUTO;
                             record.FRM1_DURACION = form[i].DURACION;
                             record.FRM1_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
                             record.FRM1_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
@@ -393,7 +393,7 @@ namespace SPISAP.Repositories
                             record.FRM2_CT_COD_TITULO = form[i].CT_COD_TITULO;
                             record.FRM2_CE_COD_CLASE = form[i].CE_COD_CLASE;
                             record.FRM2_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
-                            record.FRM2_INSTITUO = form[i].INSTITUO;
+                            record.FRM2_INSTITUTO = form[i].INSTITUTO;
                             record.FRM2_DURACION = form[i].DURACION;
                             record.FRM2_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
                             record.FRM2_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
@@ -406,7 +406,7 @@ namespace SPISAP.Repositories
                             record.FRM3_CT_COD_TITULO = form[i].CT_COD_TITULO;
                             record.FRM3_CE_COD_CLASE = form[i].CE_COD_CLASE;
                             record.FRM3_CE_COD_ESPECIALIDAD = form[i].CE_COD_ESPECIALIDAD;
-                            record.FRM3_INSTITUO = form[i].INSTITUO;
+                            record.FRM3_INSTITUTO = form[i].INSTITUTO;
                             record.FRM3_DURACION = form[i].DURACION;
                             record.FRM3_UNIDAD_TIEMPO = form[i].UNIDAD_TIEMPO;
                             record.FRM3_FECHA_INICIO = form[i].FECHA_INICIO.ToString();
@@ -651,7 +651,7 @@ namespace SPISAP.Repositories
                         NUMERO = empleado.NUMERO,
                         CIUDAD = empleado.CIUDAD,
                         URBANIZACION = empleado.URBANIZACION,
-                        COD_ESTADO = empleado.COD_ESTADO_SSO,  // CONVERSAR CON CAROLINA //empleado.COD_ESTADO,
+                        COD_ESTADO = empleado.COD_ESTADO,  // CONVERSAR CON CAROLINA //empleado.COD_ESTADO,
                         COD_PAIS = empleado.COD_PAIS,
                         TELEFONOS = empleado.TELEFONOS,
                         COD_ESTADO_SSO = empleado.COD_ESTADO_SSO,
@@ -713,256 +713,266 @@ namespace SPISAP.Repositories
 
                     #region DATOS_FAMILIARES
 
-                    //if (empleado.FAM1_COD_PARENTESCO != null)
-                    //{
+                    if (empleado.FAM1_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM1_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM1_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM1_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM1_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM1_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM1_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM1_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM1_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM1_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM1_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM1_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM1_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM1_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM1_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM1_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM1_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM1_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM1_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM1_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM1_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM2_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM2_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM2_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM2_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM2_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM2_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM2_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM2_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM2_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM2_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM1_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM2_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM2_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM2_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM2_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM2_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM2_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM2_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM3_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM3_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM3_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM3_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM3_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM3_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM3_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM3_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM3_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM3_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM3_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM3_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM3_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM3_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM3_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM3_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM3_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM3_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM3_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM3_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM3_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM3_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM4_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM4_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM4_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM4_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM4_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM4_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM4_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM4_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM4_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM4_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM4_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM4_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM4_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM4_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM4_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM4_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM4_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM4_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM4_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM4_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM4_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM4_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM5_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM5_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM5_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM5_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM5_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM5_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM5_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM5_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM5_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM5_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM5_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM5_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM5_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM5_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM5_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM5_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM5_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM5_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM5_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM5_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM5_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM5_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM6_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM6_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM6_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM6_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM6_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM6_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM6_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM6_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM6_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM6_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM6_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM6_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM6_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM6_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM6_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM6_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM6_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM6_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM6_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM6_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM6_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM6_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM7_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM7_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM7_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM7_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM7_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM7_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM7_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM7_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM7_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM7_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM7_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM7_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM7_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM7_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM7_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM7_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM7_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM7_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM7_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM7_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM7_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM7_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM8_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM8_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM8_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM8_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM8_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM8_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM8_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM8_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM8_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM8_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM8_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM8_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM8_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM8_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM8_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM8_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM8_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM8_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM8_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM8_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM8_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM8_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM9_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM9_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM9_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM9_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM9_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM9_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM9_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM9_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM9_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM9_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM9_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM9_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM9_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM9_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM9_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM9_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM9_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM9_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM9_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM9_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM9_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM9_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
-                    //if (empleado.FAM10_COD_PARENTESCO != null)
-                    //{
+                    }
+                    if (empleado.FAM10_COD_PARENTESCO != null)
+                    {
 
-                    //    DFAMILIAR DFamilar = new DFAMILIAR()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_PARENTESCO = empleado.FAM10_COD_PARENTESCO,
-                    //        PRIMER_APELLIDO = empleado.FAM10_PRIMER_APELLIDO,
-                    //        SEGUNDO_APELLIDO = empleado.FAM10_SEGUNDO_APELLIDO,
-                    //        NOMBRES = empleado.FAM10_NOMBRES,
-                            //FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM10_FECHA_NACIMIENTO),
-                    //        LUGAR_NACIMIENTO = empleado.FAM10_LUGAR_NACIMIENTO,
-                    //        COD_PAIS = empleado.FAM10_COD_PAIS,
-                    //        COD_NACIONALIDAD = empleado.FAM10_COD_NACIONALIDAD,
-                    //        CEDULA_FAMILIAR = empleado.FAM10_CEDULA_FAMILIAR,
-                    //        SEXO = empleado.FAM10_SEXO,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFAMILIAR DFamilar = new DFAMILIAR()
+                        {
+                            CEDULA = empleado.FAM10_CEDULA_FAMILIAR,
+                            COD_PARENTESCO = empleado.FAM10_COD_PARENTESCO,
+                            PRIMER_APELLIDO = empleado.FAM10_PRIMER_APELLIDO,
+                            SEGUNDO_APELLIDO = empleado.FAM10_SEGUNDO_APELLIDO,
+                            NOMBRES = empleado.FAM10_NOMBRES,
+                            FECHA_NACIMIENTO = OracleStringToDate(empleado.FAM10_FECHA_NACIMIENTO),
+                            LUGAR_NACIMIENTO = empleado.FAM10_LUGAR_NACIMIENTO,
+                            COD_PAIS = empleado.FAM10_COD_PAIS,
+                            COD_NACIONALIDAD = empleado.FAM10_COD_NACIONALIDAD,
+                            CEDULA_FAMILIAR = empleado.CEDULA,
+                            SEXO = empleado.FAM10_SEXO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FAMILIARES = GetFamiliarNextVal()
+                        };
 
-                    //    db.DFAMILIARES.Add(DFamilar);
+                        db.DFAMILIARES.Add(DFamilar);
 
-                    //}
+                    }
                     #endregion
 
                     #region DATOS_FORMACIÓN_ACADÉMICA
@@ -973,13 +983,12 @@ namespace SPISAP.Repositories
                         {
                             CEDULA = empleado.CEDULA,
                             COD_CLASE = empleado.FRM1_COD_CLASE,
-                            COD_FORMACION = empleado.FRM1_COD_FORMACION,
-                            INSTITUO = empleado.FRM1_INSTITUO,
+                            INSTITUTO = empleado.FRM1_INSTITUTO,
                             COD_PAIS = empleado.FRM1_COD_PAIS,
                             CT_COD_CLASE = empleado.FRM1_COD_CLASE,
                             CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
                             DURACION = empleado.FRM1_DURACION,
-                            UNIDAD_TIEMPO = empleado.FRM1_DURACION,
+                            UNIDAD_TIEMPO = empleado.FRM1_UNIDAD_TIEMPO,
                             CE_COD_ESPECIALIDAD = empleado.FRM1_CE_COD_ESPECIALIDAD,
                             CE_COD_CLASE = empleado.FRM1_COD_CLASE,
                             FECHA_INICIO = OracleStringToDate(empleado.FRM1_FECHA_INICIO),
@@ -987,132 +996,136 @@ namespace SPISAP.Repositories
                             COD_USER_INS = empleado.COD_USER,
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
-                            FECHA_UPD = System.DateTime.Now
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FORMACION = GetFormacionNextVal()
                         };
 
                         db.DFORMACIONES.Add(DFormacion);
 
                     }
-                    //if (empleado.FRM2_COD_CLASE != null)
-                    //{
+                    if (empleado.FRM2_COD_CLASE != null)
+                    {
 
-                    //    DFORMACION DFormacion = new DFORMACION()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_CLASE = empleado.FRM2_COD_CLASE,
-                    //        COD_FORMACION = empleado.FRM2_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM2_INSTITUO,
-                    //        COD_PAIS = empleado.FRM2_COD_PAIS,
-                    //        CT_COD_CLASE = empleado.FRM2_COD_CLASE,
-                    //        CT_COD_TITULO = empleado.FRM2_CT_COD_TITULO,
-                    //        DURACION = empleado.FRM2_DURACION,
-                    //        UNIDAD_TIEMPO = empleado.FRM2_DURACION,
-                    //        CE_COD_ESPECIALIDAD = empleado.FRM2_CE_COD_ESPECIALIDAD,
-                    //        CE_COD_CLASE = empleado.FRM2_COD_CLASE,
-                            //FECHA_INICIO = OracleStringToDate(empleado.FRM2_FECHA_INICIO),
-                            //FECHA_FIN = OracleStringToDate(empleado.FRM2_FECHA_FIN),
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFORMACION DFormacion = new DFORMACION()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            COD_CLASE = empleado.FRM2_COD_CLASE,
+                            INSTITUTO = empleado.FRM2_INSTITUTO,
+                            COD_PAIS = empleado.FRM2_COD_PAIS,
+                            CT_COD_CLASE = empleado.FRM2_COD_CLASE,
+                            CT_COD_TITULO = empleado.FRM2_CT_COD_TITULO,
+                            DURACION = empleado.FRM2_DURACION,
+                            UNIDAD_TIEMPO = empleado.FRM2_UNIDAD_TIEMPO,
+                            CE_COD_ESPECIALIDAD = empleado.FRM2_CE_COD_ESPECIALIDAD,
+                            CE_COD_CLASE = empleado.FRM2_COD_CLASE,
+                            FECHA_INICIO = OracleStringToDate(empleado.FRM2_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.FRM2_FECHA_FIN),
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FORMACION = GetFormacionNextVal()
+                        };
 
-                    //    db.DFORMACIONES.Add(DFormacion);
+                        db.DFORMACIONES.Add(DFormacion);
 
-                    //}
-                    //if (empleado.FRM3_COD_CLASE != null)
-                    //{
+                    }
+                    if (empleado.FRM3_COD_CLASE != null)
+                    {
 
-                    //    DFORMACION DFormacion = new DFORMACION()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                    //        COD_CLASE = empleado.FRM3_COD_CLASE,
-                    //        COD_FORMACION = empleado.FRM3_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM3_INSTITUO,
-                    //        COD_PAIS = empleado.FRM3_COD_PAIS,
-                    //        CT_COD_CLASE = empleado.FRM3_COD_CLASE,
-                    //        CT_COD_TITULO = empleado.FRM3_CT_COD_TITULO,
-                    //        DURACION = empleado.FRM3_DURACION,
-                    //        UNIDAD_TIEMPO = empleado.FRM3_DURACION,
-                    //        CE_COD_ESPECIALIDAD = empleado.FRM3_CE_COD_ESPECIALIDAD,
-                    //        CE_COD_CLASE = empleado.FRM3_COD_CLASE,
-                            //FECHA_INICIO = OracleStringToDate(empleado.FRM3_FECHA_INICIO),
-                            //FECHA_FIN = OracleStringToDate(empleado.FRM3_FECHA_FIN),
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        DFORMACION DFormacion = new DFORMACION()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            COD_CLASE = empleado.FRM3_COD_CLASE,
+                            INSTITUTO = empleado.FRM3_INSTITUTO,
+                            COD_PAIS = empleado.FRM3_COD_PAIS,
+                            CT_COD_CLASE = empleado.FRM3_COD_CLASE,
+                            CT_COD_TITULO = empleado.FRM3_CT_COD_TITULO,
+                            DURACION = empleado.FRM3_DURACION,
+                            UNIDAD_TIEMPO = empleado.FRM3_UNIDAD_TIEMPO,
+                            CE_COD_ESPECIALIDAD = empleado.FRM3_CE_COD_ESPECIALIDAD,
+                            CE_COD_CLASE = empleado.FRM3_COD_CLASE,
+                            FECHA_INICIO = OracleStringToDate(empleado.FRM3_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.FRM3_FECHA_FIN),
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_FORMACION = GetFormacionNextVal()
+                        };
 
-                    //    db.DFORMACIONES.Add(DFormacion);
+                        db.DFORMACIONES.Add(DFormacion);
 
-                    //}
+                    }
                     #endregion
 
                     #region DATOS_EXPERIENCIA_LABORAL
-                    //if (empleado.EXP1_EMPRESA != null)
-                    //{
-                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                            //FECHA_INICIO = OracleStringToDate(empleado.EXP1_FECHA_INICIO),
-                            //FECHA_FIN = OracleStringToDate(empleado.EXP1_FECHA_FIN),
-                    //        EMPRESA = empleado.EXP1_EMPRESA,
-                    //        CIUDAD = empleado.EXP1_CIUDAD,
-                    //        PAIS = empleado.EXP1_PAIS,
-                    //        COD_RAMO = empleado.EXP1_COD_RAMO,
-                    //        COD_ACTIVIDAD = empleado.EXP1_COD_ACTIVIDAD,
-                    //        COD_RELACION = empleado.EXP1_COD_RELACION,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                    if (empleado.EXP1_EMPRESA != null)
+                    {
+                        DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            FECHA_INICIO = OracleStringToDate(empleado.EXP1_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.EXP1_FECHA_FIN),
+                            EMPRESA = empleado.EXP1_EMPRESA,
+                            CIUDAD = empleado.EXP1_CIUDAD,
+                            PAIS = empleado.EXP1_PAIS,
+                            COD_RAMO = empleado.EXP1_COD_RAMO,
+                            COD_ACTIVIDAD = empleado.EXP1_COD_ACTIVIDAD,
+                            COD_RELACION = empleado.EXP1_COD_RELACION,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                        };
 
-                    //    db.DEXPERIENCIAS.Add(DExperiencia);
-                    //}
-                    //if (empleado.EXP2_EMPRESA != null)
-                    //{
-                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                            //FECHA_INICIO = OracleStringToDate(empleado.EXP2_FECHA_INICIO),
-                            //FECHA_FIN = OracleStringToDate(empleado.EXP2_FECHA_FIN),
-                    //        EMPRESA = empleado.EXP2_EMPRESA,
-                    //        CIUDAD = empleado.EXP2_CIUDAD,
-                    //        PAIS = empleado.EXP2_PAIS,
-                    //        COD_RAMO = empleado.EXP2_COD_RAMO,
-                    //        COD_ACTIVIDAD = empleado.EXP2_COD_ACTIVIDAD,
-                    //        COD_RELACION = empleado.EXP2_COD_RELACION,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        db.DEXPERIENCIAS.Add(DExperiencia);
+                    }
+                    if (empleado.EXP2_EMPRESA != null)
+                    {
+                        DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            FECHA_INICIO = OracleStringToDate(empleado.EXP2_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.EXP2_FECHA_FIN),
+                            EMPRESA = empleado.EXP2_EMPRESA,
+                            CIUDAD = empleado.EXP2_CIUDAD,
+                            PAIS = empleado.EXP2_PAIS,
+                            COD_RAMO = empleado.EXP2_COD_RAMO,
+                            COD_ACTIVIDAD = empleado.EXP2_COD_ACTIVIDAD,
+                            COD_RELACION = empleado.EXP2_COD_RELACION,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                        };
 
-                    //    db.DEXPERIENCIAS.Add(DExperiencia);
-                    //}
-                    //if (empleado.EXP3_EMPRESA != null)
-                    //{
-                    //    DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
-                    //    {
-                    //        CEDULA = empleado.CEDULA,
-                            //FECHA_INICIO = OracleStringToDate(empleado.EXP3_FECHA_INICIO),
-                            //FECHA_FIN = OracleStringToDate(empleado.EXP3_FECHA_FIN),
-                    //        EMPRESA = empleado.EXP3_EMPRESA,
-                    //        CIUDAD = empleado.EXP3_CIUDAD,
-                    //        PAIS = empleado.EXP3_PAIS,
-                    //        COD_RAMO = empleado.EXP3_COD_RAMO,
-                    //        COD_ACTIVIDAD = empleado.EXP3_COD_ACTIVIDAD,
-                    //        COD_RELACION = empleado.EXP3_COD_RELACION,
-                    //        COD_USER_INS = empleado.COD_USER,
-                    //        FECHA_INS = System.DateTime.Now,
-                    //        COD_USER_UPD = empleado.COD_USER,
-                    //        FECHA_UPD = System.DateTime.Now
-                    //    };
+                        db.DEXPERIENCIAS.Add(DExperiencia);
+                    }
+                    if (empleado.EXP3_EMPRESA != null)
+                    {
+                        DEXPERIENCIA DExperiencia = new DEXPERIENCIA()
+                        {
+                            CEDULA = empleado.CEDULA,
+                            FECHA_INICIO = OracleStringToDate(empleado.EXP3_FECHA_INICIO),
+                            FECHA_FIN = OracleStringToDate(empleado.EXP3_FECHA_FIN),
+                            EMPRESA = empleado.EXP3_EMPRESA,
+                            CIUDAD = empleado.EXP3_CIUDAD,
+                            PAIS = empleado.EXP3_PAIS,
+                            COD_RAMO = empleado.EXP3_COD_RAMO,
+                            COD_ACTIVIDAD = empleado.EXP3_COD_ACTIVIDAD,
+                            COD_RELACION = empleado.EXP3_COD_RELACION,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
+                            COD_USER_UPD = empleado.COD_USER,
+                            FECHA_UPD = System.DateTime.Now,
+                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                        };
 
-                    //    db.DEXPERIENCIAS.Add(DExperiencia);
-                    //}
+                        db.DEXPERIENCIAS.Add(DExperiencia);
+                    }
                     #endregion
 
                     db.SaveChanges();
@@ -1524,7 +1537,7 @@ namespace SPISAP.Repositories
                     //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM1_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM1_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM1_INSTITUO,
+                    //        INSTITUO = empleado.FRM1_INSTITUTO,
                     //        COD_PAIS = empleado.FRM1_COD_PAIS,
                     //        CT_COD_CLASE = empleado.FRM1_COD_CLASE,
                     //        CT_COD_TITULO = empleado.FRM1_CT_COD_TITULO,
@@ -1551,7 +1564,7 @@ namespace SPISAP.Repositories
                     //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM2_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM2_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM2_INSTITUO,
+                    //        INSTITUO = empleado.FRM2_INSTITUTO,
                     //        COD_PAIS = empleado.FRM2_COD_PAIS,
                     //        CT_COD_CLASE = empleado.FRM2_COD_CLASE,
                     //        CT_COD_TITULO = empleado.FRM2_CT_COD_TITULO,
@@ -1578,7 +1591,7 @@ namespace SPISAP.Repositories
                     //        CEDULA = empleado.CEDULA,
                     //        COD_CLASE = empleado.FRM3_COD_CLASE,
                     //        COD_FORMACION = empleado.FRM3_COD_FORMACION,
-                    //        INSTITUO = empleado.FRM3_INSTITUO,
+                    //        INSTITUO = empleado.FRM3_INSTITUTO,
                     //        COD_PAIS = empleado.FRM3_COD_PAIS,
                     //        CT_COD_CLASE = empleado.FRM3_COD_CLASE,
                     //        CT_COD_TITULO = empleado.FRM3_CT_COD_TITULO,
@@ -1707,6 +1720,22 @@ namespace SPISAP.Repositories
             //return DateTime.Parse(value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(6, 4));
             return DateTime.Parse(value.ToString().Substring(6, 4) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2)); 
 
+        }
+
+        private decimal GetFamiliarNextVal()
+        {
+            Random rnd = new Random();
+            return rnd.Next(100000000);
+        }
+        private decimal GetExperienciaNextVal()
+        {
+            Random rnd = new Random();
+            return rnd.Next(120000000);
+        }
+        private decimal GetFormacionNextVal()
+        {
+            Random rnd = new Random();
+            return rnd.Next(130000000);
         }
         #endregion
 

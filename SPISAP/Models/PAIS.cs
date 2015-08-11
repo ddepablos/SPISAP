@@ -16,7 +16,7 @@ namespace SPISAP.Models
     {
         public PAIS()
         {
-            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
+            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
             this.DFAMILIARES = new HashSet<DFAMILIAR>();
             this.DFORMACIONES = new HashSet<DFORMACION>();
             this.PAIS_ESTADO = new HashSet<PAIS_ESTADO>();
@@ -25,7 +25,7 @@ namespace SPISAP.Models
         public string COD_PAIS { get; set; }
         public string DES_PAIS { get; set; }
     
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
         public virtual ICollection<DFAMILIAR> DFAMILIARES { get; set; }
         public virtual ICollection<DFORMACION> DFORMACIONES { get; set; }
         public virtual ICollection<PAIS_ESTADO> PAIS_ESTADO { get; set; }

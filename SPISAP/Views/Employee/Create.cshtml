@@ -5,22 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">Gestión de Registros de Trabajadores</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand navbar-right">Usuario : Mario Bergoglio</a>
-        </div>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">Gestión de Registros de Trabajadores</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <a class="navbar-brand navbar-right">Usuario : @Session["USUARIO"].ToString() </a>
+    </div>
     </div>
 </nav>
 
@@ -502,7 +500,7 @@
 
         <div class="col-md-2">
         Nombre del Instituto :
-        @Html.TextBoxFor(model => model.FRM1_INSTITUO, new { @class = "form-control" , @maxlength="40"})
+        @Html.TextBoxFor(model => model.FRM1_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
         @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
@@ -577,7 +575,7 @@
 
         <div class="col-md-2">
         Nombre del Instituto :
-        @Html.TextBoxFor(model => model.FRM2_INSTITUO, new { @class = "form-control" , @maxlength="40"})
+        @Html.TextBoxFor(model => model.FRM2_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
         @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
@@ -651,7 +649,7 @@
 
         <div class="col-md-2">
         Nombre del Instituto :
-        @Html.TextBoxFor(model => model.FRM3_INSTITUO, new { @class = "form-control" , @maxlength="40"})
+        @Html.TextBoxFor(model => model.FRM3_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
         @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
