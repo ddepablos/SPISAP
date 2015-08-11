@@ -23,6 +23,7 @@ $(document).ready(function () {
         if ($("#edocivil").val() != " " && $("#sexo").val() != " ") {
             if ($('#edocivil').val() === "Solt." && $('#sexo').val() === "F") {
                 $('#tratamiento').val("Srta.");
+                
             }
             if ($('#edocivil').val() != "Solt." && $('#sexo').val() === "F") {
                 $('#tratamiento').val("Sra.");
@@ -30,6 +31,8 @@ $(document).ready(function () {
             if ($('#sexo').val() === "M") {
                 $('#tratamiento').val("Sr.");
             }
+            $('#tratamientovalue').val( $('#tratamiento').val() );
+            //alert($('#tratamientovalue').val());
         }
 
     });

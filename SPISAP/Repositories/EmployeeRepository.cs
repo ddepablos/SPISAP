@@ -117,7 +117,7 @@ namespace SPISAP.Repositories
 
             // TEMPORAL
             Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
-            Empleado.TRATAMIENTO = "Sr.";
+            //Empleado.TRATAMIENTO = "Sr.";
             //Empleado.CEDULA = "11681109";
             //Empleado.SEXO = "M";
             //Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
@@ -572,7 +572,7 @@ namespace SPISAP.Repositories
                     #region DATOS_PERSONALES
                     DPERSONALES DPersonales = new DPERSONALES()
                     {
-                        FICHA = "F" + empleado.CEDULA,
+                        FICHA = empleado.FICHA,
                         CEDULA = empleado.CEDULA,
                         COD_SUCURSAL = empleado.COD_SUCURSAL,
                         COD_GRUPO = empleado.COD_GRUPO,
@@ -582,7 +582,6 @@ namespace SPISAP.Repositories
                         PRIMER_APELLIDO = empleado.PRIMER_APELLIDO,
                         SEGUNDO_APELLIDO = empleado.SEGUNDO_APELLIDO,
                         NOMBRE = empleado.NOMBRE,
-                        //FECHA_NACIMIENTO = DateTime.Parse(empleado.FECHA_NACIMIENTO_STRING),
                         FECHA_NACIMIENTO = OracleStringToDate(empleado.FECHA_NACIMIENTO), 
                         CIUDAD_NACIMIENTO = empleado.CIUDAD_NACIMIENTO,
                         COD_PAIS = empleado.COD_PAIS,
@@ -651,8 +650,8 @@ namespace SPISAP.Repositories
                         NUMERO = empleado.NUMERO,
                         CIUDAD = empleado.CIUDAD,
                         URBANIZACION = empleado.URBANIZACION,
-                        COD_ESTADO = empleado.COD_ESTADO,  // CONVERSAR CON CAROLINA //empleado.COD_ESTADO,
-                        COD_PAIS = empleado.COD_PAIS,
+                        COD_PAIS = "VE",
+                        COD_ESTADO = empleado.COD_ESTADO_DIRECCION,  
                         TELEFONOS = empleado.TELEFONOS,
                         COD_ESTADO_SSO = empleado.COD_ESTADO_SSO,
                         COD_MUNICIPIO_SSO = empleado.COD_MUNICIPIO_SSO,
@@ -744,7 +743,7 @@ namespace SPISAP.Repositories
 
                         DFAMILIAR DFamilar = new DFAMILIAR()
                         {
-                            CEDULA = empleado.FAM1_CEDULA_FAMILIAR,
+                            CEDULA = empleado.FAM2_CEDULA_FAMILIAR,
                             COD_PARENTESCO = empleado.FAM2_COD_PARENTESCO,
                             PRIMER_APELLIDO = empleado.FAM2_PRIMER_APELLIDO,
                             SEGUNDO_APELLIDO = empleado.FAM2_SEGUNDO_APELLIDO,

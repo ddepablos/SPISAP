@@ -15,6 +15,10 @@ namespace SPISAP.Models
         #region EMPLOYEE_ATRIBUTOS
 
         #region DATOS_PERSONALES
+
+        [Required(ErrorMessage = "El campo Ficha es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Ficha permite únicamente números.")]
+        [StringLength(12, MinimumLength = 6, ErrorMessage = "El campo Ficha debe contener entre 6 y 12 dígitos.")]
         public string FICHA { get; set; }
 
         [Required(ErrorMessage = "El campo Cédula es requerido.")]
@@ -127,11 +131,11 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
 
+        //[Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
+        public string COD_PAIS_DIRECCION { get; set; }
+
         //[Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO_DIRECCION { get; set; }
-
-        [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
-        public string COD_PAIS_DIRECCION { get; set; }
 
         [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
         [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
@@ -639,7 +643,7 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            //FillDummyRecord();
+            FillDummyRecord();
             FillListas();
 
         }
@@ -718,10 +722,10 @@ namespace SPISAP.Models
             CALLE = "CALLEJÓN MACHADO";
             EDIFICIO = "RESD.LOS GRANADILLOS";
             PISO = "14";
-            NUMERO = "141B";
+            NUMERO = "141";
             URBANIZACION = "EL PARAÍSO";
             COD_PAIS = "VE";
-            COD_ESTADO = "DC";
+            COD_ESTADO_DIRECCION = "DC";
             CIUDAD = "CARACAS";
             TELEFONOS = "0124835448";
             COD_ESTADO_SSO = "NUE";
@@ -754,7 +758,7 @@ namespace SPISAP.Models
             FAM2_LUGAR_NACIMIENTO = "CARACAS";
             FAM2_COD_PAIS = "VE";
             FAM2_COD_NACIONALIDAD = "VE";
-            FAM2_CEDULA_FAMILIAR = "11681109";
+            FAM2_CEDULA_FAMILIAR = "";
             FAM2_SEXO = "F";            
 
 
