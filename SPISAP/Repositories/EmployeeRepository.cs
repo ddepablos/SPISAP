@@ -522,6 +522,99 @@ namespace SPISAP.Repositories
             }        
         }
 
+        // validar si existe la cédula registrada.
+        public bool IsCedulaAlert()
+        {
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                var record = db.DPERSONALES.Where(r => r.CEDULA.Equals(empleado.CEDULA)).FirstOrDefault();
+                return (record != null);
+            }
+        }
+        // validar si existe el número de ficha registrada.
+        public bool IsFichaAlert()
+        {
+            using (SPISAPEntities db = new SPISAPEntities())
+            {
+                var record = db.DPERSONALES.Where(r => r.FICHA.Equals(empleado.FICHA)).FirstOrDefault();
+                return (record != null);
+            }
+        }
+
+        public bool IsFamiliar2Valid()
+        {
+            return (empleado.FAM2_NOMBRES == null && empleado.FAM2_COD_PARENTESCO == null && empleado.FAM2_PRIMER_APELLIDO == null && empleado.FAM2_SEGUNDO_APELLIDO == null && empleado.FAM2_FECHA_NACIMIENTO == null && empleado.FAM2_LUGAR_NACIMIENTO == null && empleado.FAM2_COD_PAIS == null && empleado.FAM2_COD_NACIONALIDAD == null && empleado.FAM2_SEXO == null ||
+                    empleado.FAM2_NOMBRES != null && empleado.FAM2_COD_PARENTESCO != null && empleado.FAM2_PRIMER_APELLIDO != null && empleado.FAM2_SEGUNDO_APELLIDO != null && empleado.FAM2_FECHA_NACIMIENTO != null && empleado.FAM2_LUGAR_NACIMIENTO != null && empleado.FAM2_COD_PAIS != null && empleado.FAM2_COD_NACIONALIDAD != null && empleado.FAM2_SEXO != null);
+        }
+        public bool IsFamiliar3Valid()
+        {
+            return (empleado.FAM3_NOMBRES == null && empleado.FAM3_COD_PARENTESCO == null && empleado.FAM3_PRIMER_APELLIDO == null && empleado.FAM3_SEGUNDO_APELLIDO == null && empleado.FAM3_FECHA_NACIMIENTO == null && empleado.FAM3_LUGAR_NACIMIENTO == null && empleado.FAM3_COD_PAIS == null && empleado.FAM3_COD_NACIONALIDAD == null && empleado.FAM3_SEXO == null ||
+                    empleado.FAM3_NOMBRES != null && empleado.FAM3_COD_PARENTESCO != null && empleado.FAM3_PRIMER_APELLIDO != null && empleado.FAM3_SEGUNDO_APELLIDO != null && empleado.FAM3_FECHA_NACIMIENTO != null && empleado.FAM3_LUGAR_NACIMIENTO != null && empleado.FAM3_COD_PAIS != null && empleado.FAM3_COD_NACIONALIDAD != null && empleado.FAM3_SEXO != null);
+        }
+        public bool IsFamiliar4Valid()
+        {
+            return (empleado.FAM4_NOMBRES == null && empleado.FAM4_COD_PARENTESCO == null && empleado.FAM4_PRIMER_APELLIDO == null && empleado.FAM4_SEGUNDO_APELLIDO == null && empleado.FAM4_FECHA_NACIMIENTO == null && empleado.FAM4_LUGAR_NACIMIENTO == null && empleado.FAM4_COD_PAIS == null && empleado.FAM4_COD_NACIONALIDAD == null && empleado.FAM4_SEXO == null ||
+                    empleado.FAM4_NOMBRES != null && empleado.FAM4_COD_PARENTESCO != null && empleado.FAM4_PRIMER_APELLIDO != null && empleado.FAM4_SEGUNDO_APELLIDO != null && empleado.FAM4_FECHA_NACIMIENTO != null && empleado.FAM4_LUGAR_NACIMIENTO != null && empleado.FAM4_COD_PAIS != null && empleado.FAM4_COD_NACIONALIDAD != null && empleado.FAM4_SEXO != null);
+        }
+        public bool IsFamiliar5Valid()
+        {
+            return (empleado.FAM5_NOMBRES == null && empleado.FAM5_COD_PARENTESCO == null && empleado.FAM5_PRIMER_APELLIDO == null && empleado.FAM5_SEGUNDO_APELLIDO == null && empleado.FAM5_FECHA_NACIMIENTO == null && empleado.FAM5_LUGAR_NACIMIENTO == null && empleado.FAM5_COD_PAIS == null && empleado.FAM5_COD_NACIONALIDAD == null && empleado.FAM5_SEXO == null ||
+                    empleado.FAM5_NOMBRES != null && empleado.FAM5_COD_PARENTESCO != null && empleado.FAM5_PRIMER_APELLIDO != null && empleado.FAM5_SEGUNDO_APELLIDO != null && empleado.FAM5_FECHA_NACIMIENTO != null && empleado.FAM5_LUGAR_NACIMIENTO != null && empleado.FAM5_COD_PAIS != null && empleado.FAM5_COD_NACIONALIDAD != null && empleado.FAM5_SEXO != null);
+        }
+        public bool IsFamiliar6Valid()
+        {
+            return (empleado.FAM6_NOMBRES == null && empleado.FAM6_COD_PARENTESCO == null && empleado.FAM6_PRIMER_APELLIDO == null && empleado.FAM6_SEGUNDO_APELLIDO == null && empleado.FAM6_FECHA_NACIMIENTO == null && empleado.FAM6_LUGAR_NACIMIENTO == null && empleado.FAM6_COD_PAIS == null && empleado.FAM6_COD_NACIONALIDAD == null && empleado.FAM6_SEXO == null ||
+                    empleado.FAM6_NOMBRES != null && empleado.FAM6_COD_PARENTESCO != null && empleado.FAM6_PRIMER_APELLIDO != null && empleado.FAM6_SEGUNDO_APELLIDO != null && empleado.FAM6_FECHA_NACIMIENTO != null && empleado.FAM6_LUGAR_NACIMIENTO != null && empleado.FAM6_COD_PAIS != null && empleado.FAM6_COD_NACIONALIDAD != null && empleado.FAM6_SEXO != null);
+        }
+        public bool IsFamiliar7Valid()
+        {
+            return (empleado.FAM7_NOMBRES == null && empleado.FAM7_COD_PARENTESCO == null && empleado.FAM7_PRIMER_APELLIDO == null && empleado.FAM7_SEGUNDO_APELLIDO == null && empleado.FAM7_FECHA_NACIMIENTO == null && empleado.FAM7_LUGAR_NACIMIENTO == null && empleado.FAM7_COD_PAIS == null && empleado.FAM7_COD_NACIONALIDAD == null && empleado.FAM7_SEXO == null ||
+                    empleado.FAM7_NOMBRES != null && empleado.FAM7_COD_PARENTESCO != null && empleado.FAM7_PRIMER_APELLIDO != null && empleado.FAM7_SEGUNDO_APELLIDO != null && empleado.FAM7_FECHA_NACIMIENTO != null && empleado.FAM7_LUGAR_NACIMIENTO != null && empleado.FAM7_COD_PAIS != null && empleado.FAM7_COD_NACIONALIDAD != null && empleado.FAM7_SEXO != null);
+        }
+        public bool IsFamiliar8Valid()
+        {
+            return (empleado.FAM8_NOMBRES == null && empleado.FAM8_COD_PARENTESCO == null && empleado.FAM8_PRIMER_APELLIDO == null && empleado.FAM8_SEGUNDO_APELLIDO == null && empleado.FAM8_FECHA_NACIMIENTO == null && empleado.FAM8_LUGAR_NACIMIENTO == null && empleado.FAM8_COD_PAIS == null && empleado.FAM8_COD_NACIONALIDAD == null && empleado.FAM8_SEXO == null ||
+                    empleado.FAM8_NOMBRES != null && empleado.FAM8_COD_PARENTESCO != null && empleado.FAM8_PRIMER_APELLIDO != null && empleado.FAM8_SEGUNDO_APELLIDO != null && empleado.FAM8_FECHA_NACIMIENTO != null && empleado.FAM8_LUGAR_NACIMIENTO != null && empleado.FAM8_COD_PAIS != null && empleado.FAM8_COD_NACIONALIDAD != null && empleado.FAM8_SEXO != null);
+        }
+        public bool IsFamiliar9Valid()
+        {
+            return (empleado.FAM9_NOMBRES == null && empleado.FAM9_COD_PARENTESCO == null && empleado.FAM9_PRIMER_APELLIDO == null && empleado.FAM9_SEGUNDO_APELLIDO == null && empleado.FAM9_FECHA_NACIMIENTO == null && empleado.FAM9_LUGAR_NACIMIENTO == null && empleado.FAM9_COD_PAIS == null && empleado.FAM9_COD_NACIONALIDAD == null && empleado.FAM9_SEXO == null ||
+                    empleado.FAM9_NOMBRES != null && empleado.FAM9_COD_PARENTESCO != null && empleado.FAM9_PRIMER_APELLIDO != null && empleado.FAM9_SEGUNDO_APELLIDO != null && empleado.FAM9_FECHA_NACIMIENTO != null && empleado.FAM9_LUGAR_NACIMIENTO != null && empleado.FAM9_COD_PAIS != null && empleado.FAM9_COD_NACIONALIDAD != null && empleado.FAM9_SEXO != null);
+        }
+        public bool IsFamiliar10Valid()
+        {
+            return (empleado.FAM10_NOMBRES == null && empleado.FAM10_COD_PARENTESCO == null && empleado.FAM10_PRIMER_APELLIDO == null && empleado.FAM10_SEGUNDO_APELLIDO == null && empleado.FAM10_FECHA_NACIMIENTO == null && empleado.FAM10_LUGAR_NACIMIENTO == null && empleado.FAM10_COD_PAIS == null && empleado.FAM10_COD_NACIONALIDAD == null && empleado.FAM10_SEXO == null ||
+                    empleado.FAM10_NOMBRES != null && empleado.FAM10_COD_PARENTESCO != null && empleado.FAM10_PRIMER_APELLIDO != null && empleado.FAM10_SEGUNDO_APELLIDO != null && empleado.FAM10_FECHA_NACIMIENTO != null && empleado.FAM10_LUGAR_NACIMIENTO != null && empleado.FAM10_COD_PAIS != null && empleado.FAM10_COD_NACIONALIDAD != null && empleado.FAM10_SEXO != null);
+        }
+        // FORMACIÓN ACADÉMICA
+        public bool IsFormacion2Alert()
+        {
+            return (empleado.FRM2_COD_CLASE == null && empleado.FRM2_CT_COD_CLASE == null && empleado.FRM2_CT_COD_TITULO == null && empleado.FRM2_CE_COD_CLASE == null && empleado.FRM2_CE_COD_ESPECIALIDAD == null && empleado.FRM2_INSTITUTO == null && empleado.FRM2_UNIDAD_TIEMPO == null && empleado.FRM2_DURACION == null && empleado.FRM2_FECHA_INICIO == null && empleado.FRM2_FECHA_FIN == null && empleado.FRM2_COD_PAIS == null ||
+                    empleado.FRM2_COD_CLASE != null && empleado.FRM2_CT_COD_CLASE != null && empleado.FRM2_CT_COD_TITULO != null && empleado.FRM2_CE_COD_CLASE != null && empleado.FRM2_CE_COD_ESPECIALIDAD != null && empleado.FRM2_INSTITUTO != null && empleado.FRM2_UNIDAD_TIEMPO != null && empleado.FRM2_DURACION != null && empleado.FRM2_FECHA_INICIO != null && empleado.FRM2_FECHA_FIN != null && empleado.FRM2_COD_PAIS != null);
+        }
+        public bool IsFormacion3Alert()
+        {
+            return (empleado.FRM3_COD_CLASE == null && empleado.FRM3_CT_COD_CLASE == null && empleado.FRM3_CT_COD_TITULO == null && empleado.FRM3_CE_COD_CLASE == null && empleado.FRM3_CE_COD_ESPECIALIDAD == null && empleado.FRM3_INSTITUTO == null && empleado.FRM3_UNIDAD_TIEMPO == null && empleado.FRM3_DURACION == null && empleado.FRM3_FECHA_INICIO == null && empleado.FRM3_FECHA_FIN == null && empleado.FRM3_COD_PAIS == null ||
+                    empleado.FRM3_COD_CLASE != null && empleado.FRM3_CT_COD_CLASE != null && empleado.FRM3_CT_COD_TITULO != null && empleado.FRM3_CE_COD_CLASE != null && empleado.FRM3_CE_COD_ESPECIALIDAD != null && empleado.FRM3_INSTITUTO != null && empleado.FRM3_UNIDAD_TIEMPO != null && empleado.FRM3_DURACION != null && empleado.FRM3_FECHA_INICIO != null && empleado.FRM3_FECHA_FIN != null && empleado.FRM3_COD_PAIS != null);
+        }
+
+        // EXPERIENCIA LABORAL
+        public bool IsExperiencia1Alert()
+        {
+            return (empleado.EXP1_EMPRESA == null && empleado.EXP1_COD_ACTIVIDAD == null && empleado.EXP1_FECHA_INICIO == null && empleado.EXP1_FECHA_FIN == null && empleado.EXP1_COD_RAMO == null && empleado.EXP1_COD_RELACION == null && empleado.EXP1_CIUDAD == null && empleado.EXP1_PAIS == null ||
+                    empleado.EXP1_EMPRESA != null && empleado.EXP1_COD_ACTIVIDAD != null && empleado.EXP1_FECHA_INICIO != null && empleado.EXP1_FECHA_FIN != null && empleado.EXP1_COD_RAMO != null && empleado.EXP1_COD_RELACION != null && empleado.EXP1_CIUDAD != null && empleado.EXP1_PAIS != null);
+        }
+        public bool IsExperiencia2Alert()
+        {
+            return (empleado.EXP2_EMPRESA == null && empleado.EXP2_COD_ACTIVIDAD == null && empleado.EXP2_FECHA_INICIO == null && empleado.EXP2_FECHA_FIN == null && empleado.EXP2_COD_RAMO == null && empleado.EXP2_COD_RELACION == null && empleado.EXP2_CIUDAD == null && empleado.EXP2_PAIS == null ||
+                    empleado.EXP2_EMPRESA != null && empleado.EXP2_COD_ACTIVIDAD != null && empleado.EXP2_FECHA_INICIO != null && empleado.EXP2_FECHA_FIN != null && empleado.EXP2_COD_RAMO != null && empleado.EXP2_COD_RELACION != null && empleado.EXP2_CIUDAD != null && empleado.EXP2_PAIS != null);
+        }
+        public bool IsExperiencia3Alert()
+        {
+            return (empleado.EXP3_EMPRESA == null && empleado.EXP3_COD_ACTIVIDAD == null && empleado.EXP3_FECHA_INICIO == null && empleado.EXP3_FECHA_FIN == null && empleado.EXP3_COD_RAMO == null && empleado.EXP3_COD_RELACION == null && empleado.EXP3_CIUDAD == null && empleado.EXP3_PAIS == null ||
+                    empleado.EXP3_EMPRESA != null && empleado.EXP3_COD_ACTIVIDAD != null && empleado.EXP3_FECHA_INICIO != null && empleado.EXP3_FECHA_FIN != null && empleado.EXP3_COD_RAMO != null && empleado.EXP3_COD_RELACION != null && empleado.EXP3_CIUDAD != null && empleado.EXP3_PAIS != null);
+        }
+
         public bool IsDatosFamiliarAlert()
         {
             return false;

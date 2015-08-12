@@ -43,15 +43,16 @@
     <thead>
         <tr>
         <th>#</th>
-        @*<th>Ficha</th>*@
+        <th>Ficha</th>
         <th>Cédula</th>
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
         <th>Nombres</th>
-        <th>Usuario (AddNew)</th>
+        <th>Usuario (Agregado por)</th>
         <th>Fecha / Hora</th>
-        <th>Usuario (Upgrade)</th>
+        <th>Usuario (Actualizado por)</th>
         <th>Fecha / Hora</th>
+        <th></th>
         </tr>
     </thead>
     <tbody>
@@ -62,11 +63,11 @@
         <td>
         @Html.Raw(++i)
         </td>
-@*        <td>
+        <td class="text-center">
         @Html.DisplayFor(modelItem => item.FICHA)
-        </td>*@
-        <td>
-        @Html.ActionLink(item.CEDULA, "Edit", new { id=item.CEDULA })
+        </td>
+        <td class="text-center">
+        @Html.DisplayFor(modelItem => item.CEDULA)
         </td>
         <td>
         @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
@@ -77,17 +78,20 @@
         <td>
         @Html.DisplayFor(modelItem => item.NOMBRE)
         </td>
-        <td>
+        <td class="text-center">
         @Html.DisplayFor(modelItem => item.COD_USER_INS)
         </td>
-        <td>
+        <td class="text-center">
         @Html.DisplayFor(modelItem => item.FECHA_INS)
         </td>
-        <td>
+        <td class="text-center">
         @Html.DisplayFor(modelItem => item.COD_USER_UPD)
         </td>
-        <td>
+        <td class="text-center">
         @Html.DisplayFor(modelItem => item.FECHA_UPD)
+        </td>
+        <td>  
+        @Html.ActionLink("Editar", "Edit", new { id = item.CEDULA })
         </td>
         </tr>             
         }

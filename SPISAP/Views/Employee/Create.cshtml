@@ -209,7 +209,7 @@
         </div>
         <div class="col-md-3" style="width: 250px;">
         Estado :
-        @if (Model.COD_ESTADO_DIRECCION != null)
+        @if (Model.Estados != null)
         {
         @Html.DropDownListFor(m => m.COD_ESTADO_DIRECCION, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "estadodir" })
         }
@@ -238,7 +238,7 @@
     <div class="row">
         <div class="col-md-4" style="padding-left: 0px;">
         Estado (SSO):
-        @if (Model.COD_ESTADO_SSO != null)
+        @if (Model.EstadoSSO != null)
         {
         @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id = "estadosso" })
         }

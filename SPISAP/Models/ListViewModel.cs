@@ -16,7 +16,7 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION=""  },
+                new GenericModel() { CODIGO="", DESCRIPCION=""  },
                 new GenericModel() { CODIGO="F", DESCRIPCION="F" },
                 new GenericModel() { CODIGO="M", DESCRIPCION="M" }
             };
@@ -99,7 +99,7 @@ namespace SPISAP.Models
 
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" "     , DESCRIPCION=""              },
+                new GenericModel() { CODIGO=""     , DESCRIPCION=""              },
                 new GenericModel() { CODIGO="Solt." , DESCRIPCION="Soltero(a)"    },
                 new GenericModel() { CODIGO="Concu.", DESCRIPCION="Concubino(a)"  },
                 new GenericModel() { CODIGO="Cas."  , DESCRIPCION="Casado(a)"     },
@@ -193,7 +193,7 @@ namespace SPISAP.Models
 
             return new List<Generic2Model>
             {
-                new Generic2Model() { CODIGO=" ", DESCRIPCION="Seleccione un valor", FOREINGKEY = "" },
+                new Generic2Model() { CODIGO="", DESCRIPCION="Seleccione un valor", FOREINGKEY = "" },
                 new Generic2Model() { CODIGO="S", DESCRIPCION="S", FOREINGKEY = "F" },
                 new Generic2Model() { CODIGO="M", DESCRIPCION="M", FOREINGKEY = "F" },
                 new Generic2Model() { CODIGO="L", DESCRIPCION="L", FOREINGKEY = "F" },
@@ -251,7 +251,7 @@ namespace SPISAP.Models
             // CALZADO BETWEEN '34' AND '46'
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" ", DESCRIPCION="Seleccione un valor"},
+                new GenericModel() { CODIGO="", DESCRIPCION="Seleccione un valor"},
                 new GenericModel() { CODIGO="34", DESCRIPCION="34"},
                 new GenericModel() { CODIGO="35", DESCRIPCION="35"},
                 new GenericModel() { CODIGO="36", DESCRIPCION="36"},
@@ -469,7 +469,7 @@ namespace SPISAP.Models
             // 'Años', 'Clases', 'Dias', 'Meses', 'Semanas', 'Semestres'
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO=" "         , DESCRIPCION=""          },
+                new GenericModel() { CODIGO=""         , DESCRIPCION=""          },
                 new GenericModel() { CODIGO="Años"      , DESCRIPCION="Años"      },
                 new GenericModel() { CODIGO="Clases"    , DESCRIPCION="Clases"    },
                 new GenericModel() { CODIGO="Dias"      , DESCRIPCION="Dias"      },

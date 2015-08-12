@@ -75,6 +75,70 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("Experiencia Laboral", "Experiencia Laboral : Existe un registro que no posee todos los valores completos.");
                     }
+                    else if (e.IsCedulaAlert())
+                    {
+                        ModelState.AddModelError("Cédula Duplicada", "Cédula Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.CEDULA );
+                    }
+                    else if (e.IsFichaAlert())
+                    {
+                        ModelState.AddModelError("Ficha Duplicada", "Ficha Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.FICHA);
+                    }
+                    else if (! e.IsFamiliar2Valid())
+                    {
+                        ModelState.AddModelError("Familar # 2", "Familar # 2 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar3Valid())
+                    {
+                        ModelState.AddModelError("Familar # 3", "Familar # 3 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar4Valid())
+                    {
+                        ModelState.AddModelError("Familar # 4", "Familar # 4 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar5Valid())
+                    {
+                        ModelState.AddModelError("Familar # 5", "Familar # 5 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar6Valid())
+                    {
+                        ModelState.AddModelError("Familar # 6", "Familar # 6 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar7Valid())
+                    {
+                        ModelState.AddModelError("Familar # 7", "Familar # 7 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar8Valid())
+                    {
+                        ModelState.AddModelError("Familar # 8", "Familar # 8 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar9Valid())
+                    {
+                        ModelState.AddModelError("Familar # 9", "Familar # 9 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFamiliar10Valid())
+                    {
+                        ModelState.AddModelError("Familar # 10", "Familar # 10 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFormacion2Alert())
+                    {
+                        ModelState.AddModelError("F2", "Formación # 2 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsFormacion3Alert())
+                    {
+                        ModelState.AddModelError("F3", "Formación # 3 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsExperiencia1Alert())
+                    {
+                        ModelState.AddModelError("E1", "Experiencia Laboral # 1 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsExperiencia2Alert())
+                    {
+                        ModelState.AddModelError("E2", "Experiencia Laboral # 2 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsExperiencia3Alert())
+                    {
+                        ModelState.AddModelError("E3", "Experiencia Laboral # 3 : Los campos no están llenados completamente.");
+                    }
                     else if (HttpContext.ApplicationInstance.Session["COD_USER"] == null)
                     {
                         ModelState.AddModelError("Experiencia Laboral", "Sesión Usuario : Su sesión ha caducado, debe ingresar nuevamente.");
@@ -89,6 +153,7 @@ namespace SPISAP.Controllers
 
                 }
 
+                EmployeeModel.ERROR=(string)HttpContext.ApplicationInstance.Session["ERROR"] ;//= e.InnerException.InnerException.Message;
                 return View(EmployeeModel);
 
             }
