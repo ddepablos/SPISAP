@@ -63,25 +63,17 @@ namespace SPISAP.Controllers
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
                     // validación del modelo.
-                    if (e.IsDatosFamiliarAlert())
-                    {
-                        ModelState.AddModelError("Datos Familiares", "Datos de Familiares : Existe un registro de  que no posee todos los valores completos.");
-                    }
-                    else if (e.IsDatosFormacionAlert())
-                    {
-                        ModelState.AddModelError("Datos Formación", "Datos de Formación : Existe un registro que no posee todos los valores completos.");
-                    }
-                    else if (e.IsExperienciaLaboralAlert())
-                    {
-                        ModelState.AddModelError("Experiencia Laboral", "Experiencia Laboral : Existe un registro que no posee todos los valores completos.");
-                    }
-                    else if (e.IsCedulaAlert())
+                    if (e.IsCedulaAlert())
                     {
                         ModelState.AddModelError("Cédula Duplicada", "Cédula Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.CEDULA );
                     }
                     else if (e.IsFichaAlert())
                     {
                         ModelState.AddModelError("Ficha Duplicada", "Ficha Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.FICHA);
+                    }
+                    else if ( ! e.IsEdadValid() )
+                    {
+                        ModelState.AddModelError("Menor de Edad", "Fecha de Nacimiento : La edad debe ser mayor/igual a 16 años.");
                     }
                     else if (! e.IsFamiliar2Valid())
                     {
@@ -119,25 +111,49 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("Familar # 10", "Familar # 10 : Los campos no están llenados completamente.");
                     }
+                    else if (!e.IsRangeValid(EmployeeModel.FRM1_FECHA_INICIO, EmployeeModel.FRM1_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("F1F", "Formación # 1 : El rango de fechas no es válido.");
+                    }
                     else if (!e.IsFormacion2Alert())
                     {
                         ModelState.AddModelError("F2", "Formación # 2 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsRangeValid(EmployeeModel.FRM2_FECHA_INICIO, EmployeeModel.FRM2_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("F2F", "Formación # 2 : El rango de fechas no es válido.");
                     }
                     else if (!e.IsFormacion3Alert())
                     {
                         ModelState.AddModelError("F3", "Formación # 3 : Los campos no están llenados completamente.");
                     }
+                    else if (!e.IsRangeValid(EmployeeModel.FRM2_FECHA_INICIO, EmployeeModel.FRM2_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("F3F", "Formación # 3 : El rango de fechas no es válido.");
+                    }
                     else if (!e.IsExperiencia1Alert())
                     {
                         ModelState.AddModelError("E1", "Experiencia Laboral # 1 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsRangeValid(EmployeeModel.EXP1_FECHA_INICIO, EmployeeModel.EXP1_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("E1F", "Experiencia Laboral # 1 : El rango de fechas no es válido.");
                     }
                     else if (!e.IsExperiencia2Alert())
                     {
                         ModelState.AddModelError("E2", "Experiencia Laboral # 2 : Los campos no están llenados completamente.");
                     }
+                    else if (!e.IsRangeValid(EmployeeModel.EXP2_FECHA_INICIO, EmployeeModel.EXP2_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("E2F", "Experiencia Laboral # 2 : El rango de fechas no es válido.");
+                    }
                     else if (!e.IsExperiencia3Alert())
                     {
                         ModelState.AddModelError("E3", "Experiencia Laboral # 3 : Los campos no están llenados completamente.");
+                    }
+                    else if (!e.IsRangeValid(EmployeeModel.EXP3_FECHA_INICIO, EmployeeModel.EXP3_FECHA_FIN))
+                    {
+                        ModelState.AddModelError("E3F", "Experiencia Laboral # 3 : El rango de fechas no es válido.");
                     }
                     else if (HttpContext.ApplicationInstance.Session["COD_USER"] == null)
                     {
@@ -294,22 +310,51 @@ namespace SPISAP.Controllers
         [HttpPost]
         public ActionResult Filter(FilterViewModel filter)
         {
-            try
-            {
-                // TODO: Add delete logic here
 
-                if (filter.CEDULA == null)
+            // TODO: Add delete logic here
+            if (ModelState.IsValid)
+            {
+
+                if (filter.CEDULA == null && filter.FICHA == null && filter.PRIMER_APELLIDO == null)
                 {
-                    return RedirectToAction("Table","Employee");
+                    ModelState.AddModelError("Filtro", "Es requerido ingresar un valor para ejecutar la búsqueda.");
+                }
+                else
+                {
+                    EmployeeRepository rep = new EmployeeRepository();
+
+                    List<DPERSONALES> personales = null;
+
+                    if (filter.CEDULA != null)
+                    {
+                        //records = db.DPERSONALES.Where(x => x.CEDULA.Equals(filter.CEDULA)).ToList();
+                        personales = rep.FindByCedula(filter.CEDULA);
+                    }
+                    if (filter.FICHA != null)
+                    {
+                        //records = db.DPERSONALES.Where(x => x.FICHA.Equals(filter.FICHA)).ToList();
+                        personales = rep.FindByFicha(filter.FICHA);
+                    }
+                    if (filter.PRIMER_APELLIDO != null)
+                    {
+                        personales = rep.FindByLastName(filter.PRIMER_APELLIDO);
+                    }
+
+                    return View("Table", personales);
+                    //List<DPERSONALES> records2 = EmployeeRep.Find(); //.FindByCedula("11681109");
+                    //return View(records);
                 }
 
-                return View();
+                return View(filter);
 
             }
-            catch
+            else
             {
-                return View();
+
+                return View(filter);
+           
             }
+
         }
 
         #region JSONRESULT

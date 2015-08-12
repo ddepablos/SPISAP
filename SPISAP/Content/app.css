@@ -409,3 +409,9 @@ h3 {
     text-align:center;
     color: #00a160;
 }
+
+#tablerow > thead > td > th , .table > tbody > td > th {
+    text-align:center;
+    padding-left: 15px;
+    padding-right: 15px;    
+}

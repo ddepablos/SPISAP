@@ -543,48 +543,48 @@ namespace SPISAP.Repositories
 
         public bool IsFamiliar2Valid()
         {
-            return (empleado.FAM2_NOMBRES == null && empleado.FAM2_COD_PARENTESCO == null && empleado.FAM2_PRIMER_APELLIDO == null && empleado.FAM2_SEGUNDO_APELLIDO == null && empleado.FAM2_FECHA_NACIMIENTO == null && empleado.FAM2_LUGAR_NACIMIENTO == null && empleado.FAM2_COD_PAIS == null && empleado.FAM2_COD_NACIONALIDAD == null && empleado.FAM2_SEXO == null ||
-                    empleado.FAM2_NOMBRES != null && empleado.FAM2_COD_PARENTESCO != null && empleado.FAM2_PRIMER_APELLIDO != null && empleado.FAM2_SEGUNDO_APELLIDO != null && empleado.FAM2_FECHA_NACIMIENTO != null && empleado.FAM2_LUGAR_NACIMIENTO != null && empleado.FAM2_COD_PAIS != null && empleado.FAM2_COD_NACIONALIDAD != null && empleado.FAM2_SEXO != null);
+            return (empleado.FAM2_NOMBRES == null && empleado.FAM2_COD_PARENTESCO == null && empleado.FAM2_PRIMER_APELLIDO == null && empleado.FAM2_FECHA_NACIMIENTO == null && empleado.FAM2_LUGAR_NACIMIENTO == null && empleado.FAM2_COD_PAIS == null && empleado.FAM2_COD_NACIONALIDAD == null && empleado.FAM2_SEXO == null ||
+                    empleado.FAM2_NOMBRES != null && empleado.FAM2_COD_PARENTESCO != null && empleado.FAM2_PRIMER_APELLIDO != null && empleado.FAM2_FECHA_NACIMIENTO != null && empleado.FAM2_LUGAR_NACIMIENTO != null && empleado.FAM2_COD_PAIS != null && empleado.FAM2_COD_NACIONALIDAD != null && empleado.FAM2_SEXO != null);
         }
         public bool IsFamiliar3Valid()
         {
-            return (empleado.FAM3_NOMBRES == null && empleado.FAM3_COD_PARENTESCO == null && empleado.FAM3_PRIMER_APELLIDO == null && empleado.FAM3_SEGUNDO_APELLIDO == null && empleado.FAM3_FECHA_NACIMIENTO == null && empleado.FAM3_LUGAR_NACIMIENTO == null && empleado.FAM3_COD_PAIS == null && empleado.FAM3_COD_NACIONALIDAD == null && empleado.FAM3_SEXO == null ||
-                    empleado.FAM3_NOMBRES != null && empleado.FAM3_COD_PARENTESCO != null && empleado.FAM3_PRIMER_APELLIDO != null && empleado.FAM3_SEGUNDO_APELLIDO != null && empleado.FAM3_FECHA_NACIMIENTO != null && empleado.FAM3_LUGAR_NACIMIENTO != null && empleado.FAM3_COD_PAIS != null && empleado.FAM3_COD_NACIONALIDAD != null && empleado.FAM3_SEXO != null);
+            return (empleado.FAM3_NOMBRES == null && empleado.FAM3_COD_PARENTESCO == null && empleado.FAM3_PRIMER_APELLIDO == null && empleado.FAM3_FECHA_NACIMIENTO == null && empleado.FAM3_LUGAR_NACIMIENTO == null && empleado.FAM3_COD_PAIS == null && empleado.FAM3_COD_NACIONALIDAD == null && empleado.FAM3_SEXO == null ||
+                    empleado.FAM3_NOMBRES != null && empleado.FAM3_COD_PARENTESCO != null && empleado.FAM3_PRIMER_APELLIDO != null && empleado.FAM3_FECHA_NACIMIENTO != null && empleado.FAM3_LUGAR_NACIMIENTO != null && empleado.FAM3_COD_PAIS != null && empleado.FAM3_COD_NACIONALIDAD != null && empleado.FAM3_SEXO != null);
         }
         public bool IsFamiliar4Valid()
         {
-            return (empleado.FAM4_NOMBRES == null && empleado.FAM4_COD_PARENTESCO == null && empleado.FAM4_PRIMER_APELLIDO == null && empleado.FAM4_SEGUNDO_APELLIDO == null && empleado.FAM4_FECHA_NACIMIENTO == null && empleado.FAM4_LUGAR_NACIMIENTO == null && empleado.FAM4_COD_PAIS == null && empleado.FAM4_COD_NACIONALIDAD == null && empleado.FAM4_SEXO == null ||
-                    empleado.FAM4_NOMBRES != null && empleado.FAM4_COD_PARENTESCO != null && empleado.FAM4_PRIMER_APELLIDO != null && empleado.FAM4_SEGUNDO_APELLIDO != null && empleado.FAM4_FECHA_NACIMIENTO != null && empleado.FAM4_LUGAR_NACIMIENTO != null && empleado.FAM4_COD_PAIS != null && empleado.FAM4_COD_NACIONALIDAD != null && empleado.FAM4_SEXO != null);
+            return (empleado.FAM4_NOMBRES == null && empleado.FAM4_COD_PARENTESCO == null && empleado.FAM4_PRIMER_APELLIDO == null && empleado.FAM4_FECHA_NACIMIENTO == null && empleado.FAM4_LUGAR_NACIMIENTO == null && empleado.FAM4_COD_PAIS == null && empleado.FAM4_COD_NACIONALIDAD == null && empleado.FAM4_SEXO == null ||
+                    empleado.FAM4_NOMBRES != null && empleado.FAM4_COD_PARENTESCO != null && empleado.FAM4_PRIMER_APELLIDO != null && empleado.FAM4_FECHA_NACIMIENTO != null && empleado.FAM4_LUGAR_NACIMIENTO != null && empleado.FAM4_COD_PAIS != null && empleado.FAM4_COD_NACIONALIDAD != null && empleado.FAM4_SEXO != null);
         }
         public bool IsFamiliar5Valid()
         {
-            return (empleado.FAM5_NOMBRES == null && empleado.FAM5_COD_PARENTESCO == null && empleado.FAM5_PRIMER_APELLIDO == null && empleado.FAM5_SEGUNDO_APELLIDO == null && empleado.FAM5_FECHA_NACIMIENTO == null && empleado.FAM5_LUGAR_NACIMIENTO == null && empleado.FAM5_COD_PAIS == null && empleado.FAM5_COD_NACIONALIDAD == null && empleado.FAM5_SEXO == null ||
-                    empleado.FAM5_NOMBRES != null && empleado.FAM5_COD_PARENTESCO != null && empleado.FAM5_PRIMER_APELLIDO != null && empleado.FAM5_SEGUNDO_APELLIDO != null && empleado.FAM5_FECHA_NACIMIENTO != null && empleado.FAM5_LUGAR_NACIMIENTO != null && empleado.FAM5_COD_PAIS != null && empleado.FAM5_COD_NACIONALIDAD != null && empleado.FAM5_SEXO != null);
+            return (empleado.FAM5_NOMBRES == null && empleado.FAM5_COD_PARENTESCO == null && empleado.FAM5_PRIMER_APELLIDO == null && empleado.FAM5_FECHA_NACIMIENTO == null && empleado.FAM5_LUGAR_NACIMIENTO == null && empleado.FAM5_COD_PAIS == null && empleado.FAM5_COD_NACIONALIDAD == null && empleado.FAM5_SEXO == null ||
+                    empleado.FAM5_NOMBRES != null && empleado.FAM5_COD_PARENTESCO != null && empleado.FAM5_PRIMER_APELLIDO != null && empleado.FAM5_FECHA_NACIMIENTO != null && empleado.FAM5_LUGAR_NACIMIENTO != null && empleado.FAM5_COD_PAIS != null && empleado.FAM5_COD_NACIONALIDAD != null && empleado.FAM5_SEXO != null);
         }
         public bool IsFamiliar6Valid()
         {
-            return (empleado.FAM6_NOMBRES == null && empleado.FAM6_COD_PARENTESCO == null && empleado.FAM6_PRIMER_APELLIDO == null && empleado.FAM6_SEGUNDO_APELLIDO == null && empleado.FAM6_FECHA_NACIMIENTO == null && empleado.FAM6_LUGAR_NACIMIENTO == null && empleado.FAM6_COD_PAIS == null && empleado.FAM6_COD_NACIONALIDAD == null && empleado.FAM6_SEXO == null ||
-                    empleado.FAM6_NOMBRES != null && empleado.FAM6_COD_PARENTESCO != null && empleado.FAM6_PRIMER_APELLIDO != null && empleado.FAM6_SEGUNDO_APELLIDO != null && empleado.FAM6_FECHA_NACIMIENTO != null && empleado.FAM6_LUGAR_NACIMIENTO != null && empleado.FAM6_COD_PAIS != null && empleado.FAM6_COD_NACIONALIDAD != null && empleado.FAM6_SEXO != null);
+            return (empleado.FAM6_NOMBRES == null && empleado.FAM6_COD_PARENTESCO == null && empleado.FAM6_PRIMER_APELLIDO == null && empleado.FAM6_FECHA_NACIMIENTO == null && empleado.FAM6_LUGAR_NACIMIENTO == null && empleado.FAM6_COD_PAIS == null && empleado.FAM6_COD_NACIONALIDAD == null && empleado.FAM6_SEXO == null ||
+                    empleado.FAM6_NOMBRES != null && empleado.FAM6_COD_PARENTESCO != null && empleado.FAM6_PRIMER_APELLIDO != null && empleado.FAM6_FECHA_NACIMIENTO != null && empleado.FAM6_LUGAR_NACIMIENTO != null && empleado.FAM6_COD_PAIS != null && empleado.FAM6_COD_NACIONALIDAD != null && empleado.FAM6_SEXO != null);
         }
         public bool IsFamiliar7Valid()
         {
-            return (empleado.FAM7_NOMBRES == null && empleado.FAM7_COD_PARENTESCO == null && empleado.FAM7_PRIMER_APELLIDO == null && empleado.FAM7_SEGUNDO_APELLIDO == null && empleado.FAM7_FECHA_NACIMIENTO == null && empleado.FAM7_LUGAR_NACIMIENTO == null && empleado.FAM7_COD_PAIS == null && empleado.FAM7_COD_NACIONALIDAD == null && empleado.FAM7_SEXO == null ||
-                    empleado.FAM7_NOMBRES != null && empleado.FAM7_COD_PARENTESCO != null && empleado.FAM7_PRIMER_APELLIDO != null && empleado.FAM7_SEGUNDO_APELLIDO != null && empleado.FAM7_FECHA_NACIMIENTO != null && empleado.FAM7_LUGAR_NACIMIENTO != null && empleado.FAM7_COD_PAIS != null && empleado.FAM7_COD_NACIONALIDAD != null && empleado.FAM7_SEXO != null);
+            return (empleado.FAM7_NOMBRES == null && empleado.FAM7_COD_PARENTESCO == null && empleado.FAM7_PRIMER_APELLIDO == null && empleado.FAM7_FECHA_NACIMIENTO == null && empleado.FAM7_LUGAR_NACIMIENTO == null && empleado.FAM7_COD_PAIS == null && empleado.FAM7_COD_NACIONALIDAD == null && empleado.FAM7_SEXO == null ||
+                    empleado.FAM7_NOMBRES != null && empleado.FAM7_COD_PARENTESCO != null && empleado.FAM7_PRIMER_APELLIDO != null && empleado.FAM7_FECHA_NACIMIENTO != null && empleado.FAM7_LUGAR_NACIMIENTO != null && empleado.FAM7_COD_PAIS != null && empleado.FAM7_COD_NACIONALIDAD != null && empleado.FAM7_SEXO != null);
         }
         public bool IsFamiliar8Valid()
         {
-            return (empleado.FAM8_NOMBRES == null && empleado.FAM8_COD_PARENTESCO == null && empleado.FAM8_PRIMER_APELLIDO == null && empleado.FAM8_SEGUNDO_APELLIDO == null && empleado.FAM8_FECHA_NACIMIENTO == null && empleado.FAM8_LUGAR_NACIMIENTO == null && empleado.FAM8_COD_PAIS == null && empleado.FAM8_COD_NACIONALIDAD == null && empleado.FAM8_SEXO == null ||
-                    empleado.FAM8_NOMBRES != null && empleado.FAM8_COD_PARENTESCO != null && empleado.FAM8_PRIMER_APELLIDO != null && empleado.FAM8_SEGUNDO_APELLIDO != null && empleado.FAM8_FECHA_NACIMIENTO != null && empleado.FAM8_LUGAR_NACIMIENTO != null && empleado.FAM8_COD_PAIS != null && empleado.FAM8_COD_NACIONALIDAD != null && empleado.FAM8_SEXO != null);
+            return (empleado.FAM8_NOMBRES == null && empleado.FAM8_COD_PARENTESCO == null && empleado.FAM8_PRIMER_APELLIDO == null && empleado.FAM8_FECHA_NACIMIENTO == null && empleado.FAM8_LUGAR_NACIMIENTO == null && empleado.FAM8_COD_PAIS == null && empleado.FAM8_COD_NACIONALIDAD == null && empleado.FAM8_SEXO == null ||
+                    empleado.FAM8_NOMBRES != null && empleado.FAM8_COD_PARENTESCO != null && empleado.FAM8_PRIMER_APELLIDO != null && empleado.FAM8_FECHA_NACIMIENTO != null && empleado.FAM8_LUGAR_NACIMIENTO != null && empleado.FAM8_COD_PAIS != null && empleado.FAM8_COD_NACIONALIDAD != null && empleado.FAM8_SEXO != null);
         }
         public bool IsFamiliar9Valid()
         {
-            return (empleado.FAM9_NOMBRES == null && empleado.FAM9_COD_PARENTESCO == null && empleado.FAM9_PRIMER_APELLIDO == null && empleado.FAM9_SEGUNDO_APELLIDO == null && empleado.FAM9_FECHA_NACIMIENTO == null && empleado.FAM9_LUGAR_NACIMIENTO == null && empleado.FAM9_COD_PAIS == null && empleado.FAM9_COD_NACIONALIDAD == null && empleado.FAM9_SEXO == null ||
-                    empleado.FAM9_NOMBRES != null && empleado.FAM9_COD_PARENTESCO != null && empleado.FAM9_PRIMER_APELLIDO != null && empleado.FAM9_SEGUNDO_APELLIDO != null && empleado.FAM9_FECHA_NACIMIENTO != null && empleado.FAM9_LUGAR_NACIMIENTO != null && empleado.FAM9_COD_PAIS != null && empleado.FAM9_COD_NACIONALIDAD != null && empleado.FAM9_SEXO != null);
+            return (empleado.FAM9_NOMBRES == null && empleado.FAM9_COD_PARENTESCO == null && empleado.FAM9_PRIMER_APELLIDO == null && empleado.FAM9_FECHA_NACIMIENTO == null && empleado.FAM9_LUGAR_NACIMIENTO == null && empleado.FAM9_COD_PAIS == null && empleado.FAM9_COD_NACIONALIDAD == null && empleado.FAM9_SEXO == null ||
+                    empleado.FAM9_NOMBRES != null && empleado.FAM9_COD_PARENTESCO != null && empleado.FAM9_PRIMER_APELLIDO != null && empleado.FAM9_FECHA_NACIMIENTO != null && empleado.FAM9_LUGAR_NACIMIENTO != null && empleado.FAM9_COD_PAIS != null && empleado.FAM9_COD_NACIONALIDAD != null && empleado.FAM9_SEXO != null);
         }
         public bool IsFamiliar10Valid()
         {
-            return (empleado.FAM10_NOMBRES == null && empleado.FAM10_COD_PARENTESCO == null && empleado.FAM10_PRIMER_APELLIDO == null && empleado.FAM10_SEGUNDO_APELLIDO == null && empleado.FAM10_FECHA_NACIMIENTO == null && empleado.FAM10_LUGAR_NACIMIENTO == null && empleado.FAM10_COD_PAIS == null && empleado.FAM10_COD_NACIONALIDAD == null && empleado.FAM10_SEXO == null ||
-                    empleado.FAM10_NOMBRES != null && empleado.FAM10_COD_PARENTESCO != null && empleado.FAM10_PRIMER_APELLIDO != null && empleado.FAM10_SEGUNDO_APELLIDO != null && empleado.FAM10_FECHA_NACIMIENTO != null && empleado.FAM10_LUGAR_NACIMIENTO != null && empleado.FAM10_COD_PAIS != null && empleado.FAM10_COD_NACIONALIDAD != null && empleado.FAM10_SEXO != null);
+            return (empleado.FAM10_NOMBRES == null && empleado.FAM10_COD_PARENTESCO == null && empleado.FAM10_PRIMER_APELLIDO == null && empleado.FAM10_FECHA_NACIMIENTO == null && empleado.FAM10_LUGAR_NACIMIENTO == null && empleado.FAM10_COD_PAIS == null && empleado.FAM10_COD_NACIONALIDAD == null && empleado.FAM10_SEXO == null ||
+                    empleado.FAM10_NOMBRES != null && empleado.FAM10_COD_PARENTESCO != null && empleado.FAM10_PRIMER_APELLIDO != null && empleado.FAM10_FECHA_NACIMIENTO != null && empleado.FAM10_LUGAR_NACIMIENTO != null && empleado.FAM10_COD_PAIS != null && empleado.FAM10_COD_NACIONALIDAD != null && empleado.FAM10_SEXO != null);
         }
         // FORMACIÓN ACADÉMICA
         public bool IsFormacion2Alert()
@@ -640,12 +640,15 @@ namespace SPISAP.Repositories
         {
             return Find().Where(x => x.CEDULA.Equals(value)).ToList();
         }
-
+        public List<DPERSONALES> FindByFicha(string value)
+        {
+            return Find().Where(x => x.FICHA.Equals(value)).ToList();
+        }
         public List<DPERSONALES> FindByLastName( string value )
         {
             using (SPISAPEntities db = new SPISAPEntities())
             {
-                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.Equals(value)).ToList();
+                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.Contains(value)).ToList();
             }
         }
 
@@ -1789,6 +1792,40 @@ namespace SPISAP.Repositories
                 }
 
                 return false;
+            }
+
+            return true;
+
+        }
+
+        // retornar True/False si la edad del competidor es válida para el evento (Edad >=16).
+        public bool IsEdadValid()
+        {
+            return (GetEdad() >= 16);
+        }
+
+        // retornar la edad a la fecha del evento.
+        private int GetEdad()
+        {
+
+            int diaCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(0, 2) );
+            int mesCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(3, 2) );
+            int añoCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(6, 4) );
+
+            DateTime fechaNacimiento = new DateTime(añoCumple, mesCumple, diaCumple);
+            DateTime fechaEvento = System.DateTime.Now;
+
+            return ((fechaEvento.Subtract(fechaNacimiento)).Days / 365);
+        }
+
+        public bool IsRangeValid(string desde, string hasta)
+        {
+
+            if (desde != null && hasta != null)
+            {
+                DateTime date1 = new DateTime( int.Parse(desde.Substring(6, 4)) , int.Parse(desde.Substring(3, 2)), int.Parse(desde.Substring(0, 2)), 0, 0, 0);
+                DateTime date2 = new DateTime(int.Parse(hasta.Substring(6, 4)), int.Parse(hasta.Substring(3, 2)), int.Parse(hasta.Substring(0, 2)), 0, 0, 0);
+                return (DateTime.Compare(date1, date2) < 0);                
             }
 
             return true;

@@ -244,6 +244,7 @@
     <Compile Include="Models\ESTADO_SSO.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilterModelView.cs" />
     <Compile Include="Models\FilterViewModel.cs" />
     <Compile Include="Models\FORMACION.cs">
       <DependentUpon>SPISAPModel.tt</DependentUpon>

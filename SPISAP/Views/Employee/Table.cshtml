@@ -5,6 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+.table > thead > td > th , .table > tbody > td > th {
+    text-align:center;
+    padding-left: 15px;
+    padding-right: 15px;    
+}
+</style>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -39,19 +46,19 @@
 
     <div class="panel-body">
 
-    <table class="table table-hover">
+    <table class="table table-hover" id="tablerow">
     <thead>
         <tr>
-        <th>#</th>
-        <th>Ficha</th>
-        <th>Cédula</th>
-        <th>Primer Apellido</th>
-        <th>Segundo Apellido</th>
-        <th>Nombres</th>
-        <th>Usuario (Agregado por)</th>
-        <th>Fecha / Hora</th>
-        <th>Usuario (Actualizado por)</th>
-        <th>Fecha / Hora</th>
+        <th class="text-center">#</th>
+        <th class="text-center">Ficha</th>
+        <th class="text-center">Cédula</th>
+        <th class="text-center">Primer Apellido</th>
+        <th class="text-center">Segundo Apellido</th>
+        <th class="text-center">Nombres</th>
+        <th class="text-center">Usuario (Agregado por)</th>
+        <th class="text-center">Fecha / Hora</th>
+        <th class="text-center">Usuario (Actualizado por)</th>
+        <th class="text-center">Fecha / Hora</th>
         <th></th>
         </tr>
     </thead>
@@ -90,7 +97,7 @@
         <td class="text-center">
         @Html.DisplayFor(modelItem => item.FECHA_UPD)
         </td>
-        <td>  
+        <td  class="text-center">  
         @Html.ActionLink("Editar", "Edit", new { id = item.CEDULA })
         </td>
         </tr>             

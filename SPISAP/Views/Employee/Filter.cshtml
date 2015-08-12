@@ -23,55 +23,32 @@
       </div>
     </nav>
 
-    <br><br>
+@Html.Partial("_ValidationSummary")
 
     <div class="container">
-        <div class="row">
-		    <div class="span12">
-			    <form class="form-horizontal" action="@Url.Action("Filter","Employee")" method="POST">
-			        <div id="legend">
-			          <legend class="">Filtro de Consulta de Trabajadores</legend>
-			        </div>
-			        <div class="control-group">
-			          <!-- Username -->
-			          <label class="control-label"  for="username">Ficha:</label>
-			          <div class="controls">
-			            <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-			          </div>
-			        </div>
-			        <div class="control-group">
-			          <!-- Password-->
-			          <label class="control-label" for="password">Cédula:</label>
-			          <div class="controls">
-			            <input type="password" id="cedula" name="password" placeholder="" class="input-xlarge">
-			          </div>
-			        </div>
-			        <div class="control-group">
-			          <!-- Password-->
-			          <label class="control-label" for="password">Primer Apellido:</label>
-			          <div class="controls">
-			            <input type="password" id="primer_apellido" name="password" placeholder="" class="input-xlarge">
-			          </div>
-			        </div>
-			        <div class="control-group">
-			          <!-- Password-->
-			          <label class="control-label" for="password">Nombres:</label>
-			          <div class="controls">
-			            <input type="password" id="nombres" name="password" placeholder="" class="input-xlarge">
-			          </div>
-			        </div>
-                    <br>
-                    <!-- BUTTONS -->
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <button class="btn btn-success">Buscar</button>
-                        </div>
-                        <div class="col-md-offset-4 col-md-2">
-                            <a class="btn  btn-success btn-md" href="@Url.Action("Create","Employee")">Agregar Nuevo Trabajador</a>
-                        </div>
-                    </div>
-                    <!--// BUTTONS //-->
-			    </form>
-		    </div>
+        <div class="row" style="margin-left: 150px; margin-right: 150px;">
+            <div class="card">
+            <h3>Formulario de Búsqueda de Registro de Trabajador</h3>
+            <br>
+            <form class="form-horizontal" action="@Url.Action("Filter","Employee")" method="POST">
+                <div class="col-md-2" style="width: 110px;">
+                Cédula :
+                @Html.TextBoxFor(model => model.CEDULA, new { @class = "form-control", @maxlength="8" , @style="text-align:center"})
+                </div>
+                <div class="col-md-3" style="width: 130px;">
+                Ficha :
+                @Html.TextBoxFor(model => model.FICHA, new { @class = "form-control", id = "primerapellido", @maxlength="12", @style="text-align:center" })
+                </div>
+                <div class="col-md-3" style="width: 380px;">
+                Primer Apellido :
+                @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" })
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success">Buscar Trabajador</button>
+            </form>
+            </div>
+            <div class="row text-center">
+                <a class="btn  btn-success btn-md" href="@Url.Action("Create","Employee")">Agregar Nuevo Trabajador</a>
+            </div>
 	    </div>
     </div>

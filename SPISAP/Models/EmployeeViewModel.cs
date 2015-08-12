@@ -46,7 +46,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
         public string PRIMER_APELLIDO { get; set; }
 
-        [Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
+        //[Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
         public string SEGUNDO_APELLIDO { get; set; }
 
@@ -118,7 +118,7 @@ namespace SPISAP.Models
         public string EDIFICIO { get; set; }
 
         [Required(ErrorMessage = "El campo Piso es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Piso permite únicamente números.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Piso permite únicamente números.")]
         public string PISO { get; set; }
 
         [Required(ErrorMessage = "El campo Número es requerido.")]
@@ -648,7 +648,7 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            //FillDummyRecord();
+            FillDummyRecord();
             FillListas();
 
         }
