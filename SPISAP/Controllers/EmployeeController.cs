@@ -75,15 +75,15 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("Experiencia Laboral", "Experiencia Laboral : Existe un registro que no posee todos los valores completos.");
                     }
+                    else if (HttpContext.ApplicationInstance.Session["COD_USER"] == null)
+                    {
+                        ModelState.AddModelError("Experiencia Laboral", "Sesión Usuario : Su sesión ha caducado, debe ingresar nuevamente.");
+                    }
                     else
                     {
                         if (e.AddNew())
                         {
-                            return RedirectToAction("Filter", "Employee");
-                        }
-                        else
-                        {
-                            return View(EmployeeModel);
+                            return RedirectToAction("Table", "Employee");
                         }
                     }
 
@@ -94,8 +94,8 @@ namespace SPISAP.Controllers
             }
             catch( Exception e )
             {
-                Console.Write(e);
-                return View();
+                HttpContext.ApplicationInstance.Session["ERROR"] = e.InnerException.InnerException.Message;
+                return View(EmployeeModel);
             }
         }
 

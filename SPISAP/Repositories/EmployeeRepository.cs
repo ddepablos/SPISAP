@@ -105,7 +105,7 @@ namespace SPISAP.Repositories
             #endregion
 
             // agregar valores por defecto.
-            Empleado.COD_PAIS = "VE";
+            Empleado.COD_PAIS_DIRECCION = "VE";
             Empleado.FRM1_CT_COD_CLASE = Empleado.FRM1_COD_CLASE;
             Empleado.FRM1_CE_COD_CLASE = Empleado.FRM1_COD_CLASE;
 
@@ -115,12 +115,8 @@ namespace SPISAP.Repositories
             Empleado.FRM3_CT_COD_CLASE = Empleado.FRM3_COD_CLASE;
             Empleado.FRM3_CE_COD_CLASE = Empleado.FRM3_COD_CLASE;
 
-            // TEMPORAL
+            Empleado.NEXTVAL = GetOracleNextVal();
             Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
-            //Empleado.TRATAMIENTO = "Sr.";
-            //Empleado.CEDULA = "11681109";
-            //Empleado.SEXO = "M";
-            //Empleado.FRM1_COD_FORMACION = "1";  // PENDIENTE POR DESTINO DEL CAMPO.
 
             empleado = Empleado;
         }
@@ -732,7 +728,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -758,7 +754,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -784,7 +780,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -810,7 +806,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -836,7 +832,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -862,7 +858,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -888,7 +884,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -914,7 +910,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -940,7 +936,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -966,7 +962,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FAMILIARES = GetFamiliarNextVal()
+                            ID_FAMILIARES = ++empleado.NEXTVAL
                         };
 
                         db.DFAMILIARES.Add(DFamilar);
@@ -996,7 +992,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FORMACION = GetFormacionNextVal()
+                            ID_FORMACION = ++empleado.NEXTVAL
                         };
 
                         db.DFORMACIONES.Add(DFormacion);
@@ -1023,7 +1019,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FORMACION = GetFormacionNextVal()
+                            ID_FORMACION = ++empleado.NEXTVAL
                         };
 
                         db.DFORMACIONES.Add(DFormacion);
@@ -1050,7 +1046,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_FORMACION = GetFormacionNextVal()
+                            ID_FORMACION = ++empleado.NEXTVAL
                         };
 
                         db.DFORMACIONES.Add(DFormacion);
@@ -1076,7 +1072,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                            ID_DEXPERIENCIA = ++empleado.NEXTVAL
                         };
 
                         db.DEXPERIENCIAS.Add(DExperiencia);
@@ -1098,7 +1094,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                            ID_DEXPERIENCIA = ++empleado.NEXTVAL
                         };
 
                         db.DEXPERIENCIAS.Add(DExperiencia);
@@ -1120,7 +1116,7 @@ namespace SPISAP.Repositories
                             FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now,
-                            ID_DEXPERIENCIA = GetExperienciaNextVal()
+                            ID_DEXPERIENCIA = ++empleado.NEXTVAL
                         };
 
                         db.DEXPERIENCIAS.Add(DExperiencia);
@@ -1140,11 +1136,13 @@ namespace SPISAP.Repositories
                 {
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
+                        HttpContext.Current.Session["ERROR"] = validationError.PropertyName + "::::>" + validationError.ErrorMessage;
                         System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
 
-                return false;
+                throw;
+
             }
 
         }
@@ -1692,6 +1690,7 @@ namespace SPISAP.Repositories
                 {
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
+                        HttpContext.Current.Session["ERROR"] = validationError.PropertyName + "::::>" + validationError.ErrorMessage;
                         System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
@@ -1717,24 +1716,14 @@ namespace SPISAP.Repositories
         private DateTime OracleStringToDate(string value)
         {
             //return DateTime.Parse(value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2) + "/" + value.ToString().Substring(6, 4));
-            return DateTime.Parse(value.ToString().Substring(6, 4) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2)); 
-
+            return DateTime.Parse(value.ToString().Substring(6, 4) + "/" + value.ToString().Substring(3, 2) + "/" + value.ToString().Substring(0, 2));
+            //return DateTime.Parse("2000/01/01");
         }
 
-        private decimal GetFamiliarNextVal()
+        private decimal GetOracleNextVal()
         {
             Random rnd = new Random();
-            return rnd.Next(100000000);
-        }
-        private decimal GetExperienciaNextVal()
-        {
-            Random rnd = new Random();
-            return rnd.Next(120000000);
-        }
-        private decimal GetFormacionNextVal()
-        {
-            Random rnd = new Random();
-            return rnd.Next(130000000);
+            return rnd.Next(1000000000);
         }
         #endregion
 

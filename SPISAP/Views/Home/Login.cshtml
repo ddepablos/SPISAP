@@ -7,41 +7,18 @@
 <br>
 <br>
 <br>
-<br>
 
 @Html.Partial("_ValidationSummary")
 
 <div class="container">
-    <div class="row">
-		<div class="span12">
-			<form class="form-horizontal" action="@Url.Action("Login","Home")" method="POST">
-			    <div id="legend">
-			      <legend class="">Login - V.0.5</legend>
-			    </div>
-			    <div class="control-group">
-			      <!-- Username -->
-			      <label class="control-label"  for="username">Usuario</label>
-			      <div class="controls">
-			        @*<input type="text" id="username" name="username" placeholder="" class="input-xlarge">*@
-                      @Html.TextBoxFor(model => model.username, new { @class = "form-control", id = "username", @maxlength="12", @Value="CROSARIO"})
-			      </div>
-			    </div>
-			    <div class="control-group">
-			      <!-- Password-->
-			      <label class="control-label" for="password">Contraseña</label>
-			      <div class="controls">
-                      @Html.TextBoxFor(model => model.password, new { @class = "form-control", id = "password", @maxlength="8", @Value="*" })
-			      </div>
-			    </div>
-                <br>
-			    <div class="control-group">
-			      <!-- Button -->
-			      <div class="controls">
-			        <button class="btn btn-success">Ingresar</button>
-			      </div>
-			    </div>
-			</form>
-		</div>
-	</div>
-</div>
-
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="@Href("~/Images/plz.png")" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin form-horizontal" action="@Url.Action("Login","Home")" method="POST">
+            <span id="reauth-email" class="reauth-email"></span>
+            @Html.TextBoxFor(model => model.username, new { @class = "form-control", id = "username", @maxlength="12", @Value="CROSARIO", @placeholder="Usuario"})
+            @Html.TextBoxFor(model => model.password, new { @class = "form-control", id = "password", @maxlength="8", @Value="*", @placeholder="Contraseña" })
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+</div><!-- /container -->

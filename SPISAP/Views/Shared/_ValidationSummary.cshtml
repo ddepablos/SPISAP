@@ -1,17 +1,14 @@
 ﻿
 @if (Html.ViewData.ModelState.Count > 0)
 {
-    <br><br>
-    
+    <br>
     <div class="container">
         <div class="alert alert-danger" role="alert">     
-            <h4>Atención : El formulario no puede ser procesado, revise los siguientes campos:</h4>
+            <h5>El formulario no puede ser procesado, revise los siguientes campos e intente nuevamente :</h5>
             @foreach (var modelError in Html.ViewData.ModelState.SelectMany(keyValuePair => keyValuePair.Value.Errors))
             {
                 <p>@modelError.ErrorMessage</p>
             }
         </div>
     </div>
-    
-    <br>
 }

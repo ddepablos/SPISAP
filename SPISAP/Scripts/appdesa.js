@@ -10,6 +10,7 @@ $(document).ready(function () {
 
     $('#paissso').val("VE");
 
+    $('#username').focus();
     $('#primerapellido').focus();
 
 
@@ -32,7 +33,6 @@ $(document).ready(function () {
                 $('#tratamiento').val("Sr.");
             }
             $('#tratamientovalue').val( $('#tratamiento').val() );
-            //alert($('#tratamientovalue').val());
         }
 
     });

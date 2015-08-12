@@ -39,7 +39,7 @@
 
     <!-- DATOS PERSONALES -->
     <div class="title green">DATOS PERSONALES</div>
-
+    @Session["ERROR"].ToString() 
     <div class="row">
         <br>
         <div class="col-md-3" style="width: 130px;">
@@ -125,7 +125,7 @@
         <div class="col-md-2" style="width: 150px;">
         Tratamiento :
         @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamiento",  @disabled="disabled", @style="text-align:center"})
-        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamientovalue", @Value="", style = "display:none" })
+        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamientovalue", @value="", @type="hidden" })
         </div>
         </div>
         <div class="row">
@@ -204,7 +204,7 @@
     <div class="row">
         <div class="col-md-3">
         País :
-        @Html.TextBoxFor(model => model.COD_PAIS, new { @class = "form-control", @Value="VE", style = "display:none" })
+        @Html.TextBoxFor(model => model.COD_PAIS_DIRECCION, new { @class = "form-control", @value="VE", @type="hidden" })
         @Html.TextBoxFor(model => model.FIELD_WITHOUT_VALUE, new { @class = "form-control", @Value="VENEZUELA", @disabled="disabled"})
         </div>
         <div class="col-md-3" style="width: 250px;">

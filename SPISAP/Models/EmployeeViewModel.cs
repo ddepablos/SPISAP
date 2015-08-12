@@ -16,6 +16,8 @@ namespace SPISAP.Models
 
         #region DATOS_PERSONALES
 
+        public string ERROR { get; set; }
+
         [Required(ErrorMessage = "El campo Ficha es requerido.")]
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Ficha permite únicamente números.")]
         [StringLength(12, MinimumLength = 6, ErrorMessage = "El campo Ficha debe contener entre 6 y 12 dígitos.")]
@@ -586,6 +588,9 @@ namespace SPISAP.Models
         
         #endregion
 
+        /* ORACLE NEXTVAL */
+        public decimal NEXTVAL { get; set; }
+
         /* ESTRUCTURAS DE LISTAS */
         #region LISTAS_DE_ATRIBUTOS
 
@@ -643,7 +648,7 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            FillDummyRecord();
+            //FillDummyRecord();
             FillListas();
 
         }
@@ -733,12 +738,11 @@ namespace SPISAP.Models
             COD_PARROQUIA_SSO = "1191";
 
             /* DISCAPACIDAD */
-            COD_DISCAPACIDAD_MOTRIZ = true;
-            COD_DISCAPACIDAD_SENSORIAL = true;
+            COD_DISCAPACIDAD_MOTRIZ = false;
+            COD_DISCAPACIDAD_SENSORIAL = false;
             COD_DISCAPACIDAD_INTELECTUAL = false;
 
             /* FAMILIARES */
-
             FAM1_COD_PARENTESCO = "1";
             FAM1_PRIMER_APELLIDO = "DEPABLOS";
             FAM1_SEGUNDO_APELLIDO = "SILVA";
@@ -761,31 +765,6 @@ namespace SPISAP.Models
             FAM2_CEDULA_FAMILIAR = "";
             FAM2_SEXO = "F";            
 
-
-            ///* Discapacidad : 'ZA', 'ZB', 'ZC' */
-            //Discapacidades = new List<DDISCAPACIDAD>();
-            //Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZA", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
-            //Discapacidades.Add(new DDISCAPACIDAD { CEDULA = "12919906", GRUPO_DISCAPACIDAD = "ZB", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = "CROSARIO", FECHA_UPD = null });
-
-            ///* Familiares */
-            //Familiares = new List<DFAMILIAR>();
-            //Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "1", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "SILVA", NOMBRES = "DANIEL JOSÉ", FECHA_NACIMIENTO = DateTime.Parse("1974-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "CARACAS", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "11681109", SEXO = "M" });
-            //Familiares.Add(new DFAMILIAR { CEDULA = "12919906", COD_PARENTESCO = "2", PRIMER_APELLIDO = "DEPABLOS", SEGUNDO_APELLIDO = "GONZALEZ", NOMBRES = "NICOLLE", FECHA_NACIMIENTO = DateTime.Parse("2016-04-05", CultureInfo.InvariantCulture), LUGAR_NACIMIENTO = "PORLAMAR", COD_PAIS = "VE", COD_NACIONALIDAD = "VE", CEDULA_FAMILIAR = "", SEXO = "F" });
-
-            ///* Formación */
-            //DFormaciones = new List<DFORMACION>();
-            //DFormaciones.Add(new DFORMACION { CEDULA = "12919906", COD_CLASE = "V1", COD_FORMACION = "7", INSTITUO = "UNEFA", COD_PAIS = "VE", CT_COD_CLASE = "V1", CT_COD_TITULO = "2", DURACION = "5", UNIDAD_TIEMPO = "Años", CE_COD_ESPECIALIDAD = "00094", CE_COD_CLASE = "V1", FECHA_INICIO = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2015-01-01", CultureInfo.InvariantCulture), COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
-
-            ///* Experiencia */
-            //Experiencias = new List<DEXPERIENCIA>();
-            //Experiencias.Add(new DEXPERIENCIA { CEDULA = "12919906", FECHA_INICIO = DateTime.Parse("2000-01-01", CultureInfo.InvariantCulture), FECHA_FIN = DateTime.Parse("2010-01-01", CultureInfo.InvariantCulture), EMPRESA = "GOOGLE INC", CIUDAD = "SEATTLE", PAIS = "VE", COD_RAMO = "01", COD_ACTIVIDAD = "01", COD_RELACION = "5", COD_USER_INS = "CROSARIO", FECHA_INS = System.DateTime.Now, COD_USER_UPD = null, FECHA_UPD = System.DateTime.Now });
-
-            /* Usuario */
-            //COD_USER_INS = "CROSARIO";
-            //FECHA_INS = System.DateTime.Now;
-            //COD_USER_UPD = null;
-            //FECHA_UPD = System.DateTime.Now;
-
             // DATOS DE FORMACIÓN //
             FRM1_COD_CLASE = "V1";
             FRM1_CT_COD_CLASE = "V1";
@@ -799,6 +778,18 @@ namespace SPISAP.Models
             FRM1_FECHA_FIN = "01/01/2005";
             FRM1_COD_PAIS = "VE";
 
+            FRM2_COD_CLASE = "V1";
+            FRM2_CT_COD_CLASE = "V1";
+            FRM2_CT_COD_TITULO = "2";
+            FRM2_CE_COD_CLASE = "V1";
+            FRM2_CE_COD_ESPECIALIDAD = "00001";
+            FRM2_INSTITUTO = "INSTITUTO 2";
+            FRM2_DURACION = "5";
+            FRM2_UNIDAD_TIEMPO = "Años";
+            FRM2_FECHA_INICIO = "01/01/2005";
+            FRM2_FECHA_FIN = "01/01/2010";
+            FRM2_COD_PAIS = "VE";
+
             // DATOS EXPERIENCIA //
             EXP1_FECHA_INICIO = "01/01/2000";
             EXP1_FECHA_FIN = "01/01/2010";
@@ -808,6 +799,16 @@ namespace SPISAP.Models
             EXP1_COD_RAMO = "36";
             EXP1_COD_ACTIVIDAD = "14";
             EXP1_COD_RELACION = "5";
+
+            EXP2_FECHA_INICIO = "01/01/2010";
+            EXP2_FECHA_FIN = "01/01/2011";
+            EXP2_EMPRESA = "EMPRESA 2";
+            EXP2_CIUDAD = "CARACAS";
+            EXP2_PAIS = "VE";
+            EXP2_COD_RAMO = "36";
+            EXP2_COD_ACTIVIDAD = "14";
+            EXP2_COD_RELACION = "6";
+
 
         }
 

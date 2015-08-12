@@ -37,6 +37,7 @@ namespace SPISAP.Controllers
                 {
                     Session["COD_USER"] = user.username;
                     Session["USUARIO"] = user.userdesc;
+                    Session["ERROR"] = "";
                     return RedirectToAction("Filter", "Employee");
                 }
                 else
