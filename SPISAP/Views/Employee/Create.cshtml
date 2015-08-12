@@ -33,7 +33,7 @@
     
     <form class="form-horizontal">
 
-    <h3>Agregar un Nuevo Trabajador</h3>
+    <h3>Formulario de Ingreso de Nuevo Trabajador</h3>
 
     <div class="row">
 
@@ -44,7 +44,7 @@
         <br>
         <div class="col-md-3" style="width: 130px;">
         Ficha :
-        @Html.TextBoxFor(model => model.FICHA, new { @class = "form-control", id = "primerapellido", @maxlength="12", @style="text-align:center" })
+        @Html.TextBoxFor(model => model.FICHA, new { @class = "form-control", id = "ficha", @maxlength="12", @style="text-align:center" })
         </div>
         <div class="col-md-3" style="width: 280px;">
         Primer Apellido :
@@ -855,16 +855,10 @@
             <button type="submit" class="btn btn-success btn-md">Confirmar Datos</button>
         </div>
         <div class="col-md-2">
-            <a class="btn  btn-danger btn-md" href="@Url.Action("Filter","Employee")">Cancelar</a>
+            <a class="btn  btn-danger btn-md" href="@Url.Action("Filter","Employee")">Regresar</a>
         </div>
     </div>
-    <!--// BUTTONS //-->
-@*    <div class="row text-center">
-        <div class="col-md-offset-4 col-md-4">
-            <button type="submit" class="btn btn-primary">Guardar Registro del Trabajador</button>
-        </div>
-    </div>*@
-    
+   
     </form>
 
     </div>

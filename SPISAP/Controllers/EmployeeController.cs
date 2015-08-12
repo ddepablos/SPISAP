@@ -163,13 +163,13 @@ namespace SPISAP.Controllers
                     {
                         if (e.AddNew())
                         {
-                            return RedirectToAction("Table", "Employee");
+                            return RedirectToAction("Filter", "Employee");
                         }
                     }
 
                 }
 
-                EmployeeModel.ERROR=(string)HttpContext.ApplicationInstance.Session["ERROR"] ;//= e.InnerException.InnerException.Message;
+                EmployeeModel.ERROR = (string) HttpContext.ApplicationInstance.Session["ERROR"];
                 return View(EmployeeModel);
 
             }

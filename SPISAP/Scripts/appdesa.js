@@ -11,8 +11,8 @@ $(document).ready(function () {
     $('#paissso').val("VE");
 
     $('#username').focus();
-    $('#primerapellido').focus();
-
+    $('#cedula').focus();
+    $('#ficha').focus();
 
     // ::::: DROPDOWNLIST ::::: //
 
