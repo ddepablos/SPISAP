@@ -17,58 +17,71 @@
             <a class="navbar-brand">Gestión de Registros de Trabajadores</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand navbar-right">Usuario : @Html.DisplayFor(model => model.COD_USER, new { @class="form-control", @disabled="disabled"})</a>
+            <a class="navbar-brand navbar-right">Usuario : @Session["USUARIO"].ToString() </a>
+@*            <a class="navbar-brand navbar-right">Usuario : @Html.DisplayFor(model => model., new { @class="form-control", @disabled="disabled"})</a>*@
         </div>
     </div>
 </nav>
 
-@using (Html.BeginForm("Edit","Employee","POST"))
+@Html.Partial("_ValidationSummary")
+
+@using (Html.BeginForm()) //"Edit","Employee","POST"
 { 
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
-    //Html.Partial("_ValidationSummary") --antes del beginform.
-    //Html.HiddenFor(model => model.PLANILLA)
 
     <div class="container jumbotron form-signin">
     
     <form class="form-horizontal">
 
-    <h3>Editar/Actualizar Datos del Trabajador</h3>
+    <h3>Formulario de Editar/Actualizar Datos del Trabajador</h3>
 
     <div class="row">
 
-        <!-- DATOS PERSONALES -->
-        <div class="title green">DATOS PERSONALES</div>
-    
-        <div class="row">
-            <br>
-            <div class="col-md-3">
-            Primer Apellido :
-            @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" })
-            </div>
-            <div class="col-md-3">
-            Segundo Apellido :
-            @Html.TextBoxFor(model => model.SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })
-            </div>
-            <div class="col-md-3">
-            Nombres :
-            @Html.TextBoxFor(model => model.NOMBRE, new { @class = "form-control", @maxlength="40" })
-            </div>
-            <div class="col-md-2">
-            Cédula :
-            @Html.TextBoxFor(model => model.CEDULA, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
-            </div>
-            <div class="col-md-1">
-            Sexo :
-            @Html.DropDownListFor(model => model.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
-            </div>
+    @Html.HiddenFor(model => model.FICHA)
+    @Html.HiddenFor(model => model.PRIMER_APELLIDO)
+    @Html.HiddenFor(model => model.SEGUNDO_APELLIDO)
+    @Html.HiddenFor(model => model.NOMBRE)
+    @Html.HiddenFor(model => model.CEDULA)
+    @Html.HiddenFor(model => model.COD_AREA_PERSONAL)
+    @Html.HiddenFor(model => model.CARGO)
+    @Html.HiddenFor(model => model.COD_SUCURSAL)
+    @Html.HiddenFor(model => model.COD_GRUPO)
+
+    <!-- DATOS PERSONALES -->
+    <div class="title green">DATOS PERSONALES</div>
+    @Session["ERROR"].ToString() 
+    <div class="row">
+        <br>
+        <div class="col-md-3" style="width: 130px;">
+        Ficha :
+        @Html.TextBoxFor(model => model.FICHA, new { @class = "form-control", id = "ficha", @maxlength="12", @style="text-align:center", @disabled="disabled" })
         </div>
+        <div class="col-md-3" style="width: 280px;">
+        Primer Apellido :
+        @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" , @disabled="disabled"})
+        </div>
+        <div class="col-md-3" style="width: 280px;">
+        Segundo Apellido :
+        @Html.TextBoxFor(model => model.SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40", @disabled="disabled" })
+        </div>
+        <div class="col-md-3">
+        Nombres :
+        @Html.TextBoxFor(model => model.NOMBRE, new { @class = "form-control", @maxlength="40", @disabled="disabled" })
+        </div>
+        <div class="col-md-2" style="width: 110px;">
+        Cédula :
+        @Html.TextBoxFor(model => model.CEDULA, new { @class = "form-control", @maxlength="8", @style="text-align:center", @disabled="disabled"})
+        </div>
+        <div class="col-md-1">
+        Sexo :
+        @Html.DropDownListFor(model => model.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-3">
         Fecha de Nacimiento :
         @Html.TextBoxFor(model => model.FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
-        @*@Html.TextBoxFor(model => model.FECHA_NACIMIENTO_STRING, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})*@
         </div>
         <div class="col-md-3">
         Ciudad de Nacimiento :
@@ -104,23 +117,24 @@
         <div class="row">
         <div class="col-md-3">
         Nivel de Cargo :
-        @Html.DropDownListFor(m => m.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id = "nivelcargo" })
+        @Html.DropDownListFor(m => m.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id = "nivelcargo", @disabled="disabled" })
         </div>
         <div class="col-md-3">
         Nombre del Cargo :
-        @Html.TextBoxFor(model => model.CARGO, new { @class = "form-control", @maxlength="60" })
+        @Html.TextBoxFor(model => model.CARGO, new { @class = "form-control", @maxlength="60", @disabled="disabled" })
         </div>
         <div class="col-md-2" style="width: 300px;">
         Sucursal :
-        @Html.DropDownListFor(m => m.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id = "sucursal" })
+        @Html.DropDownListFor(m => m.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id = "sucursal", @disabled="disabled" })
         </div>
         <div class="col-md-2" style="width: 150px;">
         Tipo de Contratación :
-        @Html.DropDownListFor(m => m.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id = "grupopersonal" })
+        @Html.DropDownListFor(m => m.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id = "grupopersonal", @disabled="disabled" })
         </div>
         <div class="col-md-2" style="width: 150px;">
         Tratamiento :
-        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamiento",  @disabled = "disabled", @style="text-align:center"})
+        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamiento",  @disabled="disabled", @style="text-align:center"})
+        @Html.TextBoxFor(model => model.TRATAMIENTO, new { @class = "form-control", @id = "tratamientovalue", @value="", @type="hidden" })
         </div>
         </div>
         <div class="row">
@@ -164,8 +178,8 @@
         }
         </div>
     </div>
-    
-    </div>    
+
+    </div>
     <!-- // DATOS PERSONALES -->
 
     <br>
@@ -196,15 +210,43 @@
         @Html.TextBoxFor(model => model.URBANIZACION, new { @class = "form-control", @maxlength="40" })
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-3">
         País :
-        @Html.TextBoxFor(model => model.COD_PAIS, new { @class = "form-control", @Value="VE", style = "display:none" })
+        @Html.TextBoxFor(model => model.COD_PAIS_DIRECCION, new { @class = "form-control", @value="VE", @type="hidden" })
         @Html.TextBoxFor(model => model.FIELD_WITHOUT_VALUE, new { @class = "form-control", @Value="VENEZUELA", @disabled="disabled"})
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" style="width: 250px;">
         Estado :
+        @if (Model.Estados != null)
+        {
+        @Html.DropDownListFor(m => m.COD_ESTADO_DIRECCION, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "estadodir" })
+        }
+        else
+        { 
+        <select class="form-control" id="estadosdir" name="COD_ESTADO_DIRECCION">
+        <option value=" ">Seleccione un valor</option>
+        </select>                       
+        }
+        </div>
+        <div class="col-md-3" style="width: 250px;">
+        Ciudad :
+        @Html.TextBoxFor(model => model.CIUDAD, new { @class = "form-control", @maxlength="40" })
+        </div>
+        <div class="col-md-2">
+        Teléfono de Habitación :
+        @Html.TextBoxFor(model => model.TELEFONOS, new { @class = "form-control", @maxlength="11" })
+        </div>
+        <div class="col-md-2">
+        Teléfono Celular :
+        @Html.TextBoxFor(model => model.COD_CLASE_CELULAR, new { @class = "form-control", @maxlength="11" })
+        </div>
+        </div>
+    </div>
+    <div class="row text-center">Datos de Seguro Social Obligatorio</div>
+    <div class="row">
+        <div class="col-md-4" style="padding-left: 0px;">
+        Estado (SSO):
         @if (Model.EstadoSSO != null)
         {
         @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id = "estadosso" })
@@ -216,12 +258,8 @@
         </select>                       
         }
         </div>
-        <div class="col-md-3">
-        Ciudad :
-        @Html.TextBoxFor(model => model.CIUDAD, new { @class = "form-control", @maxlength="40" })
-        </div>
-        <div class="col-md-3">
-        Municipio :
+        <div class="col-md-4">
+        Municipio (SSO):
         @if (Model.MunicipioSSO != null)
         {
         @Html.DropDownListFor(m => m.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id = "municipiosso" })
@@ -233,10 +271,8 @@
         </select>                       
         }
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-        Parroquia :
+        <div class="col-md-4" style="padding-right: 0px;">
+        Parroquia (SSO):
         @if (Model.ParroquiaSSO != null)
         {
         @Html.DropDownListFor(m => m.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id = "parroquiasso" })
@@ -247,15 +283,6 @@
         <option value=" ">Seleccione un valor</option>
         </select>                       
         }
-        </div>
-        <div class="col-md-4">
-        Teléfono de Habitación :
-        @Html.TextBoxFor(model => model.TELEFONOS, new { @class = "form-control", @maxlength="11" })
-        </div>
-        <div class="col-md-4">
-        Teléfono Celular :
-        @Html.TextBoxFor(model => model.COD_CLASE_CELULAR, new { @class = "form-control", @maxlength="11" })
-        </div>
         </div>
     </div>
     <!-- // DIRECCIÓN DEL TRABAJADOR -->
@@ -837,10 +864,10 @@
             <button type="submit" class="btn btn-success btn-md">Confirmar Datos</button>
         </div>
         <div class="col-md-2">
-            <a class="btn  btn-danger btn-md" href="@Url.Action("Table","Employee")">Cancelar</a>
+            <a class="btn  btn-danger btn-md" href="@Url.Action("Filter","Employee")">Regresar</a>
         </div>
     </div>
-    <!--// BUTTONS //-->
+    <!--// BUTTONS -->
 
     </form>
 

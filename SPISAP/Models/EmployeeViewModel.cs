@@ -648,7 +648,7 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            FillDummyRecord();
+            //FillDummyRecord();
             FillListas();
 
         }
@@ -699,118 +699,118 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            #region JESUSMERINO
-            FICHA = "13139792";
-            CEDULA = "13139792";
-            COD_SUCURSAL = "1001";
-            COD_GRUPO = "1";
-            COD_AREA_PERSONAL = "VK";
-            CARGO = "ANALISTA DE PROCESOS";
-            TRATAMIENTO = "Sr.";
-            PRIMER_APELLIDO = "MERIÑO";
-            SEGUNDO_APELLIDO = "APARICIO";
-            NOMBRE = "JESÚS RAMÓN";
-            FECHA_NACIMIENTO = "09.02.1978";    // ("1976-01-18", CultureInfo.InvariantCulture);
-            CIUDAD_NACIMIENTO = "CARACAS";
-            COD_PAIS = "VE";
-            COD_ESTADO = "DC";
-            COD_NACIONALIDAD = "VE";
-            ESTADO_CIVIL = "Div.";
-            SEXO = "M";
-            RIF = "";
-            CALZADO = "41";
-            CHEMISE = "38";
-            PANTALON = "32";
-            COD_CLASE_CELULAR = "04141231212";
-            COD_CLASE_CORREO = "jesusdie09@hotmail.com";
+            //#region JESUSMERINO
+            //FICHA = "13139792";
+            //CEDULA = "13139792";
+            //COD_SUCURSAL = "1001";
+            //COD_GRUPO = "1";
+            //COD_AREA_PERSONAL = "VK";
+            //CARGO = "ANALISTA DE PROCESOS";
+            //TRATAMIENTO = "Sr.";
+            //PRIMER_APELLIDO = "MERIÑO";
+            //SEGUNDO_APELLIDO = "APARICIO";
+            //NOMBRE = "JESÚS RAMÓN";
+            //FECHA_NACIMIENTO = "09.02.1978";    // ("1976-01-18", CultureInfo.InvariantCulture);
+            //CIUDAD_NACIMIENTO = "CARACAS";
+            //COD_PAIS = "VE";
+            //COD_ESTADO = "DC";
+            //COD_NACIONALIDAD = "VE";
+            //ESTADO_CIVIL = "Div.";
+            //SEXO = "M";
+            //RIF = "";
+            //CALZADO = "41";
+            //CHEMISE = "38";
+            //PANTALON = "32";
+            //COD_CLASE_CELULAR = "04141231212";
+            //COD_CLASE_CORREO = "jesusdie09@hotmail.com";
 
-            ///* DIRECCIÓN */
-            CALLE = "SAN MARTIN";
-            EDIFICIO = "GUACAMAYAS";
-            PISO = "7";
-            NUMERO = "71";
-            URBANIZACION = "SAN MARTIN";
-            COD_PAIS = "VE";
-            COD_ESTADO_DIRECCION = "DC";
-            CIUDAD = "CARACAS";
-            TELEFONOS = "02124830102";
-            COD_ESTADO_SSO = "DC";
-            COD_MUNICIPIO_SSO = "1";
-            COD_PARROQUIA_SSO = "672";
+            /////* DIRECCIÓN */
+            //CALLE = "SAN MARTIN";
+            //EDIFICIO = "GUACAMAYAS";
+            //PISO = "7";
+            //NUMERO = "71";
+            //URBANIZACION = "SAN MARTIN";
+            //COD_PAIS = "VE";
+            //COD_ESTADO_DIRECCION = "DC";
+            //CIUDAD = "CARACAS";
+            //TELEFONOS = "02124830102";
+            //COD_ESTADO_SSO = "DC";
+            //COD_MUNICIPIO_SSO = "1";
+            //COD_PARROQUIA_SSO = "672";
 
-            ///* DISCAPACIDAD */
-            COD_DISCAPACIDAD_MOTRIZ = false;
-            COD_DISCAPACIDAD_SENSORIAL = false;
-            COD_DISCAPACIDAD_INTELECTUAL = false;
+            /////* DISCAPACIDAD */
+            //COD_DISCAPACIDAD_MOTRIZ = false;
+            //COD_DISCAPACIDAD_SENSORIAL = false;
+            //COD_DISCAPACIDAD_INTELECTUAL = false;
 
-            /* FAMILIARES */
-            FAM1_COD_PARENTESCO = "2";
-            FAM1_PRIMER_APELLIDO = "MERIÑO";
-            FAM1_SEGUNDO_APELLIDO = "DURÁN";
-            FAM1_NOMBRES = "DIEGO JOSÉ";
-            FAM1_FECHA_NACIMIENTO = "02.05.2006";
-            FAM1_LUGAR_NACIMIENTO = "CARACAS";
-            FAM1_COD_PAIS = "VE";
-            FAM1_COD_NACIONALIDAD = "VE";
-            FAM1_CEDULA_FAMILIAR = "13139792";
-            FAM1_SEXO = "M";
+            ///* FAMILIARES */
+            //FAM1_COD_PARENTESCO = "2";
+            //FAM1_PRIMER_APELLIDO = "MERIÑO";
+            //FAM1_SEGUNDO_APELLIDO = "DURÁN";
+            //FAM1_NOMBRES = "DIEGO JOSÉ";
+            //FAM1_FECHA_NACIMIENTO = "02.05.2006";
+            //FAM1_LUGAR_NACIMIENTO = "CARACAS";
+            //FAM1_COD_PAIS = "VE";
+            //FAM1_COD_NACIONALIDAD = "VE";
+            //FAM1_CEDULA_FAMILIAR = "13139792";
+            //FAM1_SEXO = "M";
 
-            //FAM2_COD_PARENTESCO = "1";
-            //FAM2_PRIMER_APELLIDO = "DEPABLOS";
-            //FAM2_SEGUNDO_APELLIDO = "GONZALEZ";
-            //FAM2_NOMBRES = "NICOLE CELESTE";
-            //FAM2_FECHA_NACIMIENTO = "10.10.2016";
-            //FAM2_LUGAR_NACIMIENTO = "CARACAS";
-            //FAM2_COD_PAIS = "VE";
-            //FAM2_COD_NACIONALIDAD = "VE";
-            //FAM2_CEDULA_FAMILIAR = "";
-            //FAM2_SEXO = "F";
+            ////FAM2_COD_PARENTESCO = "1";
+            ////FAM2_PRIMER_APELLIDO = "DEPABLOS";
+            ////FAM2_SEGUNDO_APELLIDO = "GONZALEZ";
+            ////FAM2_NOMBRES = "NICOLE CELESTE";
+            ////FAM2_FECHA_NACIMIENTO = "10.10.2016";
+            ////FAM2_LUGAR_NACIMIENTO = "CARACAS";
+            ////FAM2_COD_PAIS = "VE";
+            ////FAM2_COD_NACIONALIDAD = "VE";
+            ////FAM2_CEDULA_FAMILIAR = "";
+            ////FAM2_SEXO = "F";
 
-            // DATOS DE FORMACIÓN //
-            FRM1_COD_CLASE = "V5";
-            FRM1_CT_COD_CLASE = "V5";
-            FRM1_CT_COD_TITULO = "2";
-            FRM1_CE_COD_CLASE = "V5";
-            FRM1_CE_COD_ESPECIALIDAD = "00115";
-            FRM1_INSTITUTO = "SANTA MARÍA";
-            FRM1_DURACION = "5";
-            FRM1_UNIDAD_TIEMPO = "Años";
-            FRM1_FECHA_INICIO = "01.01.2000";
-            FRM1_FECHA_FIN = "01.01.2005";
-            FRM1_COD_PAIS = "VE";
+            //// DATOS DE FORMACIÓN //
+            //FRM1_COD_CLASE = "V5";
+            //FRM1_CT_COD_CLASE = "V5";
+            //FRM1_CT_COD_TITULO = "2";
+            //FRM1_CE_COD_CLASE = "V5";
+            //FRM1_CE_COD_ESPECIALIDAD = "00115";
+            //FRM1_INSTITUTO = "SANTA MARÍA";
+            //FRM1_DURACION = "5";
+            //FRM1_UNIDAD_TIEMPO = "Años";
+            //FRM1_FECHA_INICIO = "01.01.2000";
+            //FRM1_FECHA_FIN = "01.01.2005";
+            //FRM1_COD_PAIS = "VE";
 
-            //FRM2_COD_CLASE = "V1";
-            //FRM2_CT_COD_CLASE = "V1";
-            //FRM2_CT_COD_TITULO = "2";
-            //FRM2_CE_COD_CLASE = "V1";
-            //FRM2_CE_COD_ESPECIALIDAD = "00001";
-            //FRM2_INSTITUTO = "INSTITUTO 2";
-            //FRM2_DURACION = "5";
-            //FRM2_UNIDAD_TIEMPO = "Años";
-            //FRM2_FECHA_INICIO = "01.01.2005";
-            //FRM2_FECHA_FIN = "01.01.2010";
-            //FRM2_COD_PAIS = "VE";
+            ////FRM2_COD_CLASE = "V1";
+            ////FRM2_CT_COD_CLASE = "V1";
+            ////FRM2_CT_COD_TITULO = "2";
+            ////FRM2_CE_COD_CLASE = "V1";
+            ////FRM2_CE_COD_ESPECIALIDAD = "00001";
+            ////FRM2_INSTITUTO = "INSTITUTO 2";
+            ////FRM2_DURACION = "5";
+            ////FRM2_UNIDAD_TIEMPO = "Años";
+            ////FRM2_FECHA_INICIO = "01.01.2005";
+            ////FRM2_FECHA_FIN = "01.01.2010";
+            ////FRM2_COD_PAIS = "VE";
 
-            // DATOS EXPERIENCIA //
-            EXP1_FECHA_INICIO = "01.01.2000";
-            EXP1_FECHA_FIN = "01.01.2010";
-            EXP1_EMPRESA = "SOPORTE SPI";
-            EXP1_CIUDAD = "CARACAS";
-            EXP1_PAIS = "VE";
-            EXP1_COD_RAMO = "11";
-            EXP1_COD_ACTIVIDAD = "19";
-            EXP1_COD_RELACION = "5";
+            //// DATOS EXPERIENCIA //
+            //EXP1_FECHA_INICIO = "01.01.2000";
+            //EXP1_FECHA_FIN = "01.01.2010";
+            //EXP1_EMPRESA = "SOPORTE SPI";
+            //EXP1_CIUDAD = "CARACAS";
+            //EXP1_PAIS = "VE";
+            //EXP1_COD_RAMO = "11";
+            //EXP1_COD_ACTIVIDAD = "19";
+            //EXP1_COD_RELACION = "5";
 
-            //EXP2_FECHA_INICIO = "01.01.2010";
-            //EXP2_FECHA_FIN = "01.01.2011";
-            //EXP2_EMPRESA = "EMPRESA 2";
-            //EXP2_CIUDAD = "CARACAS";
-            //EXP2_PAIS = "VE";
-            //EXP2_COD_RAMO = "36";
-            //EXP2_COD_ACTIVIDAD = "14";
-            //EXP2_COD_RELACION = "6";
+            ////EXP2_FECHA_INICIO = "01.01.2010";
+            ////EXP2_FECHA_FIN = "01.01.2011";
+            ////EXP2_EMPRESA = "EMPRESA 2";
+            ////EXP2_CIUDAD = "CARACAS";
+            ////EXP2_PAIS = "VE";
+            ////EXP2_COD_RAMO = "36";
+            ////EXP2_COD_ACTIVIDAD = "14";
+            ////EXP2_COD_RELACION = "6";
 
-            #endregion
+            //#endregion
 
             #region FLORMARINA
             //FICHA = "123456789012";

@@ -251,7 +251,7 @@ namespace SPISAP.Models
             // CALZADO BETWEEN '34' AND '46'
             return new List<GenericModel>
             {
-                new GenericModel() { CODIGO="", DESCRIPCION="Seleccione un valor"},
+                //new GenericModel() { CODIGO="", DESCRIPCION="Seleccione un valor"},
                 new GenericModel() { CODIGO="34", DESCRIPCION="34"},
                 new GenericModel() { CODIGO="35", DESCRIPCION="35"},
                 new GenericModel() { CODIGO="36", DESCRIPCION="36"},
