@@ -699,7 +699,7 @@ namespace SPISAP.Models
 
             //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
 
-            //#region JESUSMERINO
+            #region JESUSMERINO
             //FICHA = "13139792";
             //CEDULA = "13139792";
             //COD_SUCURSAL = "1001";
@@ -810,118 +810,118 @@ namespace SPISAP.Models
             ////EXP2_COD_ACTIVIDAD = "14";
             ////EXP2_COD_RELACION = "6";
 
-            //#endregion
+            #endregion
 
             #region FLORMARINA
-            //FICHA = "123456789012";
-            //CEDULA = "12919906";
-            //COD_SUCURSAL = "1001";
-            //COD_GRUPO = "1";
-            //COD_AREA_PERSONAL = "VK";
-            //CARGO = "CARGO";
-            //TRATAMIENTO = "Sra.";
-            //PRIMER_APELLIDO = "GONZALEZ";
-            //SEGUNDO_APELLIDO = "LOPEZ";
-            //NOMBRE = "FLOR MARINA";
-            //FECHA_NACIMIENTO = "18.01.1976";    // ("1976-01-18", CultureInfo.InvariantCulture);
-            //CIUDAD_NACIMIENTO = "PORLAMAR";
-            //COD_PAIS = "VE";
-            //COD_ESTADO = "NE";
-            //COD_NACIONALIDAD = "PA";
-            //ESTADO_CIVIL = "Cas.";
-            //SEXO = "F";
-            //RIF = "J129199060";
-            //CALZADO = "34";
-            //CHEMISE = "S";
-            //PANTALON = "8";
-            //COD_CLASE_CELULAR = "04128094599";
-            //COD_CLASE_CORREO = "flormarinagl@gmail.com";
+            FICHA = "123456789012";
+            CEDULA = "12919906";
+            COD_SUCURSAL = "1001";
+            COD_GRUPO = "1";
+            COD_AREA_PERSONAL = "VK";
+            CARGO = "CARGO";
+            TRATAMIENTO = "Sra.";
+            PRIMER_APELLIDO = "GONZALEZ";
+            SEGUNDO_APELLIDO = "LOPEZ";
+            NOMBRE = "FLOR MARINA";
+            FECHA_NACIMIENTO = "18.01.1976";    // ("1976-01-18", CultureInfo.InvariantCulture);
+            CIUDAD_NACIMIENTO = "PORLAMAR";
+            COD_PAIS = "VE";
+            COD_ESTADO = "NE";
+            COD_NACIONALIDAD = "PA";
+            ESTADO_CIVIL = "Cas.";
+            SEXO = "F";
+            RIF = "J129199060";
+            CALZADO = "34";
+            CHEMISE = "S";
+            PANTALON = "8";
+            COD_CLASE_CELULAR = "04128094599";
+            COD_CLASE_CORREO = "flormarinagl@gmail.com";
 
-            ///* DIRECCIÓN */
-            //CALLE = "CALLEJÓN MACHADO";
-            //EDIFICIO = "RESD.LOS GRANADILLOS";
-            //PISO = "14";
-            //NUMERO = "141";
-            //URBANIZACION = "EL PARAÍSO";
-            //COD_PAIS = "VE";
-            //COD_ESTADO_DIRECCION = "DC";
-            //CIUDAD = "CARACAS";
-            //TELEFONOS = "0124835448";
-            //COD_ESTADO_SSO = "NUE";
-            //COD_MUNICIPIO_SSO = "217";
-            //COD_PARROQUIA_SSO = "1191";
+            /* DIRECCIÓN */
+            CALLE = "CALLEJÓN MACHADO";
+            EDIFICIO = "RESD.LOS GRANADILLOS";
+            PISO = "14";
+            NUMERO = "141";
+            URBANIZACION = "EL PARAÍSO";
+            COD_PAIS = "VE";
+            COD_ESTADO_DIRECCION = "DC";
+            CIUDAD = "CARACAS";
+            TELEFONOS = "0124835448";
+            COD_ESTADO_SSO = "NUE";
+            COD_MUNICIPIO_SSO = "217";
+            COD_PARROQUIA_SSO = "1191";
 
-            ///* DISCAPACIDAD */
-            //COD_DISCAPACIDAD_MOTRIZ = false;
-            //COD_DISCAPACIDAD_SENSORIAL = false;
-            //COD_DISCAPACIDAD_INTELECTUAL = false;
+            /* DISCAPACIDAD */
+            COD_DISCAPACIDAD_MOTRIZ = false;
+            COD_DISCAPACIDAD_SENSORIAL = false;
+            COD_DISCAPACIDAD_INTELECTUAL = false;
 
-            ///* FAMILIARES */
-            //FAM1_COD_PARENTESCO = "1";
-            //FAM1_PRIMER_APELLIDO = "DEPABLOS";
-            //FAM1_SEGUNDO_APELLIDO = "SILVA";
-            //FAM1_NOMBRES = "DANIEL";
-            //FAM1_FECHA_NACIMIENTO = "05.04.1974";
-            //FAM1_LUGAR_NACIMIENTO = "CARACAS";
-            //FAM1_COD_PAIS = "VE";
-            //FAM1_COD_NACIONALIDAD = "VE";
-            //FAM1_CEDULA_FAMILIAR = "11681109";
-            //FAM1_SEXO = "M";
+            /* FAMILIARES */
+            FAM1_COD_PARENTESCO = "1";
+            FAM1_PRIMER_APELLIDO = "DEPABLOS";
+            FAM1_SEGUNDO_APELLIDO = "SILVA";
+            FAM1_NOMBRES = "DANIEL";
+            FAM1_FECHA_NACIMIENTO = "05.04.1974";
+            FAM1_LUGAR_NACIMIENTO = "CARACAS";
+            FAM1_COD_PAIS = "VE";
+            FAM1_COD_NACIONALIDAD = "VE";
+            FAM1_CEDULA_FAMILIAR = "11681109";
+            FAM1_SEXO = "M";
 
-            //FAM2_COD_PARENTESCO = "1";
-            //FAM2_PRIMER_APELLIDO = "DEPABLOS";
-            //FAM2_SEGUNDO_APELLIDO = "GONZALEZ";
-            //FAM2_NOMBRES = "NICOLE CELESTE";
-            //FAM2_FECHA_NACIMIENTO = "10.10.2016";
-            //FAM2_LUGAR_NACIMIENTO = "CARACAS";
-            //FAM2_COD_PAIS = "VE";
-            //FAM2_COD_NACIONALIDAD = "VE";
-            //FAM2_CEDULA_FAMILIAR = "";
-            //FAM2_SEXO = "F";
+            FAM2_COD_PARENTESCO = "1";
+            FAM2_PRIMER_APELLIDO = "DEPABLOS";
+            FAM2_SEGUNDO_APELLIDO = "GONZALEZ";
+            FAM2_NOMBRES = "NICOLE CELESTE";
+            FAM2_FECHA_NACIMIENTO = "10.10.2016";
+            FAM2_LUGAR_NACIMIENTO = "CARACAS";
+            FAM2_COD_PAIS = "VE";
+            FAM2_COD_NACIONALIDAD = "VE";
+            FAM2_CEDULA_FAMILIAR = "";
+            FAM2_SEXO = "F";
 
-            //// DATOS DE FORMACIÓN //
-            //FRM1_COD_CLASE = "V1";
-            //FRM1_CT_COD_CLASE = "V1";
-            //FRM1_CT_COD_TITULO = "2";
-            //FRM1_CE_COD_CLASE = "V1";
-            //FRM1_CE_COD_ESPECIALIDAD = "00001";
-            //FRM1_INSTITUTO = "INSTITUTO 1";
-            //FRM1_DURACION = "5";
-            //FRM1_UNIDAD_TIEMPO = "Años";
-            //FRM1_FECHA_INICIO = "01.01.2000";
-            //FRM1_FECHA_FIN = "01.01.2005";
-            //FRM1_COD_PAIS = "VE";
+            // DATOS DE FORMACIÓN //
+            FRM1_COD_CLASE = "V1";
+            FRM1_CT_COD_CLASE = "V1";
+            FRM1_CT_COD_TITULO = "2";
+            FRM1_CE_COD_CLASE = "V1";
+            FRM1_CE_COD_ESPECIALIDAD = "00001";
+            FRM1_INSTITUTO = "INSTITUTO 1";
+            FRM1_DURACION = "5";
+            FRM1_UNIDAD_TIEMPO = "Años";
+            FRM1_FECHA_INICIO = "01.01.2000";
+            FRM1_FECHA_FIN = "01.01.2005";
+            FRM1_COD_PAIS = "VE";
 
-            //FRM2_COD_CLASE = "V1";
-            //FRM2_CT_COD_CLASE = "V1";
-            //FRM2_CT_COD_TITULO = "2";
-            //FRM2_CE_COD_CLASE = "V1";
-            //FRM2_CE_COD_ESPECIALIDAD = "00001";
-            //FRM2_INSTITUTO = "INSTITUTO 2";
-            //FRM2_DURACION = "5";
-            //FRM2_UNIDAD_TIEMPO = "Años";
-            //FRM2_FECHA_INICIO = "01.01.2005";
-            //FRM2_FECHA_FIN = "01.01.2010";
-            //FRM2_COD_PAIS = "VE";
+            FRM2_COD_CLASE = "V1";
+            FRM2_CT_COD_CLASE = "V1";
+            FRM2_CT_COD_TITULO = "2";
+            FRM2_CE_COD_CLASE = "V1";
+            FRM2_CE_COD_ESPECIALIDAD = "00001";
+            FRM2_INSTITUTO = "INSTITUTO 2";
+            FRM2_DURACION = "5";
+            FRM2_UNIDAD_TIEMPO = "Años";
+            FRM2_FECHA_INICIO = "01.01.2005";
+            FRM2_FECHA_FIN = "01.01.2010";
+            FRM2_COD_PAIS = "VE";
 
-            //// DATOS EXPERIENCIA //
-            //EXP1_FECHA_INICIO = "01.01.2000";
-            //EXP1_FECHA_FIN = "01.01.2010";
-            //EXP1_EMPRESA = "EMPRESA 1";
-            //EXP1_CIUDAD = "CARACAS";
-            //EXP1_PAIS = "VE";
-            //EXP1_COD_RAMO = "36";
-            //EXP1_COD_ACTIVIDAD = "14";
-            //EXP1_COD_RELACION = "5";
+            // DATOS EXPERIENCIA //
+            EXP1_FECHA_INICIO = "01.01.2000";
+            EXP1_FECHA_FIN = "01.01.2010";
+            EXP1_EMPRESA = "EMPRESA 1";
+            EXP1_CIUDAD = "CARACAS";
+            EXP1_PAIS = "VE";
+            EXP1_COD_RAMO = "36";
+            EXP1_COD_ACTIVIDAD = "14";
+            EXP1_COD_RELACION = "5";
 
-            //EXP2_FECHA_INICIO = "01.01.2010";
-            //EXP2_FECHA_FIN = "01.01.2011";
-            //EXP2_EMPRESA = "EMPRESA 2";
-            //EXP2_CIUDAD = "CARACAS";
-            //EXP2_PAIS = "VE";
-            //EXP2_COD_RAMO = "36";
-            //EXP2_COD_ACTIVIDAD = "14";
-            //EXP2_COD_RELACION = "6";
+            EXP2_FECHA_INICIO = "01.01.2010";
+            EXP2_FECHA_FIN = "01.01.2011";
+            EXP2_EMPRESA = "EMPRESA 2";
+            EXP2_CIUDAD = "CARACAS";
+            EXP2_PAIS = "VE";
+            EXP2_COD_RAMO = "36";
+            EXP2_COD_ACTIVIDAD = "14";
+            EXP2_COD_RELACION = "6";
             #endregion
 
         }

@@ -29,7 +29,7 @@ namespace SPISAP.Repositories
 
             using ( SPISAPEntities db = new SPISAPEntities())
             {
-                var record = db.DUSUARIOS.Where(x => x.COD_USER.Equals(UserVM.username) && x.CLAVE.Equals(UserVM.password)).FirstOrDefault();
+                var record = db.DUSUARIOS.Where(x => x.COD_USER.ToUpper() == UserVM.username.ToUpper() && x.CLAVE.Equals(UserVM.password)).FirstOrDefault();
                 if (record != null)
                 {
                     UserVM.username = record.COD_USER;

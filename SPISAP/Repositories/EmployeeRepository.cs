@@ -625,7 +625,7 @@ namespace SPISAP.Repositories
         {
             using (SPISAPEntities db = new SPISAPEntities())
             {
-                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.Contains(value)).ToList();
+                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.ToUpper().Contains(value.ToUpper())).ToList();
             }
         }
 
@@ -680,6 +680,8 @@ namespace SPISAP.Repositories
                             CEDULA = empleado.CEDULA,
                             COD_CLASE = "CELL",
                             IDENTIFICADOR = empleado.COD_CLASE_CELULAR,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now
                         };
@@ -695,6 +697,8 @@ namespace SPISAP.Repositories
                             CEDULA = empleado.CEDULA,
                             COD_CLASE = "0010",
                             IDENTIFICADOR = empleado.COD_CLASE_CORREO,
+                            COD_USER_INS = empleado.COD_USER,
+                            FECHA_INS = System.DateTime.Now,
                             COD_USER_UPD = empleado.COD_USER,
                             FECHA_UPD = System.DateTime.Now
                         };
@@ -721,6 +725,8 @@ namespace SPISAP.Repositories
                         COD_ESTADO_SSO = empleado.COD_ESTADO_SSO,
                         COD_MUNICIPIO_SSO = empleado.COD_MUNICIPIO_SSO,
                         COD_PARROQUIA_SSO = empleado.COD_PARROQUIA_SSO,
+                        COD_USER_INS = empleado.COD_USER,
+                        FECHA_INS = System.DateTime.Now,
                         COD_USER_UPD = empleado.COD_USER,
                         FECHA_UPD = System.DateTime.Now
                     };
@@ -1837,6 +1843,8 @@ namespace SPISAP.Repositories
 
         private DateTime OracleStringToDate(string value)
         {
+            value = value.Replace(".", "/");
+
             string[] dates = value.Split('/');
 
             if (FORMAT_DATE_PRODUCCION)

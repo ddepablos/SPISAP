@@ -14,10 +14,13 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="@Href("~/Images/plz.png")" />
         <p id="profile-name" class="profile-name-card"></p>
+        <div class="text-center">
+            <h3>SPISAP</h3>
+        </div>
         <form class="form-signin form-horizontal" action="@Url.Action("Login","Home")" method="POST">
             <span id="reauth-email" class="reauth-email"></span>
-            @Html.TextBoxFor(model => model.username, new { @class = "form-control", id = "username", @maxlength="12", @Value="ddepablos", @placeholder="Usuario"})
-            @Html.TextBoxFor(model => model.password, new { @class = "form-control", id = "password", @maxlength="8", @Value="*", @placeholder="Contraseña" })
+            @Html.TextBoxFor(model => model.username, new { @class = "form-control", id = "username", @maxlength="12", @Value="", @placeholder="Usuario"})
+            @Html.TextBoxFor(model => model.password, new { @class = "form-control", id = "password", @maxlength="8", @Value="", @placeholder="Contraseña" })
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
         </form><!-- /form -->
     </div><!-- /card-container -->

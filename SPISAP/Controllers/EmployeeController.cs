@@ -217,14 +217,6 @@ namespace SPISAP.Controllers
                     EmployeeRepository e = new EmployeeRepository(EmployeeModel);
 
                     // validación del modelo.
-                    //if (e.IsCedulaAlert())
-                    //{
-                    //    ModelState.AddModelError("Cédula Duplicada", "Cédula Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.CEDULA);
-                    //}
-                    //else if (e.IsFichaAlert())
-                    //{
-                    //    ModelState.AddModelError("Ficha Duplicada", "Ficha Duplicada : Existe un Trabajador con el mismo valor : " + EmployeeModel.FICHA);
-                    //}
                     if (!e.IsEdadValid())
                     {
                         ModelState.AddModelError("Menor de Edad", "Fecha de Nacimiento : La edad debe ser mayor/igual a 16 años.");
@@ -313,7 +305,6 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("Experiencia Laboral", "Sesión Usuario : Su sesión ha caducado, debe ingresar nuevamente.");
                     }
-
                     else
                     {
                         // cargar el modelo temporal para la confirmación.
@@ -332,8 +323,6 @@ namespace SPISAP.Controllers
                 return View(EmployeeModel);
             }
         }
-
-
 
         //
         // GET: /Employee/Delete/5
@@ -427,8 +416,6 @@ namespace SPISAP.Controllers
                     }
 
                     return View("Table", personales);
-                    //List<DPERSONALES> records2 = EmployeeRep.Find(); //.FindByCedula("11681109");
-                    //return View(records);
                 }
 
                 return View(filter);
