@@ -303,7 +303,7 @@ namespace SPISAP.Models
             {
                 List<MUNICIPIO_SSO> Lista = new List<MUNICIPIO_SSO>();
 
-                Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = "", DES_MUNICIPIO = "Seleccione un valor" });
+                //Lista.Add(new MUNICIPIO_SSO { COD_MUNICIPIO = "", DES_MUNICIPIO = "Seleccione un valor" });
 
                 foreach (var record in db.MUNICIPIO_SSO.OrderBy(p => p.DES_MUNICIPIO))
                 {
@@ -327,7 +327,7 @@ namespace SPISAP.Models
             {
                 List<PARROQUIA_SSO> Lista = new List<PARROQUIA_SSO>();
 
-                Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = "", DES_PARROQUIA = "Seleccione un valor" });
+                //Lista.Add(new PARROQUIA_SSO { COD_PARROQUIA = "", DES_PARROQUIA = "Seleccione un valor" });
 
                 foreach (var record in db.PARROQUIA_SSO.OrderBy(p => p.DES_PARROQUIA))
                 {

@@ -24,7 +24,11 @@ namespace SPISAP.Controllers
 
         public ActionResult Table()
         {
-            List<DPERSONALES> records = EmployeeRep.Find(); //.FindByCedula("11681109");
+            if (@Session["USUARIO"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            List<DPERSONALES> records = EmployeeRep.Find(); 
             return View(records);
         }
 
@@ -41,11 +45,12 @@ namespace SPISAP.Controllers
 
         public ActionResult Create()
         {
-
+            if (@Session["USUARIO"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             EmployeeViewModel employee = new EmployeeViewModel();
-
             return View("Create", employee);
-
         }
 
         //
@@ -185,7 +190,11 @@ namespace SPISAP.Controllers
 
         public ActionResult Edit(int? id)
         {
-
+            
+            if (@Session["USUARIO"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 EmployeeViewModel model = (EmployeeViewModel)TempData["ConfirmacionModel"];
@@ -197,7 +206,6 @@ namespace SPISAP.Controllers
                 EmployeeViewModel model = EmployeeRep.FindEmployee(id.ToString());
                 return View(model);
             }
-
            
         }
 
@@ -329,6 +337,11 @@ namespace SPISAP.Controllers
 
         public ActionResult Confirm()
         {
+            if (@Session["USUARIO"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             EmployeeViewModel confirmacion = (EmployeeViewModel) TempData["ConfirmacionModel"];
 
             TempData.Keep("ConfirmacionModel");
@@ -372,12 +385,17 @@ namespace SPISAP.Controllers
 
         }
 
+        //
+        // /Employee/Filter
 
         public ActionResult Filter()
         {
+            if (@Session["USUARIO"] == null)
+	        {
+                return RedirectToAction("Login", "Home");
+	        }
             return View();
         }
-
 
         //
         // POST: /Employee/Filter/5
@@ -463,7 +481,7 @@ namespace SPISAP.Controllers
         }
 
         // retornar JSON : Talla de Calzado.
-        public JsonResult GetCalzadoList(string id)
+        public JsonResult GetCalzadoList() //string id)
         {
             List<GenericModel> records = ListViewModel.GetTallaCalzado();
             return Json(new SelectList(records.Where(x => x.CODIGO != " "), "CODIGO", "DESCRIPCION"), JsonRequestBehavior.AllowGet);

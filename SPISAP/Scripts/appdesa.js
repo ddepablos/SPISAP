@@ -70,13 +70,18 @@ $(document).ready(function () {
 
         $.getJSON('/Employee/GetCalzadoList/' + $('#sexo').val(), function (data) {
             var items = '<option value=" ">Seleccione un valor.</option>';
-            if ($('#sexo').val() != " ") {
+            if ($('#sexo').val() != " " || $('#sexo').val() != null) {
                 $.each(data, function (i, district) {
                     items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
                 });
             }
             $('#calzado').html(items);
+            if ($('#sexo').val() == "" || $('#sexo').val() == null) {
+                var items = '<option value=" ">Seleccione un valor.</option>';
+                $('#calzado').html(items);
+            }
         });
+
 
     });
 
@@ -103,22 +108,22 @@ $(document).ready(function () {
     });
 
 
-    //  D A T O S   D E  D I R E C C I Ó N  //
+    //  D A T O S   D E   D I R E C C I Ó N  //
     $('#estadosso').change(function () {
         $.getJSON('/Employee/GetMunicipioList/' + $('#estadosso').val(), function (data) {
-            var items = '<option value=" ">Seleccione un valor.</option>';
+            var items = '<option value="">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
             $('#municipiosso').html(items);
-            items = '<option value=" ">Seleccione un valor.</option>';
+            //items = '<option value="">Seleccione un valor¿</option>';
             $('#parroquiasso').html(items);
         });
     });
 
     $('#municipiosso').change(function () {
         $.getJSON('/Employee/GetParroquiaList/' + $('#municipiosso').val(), function (data) {
-            var items = '<option value=" ">Seleccione un valor.</option>';
+            var items = '<option value="">Seleccione un valor</option>';
             $.each(data, function (i, district) {
                 items += "<option value='" + district.Value + "'>" + district.Text + "</option>";
             });
@@ -127,7 +132,7 @@ $(document).ready(function () {
     });
 
 
-    //  D A T O S  F A M I L I A R E S  //
+    //  D A T O S   F A M I L I A R E S  //
     $('#fpais1').change(function () {
         $.getJSON('/Employee/GetNacionalidadList/' + $('#fpais1').val(), function (data) {
             var items = '';

@@ -813,7 +813,7 @@ namespace SPISAP.Models
             #endregion
 
             #region FLORMARINA
-            FICHA = "123456789012";
+            //FICHA = "123456789012";
             CEDULA = "12919906";
             COD_SUCURSAL = "1001";
             COD_GRUPO = "1";

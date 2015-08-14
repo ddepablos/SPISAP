@@ -18,18 +18,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a class="navbar-brand navbar-right">Usuario : @Session["USUARIO"].ToString() </a>
-@*            <a class="navbar-brand navbar-right">Usuario : @Html.DisplayFor(model => model., new { @class="form-control", @disabled="disabled"})</a>*@
         </div>
     </div>
 </nav>
 
-@Html.Partial("_ValidationSummary")
+@*@Html.Partial("_ValidationSummary")*@
 
-@using (Html.BeginForm()) //"Edit","Employee","POST"
+@using (Html.BeginForm()) 
 { 
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
+    @Html.Partial("_ValidationSummary")
     <div class="container jumbotron form-signin">
     
     <form class="form-horizontal">
@@ -824,11 +823,11 @@
             </div>
             <div class="col-md-3">
             Fecha de Inicio :
-            @Html.TextBoxFor(model => model.EXP3_FECHA_INICIO, new { @class = "form-control" , @maxlength="10"})
+            @Html.TextBoxFor(model => model.EXP3_FECHA_INICIO, new { @class = "form-control" , @maxlength="10", @style="text-align:center"})
             </div>
             <div class="col-md-3">
             Fecha Fin :
-            @Html.TextBoxFor(model => model.EXP3_FECHA_FIN, new { @class = "form-control" , @maxlength="10"})
+            @Html.TextBoxFor(model => model.EXP3_FECHA_FIN, new { @class = "form-control" , @maxlength="10", @style="text-align:center"})
             </div>
 
             <div class="col-md-3">

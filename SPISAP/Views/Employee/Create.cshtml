@@ -71,8 +71,6 @@
         <div class="col-md-3">
         Fecha de Nacimiento :
         @Html.TextBoxFor(model => model.FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
-        @*@Html.TextBoxFor(model => model.FECHA_NACIMIENTO_STRING, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})*@
-        
         </div>
         <div class="col-md-3">
         Ciudad de Nacimiento :
@@ -90,7 +88,11 @@
     <div class="row">
         <div class="col-md-3">
         Estado de Nacimiento :
-        @Html.DropDownListFor(m => m.COD_ESTADO, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "edonac" })
+        @if ( Model.COD_PAIS == "VE" || Model.COD_PAIS == null )
+        {
+            Model.Estados.Add(new SPISAP.Models.PAIS_ESTADO { COD_ESTADO = "", DES_ESTADO = "Seleccione un valor", COD_PAIS = "VE" });
+        }
+        @Html.DropDownListFor(m => m.COD_ESTADO, new SelectList(Model.Estados.OrderBy(x=>x.COD_ESTADO), "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "edonac" })
         </div>
         <div class="col-md-3">
         Estado Civil :
@@ -131,40 +133,43 @@
         <div class="row">
         <div class="col-md-4">
         Talla de Camisa :
-        @if ( Model.TallaChemise != null )
+        @if( (Model.SEXO != null && Model.CHEMISE == null) || ( Model.SEXO != null && Model.CHEMISE != null ) )             
         {
-        @Html.DropDownListFor(model => model.CHEMISE, new SelectList(Model.TallaChemise, "CODIGO", "DESCRIPCION", Model.TallaChemise), new { @class = "form-control", @id = "chemise" })
+            Model.TallaChemise.Add(new SPISAP.Models.Generic2Model { CODIGO = "", DESCRIPCION = "Seleccione un valor", FOREINGKEY = Model.SEXO });
+            @Html.DropDownListFor(m => m.CHEMISE, new SelectList(Model.TallaChemise.Where(x => x.FOREINGKEY == Model.SEXO).OrderBy( x=> x.CODIGO), "CODIGO", "DESCRIPCION", Model.SEXO), new { @class = "form-control", @id = "chemise" })
         }
         else
         {
         <select class="form-control" id="chemise" name="CHEMISE">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                                    
         }
         </div>
         <div class="col-md-4">
         Talla de Pantalón :
-        @if ( Model.TallaPantalon != null )
+        @if( (Model.SEXO != null && Model.PANTALON == null) || ( Model.SEXO != null && Model.PANTALON != null ) )             
         {
-        @Html.DropDownListFor(model => model.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
+            Model.TallaPantalon.Add(new SPISAP.Models.Generic2Model { CODIGO = "", DESCRIPCION = "Seleccione un valor", FOREINGKEY = Model.SEXO });
+            @Html.DropDownListFor(m => m.PANTALON, new SelectList(Model.TallaPantalon.Where(x => x.FOREINGKEY == Model.SEXO).OrderBy( x=> x.CODIGO), "CODIGO", "DESCRIPCION", Model.SEXO), new { @class = "form-control", @id = "pantalon" })
         }
         else
         {
         <select class="form-control" id="pantalon" name="PANTALON">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                            
         }
         </div>
         <div class="col-md-4">
         Nro. de Zapato :
-        @if ( Model.TallaCalzado != null )
+        @if( (Model.SEXO != null && Model.CALZADO == null) || ( Model.SEXO != null && Model.CALZADO != null ) )
         {
-        @Html.DropDownListFor(model => model.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.TallaCalzado), new { @class = "form-control", @id = "calzado" })                        
+            Model.TallaCalzado.Add(new SPISAP.Models.GenericModel { CODIGO = "", DESCRIPCION = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.CALZADO, new SelectList(Model.TallaCalzado, "CODIGO", "DESCRIPCION", Model.CALZADO), new { @class = "form-control", @id = "calzado" })
         }
         else
         {
         <select class="form-control" id="calzado" name="CALZADO">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                               
         }
         </div>
@@ -238,40 +243,42 @@
     <div class="row">
         <div class="col-md-4" style="padding-left: 0px;">
         Estado (SSO):
-        @if (Model.EstadoSSO != null)
+        @if (Model.EstadoSSO != null)   
         {
-        @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.EstadoSSO), new { @class = "form-control", @id = "estadosso" })
+            @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.COD_ESTADO_SSO), new { @class = "form-control", @id = "estadosso" })
         }
         else
         { 
         <select class="form-control" id="estadosso" name="COD_ESTADO_SSO">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Municipio (SSO):
-        @if (Model.MunicipioSSO != null)
+        @if( (Model.COD_ESTADO_SSO != null && Model.COD_MUNICIPIO_SSO == null) || ( Model.COD_ESTADO_SSO != null && Model.COD_MUNICIPIO_SSO != null ) )  
         {
-        @Html.DropDownListFor(m => m.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO, "COD_MUNICIPIO", "DES_MUNICIPIO", Model.MunicipioSSO), new { @class = "form-control", @id = "municipiosso" })
+            Model.MunicipioSSO.Add(new SPISAP.Models.MUNICIPIO_SSO { COD_ESTADO_SSO = Model.COD_ESTADO_SSO, COD_MUNICIPIO = "", DES_MUNICIPIO = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.COD_MUNICIPIO_SSO, new SelectList(Model.MunicipioSSO.Where(x => x.COD_ESTADO_SSO == Model.COD_ESTADO_SSO).OrderBy( x=> x.COD_MUNICIPIO), "COD_MUNICIPIO", "DES_MUNICIPIO", Model.COD_MUNICIPIO_SSO), new { @class = "form-control", @id = "municipiosso" })
         }
-        else
+        else 
         { 
         <select class="form-control" id="municipiosso" name="COD_MUNICIPIO_SSO">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4" style="padding-right: 0px;">
         Parroquia (SSO):
-        @if (Model.ParroquiaSSO != null)
+        @if( (Model.COD_MUNICIPIO_SSO != null && Model.COD_PARROQUIA_SSO == null) || ( Model.COD_MUNICIPIO_SSO != null && Model.COD_PARROQUIA_SSO != null ) )  
         {
-        @Html.DropDownListFor(m => m.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO, "COD_PARROQUIA", "DES_PARROQUIA", Model.ParroquiaSSO), new { @class = "form-control", @id = "parroquiasso" })
+            Model.ParroquiaSSO.Add(new SPISAP.Models.PARROQUIA_SSO { COD_MUNICIPIO = Model.COD_MUNICIPIO_SSO, COD_PARROQUIA = "", DES_PARROQUIA = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.COD_PARROQUIA_SSO, new SelectList(Model.ParroquiaSSO.Where(x => x.COD_MUNICIPIO == Model.COD_MUNICIPIO_SSO).OrderBy( x=> x.COD_PARROQUIA), "COD_PARROQUIA", "DES_PARROQUIA", Model.COD_MUNICIPIO_SSO), new { @class = "form-control", @id = "parroquiasso" })
         }
         else
         { 
         <select class="form-control" id="parroquiasso" name="COD_PARROQUIA_SSO">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
@@ -480,7 +487,7 @@
         Nivel de Estudio :
         @if (Model.NivelEstudio != null)
         {
-        @Html.DropDownListFor(m => m.FRM1_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel1" })
+            @Html.DropDownListFor(m => m.FRM1_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel1" })
         }
         else
         { 
@@ -491,12 +498,20 @@
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @*@if (Model.Condiciones != null)
         {
         @Html.DropDownListFor(m => m.FRM1_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion1" })
         }
         else
         { 
+        *@
+        @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CT_COD_TITULO == null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CT_COD_TITULO != null))  
+        {
+            Model.Condiciones.Add(new SPISAP.Models.CLASE_TITULO {COD_TITULO = "", DES_TITULO = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM1_CT_COD_TITULO, new SelectList(Model.Condiciones.Where(x => x.COD_CLASE == Model.FRM1_COD_CLASE).OrderBy( x=> x.COD_TITULO), "COD_TITULO", "DES_TITULO", Model.FRM1_COD_CLASE), new { @class = "form-control", @id = "condicion1" })
+        }
+        else
+        {
         <select class="form-control" id="condicion1" name="FRM1_CT_COD_TITULO">
         <option value=" ">Seleccione un valor</option>
         </select>                       
@@ -504,12 +519,21 @@
         </div>
         <div class="col-md-4">
         Especialidad :
+        @*
         @if (Model.Especialidades != null)
         {
         @Html.DropDownListFor(m => m.FRM1_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad1" })
         }
         else
         { 
+        *@
+        @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CE_COD_ESPECIALIDAD != null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CE_COD_ESPECIALIDAD != null))
+        {
+            Model.Especialidades.Add(new SPISAP.Models.CLASE_ESPECIALIDAD {COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM1_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades.Where(x => x.COD_CLASE == Model.FRM1_COD_CLASE).OrderBy( x=> x.COD_ESPECIALIDAD), "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.FRM1_COD_CLASE), new { @class = "form-control", @id = "especialidad1" })
+        }
+        else
+        {
         <select class="form-control" id="especialidad1" name="FRM1_CE_COD_ESPECIALIDAD">
         <option value=" ">Seleccione un valor</option>
         </select>                       
@@ -565,9 +589,10 @@
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @if ((Model.FRM2_COD_CLASE == null && Model.FRM2_CT_COD_TITULO == null) || (Model.FRM2_COD_CLASE != null && Model.FRM2_CT_COD_TITULO != null))  
         {
-        @Html.DropDownListFor(m => m.FRM2_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion2" })
+            Model.Condiciones.Add(new SPISAP.Models.CLASE_TITULO {COD_TITULO = "", DES_TITULO = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM2_CT_COD_TITULO, new SelectList(Model.Condiciones.Where(x => x.COD_CLASE == Model.FRM2_COD_CLASE).OrderBy( x=> x.COD_TITULO), "COD_TITULO", "DES_TITULO", Model.FRM2_COD_CLASE), new { @class = "form-control", @id = "condicion2" })
         }
         else
         { 
@@ -578,9 +603,10 @@
         </div>
         <div class="col-md-4">
         Especialidad :
-        @if (Model.Especialidades != null)
+        @if ((Model.FRM2_COD_CLASE == null && Model.FRM2_CE_COD_ESPECIALIDAD != null) || (Model.FRM2_COD_CLASE != null && Model.FRM2_CE_COD_ESPECIALIDAD != null))
         {
-        @Html.DropDownListFor(m => m.FRM2_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad2" })
+            Model.Especialidades.Add(new SPISAP.Models.CLASE_ESPECIALIDAD {COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM2_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades.Where(x => x.COD_CLASE == Model.FRM2_COD_CLASE).OrderBy( x=> x.COD_ESPECIALIDAD), "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.FRM2_COD_CLASE), new { @class = "form-control", @id = "especialidad2" })
         }
         else
         { 
@@ -640,9 +666,10 @@
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @if ((Model.FRM3_COD_CLASE == null && Model.FRM3_CT_COD_TITULO == null) || (Model.FRM3_COD_CLASE != null && Model.FRM3_CT_COD_TITULO != null))  
         {
-        @Html.DropDownListFor(m => m.FRM3_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion3" })
+            Model.Condiciones.Add(new SPISAP.Models.CLASE_TITULO {COD_TITULO = "", DES_TITULO = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM3_CT_COD_TITULO, new SelectList(Model.Condiciones.Where(x => x.COD_CLASE == Model.FRM3_COD_CLASE).OrderBy( x=> x.COD_TITULO), "COD_TITULO", "DES_TITULO", Model.FRM3_COD_CLASE), new { @class = "form-control", @id = "condicion3" })
         }
         else
         { 
@@ -653,9 +680,10 @@
         </div>
         <div class="col-md-4">
         Especialidad :
-        @if (Model.Especialidades != null)
+        @if ((Model.FRM3_COD_CLASE == null && Model.FRM3_CE_COD_ESPECIALIDAD != null) || (Model.FRM3_COD_CLASE != null && Model.FRM3_CE_COD_ESPECIALIDAD != null))
         {
-        @Html.DropDownListFor(m => m.FRM3_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad3" })
+            Model.Especialidades.Add(new SPISAP.Models.CLASE_ESPECIALIDAD {COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
+            @Html.DropDownListFor(m => m.FRM3_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades.Where(x => x.COD_CLASE == Model.FRM3_COD_CLASE).OrderBy( x=> x.COD_ESPECIALIDAD), "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.FRM3_COD_CLASE), new { @class = "form-control", @id = "especialidad3" })
         }
         else
         { 
