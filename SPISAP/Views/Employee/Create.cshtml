@@ -498,13 +498,6 @@
         </div>
         <div class="col-md-4">
         Condición :
-        @*@if (Model.Condiciones != null)
-        {
-        @Html.DropDownListFor(m => m.FRM1_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion1" })
-        }
-        else
-        { 
-        *@
         @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CT_COD_TITULO == null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CT_COD_TITULO != null))  
         {
             Model.Condiciones.Add(new SPISAP.Models.CLASE_TITULO {COD_TITULO = "", DES_TITULO = "Seleccione un valor" });
@@ -519,14 +512,6 @@
         </div>
         <div class="col-md-4">
         Especialidad :
-        @*
-        @if (Model.Especialidades != null)
-        {
-        @Html.DropDownListFor(m => m.FRM1_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad1" })
-        }
-        else
-        { 
-        *@
         @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CE_COD_ESPECIALIDAD != null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CE_COD_ESPECIALIDAD != null))
         {
             Model.Especialidades.Add(new SPISAP.Models.CLASE_ESPECIALIDAD {COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
@@ -543,7 +528,6 @@
         <div class="col-md-2">
         Nombre del Instituto :
         @Html.TextBoxFor(model => model.FRM1_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
-        @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
@@ -620,7 +604,6 @@
         <div class="col-md-2">
         Nombre del Instituto :
         @Html.TextBoxFor(model => model.FRM2_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
-        @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
@@ -696,7 +679,6 @@
         <div class="col-md-2">
         Nombre del Instituto :
         @Html.TextBoxFor(model => model.FRM3_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
-        @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :

@@ -424,7 +424,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_TITULO> Lista = new List<CLASE_TITULO>();
 
-                Lista.Add(new CLASE_TITULO { COD_CLASE = "", DES_TITULO = "Seleccione un valor" });
+                //Lista.Add(new CLASE_TITULO { COD_CLASE = "", DES_TITULO = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_TITULO.OrderBy(p => p.DES_TITULO))
                 {
@@ -447,7 +447,7 @@ namespace SPISAP.Models
             {
                 List<CLASE_ESPECIALIDAD> Lista = new List<CLASE_ESPECIALIDAD>();
 
-                Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
+                //Lista.Add(new CLASE_ESPECIALIDAD { COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
 
                 foreach (var record in db.CLASE_ESPECIALIDAD.OrderBy(p => p.DES_ESPECIALIDAD))
                 {

@@ -23,30 +23,10 @@ namespace SPISAP.Models
         [StringLength(12, MinimumLength = 6, ErrorMessage = "El campo Ficha debe contener entre 6 y 12 dígitos.")]
         public string FICHA { get; set; }
 
-        [Required(ErrorMessage = "El campo Cédula es requerido.")]
-        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
-        [StringLength(8, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 8 dígitos.")]
-        public string CEDULA { get; set; }
-
-        [Required(ErrorMessage = "El campo Sucursal es requerido.")]
-        public string COD_SUCURSAL { get; set; }
-
-        [Required(ErrorMessage = "El campo Tipo de Contratación es requerido.")]
-        public string COD_GRUPO { get; set; }
-
-        [Required(ErrorMessage = "El campo Nivel de Cargo es requerido.")]
-        public string COD_AREA_PERSONAL { get; set; }
-
-        [Required(ErrorMessage = "El campo Cargo es requerido.")]
-        public string CARGO { get; set; }
-
-        public string TRATAMIENTO { get; set; }
-
         [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
         public string PRIMER_APELLIDO { get; set; }
 
-        //[Required(ErrorMessage = "El campo Segundo Apellido es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
         public string SEGUNDO_APELLIDO { get; set; }
 
@@ -54,17 +34,32 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres debe contener entre 3 y 40 carácteres.")]
         public string NOMBRE { get; set; }
 
+        [Required(ErrorMessage = "El campo Cédula es requerido.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Cédula permite únicamente números.")]
+        [StringLength(8, MinimumLength = 6, ErrorMessage = "El campo Cédula debe contener entre 6 y 8 dígitos.")]
+        public string CEDULA { get; set; }
+
+        [Required(ErrorMessage = "El campo Sexo es requerido.")]
+        public string SEXO { get; set; }
+
         [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
         [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
             ErrorMessage = "El campo Fecha de Nacimiento no posee un formato válido : (dd/mm/yyyy)")]
         public string FECHA_NACIMIENTO { get; set; }
-        
+
         public Nullable<System.DateTime> FECHA_NACIMIENTO_DATE { get; set; }
 
-        //"^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$"
-        //[RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-        //    ErrorMessage="El campo Fecha de Nacimiento no posee un formato válido : (dd/mm/yyyy)")]
-        //public string FECHA_NACIMIENTO_STRING { get; set; }
+        [Required(ErrorMessage = "El campo Sucursal es requerido.")]
+        public string COD_SUCURSAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Nivel de Cargo es requerido.")]
+        public string COD_AREA_PERSONAL { get; set; }
+
+        [Required(ErrorMessage = "El campo Cargo es requerido.")]
+        public string CARGO { get; set; }
+
+        [Required(ErrorMessage = "El campo Tipo de Contratación es requerido.")]
+        public string COD_GRUPO { get; set; }
 
         [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad de Nacimiento debe contener entre 3 y 40 carácteres.")]
@@ -82,11 +77,9 @@ namespace SPISAP.Models
         [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
         public string ESTADO_CIVIL { get; set; }
 
-        [Required(ErrorMessage = "El campo Sexo es requerido.")]
-        public string SEXO { get; set; }
-
-        //[Required(ErrorMessage = "El campo RIF es requerido.")]
         public string RIF { get; set; }
+
+        public string TRATAMIENTO { get; set; }
 
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                     @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
@@ -122,7 +115,6 @@ namespace SPISAP.Models
         public string PISO { get; set; }
 
         [Required(ErrorMessage = "El campo Número es requerido.")]
-        //[RegularExpression(@"^[1-9]\d*$", ErrorMessage = "El campo Número (Dirección) permite únicamente números.")]
         public string NUMERO { get; set; }
 
         [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
@@ -133,10 +125,10 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
 
-        //[Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
+        [Required(ErrorMessage = "El campo País (Dirección) es requerido.")]
         public string COD_PAIS_DIRECCION { get; set; }
 
-        //[Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
+        [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO_DIRECCION { get; set; }
 
         [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
@@ -438,8 +430,8 @@ namespace SPISAP.Models
         [Required(ErrorMessage = "El campo Nivel de Estudio (Formación # 1) es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
 
-        // PENDIENTE POR ANALIZAR SU VALOR.
-        public string FRM1_COD_FORMACION { get; set; }
+        //// PENDIENTE POR ANALIZAR SU VALOR.
+        //public string FRM1_COD_FORMACION { get; set; }
 
         [Required(ErrorMessage = "El campo Nombre del Instituto (Formación # 1) es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 1) debe contener entre 3 y 40 carácteres.")]
@@ -477,7 +469,7 @@ namespace SPISAP.Models
 
         // FORMACIÓN # 2
         public string FRM2_COD_CLASE { get; set; }
-        public string FRM2_COD_FORMACION { get; set; }
+        //public string FRM2_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 2) debe contener entre 3 y 40 carácteres.")]
         public string FRM2_INSTITUTO { get; set; }
@@ -495,7 +487,7 @@ namespace SPISAP.Models
 
         // FORMACIÓN # 3
         public string FRM3_COD_CLASE { get; set; }
-        public string FRM3_COD_FORMACION { get; set; }
+        //public string FRM3_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 3) debe contener entre 3 y 40 carácteres.")]
         public string FRM3_INSTITUTO { get; set; }

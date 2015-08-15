@@ -265,6 +265,9 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("Familar # 10", "Familar # 10 : Los campos no están llenados completamente.");
                     }
+
+
+
                     else if (!e.IsRangeValid(EmployeeModel.FRM1_FECHA_INICIO, EmployeeModel.FRM1_FECHA_FIN))
                     {
                         ModelState.AddModelError("F1F", "Formación # 1 : El rango de fechas no es válido.");
@@ -285,6 +288,9 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("F3F", "Formación # 3 : El rango de fechas no es válido.");
                     }
+
+
+
                     else if (!e.IsExperiencia1Alert())
                     {
                         ModelState.AddModelError("E1", "Experiencia Laboral # 1 : Los campos no están llenados completamente.");
@@ -293,6 +299,7 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("E1F", "Experiencia Laboral # 1 : El rango de fechas no es válido.");
                     }
+
                     else if (!e.IsExperiencia2Alert())
                     {
                         ModelState.AddModelError("E2", "Experiencia Laboral # 2 : Los campos no están llenados completamente.");
@@ -301,6 +308,7 @@ namespace SPISAP.Controllers
                     {
                         ModelState.AddModelError("E2F", "Experiencia Laboral # 2 : El rango de fechas no es válido.");
                     }
+
                     else if (!e.IsExperiencia3Alert())
                     {
                         ModelState.AddModelError("E3", "Experiencia Laboral # 3 : Los campos no están llenados completamente.");
@@ -355,7 +363,7 @@ namespace SPISAP.Controllers
         public ActionResult Confirm(EmployeeViewModel EmployeeModel)
         {
 
-            // PARCHE_LEÓN
+            // transferencia del modelo.
             EmployeeViewModel modelo = (EmployeeViewModel)TempData["ConfirmacionModel"];
 
             TempData["ConfirmacionModel"] = null;

@@ -14,7 +14,7 @@ namespace SPISAP.Repositories
 
         EmployeeViewModel empleado;
 
-        static bool FORMAT_DATE_PRODUCCION = false;
+        static bool FORMAT_DATE_PRODUCCION = true;
 
         public EmployeeRepository()
         { 
@@ -109,15 +109,6 @@ namespace SPISAP.Repositories
 
             // agregar valores por defecto.
             Empleado.COD_PAIS_DIRECCION = "VE";
-            Empleado.FRM1_CT_COD_CLASE = Empleado.FRM1_COD_CLASE;
-            Empleado.FRM1_CE_COD_CLASE = Empleado.FRM1_COD_CLASE;
-
-            Empleado.FRM2_CT_COD_CLASE = Empleado.FRM2_COD_CLASE;
-            Empleado.FRM2_CE_COD_CLASE = Empleado.FRM2_COD_CLASE;
-
-            Empleado.FRM3_CT_COD_CLASE = Empleado.FRM3_COD_CLASE;
-            Empleado.FRM3_CE_COD_CLASE = Empleado.FRM3_COD_CLASE;
-
             Empleado.NEXTVAL = GetOracleNextVal();
             Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
 
@@ -625,7 +616,7 @@ namespace SPISAP.Repositories
         {
             using (SPISAPEntities db = new SPISAPEntities())
             {
-                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.ToUpper().Contains(value.ToUpper())).ToList();
+                return db.DPERSONALES.Where(x => x.PRIMER_APELLIDO.ToUpper().Contains(value.ToUpper())).OrderBy( x => x.CEDULA ).ToList();
             }
         }
 
@@ -1266,14 +1257,30 @@ namespace SPISAP.Repositories
                         DCOMUNICACION dc = db.DCOMUNICACIONES.FirstOrDefault(x => x.CEDULA.Equals(empleado.CEDULA) && x.COD_CLASE.Equals("CELL"));
                         if (dc != null)
                         {
+
                             dc.CEDULA = empleado.CEDULA;
                             dc.COD_CLASE = "CELL";
                             dc.IDENTIFICADOR = empleado.COD_CLASE_CELULAR;
                             dc.COD_USER_UPD = empleado.COD_USER;
                             dc.FECHA_UPD = System.DateTime.Now;
-                        }
 
-                        db.Entry(dc).State = EntityState.Modified;
+                            db.Entry(dc).State = EntityState.Modified;
+                        }
+                        else 
+                        {
+                            DCOMUNICACION dcomunicacion1 = new DCOMUNICACION()
+                            {
+                                CEDULA = empleado.CEDULA,
+                                COD_CLASE = "CELL",
+                                IDENTIFICADOR = empleado.COD_CLASE_CELULAR,
+                                COD_USER_INS = empleado.COD_USER,
+                                FECHA_INS = System.DateTime.Now,
+                                COD_USER_UPD = empleado.COD_USER,
+                                FECHA_UPD = System.DateTime.Now
+                            };
+
+                            db.DCOMUNICACIONES.Add(dcomunicacion1);
+                        }
                     
                     }
                     if (empleado.COD_CLASE_CORREO != null)
@@ -1287,9 +1294,24 @@ namespace SPISAP.Repositories
                             dcorreo.IDENTIFICADOR = empleado.COD_CLASE_CORREO;
                             dcorreo.COD_USER_UPD = empleado.COD_USER;
                             dcorreo.FECHA_UPD = System.DateTime.Now;
-                        }
 
-                        db.Entry(dcorreo).State = EntityState.Modified;
+                            db.Entry(dcorreo).State = EntityState.Modified;
+                        }
+                        else 
+                        {
+                            DCOMUNICACION dcomunicacion2 = new DCOMUNICACION()
+                            {
+                                CEDULA = empleado.CEDULA,
+                                COD_CLASE = "0010",
+                                IDENTIFICADOR = empleado.COD_CLASE_CORREO,
+                                COD_USER_INS = empleado.COD_USER,
+                                FECHA_INS = System.DateTime.Now,
+                                COD_USER_UPD = empleado.COD_USER,
+                                FECHA_UPD = System.DateTime.Now
+                            };
+
+                            db.DCOMUNICACIONES.Add(dcomunicacion2);
+                        }
 
                     }
                     #endregion

@@ -472,40 +472,40 @@
 
         <div class="col-md-4">
         Nivel de Estudio :
-        @if (Model.NivelEstudio != null)
+        @if (Model.FRM1_COD_CLASE != null)
         {
         @Html.DropDownListFor(m => m.FRM1_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel1", @disabled="disabled"})
         }
         else
         { 
         <select class="form-control" id="nivel1" name="FRM1_COD_CLASE">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @if (Model.FRM1_CT_COD_TITULO != null)
         {
         @Html.DropDownListFor(m => m.FRM1_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion1", @disabled="disabled"})
         }
         else
         { 
         <select class="form-control" id="condicion1" name="FRM1_CT_COD_TITULO">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Especialidad :
-        @if (Model.Especialidades != null)
+        @if (Model.FRM1_CE_COD_ESPECIALIDAD != null)
         {
         @Html.DropDownListFor(m => m.FRM1_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad1", @disabled="disabled"})
         }
         else
         { 
         <select class="form-control" id="especialidad1" name="FRM1_CE_COD_ESPECIALIDAD">
-        <option value=" ">Seleccione un valor</option>
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
@@ -513,7 +513,6 @@
         <div class="col-md-2">
         Nombre del Instituto :
         @Html.TextBoxFor(model => model.FRM1_INSTITUTO, new { @class = "form-control" , @maxlength="40", @disabled="disabled"})
-        @*@Html.ValidationMessageFor(model => model.name2)*@
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
         Duración :
@@ -546,40 +545,40 @@
 
         <div class="col-md-4">
         Nivel de Estudio :
-        @if (Model.NivelEstudio != null)
+        @if (Model.FRM2_COD_CLASE != null)
         {
-        @Html.DropDownListFor(m => m.FRM2_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel2", @disabled="disabled"})
+        @Html.DropDownListFor(m => m.FRM2_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel2" , @disabled="disabled" })
         }
         else
         { 
-        <select class="form-control" id="nivel2" name="FRM2_COD_CLASE">
-        <option value=" ">Seleccione un valor</option>
-        </select>                       
+        <select class="form-control" id="nivel2" name="FRM2_COD_CLASE" disabled="disabled">
+        <option value="">Seleccione un valor</option>
+        </select>          
         }
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @if (Model.FRM2_CT_COD_TITULO != null)
         {
         @Html.DropDownListFor(m => m.FRM2_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion2", @disabled="disabled"})
         }
         else
         { 
-        <select class="form-control" id="condicion2" name="FRM2_CT_COD_TITULO">
-        <option value=" ">Seleccione un valor</option>
+        <select class="form-control" id="condicion2" name="FRM2_CT_COD_TITULO" disabled="disabled">
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Especialidad :
-        @if (Model.Especialidades != null)
+        @if (Model.FRM2_CE_COD_ESPECIALIDAD != null)
         {
         @Html.DropDownListFor(m => m.FRM2_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad2", @disabled="disabled"})
         }
         else
         { 
-        <select class="form-control" id="especialidad2" name="FRM2_CE_COD_ESPECIALIDAD">
-        <option value=" ">Seleccione un valor</option>
+        <select class="form-control" id="especialidad2" name="FRM2_CE_COD_ESPECIALIDAD" disabled="disabled">
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
@@ -621,40 +620,40 @@
 
         <div class="col-md-4">
         Nivel de Estudio :
-        @if (Model.NivelEstudio != null)
+        @if (Model.FRM3_COD_CLASE != null)
         {
         @Html.DropDownListFor(m => m.FRM3_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel3", @disabled="disabled"})
         }
         else
         { 
-        <select class="form-control" id="nivel3" name="FRM3_COD_CLASE">
-        <option value=" ">Seleccione un valor</option>
+        <select class="form-control" id="nivel3" name="FRM3_COD_CLASE" disabled="disabled">
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Condición :
-        @if (Model.Condiciones != null)
+        @if (Model.FRM3_CT_COD_TITULO != null)
         {
         @Html.DropDownListFor(m => m.FRM3_CT_COD_TITULO, new SelectList(Model.Condiciones, "COD_TITULO", "DES_TITULO", Model.Condiciones), new { @class = "form-control", @id = "condicion3", @disabled="disabled"})
         }
         else
         { 
-        <select class="form-control" id="condicion3" name="FRM3_CT_COD_TITULO">
-        <option value=" ">Seleccione un valor</option>
+        <select class="form-control" id="condicion3" name="FRM3_CT_COD_TITULO" disabled="disabled">
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
         <div class="col-md-4">
         Especialidad :
-        @if (Model.Especialidades != null)
+        @if (Model.FRM3_CE_COD_ESPECIALIDAD != null)
         {
         @Html.DropDownListFor(m => m.FRM3_CE_COD_ESPECIALIDAD, new SelectList(Model.Especialidades, "COD_ESPECIALIDAD", "DES_ESPECIALIDAD", Model.Especialidades), new { @class = "form-control", @id = "especialidad3", @disabled="disabled"})
         }
         else
         { 
-        <select class="form-control" id="especialidad3" name="FRM3_CE_COD_ESPECIALIDAD">
-        <option value=" ">Seleccione un valor</option>
+        <select class="form-control" id="especialidad3" name="FRM3_CE_COD_ESPECIALIDAD" disabled="disabled">
+        <option value="">Seleccione un valor</option>
         </select>                       
         }
         </div>
@@ -691,10 +690,6 @@
         </table>
 
         <br>
-        @*// TEMPORAL CAMPO A ELIMINAR DE LAS TABLAS. CAROLINA.*@
-        @Html.TextBoxFor(model => model.FRM1_COD_FORMACION, new { @class = "form-control", @Value="1", style = "display:none", @disabled="disabled"})
-        @Html.TextBoxFor(model => model.FRM2_COD_FORMACION, new { @class = "form-control", @Value="1", style = "display:none", @disabled="disabled"})
-        @Html.TextBoxFor(model => model.FRM3_COD_FORMACION, new { @class = "form-control", @Value="1", style = "display:none", @disabled="disabled"})
     
     </div>
     <!-- // FORMACIÓN -->

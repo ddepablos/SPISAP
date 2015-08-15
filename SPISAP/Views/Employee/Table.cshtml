@@ -46,20 +46,20 @@
 
     <div class="panel-body">
 
-    <table class="table table-hover" id="tablerow">
+    <table class="table table-hover table-striped" id="tablerow">
     <thead>
         <tr>
-        <th class="text-center">#</th>
-        <th class="text-center">Ficha</th>
-        <th class="text-center">Cédula</th>
-        <th class="text-center">Primer Apellido</th>
-        <th class="text-center">Segundo Apellido</th>
-        <th class="text-center">Nombres</th>
-        <th class="text-center">Usuario (Agregado por)</th>
-        <th class="text-center">Fecha / Hora</th>
-        <th class="text-center">Usuario (Actualizado por)</th>
-        <th class="text-center">Fecha / Hora</th>
-        <th></th>
+        <th class="text-center" style="width: 25px;">#</th>
+        <th class="text-center" style="width: 50px;">Ficha</th>
+        <th class="text-center" style="width: 50px;">Cédula</th>
+        <th class="text-center" style="width: 150px;">Primer Apellido</th>
+        <th class="text-center" style="width: 90px;">Segundo Apellido</th>
+        <th class="text-center" style="width: 150px;">Nombres</th>
+        <th class="text-center" style="width: 50px;">Usuario (Agregado)</th>
+        <th class="text-center" style="width: 140px;">Fecha / Hora</th>
+        <th class="text-center" style="width: 50px;">Usuario (Actualizado)</th>
+        <th class="text-center" style="width: 140px;">Fecha / Hora</th>
+        <th style="width: 50px;"></th>
         </tr>
     </thead>
     <tbody>
@@ -67,7 +67,7 @@
         @foreach (var item in Model)
         {
         <tr>
-        <td>
+        <td class="text-center">
         @Html.Raw(++i)
         </td>
         <td class="text-center">
@@ -112,14 +112,14 @@
     </div>
 
     <!-- BUTTONS -->
-    <div class="form-group">
-        <div class="col-md-offset-4 col-md-2">
-            <a class="btn  btn-success btn-md" href="@Url.Action("Create","Employee")">Agregar Nuevo Trabajador</a>
-        </div>
-        <div class="col-md-2">
-            <a class="btn  btn-danger btn-md" href="@Url.Action("Filter","Employee")">Regresar</a>
-        </div>
+    <div class="text-center">
+        <a class="btn btn-danger btn-md" href="@Url.Action("Filter","Employee")">Regresar</a>
     </div>
     <!--// BUTTONS //-->
+
+    <br>
+    <br>
+    <br>
+    <br>
 
 </div>
