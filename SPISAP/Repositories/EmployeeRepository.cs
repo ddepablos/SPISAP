@@ -108,9 +108,9 @@ namespace SPISAP.Repositories
             #endregion
 
             // agregar valores por defecto.
-            Empleado.COD_PAIS_DIRECCION = "VE";
-            Empleado.NEXTVAL = GetOracleNextVal();
-            Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
+            //Empleado.COD_PAIS_DIRECCION = "VE";
+            //Empleado.NEXTVAL = GetOracleNextVal();
+            //Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
 
             empleado = Empleado;
         }

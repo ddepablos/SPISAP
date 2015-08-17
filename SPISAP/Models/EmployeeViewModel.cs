@@ -624,12 +624,17 @@ namespace SPISAP.Models
 
         public EmployeeViewModel()
         {
-
-            //DPERSONALES DATOS_PERSONALES = new DPERSONALES();
-
             //FillDummyRecord();
             FillListas();
+            COD_PAIS_DIRECCION = "VE";
+            NEXTVAL = GetOracleNextVal();
+            COD_USER = (string)HttpContext.Current.Session["COD_USER"];
+        }
 
+        private decimal GetOracleNextVal()
+        {
+            Random rnd = new Random();
+            return rnd.Next(1000000000);
         }
 
         private void FillListas()
@@ -656,7 +661,6 @@ namespace SPISAP.Models
             #endregion
 
             #region FORMACION
-            //Formaciones = ListViewModel.GetFormacion();
             NivelEstudio = ListViewModel.GetNivelEstudio();
             Condiciones = ListViewModel.GetCondiciones();
             Especialidades = ListViewModel.GetEspecialidades();
