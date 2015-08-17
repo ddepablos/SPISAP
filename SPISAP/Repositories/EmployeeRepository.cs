@@ -23,7 +23,6 @@ namespace SPISAP.Repositories
 
         public EmployeeRepository(EmployeeViewModel Empleado)
         {
-
             #region DATA_EMPLOYEE_TEST
             ////DATOS PERSONALES
             //Empleado.FICHA = "123456789012";
@@ -106,12 +105,6 @@ namespace SPISAP.Repositories
             //Empleado.EXP1_COD_ACTIVIDAD = "01";
             //Empleado.EXP1_COD_RELACION = "4";
             #endregion
-
-            // agregar valores por defecto.
-            //Empleado.COD_PAIS_DIRECCION = "VE";
-            //Empleado.NEXTVAL = GetOracleNextVal();
-            //Empleado.COD_USER = (string) HttpContext.Current.Session["COD_USER"];
-
             empleado = Empleado;
         }
 

@@ -18,6 +18,11 @@ $(document).ready(function () {
 
     // <--DATOS PERSONALES--> //
 
+    $('input[type=text]').focusout(function () {
+        alert('qwoie');
+        return this.value.toUpperCase();
+    });
+
     /* Estado Civil */
     $("#edocivil").change(function () {
 

@@ -66,7 +66,14 @@
         @{ long i = 0; }
         @foreach (var item in Model)
         {
-        <tr>
+        if( item.FECHA_INS == item.FECHA_UPD )
+        { 
+            @:<tr> 
+        }
+        else
+        { 
+            @:<tr style="color:green"> 
+        }
         <td class="text-center">
         @Html.Raw(++i)
         </td>
@@ -100,7 +107,7 @@
         <td  class="text-center">  
         @Html.ActionLink("Editar", "Edit", new { id = item.CEDULA })
         </td>
-        </tr>             
+        @:</tr>           
         }
     </tbody>
     </table>  

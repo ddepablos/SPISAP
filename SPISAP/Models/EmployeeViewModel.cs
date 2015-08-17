@@ -24,13 +24,16 @@ namespace SPISAP.Models
         public string FICHA { get; set; }
 
         [Required(ErrorMessage = "El campo Primer Apellido es requerido.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido debe contener entre 3 y 40 carácteres.")]
         public string PRIMER_APELLIDO { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido no permite números o caracteres especiales.")]
         public string SEGUNDO_APELLIDO { get; set; }
 
         [Required(ErrorMessage = "El campo Nombres es requerido.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres debe contener entre 3 y 40 carácteres.")]
         public string NOMBRE { get; set; }
 
@@ -62,6 +65,7 @@ namespace SPISAP.Models
         public string COD_GRUPO { get; set; }
 
         [Required(ErrorMessage = "El campo Ciudad de Nacimiento es requerido.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Ciudad de Nacimiento no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad de Nacimiento debe contener entre 3 y 40 carácteres.")]
         public string CIUDAD_NACIMIENTO { get; set; }
 
@@ -77,6 +81,7 @@ namespace SPISAP.Models
         [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
         public string ESTADO_CIVIL { get; set; }
 
+        [RegularExpression(@"^([Jj]{1})-([0-9]{6,8})-([0-9]{1})$", ErrorMessage = "El campo RIF no contiene el formato válido : J-XXXXXX-X")]
         public string RIF { get; set; }
 
         public string TRATAMIENTO { get; set; }
@@ -103,10 +108,12 @@ namespace SPISAP.Models
 
         #region DATOS_DIRECCION
         [Required(ErrorMessage = "El campo Calle es requerido.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Calle no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Calle debe contener entre 3 y 40 carácteres.")]
         public string CALLE { get; set; }
 
         [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Edificio/Casa/Escalera no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Edificio/Casa/Escalera debe contener entre 3 y 40 carácteres.")]
         public string EDIFICIO { get; set; }
 
@@ -115,6 +122,7 @@ namespace SPISAP.Models
         public string PISO { get; set; }
 
         [Required(ErrorMessage = "El campo Número es requerido.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Número no permite números o caracteres especiales.")]
         public string NUMERO { get; set; }
 
         [Required(ErrorMessage = "El campo Ciudad (Dirección) es requerido.")]
@@ -122,6 +130,7 @@ namespace SPISAP.Models
         public string CIUDAD { get; set; }
 
         [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Urbanización/Zona no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
 
@@ -156,12 +165,15 @@ namespace SPISAP.Models
         // FAMILIAR # 1
         public string FAM1_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 1) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 1) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 1) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_NOMBRES { get; set; }
 
@@ -169,6 +181,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM1_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 1) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_LUGAR_NACIMIENTO { get; set; }
 
@@ -184,12 +197,15 @@ namespace SPISAP.Models
         // FAMILIAR # 2
         public string FAM2_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 2) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 2) debe contener entre 3 y 40 carácteres.")]
         public string FAM2_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 2) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 2) debe contener entre 3 y 40 carácteres.")]
         public string FAM2_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 2) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 2) debe contener entre 3 y 40 carácteres.")]
         public string FAM2_NOMBRES { get; set; }
 
@@ -197,6 +213,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM2_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 2) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 2) debe contener entre 3 y 40 carácteres.")]
         public string FAM2_LUGAR_NACIMIENTO { get; set; }
 
@@ -211,12 +228,15 @@ namespace SPISAP.Models
         // FAMILIAR # 3
         public string FAM3_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 3) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 3) debe contener entre 3 y 40 carácteres.")]
         public string FAM3_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 3) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 3) debe contener entre 3 y 40 carácteres.")]
         public string FAM3_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 3) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 3) debe contener entre 3 y 40 carácteres.")]
         public string FAM3_NOMBRES { get; set; }
 
@@ -224,6 +244,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM3_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 3) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 3) debe contener entre 3 y 40 carácteres.")]
         public string FAM3_LUGAR_NACIMIENTO { get; set; }
 
@@ -238,19 +259,23 @@ namespace SPISAP.Models
         // FAMILIAR # 4
         public string FAM4_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 4) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 4) debe contener entre 3 y 40 carácteres.")]
         public string FAM4_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 4) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 4) debe contener entre 3 y 40 carácteres.")]
         public string FAM4_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 4) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 4) debe contener entre 3 y 40 carácteres.")]
         public string FAM4_NOMBRES { get; set; }
 
         [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
-            ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 4) no posee un formato válido : (dd/mm/yyyy)")]
+            ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 7) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM4_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 4) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 4) debe contener entre 3 y 40 carácteres.")]
         public string FAM4_LUGAR_NACIMIENTO { get; set; }
 
@@ -265,12 +290,15 @@ namespace SPISAP.Models
         // FAMILIAR # 5
         public string FAM5_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 5) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 5) debe contener entre 3 y 40 carácteres.")]
         public string FAM5_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 5) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 5) debe contener entre 3 y 40 carácteres.")]
         public string FAM5_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 5) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 5) debe contener entre 3 y 40 carácteres.")]
         public string FAM5_NOMBRES { get; set; }
 
@@ -278,6 +306,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 5) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM5_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 5) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 5) debe contener entre 3 y 40 carácteres.")]
         public string FAM5_LUGAR_NACIMIENTO { get; set; }
 
@@ -292,12 +321,15 @@ namespace SPISAP.Models
         // FAMILIAR # 6
         public string FAM6_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 6) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 6) debe contener entre 3 y 40 carácteres.")]
         public string FAM6_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 6) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 6) debe contener entre 3 y 40 carácteres.")]
         public string FAM6_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 6) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 6) debe contener entre 3 y 40 carácteres.")]
         public string FAM6_NOMBRES { get; set; }
 
@@ -305,6 +337,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 6) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM6_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 6) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 6) debe contener entre 3 y 40 carácteres.")]
         public string FAM6_LUGAR_NACIMIENTO { get; set; }
 
@@ -319,12 +352,15 @@ namespace SPISAP.Models
         // FAMILIAR # 7
         public string FAM7_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 7) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 7) debe contener entre 3 y 40 carácteres.")]
         public string FAM7_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 7) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 7) debe contener entre 3 y 40 carácteres.")]
         public string FAM7_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 7) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 7) debe contener entre 3 y 40 carácteres.")]
         public string FAM7_NOMBRES { get; set; }
 
@@ -332,6 +368,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 7) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM7_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 7) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 7) debe contener entre 3 y 40 carácteres.")]
         public string FAM7_LUGAR_NACIMIENTO { get; set; }
 
@@ -346,12 +383,15 @@ namespace SPISAP.Models
         // FAMILIAR # 8
         public string FAM8_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 8) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 8) debe contener entre 3 y 40 carácteres.")]
         public string FAM8_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 8) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 8) debe contener entre 3 y 40 carácteres.")]
         public string FAM8_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 8) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 8) debe contener entre 3 y 40 carácteres.")]
         public string FAM8_NOMBRES { get; set; }
 
@@ -359,6 +399,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 8) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM8_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 8) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 8) debe contener entre 3 y 40 carácteres.")]
         public string FAM8_LUGAR_NACIMIENTO { get; set; }
 
@@ -373,12 +414,15 @@ namespace SPISAP.Models
         // FAMILIAR # 9
         public string FAM9_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 9) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 9) debe contener entre 3 y 40 carácteres.")]
         public string FAM9_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Segundo Apellido (Familiar # 9) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 9) debe contener entre 3 y 40 carácteres.")]
         public string FAM9_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 9) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 9) debe contener entre 3 y 40 carácteres.")]
         public string FAM9_NOMBRES { get; set; }
 
@@ -386,6 +430,7 @@ namespace SPISAP.Models
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 9) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM9_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 9)  no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 9) debe contener entre 3 y 40 carácteres.")]
         public string FAM9_LUGAR_NACIMIENTO { get; set; }
 
@@ -400,18 +445,22 @@ namespace SPISAP.Models
         // FAMILIAR # 10
         public string FAM10_COD_PARENTESCO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Primer Apellido (Familiar # 10)  no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Primer Apellido (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
         public string FAM10_PRIMER_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Apellido (Familiar # 10)  no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Segundo Apellido (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
         public string FAM10_SEGUNDO_APELLIDO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombres (Familiar # 10)  no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
         public string FAM10_NOMBRES { get; set; }
 
         [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha Nacimiento (Familiar # 10) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM10_FECHA_NACIMIENTO { get; set; }
 
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Lugar de Nacimiento (Formación # 10) no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
         public string FAM10_LUGAR_NACIMIENTO { get; set; }
 
@@ -425,11 +474,12 @@ namespace SPISAP.Models
         #endregion
 
         #region DATOS_FORMACION
-        // FORMACIÓN # 1
+        // FORMACIÓN # 1 //
         [Required(ErrorMessage = "El campo Nivel de Estudio (Formación # 1) es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
 
         [Required(ErrorMessage = "El campo Nombre del Instituto (Formación # 1) es requerido.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombre del Instituto (Formación # 1) no permite números ni caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 1) debe contener entre 3 y 40 carácteres.")]
         public string FRM1_INSTITUTO { get; set; }
 
@@ -459,11 +509,13 @@ namespace SPISAP.Models
         [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Formación # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM1_FECHA_FIN { get; set; }
 
-        // FORMACIÓN # 2
+        // FORMACIÓN # 2 //
         public string FRM2_COD_CLASE { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 2) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombre del Instituto (Formación # 2) no permite números ni caracteres especiales.")]
         public string FRM2_INSTITUTO { get; set; }
+
         public string FRM2_COD_PAIS { get; set; }
         public string FRM2_CT_COD_CLASE { get; set; }
         public string FRM2_CT_COD_TITULO { get; set; }
@@ -480,11 +532,13 @@ namespace SPISAP.Models
         [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Formación # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM2_FECHA_FIN { get; set; }
 
-        // FORMACIÓN # 3
+        // FORMACIÓN # 3 //
         public string FRM3_COD_CLASE { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 3) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Nombre del Instituto (Formación # 3) no permite números ni caracteres especiales.")]
         public string FRM3_INSTITUTO { get; set; }
+
         public string FRM3_COD_PAIS { get; set; }
         public string FRM3_CT_COD_CLASE { get; set; }
         public string FRM3_CT_COD_TITULO { get; set; }
@@ -512,9 +566,11 @@ namespace SPISAP.Models
         public string EXP1_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 1) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Empresa (Experiencia # 1) no permite números o caracteres especiales.")]
         public string EXP1_EMPRESA { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Experiencia # 1) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Ciudad (Experiencia # 1) no permite números o caracteres especiales.")]
         public string EXP1_CIUDAD { get; set; }
 
         public string EXP1_PAIS { get; set; }
@@ -530,9 +586,11 @@ namespace SPISAP.Models
         public string EXP2_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 2) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Empresa (Experiencia # 2) no permite números o caracteres especiales.")]
         public string EXP2_EMPRESA { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Experiencia # 2) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Ciudad (Experiencia # 2) no permite números o caracteres especiales.")]
         public string EXP2_CIUDAD { get; set; }
 
         public string EXP2_PAIS { get; set; }
@@ -548,9 +606,11 @@ namespace SPISAP.Models
         public string EXP3_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 3) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Empresa (Experiencia # 3) no permite números o caracteres especiales.")]
         public string EXP3_EMPRESA { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Ciudad (Experiencia # 3) debe contener entre 3 y 40 carácteres.")]
+        [RegularExpression(@"^[a-zA-ZÑÁÉÍÓÚñáéíóú''-'\s]*$", ErrorMessage = "El campo Ciudad (Experiencia # 3) no permite números o caracteres especiales.")]
         public string EXP3_CIUDAD { get; set; }
 
         public string EXP3_PAIS { get; set; }

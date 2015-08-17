@@ -346,11 +346,12 @@ namespace SPISAP.Controllers
                 return View(EmployeeModel);
 
             }
-            catch( Exception e )
+            catch (Exception e)
             {
                 Console.Write(e.Message);
                 return View(EmployeeModel);
             }
+
         }
 
         //
