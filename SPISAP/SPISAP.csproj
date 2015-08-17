@@ -285,8 +285,8 @@
       <DependentUpon>SPISAPModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPISAPModel.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>SPISAPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPISAPModel.Designer.cs">

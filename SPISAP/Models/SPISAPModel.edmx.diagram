@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6c578640c8ac4d9da72226d9bdcf3b79" Name="Diagram1">
+      <Diagram DiagramId="eb276de3c18341cf942d3c164b96b6c8" Name="Diagram1">
         <EntityTypeShape EntityType="SPISAPModel.ACTIVIDAD" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.AREA_PERSONAL" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.CLASE_ESPECIALIDAD" Width="1.5" PointX="11.25" PointY="33" IsExpanded="true" />
@@ -20,13 +20,13 @@
         <EntityTypeShape EntityType="SPISAPModel.DPERSONALES" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.DUSUARIO" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.ESTADO_SSO" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.FORMACION" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.FORMACION" Width="1.5" PointX="4.25" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.GRUPO_PERSONAL" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.MUNICIPIO_SSO" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.NACIONALIDAD" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PAIS" Width="1.5" PointX="0.75" PointY="29.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PAIS_ESTADO" Width="1.5" PointX="3" PointY="29.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPISAPModel.PARENTESCO" Width="1.5" PointX="8.25" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPISAPModel.PARENTESCO" Width="1.5" PointX="7.25" PointY="33" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.PARROQUIA_SSO" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.RAMO" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SPISAPModel.RELACION_LABORAL" Width="1.5" PointX="8.25" PointY="29.875" IsExpanded="true" />

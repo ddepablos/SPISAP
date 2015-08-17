@@ -16,12 +16,12 @@ namespace SPISAP.Models
     {
         public RAMO()
         {
-            this.DEXPERIENCIAS = new HashSet<DEXPERIENCIA>();
+            this.DEXPERIENCIAs = new HashSet<DEXPERIENCIA>();
         }
     
         public string COD_RAMO { get; set; }
         public string DES_RAMO { get; set; }
     
-        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAS { get; set; }
+        public virtual ICollection<DEXPERIENCIA> DEXPERIENCIAs { get; set; }
     }
 }

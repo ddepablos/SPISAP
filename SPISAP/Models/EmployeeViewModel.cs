@@ -43,7 +43,7 @@ namespace SPISAP.Models
         public string SEXO { get; set; }
 
         [Required(ErrorMessage = "El campo Fecha de Nacimiento es requerido.")]
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento no posee un formato válido : (dd/mm/yyyy)")]
         public string FECHA_NACIMIENTO { get; set; }
 
@@ -87,8 +87,8 @@ namespace SPISAP.Models
                     ErrorMessage = "El campo Correo Electrónico no contiene el formato válido : usuario@correo.com.")]
         public string COD_CLASE_CORREO { get; set; }
 
-        [Required(ErrorMessage = "El campo Teléfono Celular es requerido.")]
-        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono Celular permite únicamente números.")]
+        [Required(ErrorMessage = "El campo Teléfono Celular es requerido y no permite espacios en blanco.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono Celular permite únicamente números, sin espacios en blanco.")]
         public string COD_CLASE_CELULAR { get; set; }
 
         [Required(ErrorMessage = "El campo Nro. de Zapato es requerido.")]
@@ -131,8 +131,8 @@ namespace SPISAP.Models
         [Required(ErrorMessage = "El campo Estado (Dirección) es requerido.")]
         public string COD_ESTADO_DIRECCION { get; set; }
 
-        [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido.")]
-        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números.")]
+        [Required(ErrorMessage = "El campo Teléfono de Habitación es requerido y no permite espacios en blanco.")]
+        [RegularExpression(@"^[0-9]\d*$", ErrorMessage = "El campo Teléfono de Habitación permite únicamente números, sin espacios en blanco.")]
         [StringLength(40, MinimumLength = 7, ErrorMessage = "El campo Teléfono de Habitación debe contener entre 7 y 40 carácteres.")]
         public string TELEFONOS { get; set; }
 
@@ -165,7 +165,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 1) debe contener entre 3 y 40 carácteres.")]
         public string FAM1_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM1_FECHA_NACIMIENTO { get; set; }
 
@@ -193,7 +193,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 2) debe contener entre 3 y 40 carácteres.")]
         public string FAM2_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM2_FECHA_NACIMIENTO { get; set; }
 
@@ -220,7 +220,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 3) debe contener entre 3 y 40 carácteres.")]
         public string FAM3_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM3_FECHA_NACIMIENTO { get; set; }
 
@@ -247,7 +247,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 4) debe contener entre 3 y 40 carácteres.")]
         public string FAM4_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 4) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM4_FECHA_NACIMIENTO { get; set; }
 
@@ -274,7 +274,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 5) debe contener entre 3 y 40 carácteres.")]
         public string FAM5_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 5) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM5_FECHA_NACIMIENTO { get; set; }
 
@@ -301,7 +301,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 6) debe contener entre 3 y 40 carácteres.")]
         public string FAM6_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 6) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM6_FECHA_NACIMIENTO { get; set; }
 
@@ -328,7 +328,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 7) debe contener entre 3 y 40 carácteres.")]
         public string FAM7_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 7) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM7_FECHA_NACIMIENTO { get; set; }
 
@@ -355,7 +355,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 8) debe contener entre 3 y 40 carácteres.")]
         public string FAM8_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 8) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM8_FECHA_NACIMIENTO { get; set; }
 
@@ -382,7 +382,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 9) debe contener entre 3 y 40 carácteres.")]
         public string FAM9_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}",
             ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 9) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM9_FECHA_NACIMIENTO { get; set; }
 
@@ -409,8 +409,7 @@ namespace SPISAP.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombres (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
         public string FAM10_NOMBRES { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Nacimiento (Familiar # 10) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha Nacimiento (Familiar # 10) no posee un formato válido : (dd/mm/yyyy)")]
         public string FAM10_FECHA_NACIMIENTO { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Lugar de Nacimiento (Familiar # 10) debe contener entre 3 y 40 carácteres.")]
@@ -429,9 +428,6 @@ namespace SPISAP.Models
         // FORMACIÓN # 1
         [Required(ErrorMessage = "El campo Nivel de Estudio (Formación # 1) es requerido.")]
         public string FRM1_COD_CLASE { get; set; }
-
-        //// PENDIENTE POR ANALIZAR SU VALOR.
-        //public string FRM1_COD_FORMACION { get; set; }
 
         [Required(ErrorMessage = "El campo Nombre del Instituto (Formación # 1) es requerido.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 1) debe contener entre 3 y 40 carácteres.")]
@@ -457,19 +453,14 @@ namespace SPISAP.Models
 
         public string FRM1_CE_COD_CLASE { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Inicio (Formación # 1) no posee un formato válido : (dd/mm/yyyy)")]
-        [Required(ErrorMessage = "El campo Fecha de Inicio (Formación # 1) es requerido.")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Formación # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM1_FECHA_INICIO { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Fin (Formación # 1) no posee un formato válido : (dd/mm/yyyy)")]
-        [Required(ErrorMessage = "El campo Fecha de Finalización (Formación # 1) es requerido.")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Formación # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM1_FECHA_FIN { get; set; }
 
         // FORMACIÓN # 2
         public string FRM2_COD_CLASE { get; set; }
-        //public string FRM2_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 2) debe contener entre 3 y 40 carácteres.")]
         public string FRM2_INSTITUTO { get; set; }
@@ -482,12 +473,15 @@ namespace SPISAP.Models
         public string FRM2_UNIDAD_TIEMPO { get; set; }
         public string FRM2_CE_COD_ESPECIALIDAD { get; set; }
         public string FRM2_CE_COD_CLASE { get; set; }
+
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Formación # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM2_FECHA_INICIO { get; set; }
+
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Formación # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM2_FECHA_FIN { get; set; }
 
         // FORMACIÓN # 3
         public string FRM3_COD_CLASE { get; set; }
-        //public string FRM3_COD_FORMACION { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Nombre del Instituto (Formación # 3) debe contener entre 3 y 40 carácteres.")]
         public string FRM3_INSTITUTO { get; set; }
@@ -500,20 +494,21 @@ namespace SPISAP.Models
         public string FRM3_UNIDAD_TIEMPO { get; set; }
         public string FRM3_CE_COD_ESPECIALIDAD { get; set; }
         public string FRM3_CE_COD_CLASE { get; set; }
+
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Formación # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM3_FECHA_INICIO { get; set; }
+
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Formación # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string FRM3_FECHA_FIN { get; set; }
         #endregion
 
         #region DATOS_EXPERIENCIA_LABORAL
         // EXPERIENCIA # 1
-        //public string EXP1_CEDULA { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 1) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 1) no posee un formato válido : (dd/mm/yyyy)")]
         public string EXP1_FECHA_INICIO { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 1) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 1) no posee un formato válido : (dd/mm/yyyy)")]    
         public string EXP1_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 1) debe contener entre 3 y 40 carácteres.")]
@@ -528,14 +523,10 @@ namespace SPISAP.Models
         public string EXP1_COD_RELACION { get; set; }
 
         // EXPERIENCIA # 2
-        //public string EXP2_CEDULA { get; set; }
-
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 2) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string EXP2_FECHA_INICIO { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 2) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 2) no posee un formato válido : (dd/mm/yyyy)")]
         public string EXP2_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 2) debe contener entre 3 y 40 carácteres.")]
@@ -550,14 +541,10 @@ namespace SPISAP.Models
         public string EXP2_COD_RELACION { get; set; }
 
         // EXPERIENCIA # 3
-        //public string EXP3_CEDULA { get; set; }
-
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 3) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Inicio (Experiencia Laboral # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string EXP3_FECHA_INICIO { get; set; }
 
-        [RegularExpression("^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4})$",
-            ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 3) no posee un formato válido : (dd/mm/yyyy)")]
+        [RegularExpression("[0-9]{2}[./-][0-9]{2}[./-][0-9]{4}", ErrorMessage = "El campo Fecha de Fin (Experiencia Laboral # 3) no posee un formato válido : (dd/mm/yyyy)")]
         public string EXP3_FECHA_FIN { get; set; }
 
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Empresa (Experiencia # 3) debe contener entre 3 y 40 carácteres.")]
@@ -577,7 +564,7 @@ namespace SPISAP.Models
 
         public string FIELD_WITHOUT_VALUE { get; set; }
         #endregion
-        
+
         #endregion
 
         /* ORACLE NEXTVAL */

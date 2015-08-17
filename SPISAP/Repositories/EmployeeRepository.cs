@@ -14,7 +14,7 @@ namespace SPISAP.Repositories
 
         EmployeeViewModel empleado;
 
-        static bool FORMAT_DATE_PRODUCCION = true;
+        static bool FORMAT_DATE_PRODUCCION = false;
 
         public EmployeeRepository()
         { 
@@ -557,13 +557,13 @@ namespace SPISAP.Repositories
         // FORMACIÓN ACADÉMICA
         public bool IsFormacion2Alert()
         {
-            return (empleado.FRM2_COD_CLASE == null && empleado.FRM2_CT_COD_CLASE == null && empleado.FRM2_CT_COD_TITULO == null && empleado.FRM2_CE_COD_CLASE == null && empleado.FRM2_CE_COD_ESPECIALIDAD == null && empleado.FRM2_INSTITUTO == null && empleado.FRM2_UNIDAD_TIEMPO == null && empleado.FRM2_DURACION == null && empleado.FRM2_FECHA_INICIO == null && empleado.FRM2_FECHA_FIN == null && empleado.FRM2_COD_PAIS == null ||
-                    empleado.FRM2_COD_CLASE != null && empleado.FRM2_CT_COD_CLASE != null && empleado.FRM2_CT_COD_TITULO != null && empleado.FRM2_CE_COD_CLASE != null && empleado.FRM2_CE_COD_ESPECIALIDAD != null && empleado.FRM2_INSTITUTO != null && empleado.FRM2_UNIDAD_TIEMPO != null && empleado.FRM2_DURACION != null && empleado.FRM2_FECHA_INICIO != null && empleado.FRM2_FECHA_FIN != null && empleado.FRM2_COD_PAIS != null);
+            return (empleado.FRM2_COD_CLASE == null && empleado.FRM2_CT_COD_TITULO == null && empleado.FRM2_CE_COD_ESPECIALIDAD == null && empleado.FRM2_INSTITUTO == null && empleado.FRM2_UNIDAD_TIEMPO == null && empleado.FRM2_DURACION == null && empleado.FRM2_FECHA_INICIO == null && empleado.FRM2_FECHA_FIN == null && empleado.FRM2_COD_PAIS == null ||
+                    empleado.FRM2_COD_CLASE != null && empleado.FRM2_CT_COD_TITULO != null && empleado.FRM2_CE_COD_ESPECIALIDAD != null && empleado.FRM2_INSTITUTO != null && empleado.FRM2_UNIDAD_TIEMPO != null && empleado.FRM2_DURACION != null && empleado.FRM2_FECHA_INICIO != null && empleado.FRM2_FECHA_FIN != null && empleado.FRM2_COD_PAIS != null);
         }
         public bool IsFormacion3Alert()
         {
-            return (empleado.FRM3_COD_CLASE == null && empleado.FRM3_CT_COD_CLASE == null && empleado.FRM3_CT_COD_TITULO == null && empleado.FRM3_CE_COD_CLASE == null && empleado.FRM3_CE_COD_ESPECIALIDAD == null && empleado.FRM3_INSTITUTO == null && empleado.FRM3_UNIDAD_TIEMPO == null && empleado.FRM3_DURACION == null && empleado.FRM3_FECHA_INICIO == null && empleado.FRM3_FECHA_FIN == null && empleado.FRM3_COD_PAIS == null ||
-                    empleado.FRM3_COD_CLASE != null && empleado.FRM3_CT_COD_CLASE != null && empleado.FRM3_CT_COD_TITULO != null && empleado.FRM3_CE_COD_CLASE != null && empleado.FRM3_CE_COD_ESPECIALIDAD != null && empleado.FRM3_INSTITUTO != null && empleado.FRM3_UNIDAD_TIEMPO != null && empleado.FRM3_DURACION != null && empleado.FRM3_FECHA_INICIO != null && empleado.FRM3_FECHA_FIN != null && empleado.FRM3_COD_PAIS != null);
+            return (empleado.FRM3_COD_CLASE == null && empleado.FRM3_CT_COD_TITULO == null && empleado.FRM3_CE_COD_ESPECIALIDAD == null && empleado.FRM3_INSTITUTO == null && empleado.FRM3_UNIDAD_TIEMPO == null && empleado.FRM3_DURACION == null && empleado.FRM3_FECHA_INICIO == null && empleado.FRM3_FECHA_FIN == null && empleado.FRM3_COD_PAIS == null ||
+                    empleado.FRM3_COD_CLASE != null && empleado.FRM3_CT_COD_TITULO != null && empleado.FRM3_CE_COD_ESPECIALIDAD != null && empleado.FRM3_INSTITUTO != null && empleado.FRM3_UNIDAD_TIEMPO != null && empleado.FRM3_DURACION != null && empleado.FRM3_FECHA_INICIO != null && empleado.FRM3_FECHA_FIN != null && empleado.FRM3_COD_PAIS != null);
         }
 
         // EXPERIENCIA LABORAL
@@ -1865,7 +1865,7 @@ namespace SPISAP.Repositories
 
         private DateTime OracleStringToDate(string value)
         {
-            value = value.Replace(".", "/");
+            value = value.Replace(".", "/").Replace("-", "/").Replace("\\", "/"); 
 
             string[] dates = value.Split('/');
 

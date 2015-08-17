@@ -33,7 +33,7 @@ namespace SPISAP.Models
         public string PRIMER_APELLIDO { get; set; }
         public string SEGUNDO_APELLIDO { get; set; }
         public string NOMBRE { get; set; }
-        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+        public System.DateTime FECHA_NACIMIENTO { get; set; }
         public string CIUDAD_NACIMIENTO { get; set; }
         public string COD_PAIS { get; set; }
         public string COD_ESTADO { get; set; }

@@ -76,18 +76,18 @@
             <PropertyRef Name="CEDULA" />
           </Key>
           <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
-          <Property Name="CALLE" Type="varchar2" MaxLength="40" Nullable="false" />
-          <Property Name="EDIFICIO" Type="varchar2" MaxLength="40" Nullable="false" />
-          <Property Name="PISO" Type="varchar2" MaxLength="6" Nullable="false" />
-          <Property Name="NUMERO" Type="varchar2" MaxLength="6" Nullable="false" />
-          <Property Name="CIUDAD" Type="varchar2" MaxLength="40" Nullable="false" />
-          <Property Name="URBANIZACION" Type="varchar2" MaxLength="40" Nullable="false" />
-          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" Nullable="false" />
-          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="CALLE" Type="varchar2" MaxLength="40" />
+          <Property Name="EDIFICIO" Type="varchar2" MaxLength="40" />
+          <Property Name="PISO" Type="varchar2" MaxLength="6" />
+          <Property Name="NUMERO" Type="varchar2" MaxLength="6" />
+          <Property Name="CIUDAD" Type="varchar2" MaxLength="40" />
+          <Property Name="URBANIZACION" Type="varchar2" MaxLength="40" />
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" />
           <Property Name="TELEFONOS" Type="varchar2" MaxLength="40" />
-          <Property Name="COD_ESTADO_SSO" Type="varchar2" MaxLength="3" Nullable="false" />
-          <Property Name="COD_MUNICIPIO_SSO" Type="varchar2" MaxLength="4" Nullable="false" />
-          <Property Name="COD_PARROQUIA_SSO" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="COD_ESTADO_SSO" Type="varchar2" MaxLength="3" />
+          <Property Name="COD_MUNICIPIO_SSO" Type="varchar2" MaxLength="4" />
+          <Property Name="COD_PARROQUIA_SSO" Type="varchar2" MaxLength="4" />
           <Property Name="COD_USER_INS" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="FECHA_INS" Type="date" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="varchar2" MaxLength="12" Nullable="false" />
@@ -174,18 +174,18 @@
           <Property Name="FICHA" Type="varchar2" MaxLength="12" Nullable="false" />
           <Property Name="CEDULA" Type="varchar2" MaxLength="8" Nullable="false" />
           <Property Name="COD_SUCURSAL" Type="varchar2" MaxLength="4" Nullable="false" />
-          <Property Name="COD_GRUPO" Type="varchar2" MaxLength="1" Nullable="false" />
-          <Property Name="COD_AREA_PERSONAL" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="varchar2" MaxLength="1" />
+          <Property Name="COD_AREA_PERSONAL" Type="varchar2" MaxLength="2" />
           <Property Name="CARGO" Type="varchar2" MaxLength="120" Nullable="false" />
           <Property Name="TRATAMIENTO" Type="varchar2" MaxLength="5" Nullable="false" />
           <Property Name="PRIMER_APELLIDO" Type="varchar2" MaxLength="40" Nullable="false" />
           <Property Name="SEGUNDO_APELLIDO" Type="varchar2" MaxLength="40" />
           <Property Name="NOMBRE" Type="varchar2" MaxLength="40" Nullable="false" />
-          <Property Name="FECHA_NACIMIENTO" Type="date" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
           <Property Name="CIUDAD_NACIMIENTO" Type="varchar2" MaxLength="40" />
-          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" Nullable="false" />
-          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" Nullable="false" />
-          <Property Name="COD_NACIONALIDAD" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="2" />
+          <Property Name="COD_ESTADO" Type="varchar2" MaxLength="4" />
+          <Property Name="COD_NACIONALIDAD" Type="varchar2" MaxLength="2" />
           <Property Name="ESTADO_CIVIL" Type="varchar2" MaxLength="6" Nullable="false" />
           <Property Name="SEXO" Type="varchar2" MaxLength="1" Nullable="false" />
           <Property Name="RIF" Type="varchar2" MaxLength="40" />
@@ -433,7 +433,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DDIRECCION_PAIS_ESTADO_FK">
-          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="0..1" />
           <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS_ESTADO">
@@ -447,7 +447,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DDIRECCION_PARROQUIA_SSO_FK">
-          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="1" />
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="0..1" />
           <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PARROQUIA_SSO">
@@ -743,7 +743,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_AREA_PERSONAL_FK">
-          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="1" />
+          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AREA_PERSONAL">
@@ -779,7 +779,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_GRUPO_PERSONAL_FK">
-          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="1" />
+          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GRUPO_PERSONAL">
@@ -791,7 +791,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_NACIONALIDAD_FK">
-          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NACIONALIDAD">
@@ -803,7 +803,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_PAIS_ESTADO_FK">
-          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="Self.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS_ESTADO">
@@ -1105,7 +1105,7 @@
           </Key>
           <Property Name="COD_ACTIVIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_ACTIVIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="ACTIVIDAD" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_ACTIVIDAD_FK" FromRole="ACTIVIDAD" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="AREA_PERSONAL">
           <Key>
@@ -1159,7 +1159,7 @@
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_UPD" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="DPERSONALES" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DCOMUNICACION" ToRole="DPERSONALES" />
+          <NavigationProperty Name="DPERSONALE" Relationship="Self.DCOMUNICACION_DPERSONALES_FK" FromRole="DCOMUNICACION" ToRole="DPERSONALES" />
           <NavigationProperty Name="DUSUARIO" Relationship="Self.DCOMUNICACION_DUSUARIOS_FK" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
           <NavigationProperty Name="DUSUARIO1" Relationship="Self.DCOMUNICACION_DUSUARIOS_FKV1" FromRole="DCOMUNICACION" ToRole="DUSUARIOS" />
         </EntityType>
@@ -1185,18 +1185,18 @@
             <PropertyRef Name="CEDULA" />
           </Key>
           <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CALLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EDIFICIO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PISO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NUMERO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="URBANIZACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CALLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="EDIFICIO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PISO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="URBANIZACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="TELEFONOS" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COD_ESTADO_SSO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_MUNICIPIO_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_PARROQUIA_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_ESTADO_SSO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="COD_MUNICIPIO_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PARROQUIA_SSO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="COD_USER_INS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FECHA_INS" Type="DateTime" Nullable="false" />
           <Property Name="COD_USER_UPD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1311,18 +1311,18 @@
           <Property Name="FICHA" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CEDULA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COD_SUCURSAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_GRUPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_AREA_PERSONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="COD_AREA_PERSONAL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="CARGO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TRATAMIENTO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FECHA_NACIMIENTO" Type="DateTime" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
           <Property Name="CIUDAD_NACIMIENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="COD_NACIONALIDAD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="ESTADO_CIVIL" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RIF" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
@@ -1427,7 +1427,7 @@
           <Property Name="DES_PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_PAIS_FK" FromRole="PAIS" ToRole="DEXPERIENCIA" />
           <NavigationProperty Name="DFAMILIARES" Relationship="Self.DFAMILIARES_PAIS_FK" FromRole="PAIS" ToRole="DFAMILIARES" />
-          <NavigationProperty Name="DFORMACIONES" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
+          <NavigationProperty Name="DFORMACIONs" Relationship="Self.DFORMACION_PAIS_FK" FromRole="PAIS" ToRole="DFORMACION" />
           <NavigationProperty Name="PAIS_ESTADO" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS" ToRole="PAIS_ESTADO" />
         </EntityType>
         <EntityType Name="PAIS_ESTADO">
@@ -1438,7 +1438,7 @@
           <Property Name="COD_PAIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COD_ESTADO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_ESTADO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DDIRECCION" />
           <NavigationProperty Name="DPERSONALES" Relationship="Self.DPERSONALES_PAIS_ESTADO_FK" FromRole="PAIS_ESTADO" ToRole="DPERSONALES" />
           <NavigationProperty Name="PAI" Relationship="Self.PAIS_ESTADO_PAIS_FK" FromRole="PAIS_ESTADO" ToRole="PAIS" />
         </EntityType>
@@ -1460,7 +1460,7 @@
           <Property Name="COD_MUNICIPIO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COD_PARROQUIA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_PARROQUIA" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DDIRECCIONES" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="DDIRECCION" />
+          <NavigationProperty Name="DDIRECCIONs" Relationship="Self.DDIRECCION_PARROQUIA_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="DDIRECCION" />
           <NavigationProperty Name="MUNICIPIO_SSO" Relationship="Self.PARROQUIA_MUNICIPIO_SSO_FK" FromRole="PARROQUIA_SSO" ToRole="MUNICIPIO_SSO" />
         </EntityType>
         <EntityType Name="RAMO">
@@ -1469,7 +1469,7 @@
           </Key>
           <Property Name="COD_RAMO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_RAMO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="RAMO" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RAMO_FK" FromRole="RAMO" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="RELACION_LABORAL">
           <Key>
@@ -1477,7 +1477,7 @@
           </Key>
           <Property Name="COD_RELACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DES_RELACION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DEXPERIENCIAS" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="RELACION_LABORAL" ToRole="DEXPERIENCIA" />
+          <NavigationProperty Name="DEXPERIENCIAs" Relationship="Self.DEXPERIENCIA_RLABORAL_FK" FromRole="RELACION_LABORAL" ToRole="DEXPERIENCIA" />
         </EntityType>
         <EntityType Name="SUCURSAL">
           <Key>
@@ -1501,7 +1501,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_AREA_PERSONAL_FK">
-          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="1" />
+          <End Role="AREA_PERSONAL" Type="Self.AREA_PERSONAL" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AREA_PERSONAL">
@@ -1685,7 +1685,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DDIRECCION_PAIS_ESTADO_FK">
-          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="0..1" />
           <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS_ESTADO">
@@ -1699,7 +1699,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DDIRECCION_PARROQUIA_SSO_FK">
-          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="1" />
+          <End Role="PARROQUIA_SSO" Type="Self.PARROQUIA_SSO" Multiplicity="0..1" />
           <End Role="DDIRECCION" Type="Self.DDIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PARROQUIA_SSO">
@@ -1967,7 +1967,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_GRUPO_PERSONAL_FK">
-          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="1" />
+          <End Role="GRUPO_PERSONAL" Type="Self.GRUPO_PERSONAL" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GRUPO_PERSONAL">
@@ -1979,7 +1979,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_NACIONALIDAD_FK">
-          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="1" />
+          <End Role="NACIONALIDAD" Type="Self.NACIONALIDAD" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NACIONALIDAD">
@@ -1991,7 +1991,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DPERSONALES_PAIS_ESTADO_FK">
-          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="1" />
+          <End Role="PAIS_ESTADO" Type="Self.PAIS_ESTADO" Multiplicity="0..1" />
           <End Role="DPERSONALES" Type="SPISAPModel.DPERSONALES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PAIS_ESTADO">

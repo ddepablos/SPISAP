@@ -176,7 +176,8 @@
         Talla de Pantalón :
         @if ( Model.TallaPantalon != null )
         {
-        @Html.DropDownListFor(model => model.PANTALON, new SelectList(Model.TallaPantalon, "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
+            Model.TallaPantalon.Add(new SPISAP.Models.Generic2Model { CODIGO = "", DESCRIPCION = "Seleccione un valor", FOREINGKEY = Model.SEXO });
+            @Html.DropDownListFor(model => model.PANTALON, new SelectList(Model.TallaPantalon.Where(x=>x.FOREINGKEY == Model.SEXO).OrderBy( x => x.CODIGO ), "CODIGO", "DESCRIPCION", Model.TallaPantalon), new { @class = "form-control", @id = "pantalon" })
         }
         else
         {

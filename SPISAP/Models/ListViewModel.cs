@@ -38,7 +38,7 @@ namespace SPISAP.Models
                     PAIS item = new PAIS();
                     item.COD_PAIS = record.COD_PAIS;
                     item.DES_PAIS = record.DES_PAIS;
-                    Lista.Add( item );
+                    Lista.Add(item);
                 }
 
                 return Lista;
@@ -287,7 +287,7 @@ namespace SPISAP.Models
                     ESTADO_SSO item = new ESTADO_SSO();
                     item.COD_ESTADO_SSO = record.COD_ESTADO_SSO;
                     item.DES_ESTADO_SSO = record.DES_ESTADO_SSO;
-                    Lista.Add( item );
+                    Lista.Add(item);
                 }
 
                 return Lista;
