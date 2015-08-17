@@ -22,14 +22,14 @@
     </div>
 </nav>
 
-@using (Html.BeginForm("Confirm", "Employee", "POST"))
+@using (Html.BeginForm("CreateConfirm", "Employee", "POST"))
 { 
 
     <div class="container jumbotron form-signin">
         
     <form class="form-horizontal">
 
-    <h3>Formulario de Confirmación de Actualización de Datos del Trabajador</h3>
+    <h3>Formulario de Confirmación de Nuevo Ingreso de Trabajador</h3>
 
     <div class="row">
 
@@ -844,7 +844,7 @@
             <button type="submit" class="btn btn-success btn-md">Guardar Datos</button>
         </div>
         <div class="col-md-2">
-            <a class="btn  btn-danger btn-md" href="@Url.Action("Edit","Employee")">Regresar</a>
+            <a class="btn  btn-danger btn-md" href="@Url.Action("Create","Employee")">Regresar</a>
         </div>
     </div>
     <!--// BUTTONS //-->

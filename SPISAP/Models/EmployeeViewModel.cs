@@ -624,7 +624,7 @@ namespace SPISAP.Models
 
         public EmployeeViewModel()
         {
-            //FillDummyRecord();
+            FillDummyRecord();
             FillListas();
             COD_PAIS_DIRECCION = "VE";
             NEXTVAL = GetOracleNextVal();

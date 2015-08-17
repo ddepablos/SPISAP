@@ -45,12 +45,31 @@ namespace SPISAP.Controllers
 
         public ActionResult Create()
         {
-            if (@Session["USUARIO"] == null)
+            //if (@Session["USUARIO"] == null)
+            //{
+            //    return RedirectToAction("Login", "Home");
+            //}
+            //EmployeeViewModel employee = new EmployeeViewModel();
+            //return View("Create", employee);
+
+
+            if (@Session["COD_USER"] == null)
             {
                 return RedirectToAction("Login", "Home");
             }
-            EmployeeViewModel employee = new EmployeeViewModel();
-            return View("Create", employee);
+            if (TempData["ConfirmacionModel"] != null)
+            {
+                EmployeeViewModel model = (EmployeeViewModel) TempData["ConfirmacionModel"];
+                TempData["ConfirmacionModel"] = null;
+                return View(model);
+            }
+            else
+            {
+                EmployeeViewModel employee = new EmployeeViewModel();
+                return View("Create", employee);
+            }
+
+
         }
 
         //
@@ -166,10 +185,14 @@ namespace SPISAP.Controllers
                     }
                     else
                     {
-                        if (e.AddNew())
-                        {
-                            return RedirectToAction("Filter", "Employee");
-                        }
+                        //if (e.AddNew())
+                        //{
+                        //    return RedirectToAction("Filter", "Employee");
+                        //}
+
+                        // cargar el modelo temporal para la confirmación.
+                        TempData["ConfirmacionModel"] = EmployeeModel;
+                        return RedirectToAction("CreateConfirm");
                     }
 
                 }
@@ -341,11 +364,65 @@ namespace SPISAP.Controllers
         }
 
         //
+        // GET: /Employee/CreateConfirm/
+
+        public ActionResult CreateConfirm()
+        {
+            if (@Session["COD_USER"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
+            EmployeeViewModel confirmacion = (EmployeeViewModel)TempData["ConfirmacionModel"];
+
+            TempData.Keep("ConfirmacionModel");
+            return View(confirmacion);
+        }
+
+        //
+        // POST: /Employee/CreateConfirm/
+
+        [HttpPost]
+        public ActionResult CreateConfirm(EmployeeViewModel EmployeeModel)
+        {
+
+            // transferencia del modelo.
+            EmployeeViewModel modelo = (EmployeeViewModel)TempData["ConfirmacionModel"];
+
+            TempData["ConfirmacionModel"] = null;
+
+            if (modelo.CEDULA == null)
+            {
+                // redireccionar a la vista inicial de pago en línea.
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                // actualizar el registro del trabajador.
+                EmployeeRepository e = new EmployeeRepository(modelo);
+
+                if (e.AddNew())
+                {
+                    return RedirectToAction("Filter", "Employee");
+                    //return RedirectToAction("Registrado");
+                }
+                else
+                {
+                    return RedirectToAction("AddNew", modelo);
+                    //return RedirectToAction("Rechazado");
+                }
+
+            }
+
+        }
+
+
+        //
         // GET: /Employee/Delete/5
 
         public ActionResult Confirm()
         {
-            if (@Session["USUARIO"] == null)
+            if (@Session["COD_USER"] == null)
             {
                 return RedirectToAction("Login", "Home");
             }
