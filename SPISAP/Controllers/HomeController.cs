@@ -19,6 +19,9 @@ namespace SPISAP.Controllers
 
         public ActionResult Login()
         {
+            Session["COD_USER"] = "";
+            Session["USUARIO"] = "";
+            Session["ERROR"] = "";
             return View();
         }
 

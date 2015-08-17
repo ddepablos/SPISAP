@@ -43,11 +43,11 @@
     <div class="row">
         <br>
         <div class="col-md-3" style="width: 130px;">
-        Ficha :
+        Ficha : *
         @Html.TextBoxFor(model => model.FICHA, new { @class = "form-control", id = "ficha", @maxlength="12", @style="text-align:center" })
         </div>
         <div class="col-md-3" style="width: 280px;">
-        Primer Apellido :
+        Primer Apellido : *
         @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", id = "primerapellido", @maxlength="40" })
         </div>
         <div class="col-md-3" style="width: 280px;">
@@ -55,39 +55,39 @@
         @Html.TextBoxFor(model => model.SEGUNDO_APELLIDO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
-        Nombres :
+        Nombres : *
         @Html.TextBoxFor(model => model.NOMBRE, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-2" style="width: 110px;">
-        Cédula :
+        Cédula : *
         @Html.TextBoxFor(model => model.CEDULA, new { @class = "form-control", @maxlength="8" , @style="text-align:center"})
         </div>
         <div class="col-md-1">
-        Sexo :
+        Sexo : *
         @Html.DropDownListFor(model => model.SEXO, new SelectList(Model.Generos, "CODIGO", "DESCRIPCION", Model.Generos), new { @class = "form-control", id = "sexo" })
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
-        Fecha de Nacimiento :
+        Fecha de Nacimiento : *
         @Html.TextBoxFor(model => model.FECHA_NACIMIENTO, new { @class = "form-control", @maxlength="10" , @style="text-align:center"})
         </div>
         <div class="col-md-3">
-        Ciudad de Nacimiento :
+        Ciudad de Nacimiento : *
         @Html.TextBoxFor(model => model.CIUDAD_NACIMIENTO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
-        País de Nacimiento :
+        País de Nacimiento : *
         @Html.DropDownListFor(m => m.COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "paisnac" })
         </div>
         <div class="col-md-3">
-        Nacionalidad :
+        Nacionalidad : *
         @Html.DropDownListFor(m => m.COD_NACIONALIDAD, new SelectList(Model.Nacionalidades, "COD_NACIONALIDAD", "DES_NACIONALIDAD", Model.Nacionalidades), new { @class = "form-control", @id = "nacionalidad" })
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
-        Estado de Nacimiento :
+        Estado de Nacimiento : *
         @if ( Model.COD_PAIS == "VE" || Model.COD_PAIS == null )
         {
             Model.Estados.Add(new SPISAP.Models.PAIS_ESTADO { COD_ESTADO = "", DES_ESTADO = "Seleccione un valor", COD_PAIS = "VE" });
@@ -95,7 +95,7 @@
         @Html.DropDownListFor(m => m.COD_ESTADO, new SelectList(Model.Estados.OrderBy(x=>x.COD_ESTADO), "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "edonac" })
         </div>
         <div class="col-md-3">
-        Estado Civil :
+        Estado Civil : *
         @Html.DropDownListFor(m => m.ESTADO_CIVIL, new SelectList(Model.EstadoCivil, "CODIGO", "DESCRIPCION", Model.EstadoCivil), new { @class = "form-control", @id = "edocivil" })
         </div>
         <div class="col-md-3">
@@ -103,25 +103,25 @@
         @Html.TextBoxFor(model => model.RIF, new { @class = "form-control", @maxlength="20" })
         </div>
         <div class="col-md-3">
-        Correo Electrónico :
+        Correo Electrónico : 
         @Html.TextBoxFor(model => model.COD_CLASE_CORREO, new { @class = "form-control", @maxlength="40" })
         </div>
         </div>
         <div class="row">
         <div class="col-md-3">
-        Nivel de Cargo :
+        Nivel de Cargo : *
         @Html.DropDownListFor(m => m.COD_AREA_PERSONAL, new SelectList(Model.NivelCargo, "COD_AREA_PERSONAL", "DES_AREA_PERSONAL", Model.NivelCargo), new { @class = "form-control", @id = "nivelcargo" })
         </div>
         <div class="col-md-3">
-        Nombre del Cargo :
+        Nombre del Cargo : *
         @Html.TextBoxFor(model => model.CARGO, new { @class = "form-control", @maxlength="60" })
         </div>
         <div class="col-md-2" style="width: 300px;">
-        Sucursal :
+        Sucursal : *
         @Html.DropDownListFor(m => m.COD_SUCURSAL, new SelectList(Model.Sucursales, "COD_SUCURSAL", "DES_SUCURSAL", Model.Sucursales), new { @class = "form-control", @id = "sucursal" })
         </div>
         <div class="col-md-2" style="width: 150px;">
-        Tipo de Contratación :
+        Tipo Contratación : *
         @Html.DropDownListFor(m => m.COD_GRUPO, new SelectList(Model.GrupoPersonal, "COD_GRUPO", "DES_GRUPO_PERSONAL", Model.GrupoPersonal), new { @class = "form-control", @id = "grupopersonal" })
         </div>
         <div class="col-md-2" style="width: 150px;">
@@ -132,7 +132,7 @@
         </div>
         <div class="row">
         <div class="col-md-4">
-        Talla de Camisa :
+        Talla de Camisa : *
         @if( (Model.SEXO != null && Model.CHEMISE == null) || ( Model.SEXO != null && Model.CHEMISE != null ) )             
         {
             Model.TallaChemise.Add(new SPISAP.Models.Generic2Model { CODIGO = "", DESCRIPCION = "Seleccione un valor", FOREINGKEY = Model.SEXO });
@@ -146,7 +146,7 @@
         }
         </div>
         <div class="col-md-4">
-        Talla de Pantalón :
+        Talla de Pantalón : *
         @if( (Model.SEXO != null && Model.PANTALON == null) || ( Model.SEXO != null && Model.PANTALON != null ) )             
         {
             Model.TallaPantalon.Add(new SPISAP.Models.Generic2Model { CODIGO = "", DESCRIPCION = "Seleccione un valor", FOREINGKEY = Model.SEXO });
@@ -160,7 +160,7 @@
         }
         </div>
         <div class="col-md-4">
-        Nro. de Zapato :
+        Nro. de Zapato : *
         @if( (Model.SEXO != null && Model.CALZADO == null) || ( Model.SEXO != null && Model.CALZADO != null ) )
         {
             Model.TallaCalzado.Add(new SPISAP.Models.GenericModel { CODIGO = "", DESCRIPCION = "Seleccione un valor" });
@@ -186,34 +186,34 @@
         <div class="row">
         <br>
         <div class="col-md-4">
-        Calle :
+        Calle : *
         @Html.TextBoxFor(model => model.CALLE, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-3">
-        Edificio/Casa/Escalera :
+        Edificio/Casa/Escalera : *
         @Html.TextBoxFor(model => model.EDIFICIO, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-1">
-        Piso :
+        Piso : *
         @Html.TextBoxFor(model => model.PISO, new { @class = "form-control", @maxlength="2", @style="text-align:center" })
         </div>
         <div class="col-md-1">
-        Número :
+        Número : *
         @Html.TextBoxFor(model => model.NUMERO, new { @class = "form-control", @maxlength="4", @style="text-align:center" })
         </div>
         <div class="col-md-3">
-        Urbanización/Zona :
+        Urbanización/Zona : *
         @Html.TextBoxFor(model => model.URBANIZACION, new { @class = "form-control", @maxlength="40" })
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
-        País :
+        País : *
         @Html.TextBoxFor(model => model.COD_PAIS_DIRECCION, new { @class = "form-control", @value="VE", @type="hidden" })
         @Html.TextBoxFor(model => model.FIELD_WITHOUT_VALUE, new { @class = "form-control", @Value="VENEZUELA", @disabled="disabled"})
         </div>
         <div class="col-md-3" style="width: 250px;">
-        Estado :
+        Estado : *
         @if (Model.Estados != null)
         {
         @Html.DropDownListFor(m => m.COD_ESTADO_DIRECCION, new SelectList(Model.Estados, "COD_ESTADO", "DES_ESTADO", Model.Estados), new { @class = "form-control", @id = "estadodir" })
@@ -226,15 +226,15 @@
         }
         </div>
         <div class="col-md-3" style="width: 250px;">
-        Ciudad :
+        Ciudad : *
         @Html.TextBoxFor(model => model.CIUDAD, new { @class = "form-control", @maxlength="40" })
         </div>
         <div class="col-md-2">
-        Teléfono de Habitación :
+        Teléfono de Habitación : *
         @Html.TextBoxFor(model => model.TELEFONOS, new { @class = "form-control", @maxlength="11" })
         </div>
         <div class="col-md-2">
-        Teléfono Celular :
+        Teléfono Celular : *
         @Html.TextBoxFor(model => model.COD_CLASE_CELULAR, new { @class = "form-control", @maxlength="11" })
         </div>
         </div>
@@ -242,7 +242,7 @@
     <div class="row text-center">Datos de Seguro Social Obligatorio</div>
     <div class="row">
         <div class="col-md-4" style="padding-left: 0px;">
-        Estado (SSO):
+        Estado (SSO) : *
         @if (Model.EstadoSSO != null)   
         {
             @Html.DropDownListFor(m => m.COD_ESTADO_SSO, new SelectList(Model.EstadoSSO, "COD_ESTADO_SSO", "DES_ESTADO_SSO", Model.COD_ESTADO_SSO), new { @class = "form-control", @id = "estadosso" })
@@ -255,7 +255,7 @@
         }
         </div>
         <div class="col-md-4">
-        Municipio (SSO):
+        Municipio (SSO) : *
         @if( (Model.COD_ESTADO_SSO != null && Model.COD_MUNICIPIO_SSO == null) || ( Model.COD_ESTADO_SSO != null && Model.COD_MUNICIPIO_SSO != null ) )  
         {
             Model.MunicipioSSO.Add(new SPISAP.Models.MUNICIPIO_SSO { COD_ESTADO_SSO = Model.COD_ESTADO_SSO, COD_MUNICIPIO = "", DES_MUNICIPIO = "Seleccione un valor" });
@@ -269,7 +269,7 @@
         }
         </div>
         <div class="col-md-4" style="padding-right: 0px;">
-        Parroquia (SSO):
+        Parroquia (SSO) : *
         @if( (Model.COD_MUNICIPIO_SSO != null && Model.COD_PARROQUIA_SSO == null) || ( Model.COD_MUNICIPIO_SSO != null && Model.COD_PARROQUIA_SSO != null ) )  
         {
             Model.ParroquiaSSO.Add(new SPISAP.Models.PARROQUIA_SSO { COD_MUNICIPIO = Model.COD_MUNICIPIO_SSO, COD_PARROQUIA = "", DES_PARROQUIA = "Seleccione un valor" });
@@ -484,7 +484,7 @@
         <div class="text-center"><h5>Formación # 1</h5></div>
 
         <div class="col-md-4">
-        Nivel de Estudio :
+        Nivel de Estudio : *
         @if (Model.NivelEstudio != null)
         {
             @Html.DropDownListFor(m => m.FRM1_COD_CLASE, new SelectList(Model.NivelEstudio, "COD_CLASE", "DES_CLASE", Model.NivelEstudio), new { @class = "form-control", @id = "nivel1" })
@@ -497,7 +497,7 @@
         }
         </div>
         <div class="col-md-4">
-        Condición :
+        Condición : *
         @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CT_COD_TITULO == null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CT_COD_TITULO != null))  
         {
             Model.Condiciones.Add(new SPISAP.Models.CLASE_TITULO {COD_TITULO = "", DES_TITULO = "Seleccione un valor" });
@@ -511,7 +511,7 @@
         }
         </div>
         <div class="col-md-4">
-        Especialidad :
+        Especialidad : *
         @if ((Model.FRM1_COD_CLASE == null && Model.FRM1_CE_COD_ESPECIALIDAD != null) || (Model.FRM1_COD_CLASE != null && Model.FRM1_CE_COD_ESPECIALIDAD != null))
         {
             Model.Especialidades.Add(new SPISAP.Models.CLASE_ESPECIALIDAD {COD_ESPECIALIDAD = "", DES_ESPECIALIDAD = "Seleccione un valor" });
@@ -526,26 +526,26 @@
         </div>
 
         <div class="col-md-2">
-        Nombre del Instituto :
+        Nombre del Instituto : *
         @Html.TextBoxFor(model => model.FRM1_INSTITUTO, new { @class = "form-control" , @maxlength="40"})
         </div>
         <div class="col-md-1" style="padding-right: 0px;">
-        Duración :
+        Duración : *
         @Html.TextBoxFor(model => model.FRM1_DURACION, new { @class = "form-control" , @maxlength="2", @style="text-align:center"})
         </div>
         <div class="col-md-2" style="padding-top: 17px; padding-left: 0px;">
         @Html.DropDownListFor(m => m.FRM1_UNIDAD_TIEMPO, new SelectList(Model.UnidadesTiempo, "CODIGO", "DESCRIPCION", Model.UnidadesTiempo), new { @class = "form-control" })
         </div>
         <div class="col-md-2">
-        Fecha de Inicio :
+        Fecha de Inicio : *
         @Html.TextBoxFor(model => model.FRM1_FECHA_INICIO, new { @class = "form-control" , @maxlength="10", @style="text-align:center"})
         </div>
         <div class="col-md-2">
-        Fecha de Fin :
+        Fecha de Fin : *
         @Html.TextBoxFor(model => model.FRM1_FECHA_FIN, new { @class = "form-control" , @maxlength="10", @style="text-align:center"})
         </div>
         <div class="col-md-3">
-        País :
+        País : *
         @Html.DropDownListFor(m => m.FRM1_COD_PAIS, new SelectList(Model.Paises, "COD_PAIS", "DES_PAIS", Model.Paises), new { @class = "form-control", @id = "pais" })
         </div>
 
@@ -857,6 +857,9 @@
 
     <!-- BUTTONS -->
     <div class="form-group">
+
+        <div class="text-center">Nota : Los campos con (*) son requeridos para procesar el formulario.</div>
+        <br>
         <div class="col-md-offset-4 col-md-2">
             <button type="submit" class="btn btn-success btn-md">Confirmar Datos</button>
         </div>
