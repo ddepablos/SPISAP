@@ -14,7 +14,7 @@ namespace SPISAP.Repositories
 
         EmployeeViewModel empleado;
 
-        static bool FORMAT_DATE_PRODUCCION = false;
+        static bool FORMAT_DATE_PRODUCCION = true;
 
         public EmployeeRepository()
         { 

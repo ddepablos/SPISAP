@@ -9,6 +9,8 @@ using System.Globalization;
 
 namespace SPISAP.Controllers
 {
+
+    [HandleError]
     public class EmployeeController : Controller
     {
         //
@@ -45,13 +47,6 @@ namespace SPISAP.Controllers
 
         public ActionResult Create()
         {
-            //if (@Session["USUARIO"] == null)
-            //{
-            //    return RedirectToAction("Login", "Home");
-            //}
-            //EmployeeViewModel employee = new EmployeeViewModel();
-            //return View("Create", employee);
-
 
             if (@Session["COD_USER"] == null)
             {
@@ -69,7 +64,6 @@ namespace SPISAP.Controllers
                 return View("Create", employee);
             }
 
-
         }
 
         //
@@ -78,8 +72,8 @@ namespace SPISAP.Controllers
         [HttpPost]
         public ActionResult Create(EmployeeViewModel EmployeeModel)
         {
-            try
-            {
+            //try
+            //{
 
                 if (ModelState.IsValid)
                 {
@@ -185,11 +179,6 @@ namespace SPISAP.Controllers
                     }
                     else
                     {
-                        //if (e.AddNew())
-                        //{
-                        //    return RedirectToAction("Filter", "Employee");
-                        //}
-
                         // cargar el modelo temporal para la confirmación.
                         TempData["ConfirmacionModel"] = EmployeeModel;
                         return RedirectToAction("CreateConfirm");
@@ -200,12 +189,13 @@ namespace SPISAP.Controllers
                 EmployeeModel.ERROR = (string) HttpContext.ApplicationInstance.Session["ERROR"];
                 return View(EmployeeModel);
 
-            }
-            catch( Exception e )
-            {
-                HttpContext.ApplicationInstance.Session["ERROR"] = e.InnerException.InnerException.Message;
-                return View(EmployeeModel);
-            }
+            //}
+            //catch( Exception e )
+            //{
+            //    HttpContext.ApplicationInstance.Session["ERROR"] = e.InnerException.InnerException.Message;
+            //    return View(EmployeeModel);
+            //}
+        
         }
 
         //
@@ -606,7 +596,6 @@ namespace SPISAP.Controllers
 
         #endregion
 
-
-
     }
+
 }
