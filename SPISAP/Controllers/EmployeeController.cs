@@ -72,8 +72,9 @@ namespace SPISAP.Controllers
         [HttpPost]
         public ActionResult Create(EmployeeViewModel EmployeeModel)
         {
-            //try
-            //{
+
+            try
+            {
 
                 if (ModelState.IsValid)
                 {
@@ -189,12 +190,13 @@ namespace SPISAP.Controllers
                 EmployeeModel.ERROR = (string) HttpContext.ApplicationInstance.Session["ERROR"];
                 return View(EmployeeModel);
 
-            //}
-            //catch( Exception e )
-            //{
-            //    HttpContext.ApplicationInstance.Session["ERROR"] = e.InnerException.InnerException.Message;
-            //    return View(EmployeeModel);
-            //}
+            }
+            catch( Exception e )
+            {
+                HttpContext.ApplicationInstance.Session["ERROR"] = e.InnerException.InnerException.Message;
+                return View(EmployeeModel);
+                //return View("Error");
+            }
         
         }
 
@@ -229,8 +231,8 @@ namespace SPISAP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit( EmployeeViewModel EmployeeModel )
         {
-            try
-            {
+            //try
+            //{
 
                 if (ModelState.IsValid)
                 {
@@ -345,12 +347,12 @@ namespace SPISAP.Controllers
 
                 return View(EmployeeModel);
 
-            }
-            catch (Exception e)
-            {
-                Console.Write(e.Message);
-                return View(EmployeeModel);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.Write(e.Message);
+            //    return View(EmployeeModel);
+            //}
 
         }
 

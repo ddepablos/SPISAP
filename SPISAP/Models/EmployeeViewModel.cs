@@ -81,7 +81,7 @@ namespace SPISAP.Models
         [Required(ErrorMessage = "El campo Estado Civil es requerido.")]
         public string ESTADO_CIVIL { get; set; }
 
-        [RegularExpression(@"^([Jj]{1})-([0-9]{6,8})-([0-9]{1})$", ErrorMessage = "El campo RIF no contiene el formato válido : J-XXXXXX-X")]
+        [RegularExpression(@"^([Vv]{1})-([0-9]{6,8})-([0-9]{1})$", ErrorMessage = "El campo RIF no contiene el formato válido : J-XXXXXX-X")]
         public string RIF { get; set; }
 
         public string TRATAMIENTO { get; set; }
@@ -108,12 +108,12 @@ namespace SPISAP.Models
 
         #region DATOS_DIRECCION
         [Required(ErrorMessage = "El campo Calle es requerido.")]
-        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Calle no permite números o caracteres especiales.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#\.]*$", ErrorMessage = "El campo Calle no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Calle debe contener entre 3 y 40 carácteres.")]
         public string CALLE { get; set; }
 
         [Required(ErrorMessage = "El campo Edificio/Casa/Escalera es requerido.")]
-        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Edificio/Casa/Escalera no permite números o caracteres especiales.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#\.]*$", ErrorMessage = "El campo Edificio/Casa/Escalera no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Edificio/Casa/Escalera debe contener entre 3 y 40 carácteres.")]
         public string EDIFICIO { get; set; }
 
@@ -130,7 +130,7 @@ namespace SPISAP.Models
         public string CIUDAD { get; set; }
 
         [Required(ErrorMessage = "El campo Urbanización/Zona es requerido.")]
-        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#]*$", ErrorMessage = "El campo Urbanización/Zona no permite números o caracteres especiales.")]
+        [RegularExpression(@"^[A-Za-zÑÁÉÍÓÚñáéíóú 0-9 \-\#\.]*$", ErrorMessage = "El campo Urbanización/Zona no permite números o caracteres especiales.")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "El campo Urbanización/Zona debe contener entre 3 y 40 carácteres.")]
         public string URBANIZACION { get; set; }
 

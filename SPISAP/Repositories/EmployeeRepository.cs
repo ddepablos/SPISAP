@@ -6,9 +6,11 @@ using SPISAP.Models;
 using System.Globalization;
 using System.Data.Entity.Validation;
 using System.Data;
+using System.Web.Mvc;
 
 namespace SPISAP.Repositories
 {
+    [HandleError]
     public class EmployeeRepository
     {
 
@@ -1792,7 +1794,7 @@ namespace SPISAP.Repositories
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
                         HttpContext.Current.Session["ERROR"] = validationError.PropertyName + "::::>" + validationError.ErrorMessage;
-                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        //System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
                     }
                 }
 
@@ -1813,14 +1815,25 @@ namespace SPISAP.Repositories
         private int GetEdad()
         {
 
-            int diaCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(0, 2) );
-            int mesCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(3, 2) );
-            int añoCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(6, 4) );
+            try
+            {
+            
+                int diaCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(0, 2) );
+                int mesCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(3, 2) );
+                int añoCumple = int.Parse( empleado.FECHA_NACIMIENTO.Substring(6, 4) );
 
-            DateTime fechaNacimiento = new DateTime(añoCumple, mesCumple, diaCumple);
-            DateTime fechaEvento = System.DateTime.Now;
+                DateTime fechaNacimiento = new DateTime(añoCumple, mesCumple, diaCumple);
+                DateTime fechaEvento = System.DateTime.Now;
 
-            return ((fechaEvento.Subtract(fechaNacimiento)).Days / 365);
+                return ((fechaEvento.Subtract(fechaNacimiento)).Days / 365);
+            
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+
         }
 
         public bool IsRangeValid(string desde, string hasta)
