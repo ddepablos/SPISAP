@@ -1841,8 +1841,8 @@ namespace SPISAP.Repositories
 
             if (desde != null && hasta != null)
             {
-                DateTime date1 = new DateTime( int.Parse(desde.Substring(6, 4)) , int.Parse(desde.Substring(3, 2)), int.Parse(desde.Substring(0, 2)), 0, 0, 0);
-                DateTime date2 = new DateTime(int.Parse(hasta.Substring(6, 4)), int.Parse(hasta.Substring(3, 2)), int.Parse(hasta.Substring(0, 2)), 0, 0, 0);
+                DateTime date1 = OracleStringToDate(desde);     // new DateTime(int.Parse(desde.Substring(6, 4)), int.Parse(desde.Substring(3, 2)), int.Parse(desde.Substring(0, 2)), 0, 0, 0);
+                DateTime date2 = OracleStringToDate(hasta);     // new DateTime(int.Parse(hasta.Substring(6, 4)), int.Parse(hasta.Substring(3, 2)), int.Parse(hasta.Substring(0, 2)), 0, 0, 0);
                 return (DateTime.Compare(date1, date2) < 0);                
             }
 
